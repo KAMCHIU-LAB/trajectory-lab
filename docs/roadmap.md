@@ -12,14 +12,32 @@ lifetime or hiring outcome is promised.
 
 ## Next substantive increment
 
-Choose one research question, not several new frameworks:
+The next experiment should resolve one observed ambiguity before adding another
+algorithm. The current PointMaze training fragments all have return 1, while the
+recovered evaluation environment continues for 300 steps. The DT target is reduced
+by observed reward and can go below the training return-to-go range.
 
-1. Add another public continuous-control or navigation task and test whether the
-   data-selection observations persist.
-2. Expand training-seed count and separate tuning tasks from final reporting tasks.
-3. Add TD3+BC as a public baseline, with a paper-referenced implementation check.
-4. Compare a current generative policy against DT under an explicit compute budget,
-   only after the baseline and data pipeline are validated.
+### Study 1: PointMaze target-horizon check
+
+- Compare the current return-to-go update with a zero-clamped target. Keep the
+  dataset, split, model, optimizer, update count and evaluation horizon fixed.
+- Add training seeds and reserve new environment seeds for final evaluation; the
+  seeds already reported in v0.1 must not become a tuning set.
+- Record raw return, goal occupancy after first arrival, support diagnostics and
+  action behavior before and after reaching the goal. These metrics help explain
+  a difference; they do not establish deployment safety.
+- Publish both outcomes and exact configs, even if the target correction does not
+  improve the policy.
+
+After that result, choose one next question from this list:
+
+1. Test whether return quality or state-space coverage matters more in another
+   public task with varied episode lengths.
+2. Repeat source-data and split seeds to measure data uncertainty alongside
+   training-seed variation.
+3. Add TD3+BC as a public baseline with a paper-referenced implementation check.
+4. Compare a generative policy against DT only after defining a compute budget,
+   test-seed protocol and a specific question the comparison can answer.
 
 ## Ongoing maintenance
 

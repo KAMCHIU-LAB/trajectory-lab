@@ -72,3 +72,13 @@ core implementation digest. The optional parallel driver's source hash is stored
 separately. The report renderer can evolve without changing the trained model
 identity. Digests bind recorded artifacts; they are not signatures or independent
 third-party verification.
+
+## Transferable questions instead of transferred scores
+
+Public control tasks let the experiment isolate data selection without private
+auction logs. Their results describe the implemented control experiments. The
+connection to bidding is methodological: logged trajectory selection can trade
+off aggregate quality against coverage; reward horizons must match the policy's
+decision period; and offline support checks should inform investigation rather
+than certify release.
+The results document lists the separate measurements a bidding study would need.

@@ -29,6 +29,26 @@ This is **not** a reproduction of full-dataset published scores or a general
 algorithm ranking. Equal updates do not mean equal FLOPs. Read the
 [protocol](docs/protocol.md) before interpreting the results.
 
+## What the results say, and what they do not
+
+On Pendulum, paired by training-seed ID, top-return sampling raises BC and IQL
+returns on all three seeds. For DT it raises the mean by 34.55, but the sample
+standard deviation of the three paired differences is 67.85 and only two
+differences are positive. Return-stratified sampling does not beat uniform in
+this split. In the public PointMaze subset, DT has a higher mean return, but all
+three methods hit the same saturated 100% “ever reached the goal” success metric.
+The useful question is why these patterns differ across tasks; the available
+runs do not support a universal algorithm ranking.
+
+For generative bidding, the useful connection is the experiment design: test
+whether selecting high-value logged trajectories reduces coverage of less common
+traffic; align a return target with the bidding and budget horizon; and treat
+offline support diagnostics as investigation signals, not launch guarantees.
+These research hypotheses need auction data and independent business evaluation.
+The measured scores describe the two simulator tasks. This repository contains no
+auction data and makes no production or revenue claim. See the
+[results and next experiments](docs/results.md).
+
 ## Read the measured experiments
 
 - [Pendulum data-selection study](reports/pendulum/index.html)
