@@ -1,0 +1,33 @@
+{
+  "ablation_suite": "042c79f784d3",
+  "check": "zero-temperature IQL reproduces matched BC actor",
+  "comparisons": [
+    {
+      "actor_parameters_bitwise_equal": true,
+      "bc_run_id": "577a118f685dd0a5",
+      "iql_zero_beta_run_id": "300bccb394c01ccc",
+      "same_test_seeds_and_exact_returns": true,
+      "seed": 0,
+      "view": "uniform"
+    },
+    {
+      "actor_parameters_bitwise_equal": true,
+      "bc_run_id": "e111d8e74371a819",
+      "iql_zero_beta_run_id": "927f13fdc255b7db",
+      "same_test_seeds_and_exact_returns": true,
+      "seed": 1,
+      "view": "uniform"
+    },
+    {
+      "actor_parameters_bitwise_equal": true,
+      "bc_run_id": "fee234aa922db63b",
+      "iql_zero_beta_run_id": "c26f38cb43d3ef02",
+      "same_test_seeds_and_exact_returns": true,
+      "seed": 2,
+      "view": "uniform"
+    }
+  ],
+  "interpretation": "An implementation invariant on these CPU checkpoints; not a novel algorithmic finding",
+  "reference_suite": "ac1d0896399a",
+  "status": "passed"
+}

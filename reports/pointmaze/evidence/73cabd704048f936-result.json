@@ -1,0 +1,66 @@
+{
+  "actor_parameter_delta_l2": 9.766925811767578,
+  "algorithm": "iql",
+  "checkpoint_policy": "last update; no test-based checkpoint selection",
+  "final_training_metrics": {
+    "actor_loss": 1.25344717502594,
+    "advantage_mean": -0.007241006474941969,
+    "elapsed_seconds": 18.35860020900145,
+    "q_loss": 0.02222311496734619,
+    "step": 10000,
+    "validation_return": 78.0,
+    "value_loss": 0.0003988653770647943,
+    "weight_clip_fraction": 0.0,
+    "weight_ess_fraction": 0.9921963810920715
+  },
+  "run_id": "73cabd704048f936",
+  "seed": 2,
+  "target_return_from_training_data": 1.0,
+  "test": {
+    "action_saturation_fraction": 0.058125,
+    "episode_lengths": [
+      300,
+      300,
+      300,
+      300,
+      300,
+      300,
+      300,
+      300
+    ],
+    "return_mean": 76.25,
+    "return_std_across_episodes": 12.325930854445494,
+    "returns": [
+      92.0,
+      56.0,
+      71.0,
+      83.0,
+      90.0,
+      81.0,
+      68.0,
+      69.0
+    ],
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007
+    ],
+    "success_rate": 1.0,
+    "support": {
+      "above_validation_p95_fraction": 0.495,
+      "distance_mean": 0.6814146142348282,
+      "distance_p95": 1.435436041127743,
+      "interpretation": "Representation-dependent descriptive nearest-neighbor distance; not an OOD guarantee",
+      "reference_states": 5000,
+      "validation_distance_p95": 0.6003744129009297
+    }
+  },
+  "updates": 10000,
+  "view": "uniform",
+  "wall_seconds": 18.732108917000005
+}

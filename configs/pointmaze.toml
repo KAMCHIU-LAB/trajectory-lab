@@ -1,0 +1,30 @@
+[suite]
+name = "pointmaze-public-subset"
+algorithms = ["bc", "iql", "dt"]
+seeds = [0, 1, 2]
+purpose = "External check on a seeded subset of a public dataset; fixed small compute budget"
+
+[data]
+kind = "minari"
+minari_id = "D4RL/pointmaze/umaze-v2"
+source_episodes = 600
+source_seed = 17
+split_seed = 2026
+views = ["uniform"]
+transition_budget = 20000
+budget_tolerance = 0.03
+
+[training]
+steps = 10000
+batch_size = 128
+width = 64
+context = 15
+dt_layers = 2
+reward_scale = 1.0
+return_scale = 100.0
+eval_every = 2500
+checkpoint_every = 2500
+
+[evaluation]
+validation_seeds = [10000, 10001, 10002]
+test_seeds = [20000, 20001, 20002, 20003, 20004, 20005, 20006, 20007]

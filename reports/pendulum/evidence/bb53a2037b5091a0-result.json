@@ -1,0 +1,66 @@
+{
+  "actor_parameter_delta_l2": 5.770988464355469,
+  "algorithm": "iql",
+  "checkpoint_policy": "last update; no test-based checkpoint selection",
+  "final_training_metrics": {
+    "actor_loss": 0.606074869632721,
+    "advantage_mean": -0.0063863592222332954,
+    "elapsed_seconds": 14.252623374995892,
+    "q_loss": 0.0008144653984345496,
+    "step": 10000,
+    "validation_return": -121.01996916794864,
+    "value_loss": 0.0007745425100438297,
+    "weight_clip_fraction": 0.0,
+    "weight_ess_fraction": 0.9874793291091919
+  },
+  "run_id": "bb53a2037b5091a0",
+  "seed": 0,
+  "target_return_from_training_data": -115.15243343402695,
+  "test": {
+    "action_saturation_fraction": 0.0,
+    "episode_lengths": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "return_mean": -322.5772394277012,
+    "return_std_across_episodes": 267.15534185670776,
+    "returns": [
+      -125.91120421784325,
+      -879.9551079351935,
+      -364.8901763790682,
+      -121.97421109536997,
+      -121.45592567245536,
+      -123.1020397748596,
+      -357.0600537007469,
+      -486.2691966460731
+    ],
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007
+    ],
+    "success_rate": null,
+    "support": {
+      "above_validation_p95_fraction": 0.05375,
+      "distance_mean": 0.02957911977343932,
+      "distance_p95": 0.13994347572628812,
+      "interpretation": "Representation-dependent descriptive nearest-neighbor distance; not an OOD guarantee",
+      "reference_states": 5000,
+      "validation_distance_p95": 0.13863729909777028
+    }
+  },
+  "updates": 10000,
+  "view": "uniform",
+  "wall_seconds": 14.37404387499555
+}

@@ -1,0 +1,61 @@
+{
+  "actor_parameter_delta_l2": 5.747189998626709,
+  "algorithm": "bc",
+  "checkpoint_policy": "last update; no test-based checkpoint selection",
+  "final_training_metrics": {
+    "actor_loss": 0.6227179765701294,
+    "elapsed_seconds": 12.842644584001391,
+    "step": 10000,
+    "validation_return": -283.74768440718213
+  },
+  "run_id": "4af74d3fab7ca37d",
+  "seed": 0,
+  "target_return_from_training_data": -117.94962701223884,
+  "test": {
+    "action_saturation_fraction": 0.0,
+    "episode_lengths": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "return_mean": -613.1177960030502,
+    "return_std_across_episodes": 394.8172209726659,
+    "returns": [
+      -126.51841485357392,
+      -1282.7584847548255,
+      -843.5552269482931,
+      -367.37011826984224,
+      -368.2234169664069,
+      -246.82544271969616,
+      -833.4828910856245,
+      -836.2083724261396
+    ],
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007
+    ],
+    "success_rate": null,
+    "support": {
+      "above_validation_p95_fraction": 0.088125,
+      "distance_mean": 0.04760982441924946,
+      "distance_p95": 0.14532708392889707,
+      "interpretation": "Representation-dependent descriptive nearest-neighbor distance; not an OOD guarantee",
+      "reference_states": 5000,
+      "validation_distance_p95": 0.1271394930900921
+    }
+  },
+  "updates": 10000,
+  "view": "return_stratified",
+  "wall_seconds": 13.11284054198768
+}

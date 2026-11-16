@@ -1,0 +1,21 @@
+{
+  "completed_runs": 39,
+  "mechanism_check": "passed",
+  "studies": [
+    {
+      "runs": 27,
+      "study": "pendulum",
+      "suite_id": "ac1d0896399a"
+    },
+    {
+      "runs": 9,
+      "study": "pointmaze",
+      "suite_id": "adbcd62e9ce5"
+    },
+    {
+      "runs": 3,
+      "study": "ablation",
+      "suite_id": "042c79f784d3"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[suite]
+name = "iql-unweighted-ablation"
+algorithms = ["iql"]
+seeds = [0, 1, 2]
+purpose = "Remove advantage weighting while retaining the IQL training path; compare against the matching pendulum suite"
+
+[data]
+kind = "pendulum"
+source_episodes = 300
+source_seed = 17
+split_seed = 2026
+views = ["uniform"]
+transition_budget = 12000
+budget_tolerance = 0.0
+
+[training]
+steps = 10000
+batch_size = 128
+width = 64
+advantage_beta = 0.0
+reward_scale = 0.01
+return_scale = 1000.0
+eval_every = 2500
+checkpoint_every = 2500
+
+[evaluation]
+validation_seeds = [10000, 10001, 10002]
+test_seeds = [20000, 20001, 20002, 20003, 20004, 20005, 20006, 20007]
