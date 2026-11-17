@@ -83,3 +83,32 @@
 受控运行器支持 `--export reports/bidding-main`，在完成后执行该导出流程；不会自动提交或上传到 GitHub。
 
 Pilot 是小规模可行性配置，转化稀疏，只用于检查数据生成、训练、评估和报告链路，**不支持方法效果结论**。主实验虽使用更大的市场和 PV 配置，仍是派生自 AuctionNet 的自定义固定对手实验，不是官方 trained-opponent benchmark 或排行榜复现；对手不适应且其预算不执行，结论限于所声明的模拟设置。
+
+## 条件接续控制器研究
+
+`configs/bidding-control.toml` 指向已完成的第一轮目录，复用其三个响应模型检查点。
+候选设置、经验预测对照和晋级条件见[第二轮协议](bidding-control-protocol.md)。
+先做验证集筛选；不达标时保留所有候选结果并结束该轮，不生成新的确认数据。
+达标后才生成 3201–3224 号独立市场，确认结果不用于重调本轮参数。
+
+第一轮完成后可直接运行：
+
+```bash
+.venv/bin/python -m trajectorylab.bidding_control --config configs/bidding-control.toml
+```
+
+也可提前启动等待运行器；路径必须与配置一致：
+
+```bash
+.venv/bin/python scripts/run_bidding_control_background.py --config configs/bidding-control.toml --output artifacts/bidding/control-v1 --export reports/bidding-control
+```
+
+该运行器等待第一轮成功完成后再启动计算，沿用低电量暂停和过程绑定唤醒逻辑。
+等待期间不持有唤醒断言；一次性 launchd 作业仍应设置 `KeepAlive=false`。
+配置或受监督源码发生变化时拒绝继续；需要改实验时使用新配置和输出目录。
+完整市场评估结果逐市场保存，可在同身份下恢复；被中断的单个市场需重做。
+
+`complete-not-promoted` 表示验证集未达到晋级条件，并非运行失败。
+公开导出器 `scripts/export_bidding_control.py` 同时支持此状态和完成独立确认的 `complete` 状态，
+只复制声明的文本证据。它核对覆盖、原始记录与统计一致性，并检查常见隐私标识。
+监督器在成功导出后退出并释放计算进程的唤醒断言。

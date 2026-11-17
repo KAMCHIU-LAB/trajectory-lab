@@ -1,0 +1,22 @@
+name = "paced-response-control-v1"
+main_run = "artifacts/bidding/main-v2"
+output = "artifacts/bidding/control-v1"
+
+# Fixed before inspecting main-run test outcomes. No architecture search.
+dual_rates = [[10.0, 10.0], [10.0, 50.0], [50.0, 10.0], [50.0, 50.0]]
+discount_half_life = 8.0
+calibration_prior = 3.0
+confirmation_markets = [3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224]
+primary_scenario = "over_50"
+
+[promotion]
+minimum_score_ratio = 1.10
+minimum_conversion_ratio = 0.95
+maximum_violation_increase = 0.05
+
+[confirmation]
+minimum_score_delta = 0.0
+minimum_conversion_ratio = 0.95
+maximum_violation_increase = 0.05
+bootstrap_samples = 10000
+minimum_positive_seeds = 3

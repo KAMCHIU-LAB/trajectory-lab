@@ -15,6 +15,7 @@ response/correction/hard-constraint ablations.
 
 - [Question, information boundaries and primary comparison](docs/bidding-protocol.md)
 - [Run and resume locally](docs/bidding-runbook.md)
+- [Predeclared controller refinement and independent confirmation](docs/bidding-control-protocol.md)
 - [Completed feasibility report](reports/bidding-pilot/report.html) · [Development findings](docs/bidding-findings.md)
 
 The pilot completes real data generation, MPS training and 480 campaign-level

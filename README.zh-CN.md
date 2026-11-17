@@ -13,6 +13,7 @@
 
 - [实验协议与主比较](docs/bidding-protocol.md)：先声明信息边界、指标和结论适用范围。
 - [本地运行与断点恢复](docs/bidding-runbook.md)。
+- [第二轮：控制器诊断与独立确认方案](docs/bidding-control-protocol.md)，在正式测试结果查看前写下。
 - [已完成的可行性报告](reports/bidding-pilot/report.html) · [实测发现与开发记录](docs/bidding-findings.md)。
 
 小规模版本已完成真实数据生成、MPS 训练和 480 条逐广告主评估记录。
