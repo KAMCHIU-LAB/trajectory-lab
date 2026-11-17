@@ -33,6 +33,7 @@ to an evaluated policy. Future response labels never enter the observation.
 | `bidding/experiment.py` | Source/runtime identity, disjoint market splits, validation selection and first-study execution |
 | `bidding/report.py` | Complete-result checks, market-paired summaries and portable report |
 | `bidding_control.py` | Matched-checkpoint paced control, empirical forecast comparator, validation gate and optional new-market confirmation |
+| `bidding_context.py` / `bidding_predictive.py` | Training-only contextual ridge and matched validation forecast diagnostics; no policy-value inference |
 | `scripts/run_bidding*_background.py` | Process supervision, low-battery pause/resume and process-bound wake assertions |
 | `scripts/export_bidding*.py` | Declared text allowlists, evidence consistency checks and privacy screening |
 

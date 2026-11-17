@@ -23,13 +23,23 @@ There is currently no LLM planner in the implemented system.
 | Study | Status and evidence |
 | --- | --- |
 | [Bidding feasibility study](reports/bidding-pilot/report.html) | Completed: 480 campaign-level evaluations, one training seed. It did **not** establish a learned-policy advantage; fixed bidding was competitive and hard predicted-CPA constraints suppressed spend. |
-| [Larger bidding study](docs/bidding-protocol.md) | In progress: 16 training, 6 validation and 12 new test markets; 6 focal advertisers, 3 training seeds and 5 scenarios. Final effectiveness results are pending. |
-| [Controller refinement](docs/bidding-control-protocol.md) | Implemented and queued. Reuses the frozen response checkpoints; a validation gate controls whether to fund 24 new confirmation markets. |
+| [Formal bidding study](reports/bidding-main/report.html) | Complete: 16 / 6 / 12 training / validation / test markets, three training seeds and 6,480 rows. History correction did not establish a score gain; response-model performance depended on the stress scenario. |
+| [Controller refinement](reports/bidding-control/validation-report/report.html) | Validation complete: 11,340 candidate evaluations. The new controller failed the predeclared promotion gate; no new-market confirmation was conducted. |
+| [Matched forecast audit](reports/bidding-forecast/report.html) | Complete: neural, contextual ridge and empirical forecasts on identical validation trajectories. Lower prediction error does not guarantee accurate conversion totals or better bidding. |
 | [Offline policy-learning foundation](docs/results.md) | Completed: 39 BC/IQL/DT training runs across Pendulum, a public PointMaze subset and an IQL mechanism ablation. |
 
 Campaigns within a market and repeated methods/seeds are correlated. Row counts
 are not independent-market counts. The [findings](docs/bidding-findings.md) retain
 negative results, compute measurements and unresolved mechanisms.
+
+**A useful trade-off:** under 50% pCVR overprediction, response scored 18.3%
+higher than the feedback baseline, with 7.5% more conversions and an 18.1
+percentage-point lower CPA violation rate; all three seed score differences
+were positive. This comparison is exploratory: its nominal-scenario score was
+8.1% lower, so it does not establish an overall advantage. In the primary
+comparison, history correction's score difference was −0.577, with a
+market-clustered 95% interval of [−1.275, 0.095].
+[Full statistics and failure boundaries](docs/bidding-findings.md).
 
 ## What to inspect
 
