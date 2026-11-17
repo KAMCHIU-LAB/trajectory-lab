@@ -1,9 +1,31 @@
 # TrajectoryLab
 
-**Offline RL experiments you can inspect, reproduce, and challenge.**
+**Public, inspectable experiments in generative bidding and offline policy learning.**
 
 [中文说明](README.zh-CN.md) · [Experimental protocol](docs/protocol.md) ·
 [Results and limitations](docs/results.md) · [Architecture](docs/architecture.md)
+
+## Generative bidding under prediction error — in progress
+
+The current research track asks whether historical outcome feedback can improve
+response-model bidding when observed pCVR is miscalibrated. It uses the public
+AuctionNet traffic generator and auction kernel, independent compact models,
+fixed/tuned multipliers, numerical feedback, DT, and matched-checkpoint
+response/correction/hard-constraint ablations.
+
+- [Question, information boundaries and primary comparison](docs/bidding-protocol.md)
+- [Run and resume locally](docs/bidding-runbook.md)
+- [Completed feasibility report](reports/bidding-pilot/report.html) · [Development findings](docs/bidding-findings.md)
+
+The pilot completes real data generation, MPS training and 480 campaign-level
+evaluations. It **does not establish an advantage for learned bidding**: a simple
+fixed multiplier is strong, and hard forecast constraints can suppress spending.
+The larger three-seed study uses new test markets and is still pending final
+results. This is a custom fixed-opponent simulation, not the official AuctionNet
+benchmark. No employer code, data or online metrics are used. The independent
+response-model variant is inspired by GRM; it is not a full paper reproduction.
+
+## Earlier offline policy studies
 
 TrajectoryLab asks how trajectory selection changes offline policy learning under
 a small, declared training budget. It independently implements **BC, IQL, and a
@@ -44,9 +66,10 @@ For generative bidding, the useful connection is the experiment design: test
 whether selecting high-value logged trajectories reduces coverage of less common
 traffic; align a return target with the bidding and budget horizon; and treat
 offline support diagnostics as investigation signals, not launch guarantees.
-These research hypotheses need auction data and independent business evaluation.
-The measured scores describe the two simulator tasks. This repository contains no
-auction data and makes no production or revenue claim. See the
+The new public-simulator track investigates a narrower prediction-error question;
+business conclusions still require independent evaluation. The measured scores
+below describe the two earlier simulator tasks. This repository contains no
+employer auction data and makes no production or revenue claim. See the
 [results and next experiments](docs/results.md).
 
 ## Read the measured experiments
@@ -161,3 +184,5 @@ limited to the provided implementation and recorded experiments.
 
 Code: [MIT](LICENSE). Public source datasets retain their upstream terms and are
 downloaded separately rather than redistributed.
+The vendored AuctionNet subset retains its separate
+[Apache-2.0 license and attribution](third_party/auctionnet/README.md).

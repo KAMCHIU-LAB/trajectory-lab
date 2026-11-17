@@ -1,0 +1,4436 @@
+{
+  "feedback_shared_across_training_seeds": true,
+  "groups": [
+    {
+      "budget_utilization": 0.9892955885164905,
+      "campaigns": 12,
+      "conversions": 1.75,
+      "cost": 226.90395948435832,
+      "cpa_debt": 36.9039594843583,
+      "markets": 4,
+      "method": "dt",
+      "pooled_cpa": 129.65940541963332,
+      "scenario": "calibrated",
+      "score": 1.4767883327820652,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.929262984280886,
+      "campaigns": 12,
+      "conversions": 1.6666666666666667,
+      "cost": 211.29712491076612,
+      "cpa_debt": 27.13045824409943,
+      "markets": 4,
+      "method": "dt+correction",
+      "pooled_cpa": 126.77827494645967,
+      "scenario": "calibrated",
+      "score": 1.4156644508660763,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.8592189641088607,
+      "campaigns": 12,
+      "conversions": 1.5,
+      "cost": 192.4689421226303,
+      "cpa_debt": 20.802275455963596,
+      "markets": 4,
+      "method": "feedback",
+      "pooled_cpa": 128.3126280817535,
+      "scenario": "calibrated",
+      "score": 1.3240700414383075,
+      "training_seeds": 0,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.8533084635338812,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 187.46646066914764,
+      "cpa_debt": -57.533539330852356,
+      "markets": 4,
+      "method": "fixed-1",
+      "pooled_cpa": 89.98390112119087,
+      "scenario": "calibrated",
+      "score": 2.0300168376963112,
+      "training_seeds": 0,
+      "violation": 0.16666666666666666,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.8533084635338812,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 187.46646066914764,
+      "cpa_debt": -57.533539330852356,
+      "markets": 4,
+      "method": "fixed-tuned",
+      "pooled_cpa": 89.98390112119087,
+      "scenario": "calibrated",
+      "score": 2.0300168376963112,
+      "training_seeds": 0,
+      "violation": 0.16666666666666666,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.4532713458680138,
+      "campaigns": 12,
+      "conversions": 1.25,
+      "cost": 96.66054941257352,
+      "cpa_debt": -56.67278392075983,
+      "markets": 4,
+      "method": "response",
+      "pooled_cpa": 77.3284395300588,
+      "scenario": "calibrated",
+      "score": 1.1715258281861545,
+      "training_seeds": 1,
+      "violation": 0.6666666666666666,
+      "zero_conversions": 0.5
+    },
+    {
+      "budget_utilization": 0.475621924538159,
+      "campaigns": 12,
+      "conversions": 1.25,
+      "cost": 103.45055834824062,
+      "cpa_debt": -46.54944165175942,
+      "markets": 4,
+      "method": "response+correction",
+      "pooled_cpa": 82.76044667859246,
+      "scenario": "calibrated",
+      "score": 1.2148615859357794,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.5
+    },
+    {
+      "budget_utilization": 0.12218464087031057,
+      "campaigns": 12,
+      "conversions": 0.25,
+      "cost": 24.98173459064262,
+      "cpa_debt": -5.0182654093573795,
+      "markets": 4,
+      "method": "response-hard",
+      "pooled_cpa": 99.92693836257048,
+      "scenario": "calibrated",
+      "score": 0.25,
+      "training_seeds": 1,
+      "violation": 0.9166666666666666,
+      "zero_conversions": 0.9166666666666666
+    },
+    {
+      "budget_utilization": 0.9962837565508407,
+      "campaigns": 12,
+      "conversions": 1.75,
+      "cost": 228.9308162205381,
+      "cpa_debt": 36.43081622053813,
+      "markets": 4,
+      "method": "dt",
+      "pooled_cpa": 130.81760926887893,
+      "scenario": "mid_over_50",
+      "score": 1.4264857842196745,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.9493478082945231,
+      "campaigns": 12,
+      "conversions": 1.6666666666666667,
+      "cost": 215.31611728568456,
+      "cpa_debt": 31.149450619017898,
+      "markets": 4,
+      "method": "dt+correction",
+      "pooled_cpa": 129.18967037141073,
+      "scenario": "mid_over_50",
+      "score": 1.4156487112143272,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.940984361770429,
+      "campaigns": 12,
+      "conversions": 1.6666666666666667,
+      "cost": 213.06170946568002,
+      "cpa_debt": 21.39504279901338,
+      "markets": 4,
+      "method": "feedback",
+      "pooled_cpa": 127.83702567940801,
+      "scenario": "mid_over_50",
+      "score": 1.3936182972953925,
+      "training_seeds": 0,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.913177851224961,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 204.83424986770845,
+      "cpa_debt": -40.999083465624864,
+      "markets": 4,
+      "method": "fixed-1",
+      "pooled_cpa": 98.32043993650007,
+      "scenario": "mid_over_50",
+      "score": 1.97074039704778,
+      "training_seeds": 0,
+      "violation": 0.25,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.913177851224961,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 204.83424986770845,
+      "cpa_debt": -40.999083465624864,
+      "markets": 4,
+      "method": "fixed-tuned",
+      "pooled_cpa": 98.32043993650007,
+      "scenario": "mid_over_50",
+      "score": 1.97074039704778,
+      "training_seeds": 0,
+      "violation": 0.25,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.713814402546393,
+      "campaigns": 12,
+      "conversions": 1.5833333333333333,
+      "cost": 157.90600721489804,
+      "cpa_debt": -33.76065945176863,
+      "markets": 4,
+      "method": "response",
+      "pooled_cpa": 99.73010981993559,
+      "scenario": "mid_over_50",
+      "score": 1.5285310991492558,
+      "training_seeds": 1,
+      "violation": 0.5,
+      "zero_conversions": 0.4166666666666667
+    },
+    {
+      "budget_utilization": 0.7266790690862427,
+      "campaigns": 12,
+      "conversions": 1.5,
+      "cost": 164.17903984552575,
+      "cpa_debt": -14.154293487807601,
+      "markets": 4,
+      "method": "response+correction",
+      "pooled_cpa": 109.45269323035048,
+      "scenario": "mid_over_50",
+      "score": 1.339170798705675,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.5226287275566635,
+      "campaigns": 12,
+      "conversions": 1.4166666666666667,
+      "cost": 108.85850187245906,
+      "cpa_debt": -67.80816479420761,
+      "markets": 4,
+      "method": "response-hard",
+      "pooled_cpa": 76.84129543938286,
+      "scenario": "mid_over_50",
+      "score": 1.3886451042363062,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.5
+    },
+    {
+      "budget_utilization": 0.9998157299643156,
+      "campaigns": 12,
+      "conversions": 1.8333333333333333,
+      "cost": 229.96035365590902,
+      "cpa_debt": 30.79368698924236,
+      "markets": 4,
+      "method": "dt",
+      "pooled_cpa": 125.43292017595037,
+      "scenario": "over_25",
+      "score": 1.731890214529173,
+      "training_seeds": 1,
+      "violation": 0.5,
+      "zero_conversions": 0.3333333333333333
+    },
+    {
+      "budget_utilization": 0.9557161136247688,
+      "campaigns": 12,
+      "conversions": 1.8333333333333333,
+      "cost": 217.165576833928,
+      "cpa_debt": 12.16557683392796,
+      "markets": 4,
+      "method": "dt+correction",
+      "pooled_cpa": 118.45395100032434,
+      "scenario": "over_25",
+      "score": 1.6837597685951309,
+      "training_seeds": 1,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.9309312740479899,
+      "campaigns": 12,
+      "conversions": 1.8333333333333333,
+      "cost": 209.9792927310517,
+      "cpa_debt": -5.85404060228164,
+      "markets": 4,
+      "method": "feedback",
+      "pooled_cpa": 114.53415967148273,
+      "scenario": "over_25",
+      "score": 1.5996346249512206,
+      "training_seeds": 0,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.92019118415078,
+      "campaigns": 12,
+      "conversions": 1.8333333333333333,
+      "cost": 206.86689038838855,
+      "cpa_debt": 1.0335570550552322,
+      "markets": 4,
+      "method": "fixed-1",
+      "pooled_cpa": 112.83648566639377,
+      "scenario": "over_25",
+      "score": 1.6189639904017386,
+      "training_seeds": 0,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.92019118415078,
+      "campaigns": 12,
+      "conversions": 1.8333333333333333,
+      "cost": 206.86689038838855,
+      "cpa_debt": 1.0335570550552322,
+      "markets": 4,
+      "method": "fixed-tuned",
+      "pooled_cpa": 112.83648566639377,
+      "scenario": "over_25",
+      "score": 1.6189639904017386,
+      "training_seeds": 0,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.6478317972163586,
+      "campaigns": 12,
+      "conversions": 2.5833333333333335,
+      "cost": 141.77253854446874,
+      "cpa_debt": -173.2274614555312,
+      "markets": 4,
+      "method": "response",
+      "pooled_cpa": 54.87969233979437,
+      "scenario": "over_25",
+      "score": 2.534816170950123,
+      "training_seeds": 1,
+      "violation": 0.25,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.6401423146703537,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 142.84003725970243,
+      "cpa_debt": -108.82662940696423,
+      "markets": 4,
+      "method": "response+correction",
+      "pooled_cpa": 68.56321788465716,
+      "scenario": "over_25",
+      "score": 2.0318545529082095,
+      "training_seeds": 1,
+      "violation": 0.25,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.5789369996718786,
+      "campaigns": 12,
+      "conversions": 2.0,
+      "cost": 125.11996023694168,
+      "cpa_debt": -118.21337309639165,
+      "markets": 4,
+      "method": "response-hard",
+      "pooled_cpa": 62.55998011847084,
+      "scenario": "over_25",
+      "score": 1.9300877375558663,
+      "training_seeds": 1,
+      "violation": 0.5,
+      "zero_conversions": 0.3333333333333333
+    },
+    {
+      "budget_utilization": 0.9998446278681951,
+      "campaigns": 12,
+      "conversions": 1.6666666666666667,
+      "cost": 229.96743323968704,
+      "cpa_debt": 51.634099906353704,
+      "markets": 4,
+      "method": "dt",
+      "pooled_cpa": 137.98045994381224,
+      "scenario": "over_50",
+      "score": 1.3903778750046116,
+      "training_seeds": 1,
+      "violation": 0.6666666666666666,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.9808619396199223,
+      "campaigns": 12,
+      "conversions": 1.5,
+      "cost": 224.45580011105926,
+      "cpa_debt": 62.78913344439261,
+      "markets": 4,
+      "method": "dt+correction",
+      "pooled_cpa": 149.6372000740395,
+      "scenario": "over_50",
+      "score": 1.2304239856342176,
+      "training_seeds": 1,
+      "violation": 0.6666666666666666,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.9113687333218209,
+      "campaigns": 12,
+      "conversions": 1.4166666666666667,
+      "cost": 204.30651952651522,
+      "cpa_debt": 40.13985285984856,
+      "markets": 4,
+      "method": "feedback",
+      "pooled_cpa": 144.21636672459897,
+      "scenario": "over_50",
+      "score": 1.2619035206589535,
+      "training_seeds": 0,
+      "violation": 0.5,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.9999088739972971,
+      "campaigns": 12,
+      "conversions": 1.6666666666666667,
+      "cost": 229.97920985027153,
+      "cpa_debt": 49.14587651693815,
+      "markets": 4,
+      "method": "fixed-1",
+      "pooled_cpa": 137.9875259101629,
+      "scenario": "over_50",
+      "score": 1.3422408770223966,
+      "training_seeds": 0,
+      "violation": 0.6666666666666666,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.9999088739972971,
+      "campaigns": 12,
+      "conversions": 1.6666666666666667,
+      "cost": 229.97920985027153,
+      "cpa_debt": 49.14587651693815,
+      "markets": 4,
+      "method": "fixed-tuned",
+      "pooled_cpa": 137.9875259101629,
+      "scenario": "over_50",
+      "score": 1.3422408770223966,
+      "training_seeds": 0,
+      "violation": 0.6666666666666666,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.8237802824315777,
+      "campaigns": 12,
+      "conversions": 2.1666666666666665,
+      "cost": 183.51391441321164,
+      "cpa_debt": -74.81941892012169,
+      "markets": 4,
+      "method": "response",
+      "pooled_cpa": 84.6987297291746,
+      "scenario": "over_50",
+      "score": 2.014497449900967,
+      "training_seeds": 1,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.08333333333333333
+    },
+    {
+      "budget_utilization": 0.7833989604383874,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 177.3531570483499,
+      "cpa_debt": -71.81350961831676,
+      "markets": 4,
+      "method": "response+correction",
+      "pooled_cpa": 85.12951538320796,
+      "scenario": "over_50",
+      "score": 1.9746867008384763,
+      "training_seeds": 1,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.6554124467985423,
+      "campaigns": 12,
+      "conversions": 1.75,
+      "cost": 141.72927073999844,
+      "cpa_debt": -70.7707292600016,
+      "markets": 4,
+      "method": "response-hard",
+      "pooled_cpa": 80.98815470857052,
+      "scenario": "over_50",
+      "score": 1.6825668119459063,
+      "training_seeds": 1,
+      "violation": 0.5,
+      "zero_conversions": 0.3333333333333333
+    },
+    {
+      "budget_utilization": 0.9553908344947449,
+      "campaigns": 12,
+      "conversions": 2.0833333333333335,
+      "cost": 220.56524513553066,
+      "cpa_debt": -11.934754864469346,
+      "markets": 4,
+      "method": "dt",
+      "pooled_cpa": 105.87131766505472,
+      "scenario": "under_25",
+      "score": 1.8791203172232596,
+      "training_seeds": 1,
+      "violation": 0.5,
+      "zero_conversions": 0.16666666666666666
+    },
+    {
+      "budget_utilization": 0.8390121730925165,
+      "campaigns": 12,
+      "conversions": 2.0,
+      "cost": 193.72785480196038,
+      "cpa_debt": -27.10547853137294,
+      "markets": 4,
+      "method": "dt+correction",
+      "pooled_cpa": 96.86392740098019,
+      "scenario": "under_25",
+      "score": 1.9213825106885192,
+      "training_seeds": 1,
+      "violation": 0.4166666666666667,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.7319531481328084,
+      "campaigns": 12,
+      "conversions": 1.75,
+      "cost": 164.058575959416,
+      "cpa_debt": -40.10809070725066,
+      "markets": 4,
+      "method": "feedback",
+      "pooled_cpa": 93.74775769109486,
+      "scenario": "under_25",
+      "score": 1.6574637812006703,
+      "training_seeds": 0,
+      "violation": 0.5,
+      "zero_conversions": 0.25
+    },
+    {
+      "budget_utilization": 0.4959349990153655,
+      "campaigns": 12,
+      "conversions": 1.4166666666666667,
+      "cost": 102.56974082547345,
+      "cpa_debt": -73.2635925078599,
+      "markets": 4,
+      "method": "fixed-1",
+      "pooled_cpa": 72.40216999445182,
+      "scenario": "under_25",
+      "score": 1.3752590912149323,
+      "training_seeds": 0,
+      "violation": 0.5,
+      "zero_conversions": 0.4166666666666667
+    },
+    {
+      "budget_utilization": 0.4959349990153655,
+      "campaigns": 12,
+      "conversions": 1.4166666666666667,
+      "cost": 102.56974082547345,
+      "cpa_debt": -73.2635925078599,
+      "markets": 4,
+      "method": "fixed-tuned",
+      "pooled_cpa": 72.40216999445182,
+      "scenario": "under_25",
+      "score": 1.3752590912149323,
+      "training_seeds": 0,
+      "violation": 0.5,
+      "zero_conversions": 0.4166666666666667
+    },
+    {
+      "budget_utilization": 0.18252014368494804,
+      "campaigns": 12,
+      "conversions": 0.5,
+      "cost": 37.74108091489102,
+      "cpa_debt": -24.75891908510898,
+      "markets": 4,
+      "method": "response",
+      "pooled_cpa": 75.48216182978204,
+      "scenario": "under_25",
+      "score": 0.5,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.6666666666666666
+    },
+    {
+      "budget_utilization": 0.19090492609469534,
+      "campaigns": 12,
+      "conversions": 0.5,
+      "cost": 39.69854193434288,
+      "cpa_debt": -22.80145806565712,
+      "markets": 4,
+      "method": "response+correction",
+      "pooled_cpa": 79.39708386868575,
+      "scenario": "under_25",
+      "score": 0.5,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.6666666666666666
+    },
+    {
+      "budget_utilization": 0.034732189362965175,
+      "campaigns": 12,
+      "conversions": 0.08333333333333333,
+      "cost": 6.950178940317062,
+      "cpa_debt": -3.0498210596829396,
+      "markets": 4,
+      "method": "response-hard",
+      "pooled_cpa": 83.40214728380472,
+      "scenario": "under_25",
+      "score": 0.08333333333333333,
+      "training_seeds": 1,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.9166666666666666
+    }
+  ],
+  "identity": "0246e0596c6e602f18ba70da06952f9c5405e83ae73478f0cd13217e4831da23",
+  "independent_unit": "market ID",
+  "paired_comparisons": [
+    {
+      "market_bootstrap_95": [
+        -0.2959530292284031,
+        0.7506329075597076
+      ],
+      "mean_delta": 0.1527182913437576,
+      "method": "dt",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.15271829134375758
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.5
+      ],
+      "mean_delta": 0.25,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.4166666666666667,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.9709804374151119,
+        0.0481797904644259
+      ],
+      "mean_delta": -0.5532285049142458,
+      "method": "dt",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.5532285049142459
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666666,
+        0.08333333333333333
+      ],
+      "mean_delta": -0.3333333333333333,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.7757393234625969,
+        1.0026204425659693
+      ],
+      "mean_delta": 0.09159440942776871,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.09159440942776871
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.41666666666666663,
+        0.75
+      ],
+      "mean_delta": 0.16666666666666669,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.4166666666666667,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.387659420049694,
+        0.14081336105205117
+      ],
+      "mean_delta": -0.6143523868302347,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.6143523868302346
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.0833333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": -0.41666666666666663,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.4648023090440938,
+        0.23708668051430912
+      ],
+      "mean_delta": -0.06112388191598888,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "dt",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.061123881915988866
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.3333333333333333
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "dt",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "dt",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.4239228178964323,
+        0.05968877995455772
+      ],
+      "mean_delta": -0.7059467962580035,
+      "method": "feedback",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": -0.7059467962580035
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1666666666666665,
+        0.08333333333333333
+      ],
+      "mean_delta": -0.5833333333333333,
+      "method": "feedback",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": -0.5833333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "feedback",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.05968877995455772,
+        1.4239228178964323
+      ],
+      "mean_delta": 0.7059467962580035,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.7059467962580035
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.08333333333333333,
+        1.1666666666666665
+      ],
+      "mean_delta": 0.5833333333333333,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.5833333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.41666666666666663,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": -0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.05968877995455772,
+        1.4239228178964323
+      ],
+      "mean_delta": 0.7059467962580035,
+      "method": "fixed-tuned",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.7059467962580035
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.08333333333333333,
+        1.1666666666666665
+      ],
+      "mean_delta": 0.5833333333333333,
+      "method": "fixed-tuned",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": 0.5833333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.41666666666666663,
+      "method": "fixed-tuned",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "-1": -0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.0083385439481733,
+        0.7004451972352052
+      ],
+      "mean_delta": -0.15254421325215312,
+      "method": "response",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.15254421325215312
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.0,
+        0.5
+      ],
+      "mean_delta": -0.25,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666669,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.6784414715126859,
+        -0.060033675392622256
+      ],
+      "mean_delta": -0.8584910095101566,
+      "method": "response",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.8584910095101566
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.5833333333333335,
+        -0.16666666666666666
+      ],
+      "mean_delta": -0.8333333333333334,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.8333333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "mean_delta": 0.49999999999999994,
+      "method": "response",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.5
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.15590940564190459,
+        1.5000000000000002
+      ],
+      "mean_delta": 0.9215258281861545,
+      "method": "response",
+      "metric": "score",
+      "reference": "response-hard",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.9215258281861546
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        1.5000000000000002
+      ],
+      "mean_delta": 1.0,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "response-hard",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 1.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.25,
+      "method": "response",
+      "metric": "violation",
+      "reference": "response-hard",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5732505345285949,
+        0.3548336235235384
+      ],
+      "mean_delta": -0.10920845550252822,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.10920845550252821
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666666,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.25,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.2369434947951077,
+        -0.37518892715315394
+      ],
+      "mean_delta": -0.8151552517605316,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.8151552517605317
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1666666666666667,
+        -0.49999999999999994
+      ],
+      "mean_delta": -0.8333333333333333,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.8333333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.6422855136272082
+      ],
+      "mean_delta": 0.04333575774962492,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "response",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.04333575774962495
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.5
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "response",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "response",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.406583867861928,
+        -0.7415562150146872
+      ],
+      "mean_delta": -1.0740700414383078,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -1.0740700414383075
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.5000000000000002,
+        -1.0
+      ],
+      "mean_delta": -1.25,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -1.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.166666666666667,
+        -1.3400505130889333
+      ],
+      "mean_delta": -1.7800168376963112,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -1.7800168376963112
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.166666666666667,
+        -1.4999999999999998
+      ],
+      "mean_delta": -1.8333333333333335,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": -1.8333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.6666666666666666,
+        0.9166666666666666
+      ],
+      "mean_delta": 0.7499999999999999,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "calibrated",
+      "seed_mean_deltas": {
+        "11": 0.75
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5697600174583877,
+        0.6354949913069528
+      ],
+      "mean_delta": 0.03286748692428251,
+      "method": "dt",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.032867486924282506
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333334,
+        0.6666666666666666
+      ],
+      "mean_delta": 0.08333333333333331,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.7774587214752564,
+        -0.1847987094229727
+      ],
+      "mean_delta": -0.5442546128281052,
+      "method": "dt",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.544254612828105
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.3333333333333333,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6660112307472987,
+        0.7100720585851683
+      ],
+      "mean_delta": 0.022030413918934802,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.022030413918934826
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.5
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1324636221161906,
+        0.022280250449284875
+      ],
+      "mean_delta": -0.5550916858334528,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.5550916858334529
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333333,
+        0.0
+      ],
+      "mean_delta": -0.41666666666666663,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.45189210399764523,
+        0.3448038177033864
+      ],
+      "mean_delta": -0.010837073005347697,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "dt",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.010837073005347711
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.41666666666666663
+      ],
+      "mean_delta": -0.08333333333333334,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "dt",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "dt",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1861873695394272,
+        0.07189453392115168
+      ],
+      "mean_delta": -0.5771220997523877,
+      "method": "feedback",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": -0.5771220997523877
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333333,
+        0.08333333333333333
+      ],
+      "mean_delta": -0.4166666666666667,
+      "method": "feedback",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": -0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "feedback",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.07189453392115168,
+        1.1861873695394272
+      ],
+      "mean_delta": 0.5771220997523877,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.5771220997523877
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.08333333333333333,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.4166666666666667,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.3333333333333333,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": -0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.07189453392115168,
+        1.1861873695394272
+      ],
+      "mean_delta": 0.5771220997523877,
+      "method": "fixed-tuned",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.5771220997523877
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.08333333333333333,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.4166666666666667,
+      "method": "fixed-tuned",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.3333333333333333,
+      "method": "fixed-tuned",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "-1": -0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.4684734148512258,
+        0.602854036206094
+      ],
+      "mean_delta": 0.13491280185386345,
+      "method": "response",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.13491280185386337
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666667,
+        0.3333333333333333
+      ],
+      "mean_delta": -0.08333333333333334,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5900245063827493,
+        -0.3467156794321652
+      ],
+      "mean_delta": -0.44220929789852426,
+      "method": "response",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.4422092978985243
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666666,
+        -0.3333333333333333
+      ],
+      "mean_delta": -0.5,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.5
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.25,
+      "method": "response",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.08034201526115148,
+        0.5
+      ],
+      "mean_delta": 0.1398859949129495,
+      "method": "response",
+      "metric": "score",
+      "reference": "response-hard",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.1398859949129495
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.5
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "response-hard",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "response-hard",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1362468320403547,
+        1.0273518348609199
+      ],
+      "mean_delta": -0.05444749858971737,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.054447498589717425
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1666666666666667,
+        0.8333333333333333
+      ],
+      "mean_delta": -0.16666666666666669,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.4166666666666667,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.2470615309240014,
+        -0.016077665760208637
+      ],
+      "mean_delta": -0.631569598342105,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.6315695983421051
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.1666666666666665,
+        0.0
+      ],
+      "mean_delta": -0.5833333333333333,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.5833333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8760252812257849,
+        0.49730468033862324
+      ],
+      "mean_delta": -0.18936030044358082,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "response",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.1893603004435808
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666666,
+        0.5
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "response",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.5
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "response",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5935548841479031,
+        0.5836084980297309
+      ],
+      "mean_delta": -0.004973193059086084,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.0049731930590860935
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": -0.25,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.852184791515775,
+        -0.33085725228961416
+      ],
+      "mean_delta": -0.5820952928114738,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.5820952928114737
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.9166666666666666,
+        -0.41666666666666663
+      ],
+      "mean_delta": -0.6666666666666666,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": -0.6666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.9776791618193916,
+        0.8663207733474281
+      ],
+      "mean_delta": 0.1322555895779528,
+      "method": "dt",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.1322555895779527
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333334,
+        0.6666666666666666
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.5
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.41737930311691285,
+        0.6599626972069299
+      ],
+      "mean_delta": 0.1129262241274347,
+      "method": "dt",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.11292622412743468
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.5
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.25
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.42957355360601235,
+        0.801228191520782
+      ],
+      "mean_delta": 0.08412514364391066,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.08412514364391067
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.6666666666666667
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.7514059018205044,
+        0.7963121645819091
+      ],
+      "mean_delta": 0.06479577819339269,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.06479577819339268
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666667,
+        0.6666666666666667
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8591631085081497,
+        0.8110169949267576
+      ],
+      "mean_delta": -0.04813044593404197,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "dt",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.04813044593404201
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666667,
+        0.6666666666666667
+      ],
+      "mean_delta": 1.3877787807814457e-17,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "dt",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.25
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "dt",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5393011927912056,
+        0.6392198578532591
+      ],
+      "mean_delta": -0.01932936545051802,
+      "method": "feedback",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": -0.019329365450518037
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.5
+      ],
+      "mean_delta": 0.0,
+      "method": "feedback",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "feedback",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6392198578532591,
+        0.5393011927912056
+      ],
+      "mean_delta": 0.01932936545051802,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.019329365450518037
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.5
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6392198578532591,
+        0.5393011927912056
+      ],
+      "mean_delta": 0.01932936545051802,
+      "method": "fixed-tuned",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.019329365450518037
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.5
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-tuned",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-tuned",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3429606935499039,
+        1.6003212499282533
+      ],
+      "mean_delta": 0.9351815459989024,
+      "method": "response",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.9351815459989025
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        1.3333333333333335
+      ],
+      "mean_delta": 0.75,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.75
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.0
+      ],
+      "mean_delta": -0.16666666666666666,
+      "method": "response",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.07406213558003666,
+        1.614270350595807
+      ],
+      "mean_delta": 0.9158521805483844,
+      "method": "response",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.9158521805483844
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        2.7755575615628914e-17,
+        1.4166666666666667
+      ],
+      "mean_delta": 0.75,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.75
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.0
+      ],
+      "mean_delta": -0.16666666666666666,
+      "method": "response",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        1.1475186335161038
+      ],
+      "mean_delta": 0.6047284333942567,
+      "method": "response",
+      "metric": "score",
+      "reference": "response-hard",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.6047284333942567
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        1.0833333333333333
+      ],
+      "mean_delta": 0.5833333333333333,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "response-hard",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.5833333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.25,
+      "method": "response",
+      "metric": "violation",
+      "reference": "response-hard",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.20071434893966955,
+        0.7433258608078205
+      ],
+      "mean_delta": 0.4322199279569892,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.43221992795698916
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.5
+      ],
+      "mean_delta": 0.25,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.0
+      ],
+      "mean_delta": -0.16666666666666666,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.04317683933356268,
+        0.9821963115816645
+      ],
+      "mean_delta": 0.41289056250647116,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.41289056250647116
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.75
+      ],
+      "mean_delta": 0.25,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.16666666666666669,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.4044363412753709,
+        0.2637009914330875
+      ],
+      "mean_delta": -0.5029616180419132,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "response",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.5029616180419132
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.25,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.5,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "response",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": -0.5
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "response",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.09297645372840546,
+        0.5361359497454833
+      ],
+      "mean_delta": 0.3304531126046456,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.33045311260464566
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.25
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.12553050703172824,
+        0.7321963115816645
+      ],
+      "mean_delta": 0.3111237471541276,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.3111237471541276
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666666,
+        0.5
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.25
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.7279855606619238,
+        0.9363003527035447
+      ],
+      "mean_delta": 0.12847435434565835,
+      "method": "dt",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.12847435434565835
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.41666666666666663,
+        1.0
+      ],
+      "mean_delta": 0.25,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666666,
+        0.5
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.4037021092311649,
+        0.6666861554580815
+      ],
+      "mean_delta": 0.04813699798221502,
+      "method": "dt",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.04813699798221505
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.6666666666666667
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.7077593410743805,
+        0.5962117892694933
+      ],
+      "mean_delta": -0.0314795350247358,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.03147953502473581
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.41666666666666663,
+        0.5
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666666,
+        0.5
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.40376070103031536,
+        0.18012691825395719
+      ],
+      "mean_delta": -0.11181689138817909,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.11181689138817912
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.16666666666666669,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.020196923687968018
+      ],
+      "mean_delta": -0.15995388937039415,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "dt",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.15995388937039415
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.0
+      ],
+      "mean_delta": -0.16666666666666666,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "dt",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "dt",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8007974972371552,
+        0.786473608378883
+      ],
+      "mean_delta": -0.08033735636344329,
+      "method": "feedback",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": -0.08033735636344326
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.8333333333333333,
+        0.41666666666666663
+      ],
+      "mean_delta": -0.25,
+      "method": "feedback",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.16666666666666666,
+      "method": "feedback",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.786473608378883,
+        0.8007974972371552
+      ],
+      "mean_delta": 0.08033735636344329,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.08033735636344326
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.41666666666666663,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.25,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666666,
+        0.5
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.786473608378883,
+        0.8007974972371552
+      ],
+      "mean_delta": 0.08033735636344329,
+      "method": "fixed-tuned",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.08033735636344326
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.41666666666666663,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.25,
+      "method": "fixed-tuned",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666666,
+        0.5
+      ],
+      "mean_delta": 0.16666666666666666,
+      "method": "fixed-tuned",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "-1": 0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3473607299993088,
+        1.0921951180689602
+      ],
+      "mean_delta": 0.7525939292420137,
+      "method": "response",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.7525939292420137
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.49999999999999994,
+        1.0
+      ],
+      "mean_delta": 0.75,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.75
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.15156352540444218,
+        1.1929496203526988
+      ],
+      "mean_delta": 0.6722565728785704,
+      "method": "response",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.6722565728785704
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        0.8333333333333334
+      ],
+      "mean_delta": 0.49999999999999994,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.5
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.6666666666666666,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.25,
+      "method": "response",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.07436950285639134,
+        0.6711932785580591
+      ],
+      "mean_delta": 0.3319306379550607,
+      "method": "response",
+      "metric": "score",
+      "reference": "response-hard",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.3319306379550607
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "response-hard",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "response-hard",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.05599246835947192,
+        1.437990897230034
+      ],
+      "mean_delta": 0.7127831801795228,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.7127831801795228
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        1.3333333333333335
+      ],
+      "mean_delta": 0.6666666666666666,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.6666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.16666666666666669
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3933968708321022,
+        1.4459841435599756
+      ],
+      "mean_delta": 0.6324458238160797,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.6324458238160796
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        1.0833333333333333
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333333,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.25,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5641605719271056,
+        0.4598505949369718
+      ],
+      "mean_delta": -0.039810749062490845,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "response",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.039810749062490824
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.41666666666666663
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "response",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "response",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3474569880461672,
+        1.0414500546999856
+      ],
+      "mean_delta": 0.420663291286953,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.420663291286953
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.8333333333333334
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.18642320417647862,
+        0.8576878914813336
+      ],
+      "mean_delta": 0.34032593492350977,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.34032593492350977
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.5
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5,
+        0.16666666666666666
+      ],
+      "mean_delta": -0.16666666666666666,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "over_50",
+      "seed_mean_deltas": {
+        "11": -0.16666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.17306332828929016,
+        0.6163764003344692
+      ],
+      "mean_delta": 0.2216565360225895,
+      "method": "dt",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.2216565360225895
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.6666666666666666
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.1120828540426291,
+        0.923350679099546
+      ],
+      "mean_delta": 0.5038612260083274,
+      "method": "dt",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.5038612260083274
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.3333333333333333,
+        1.0833333333333333
+      ],
+      "mean_delta": 0.6666666666666667,
+      "method": "dt",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.6666666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "dt",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.2906248776412485,
+        0.8184623366169461
+      ],
+      "mean_delta": 0.2639187294878488,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.26391872948784884
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.3333333333333333,
+        0.8333333333333333
+      ],
+      "mean_delta": 0.25,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.05763203208152893,
+        1.0833333333333333
+      ],
+      "mean_delta": 0.5461234194735868,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.5461234194735868
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        1.0833333333333333
+      ],
+      "mean_delta": 0.5833333333333333,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.5833333333333334
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5793899717046672,
+        0.7283072679924515
+      ],
+      "mean_delta": 0.042262193465259335,
+      "method": "dt+correction",
+      "metric": "score",
+      "reference": "dt",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.042262193465259355
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.75,
+        0.6666666666666667
+      ],
+      "mean_delta": -0.08333333333333331,
+      "method": "dt+correction",
+      "metric": "conversions",
+      "reference": "dt",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.0
+      ],
+      "mean_delta": -0.08333333333333333,
+      "method": "dt+correction",
+      "metric": "violation",
+      "reference": "dt",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.10174716791676128,
+        0.43357616379478997
+      ],
+      "mean_delta": 0.28220468998573794,
+      "method": "feedback",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.282204689985738
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.08333333333333333,
+        0.5833333333333333
+      ],
+      "mean_delta": 0.3333333333333333,
+      "method": "feedback",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "feedback",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.43357616379478997,
+        -0.10174716791676128
+      ],
+      "mean_delta": -0.28220468998573794,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": -0.282204689985738
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.3333333333333333,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": -0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-1",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.43357616379478997,
+        -0.10174716791676128
+      ],
+      "mean_delta": -0.28220468998573794,
+      "method": "fixed-tuned",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": -0.282204689985738
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.5833333333333333,
+        -0.08333333333333333
+      ],
+      "mean_delta": -0.3333333333333333,
+      "method": "fixed-tuned",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": -0.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "fixed-tuned",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "-1": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.016909497128123,
+        -0.5740848103978123
+      ],
+      "mean_delta": -1.1574637812006703,
+      "method": "response",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.15746378120067
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.1666666666666665,
+        -0.6666666666666666
+      ],
+      "mean_delta": -1.25,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.25
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.6252590912149323,
+        -0.41666666666666663
+      ],
+      "mean_delta": -0.8752590912149322,
+      "method": "response",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.8752590912149322
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.6666666666666665,
+        -0.41666666666666663
+      ],
+      "mean_delta": -0.9166666666666666,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.9166666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.5
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        0.6666666666666666
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "response",
+      "metric": "score",
+      "reference": "response-hard",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.16666666666666666,
+        0.6666666666666666
+      ],
+      "mean_delta": 0.41666666666666663,
+      "method": "response",
+      "metric": "conversions",
+      "reference": "response-hard",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.4166666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.25
+      ],
+      "mean_delta": 0.0,
+      "method": "response",
+      "metric": "violation",
+      "reference": "response-hard",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.016909497128123,
+        -0.5740848103978123
+      ],
+      "mean_delta": -1.1574637812006703,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.15746378120067
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.1666666666666665,
+        -0.6666666666666666
+      ],
+      "mean_delta": -1.25,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.25
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.25
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.6252590912149323,
+        -0.41666666666666663
+      ],
+      "mean_delta": -0.8752590912149322,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.8752590912149322
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.6666666666666665,
+        -0.41666666666666663
+      ],
+      "mean_delta": -0.9166666666666666,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -0.9166666666666666
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.25,
+        0.5
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "score",
+      "reference": "response",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "conversions",
+      "reference": "response",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "mean_delta": 0.0,
+      "method": "response+correction",
+      "metric": "violation",
+      "reference": "response",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.0
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.1835761637947897,
+        -1.0608577748948913
+      ],
+      "mean_delta": -1.5741304478673368,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.574130447867337
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -2.333333333333333,
+        -1.1666666666666665
+      ],
+      "mean_delta": -1.6666666666666667,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.6666666666666667
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        0.0,
+        0.25
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.75,
+        -0.9171848490965311
+      ],
+      "mean_delta": -1.2919257578815988,
+      "method": "response-hard",
+      "metric": "score",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.2919257578815988
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -1.75,
+        -1.0
+      ],
+      "mean_delta": -1.3333333333333333,
+      "method": "response-hard",
+      "metric": "conversions",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": -1.3333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    },
+    {
+      "market_bootstrap_95": [
+        -0.16666666666666666,
+        0.3333333333333333
+      ],
+      "mean_delta": 0.08333333333333333,
+      "method": "response-hard",
+      "metric": "violation",
+      "reference": "fixed-tuned",
+      "scenario": "under_25",
+      "seed_mean_deltas": {
+        "11": 0.08333333333333333
+      },
+      "uncertainty_scope": "resample markets after averaging focal agents and training seeds; not a full training-seed confidence interval"
+    }
+  ],
+  "purpose": "feasibility-only",
+  "renderer_sha256": "067b78aa5491dc6b31b864b336c22a6598cf7d3c51d5ed0742c601537c4f2647"
+}

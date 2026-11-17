@@ -1,0 +1,9 @@
+{
+  "behavior_count_per_campaign": 10,
+  "label_source": "simulator interventions; dense counterfactual supervision for response model",
+  "ticks_per_trajectory": 48,
+  "train_behavior_mean_conversions": 1.55,
+  "train_trajectories": 120,
+  "validation_behavior_mean_conversions": 1.15,
+  "validation_trajectories": 60
+}

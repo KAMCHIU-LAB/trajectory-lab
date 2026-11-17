@@ -1,0 +1,108 @@
+{
+  "auction": {
+    "sha256": {
+      "BiddingEnv.py": "7ed178a01f0f47a175ba7a5b9c0be146649d1f4ce75f9598f44e3da6054c45d8",
+      "NeurIPSPvGen.py": "1887bd7f4eea497672d1665e1e5b71e8cee843b6bb18ff94acda24733a0767c4",
+      "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+    },
+    "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+  },
+  "config": {
+    "evaluation": {
+      "correction_priors": [
+        1.0,
+        3.0,
+        8.0
+      ],
+      "feedback_gains": [
+        0.3,
+        0.7,
+        1.2
+      ],
+      "scenarios": [
+        "calibrated",
+        "over_25",
+        "over_50",
+        "under_25",
+        "mid_over_50"
+      ]
+    },
+    "study": {
+      "actions": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "biases": [
+        0.75,
+        1.0,
+        1.25,
+        1.5
+      ],
+      "focal_agents": [
+        0,
+        16,
+        32
+      ],
+      "name": "bidding-feasibility",
+      "purpose": "feasibility-only",
+      "pv_count": 50000,
+      "test_markets": [
+        3001,
+        3002,
+        3003,
+        3004
+      ],
+      "train_markets": [
+        1001,
+        1002,
+        1003,
+        1004
+      ],
+      "training_seeds": [
+        11
+      ],
+      "validation_markets": [
+        2001,
+        2002
+      ]
+    },
+    "training": {
+      "batch_size": 32,
+      "checkpoint_every": 500,
+      "context": 16,
+      "device": "mps",
+      "heads": 4,
+      "layers": 2,
+      "learning_rate": 0.0003,
+      "log_every": 100,
+      "steps": 1500,
+      "threads": 2,
+      "width": 64
+    }
+  },
+  "identity": "0246e0596c6e602f18ba70da06952f9c5405e83ae73478f0cd13217e4831da23",
+  "implementation": {
+    "__init__.py": "bc5ac7adbc8bc092483800594fe7cee147eef1b41ba693c47e12ed3dfea223a2",
+    "__main__.py": "30858b0efeef0a31d6744f1e83ff614799813b0cfc57b2a759c996d0a283eca1",
+    "experiment.py": "3fde6d87faf8c50f869b2de79c3eaf231b1fc447af3a4440931bbb2266f33c73",
+    "learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+    "report.py": "50bba7dec532aff1d9339715a45aba8b6c225f40d9464f60ca62b00529d85be2"
+  },
+  "runtime": {
+    "device": "mps",
+    "numpy": "2.5.5",
+    "python": "3.12.13",
+    "torch": "2.15.0"
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "seconds": 1.7767683750134893,
+    "step": 100,
+    "training_loss": 0.16805504262447357,
+    "validation_loss": 0.19876211695373058
+  },
+  {
+    "seconds": 3.504899082996417,
+    "step": 200,
+    "training_loss": 0.1369132399559021,
+    "validation_loss": 0.1640241127461195
+  },
+  {
+    "seconds": 5.2399926249927375,
+    "step": 300,
+    "training_loss": 0.103577621281147,
+    "validation_loss": 0.16502764075994492
+  },
+  {
+    "seconds": 6.959802791010588,
+    "step": 400,
+    "training_loss": 0.10524588823318481,
+    "validation_loss": 0.1676674485206604
+  },
+  {
+    "seconds": 8.677006665995577,
+    "step": 500,
+    "training_loss": 0.07616004347801208,
+    "validation_loss": 0.17049547657370567
+  },
+  {
+    "seconds": 10.44213754098746,
+    "step": 600,
+    "training_loss": 0.07940424978733063,
+    "validation_loss": 0.16536256857216358
+  },
+  {
+    "seconds": 12.168254666001303,
+    "step": 700,
+    "training_loss": 0.0814051702618599,
+    "validation_loss": 0.17139684781432152
+  },
+  {
+    "seconds": 13.910448250011541,
+    "step": 800,
+    "training_loss": 0.07692406326532364,
+    "validation_loss": 0.1695828903466463
+  },
+  {
+    "seconds": 15.63895079100621,
+    "step": 900,
+    "training_loss": 0.054904378950595856,
+    "validation_loss": 0.17051539570093155
+  },
+  {
+    "seconds": 17.389656040992122,
+    "step": 1000,
+    "training_loss": 0.049184154719114304,
+    "validation_loss": 0.1702877450734377
+  },
+  {
+    "seconds": 19.148223208001582,
+    "step": 1100,
+    "training_loss": 0.04538800194859505,
+    "validation_loss": 0.1757356859743595
+  },
+  {
+    "seconds": 20.877588958013803,
+    "step": 1200,
+    "training_loss": 0.044836174696683884,
+    "validation_loss": 0.17727626860141754
+  },
+  {
+    "seconds": 22.63152983301552,
+    "step": 1300,
+    "training_loss": 0.0420069545507431,
+    "validation_loss": 0.17808180302381516
+  },
+  {
+    "seconds": 24.363555832998827,
+    "step": 1400,
+    "training_loss": 0.043494634330272675,
+    "validation_loss": 0.1796897053718567
+  },
+  {
+    "seconds": 26.090375750005478,
+    "step": 1500,
+    "training_loss": 0.03617268428206444,
+    "validation_loss": 0.18285171501338482
+  }
+]

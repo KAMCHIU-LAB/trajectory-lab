@@ -1,0 +1,18 @@
+[
+  {
+    "best_validation_loss": 0.010110850329510868,
+    "kind": "dt",
+    "parameters": 104513,
+    "seconds": 31.943138499977067,
+    "seed": 11,
+    "steps": 1500
+  },
+  {
+    "best_validation_loss": 0.1640241127461195,
+    "kind": "response",
+    "parameters": 106664,
+    "seconds": 26.114571125013754,
+    "seed": 11,
+    "steps": 1500
+  }
+]
