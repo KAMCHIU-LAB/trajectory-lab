@@ -41,6 +41,8 @@ comparison, history correction's score difference was −0.577, with a
 market-clustered 95% interval of [−1.275, 0.095].
 [Full statistics and failure boundaries](docs/bidding-findings.md).
 
+![Exploratory score and CPA violation differences across all five stress scenarios](reports/bidding-analysis/bidding-tradeoffs.svg)
+
 ## What to inspect
 
 | Part | Implementation and purpose |

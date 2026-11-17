@@ -35,6 +35,8 @@ score 差均为正。这是探索性比较：名义场景的 score 反而低 8.1
 主比较中，历史修正的 score 差为 −0.577，市场聚类 95% 区间为 [−1.275, 0.095]。
 [查看完整统计口径和失败边界](docs/bidding-findings.md)。
 
+![五种场景下的 score 与 CPA 违约频率差异：探索性结果及市场聚类区间](reports/bidding-analysis/bidding-tradeoffs.svg)
+
 ## 值得检查的实现
 
 | 部分 | 实现及作用 |

@@ -1,0 +1,167 @@
+{
+  "actions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "calibration_prior": 3.0,
+  "control_identity": "5245690cf800d87dc3bcf5141c759e103b912186b52b766267e7bbb0cc0d5d45",
+  "decision_curves": {
+    "response": "remaining",
+    "response-paced-0": "current with frozen control calibration and resource prices"
+  },
+  "discount_half_life": 8.0,
+  "files_sha256": {
+    "control_implementation": "dae094b1959eace17bd87d295bb4877e4595eb5d7fa40c731125b6fbd08c1d70",
+    "control_manifest": "25a3ea1bfde8b57e8c29b7cd8d438c12c74ab4a587d60fbd18e09c0d52baf565",
+    "control_selection": "2e38417cc5a5762675f6fde645d1f221807e26a73674305c80676d5f4c43be88",
+    "control_status": "aeb991088602e7d2327142ce717e1b0208df1a2f02a16608b297e6122a3d1ca3",
+    "control_validation_manifest": "25a3ea1bfde8b57e8c29b7cd8d438c12c74ab4a587d60fbd18e09c0d52baf565",
+    "control_validation_results": "7889875ce2effee22054eebaeb3f8e69e6ef13e59f74fcf073c022adca108ce2",
+    "implementation": "3a81f81def1a65bb21063e7b6b9184f936309fb4a338bebf5e1d017a96801d78",
+    "main_manifest": "7d9c28ac74757affbc97b00398a3fe98e0f3ecf22d2fa95bf37ced6321a80fc4",
+    "main_selection": "4a11b60b12be6f766c434db2440a40611265ca4c2c42db0a9bdf2871123b3b96",
+    "main_status": "2f9912396da8f2a181e94a1de046628427c6ca2ba1ae984ecce154febb7485c3",
+    "protocol": "f42b5f757dc83ba24ce3b17d8200a556d73ab9632a6eccb8c8414d5bee7e98da",
+    "response_11_checkpoint": "d7c09784f3748e5e880ec0cfe08af3c018458427f47d0a23474ee1bf6bd5baf0",
+    "response_23_checkpoint": "407a780646b825a48b3700984a711b6c89649ca9849d124e8851867ef63ae9d0",
+    "response_37_checkpoint": "ae388409c27c21782bc4aa71d8bcc1db88f9e36b7689b385f1b3a27429c855d9",
+    "utils_implementation": "3672c2a7d3db7ed617fc3a14b90d762bb4fde1f53d913f456687c1563a3ac788",
+    "validation_market_2001_metadata": "1415ab5cec550fe065d1b7c3ca86faa0a005f44de2d903941e36094c6c540dd0",
+    "validation_market_2002_metadata": "33a794cc7bb2d6be5c10da08badd2289fbc7e6cceebc89b555e6c4cb85a2a578",
+    "validation_market_2003_metadata": "b3889d0799afc6bb445d0ce746e27236a410c0a31ba753b100c8a7cbccef716e",
+    "validation_market_2004_metadata": "e8f80fdddb858fcca3482215265fc49d46cb62ed9c902ece4231106f847217a0",
+    "validation_market_2005_metadata": "a7d9f0e4aafbeea5ee6c54e50549e539d2533181568a2bcbc5d0dd51ce1cf8d1",
+    "validation_market_2006_metadata": "699cbe19f75ed33178c335691556fb4ffc1ec4f1038a842e9d0d2a21bcf8e756"
+  },
+  "focal_agents": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40
+  ],
+  "identity": "562156bb997b91edaeba12da0d397ca11c5f9af9b51904d26ca90ae8a90773fa",
+  "main_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+  "main_implementation": {
+    "__init__.py": "bc5ac7adbc8bc092483800594fe7cee147eef1b41ba693c47e12ed3dfea223a2",
+    "__main__.py": "30858b0efeef0a31d6744f1e83ff614799813b0cfc57b2a759c996d0a283eca1",
+    "experiment.py": "3fde6d87faf8c50f869b2de79c3eaf231b1fc447af3a4440931bbb2266f33c73",
+    "learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+    "report.py": "067b78aa5491dc6b31b864b336c22a6598cf7d3c51d5ed0742c601537c4f2647"
+  },
+  "original_response": {
+    "corrected": false,
+    "hard_cpa": false,
+    "prior": 8.0
+  },
+  "runtime": {
+    "numpy": "2.5.5",
+    "torch": "2.15.0"
+  },
+  "scenarios": [
+    "calibrated",
+    "over_25",
+    "over_50",
+    "under_25",
+    "mid_over_50"
+  ],
+  "schema_version": 1,
+  "selected_controller": {
+    "best_rate": [
+      10.0,
+      10.0
+    ],
+    "best_rate_index": 0,
+    "candidate": "response-paced-0",
+    "selected_calibration": "none"
+  },
+  "settings": {
+    "action_histogram": "11 nominal policy actions, not scenario-multiplied effective actions",
+    "aggregate_ratio": "sum normalized predictions / sum normalized private labels, per curve",
+    "budget_blocked_ticks": "included in all forecast audits using private unthrottled labels",
+    "context": 24,
+    "current_truth": "private unthrottled response at tick, nominal chosen action * current scenario bias",
+    "design": "post-hoc after viewing main-v2 and control-v1 outcomes; descriptive only",
+    "device": "cpu",
+    "early_spend": "actual cumulative budget utilization after each of first 12 settled ticks",
+    "expected_rollouts": 1080,
+    "expected_ticks": 51840,
+    "focal_advertisers": 6,
+    "forecast_capture": "read-only forward hook copies actual final-token four curves and returns None",
+    "group_weighting": "equal ticks and cost/conversion weights within current or remaining groups",
+    "log_error": "log1p(prediction*scale)-log1p(private label*scale)",
+    "methods": 2,
+    "mismatch_rule": "fail entire diagnostic; do not change tolerances or omit rollouts",
+    "policy_parameters": "original control definitions, frozen selection; no fitting or retuning",
+    "prediction_units": "normalized cost/budget and conversions*CPA/budget",
+    "prediction_values": "raw model curves; current groups cross-checked against policy diagnostics",
+    "private_label_feedback": "never passed to the policy or included in its diagnostic",
+    "remaining_truth": "private unthrottled sum tick..47 at constant current effective action, including current tick",
+    "remaining_truth_excludes": "later policy actions, remaining-budget truncation, future scenario-bias changes",
+    "replay_atol": 1e-08,
+    "replay_exact_fields": [
+      "conversions",
+      "violation"
+    ],
+    "replay_float_fields": [
+      "score",
+      "cost"
+    ],
+    "replay_rtol": 1e-09,
+    "response_seeds": [
+      11,
+      23,
+      37
+    ],
+    "scenarios": 5,
+    "smooth_l1": "beta=1; 0.5*error^2 if abs(error)<1 else abs(error)-0.5",
+    "target_scales": [
+      48.0,
+      48.0,
+      1.0,
+      1.0
+    ],
+    "torch_threads": 2,
+    "undefined_ratio": "null when the true aggregate is zero",
+    "validation_markets": 6
+  },
+  "summary_sha256": "5c6d27dae9d5e046652137610b87d252bfba935b22c02c5ed655578ec1cc6b0b",
+  "validation_markets": {
+    "2001": {
+      "bytes": 128294201,
+      "identity": "9717badc80943ac6942265e34456fe3fe2bf3ff7a0fff3fcce642d885db93155"
+    },
+    "2002": {
+      "bytes": 113066014,
+      "identity": "3b24a1a746d7d7e367589fe8d539759e3d8e210c922dfccbf4c63be406177ce3"
+    },
+    "2003": {
+      "bytes": 113750881,
+      "identity": "7ec177241cd8c62d726295091b75249db574ca86a2789501ec4142db3b959c4c"
+    },
+    "2004": {
+      "bytes": 126417087,
+      "identity": "17044e5f536450182fcd4b969dd2e750bcf1afc9e9cd752452f17d53d31a0461"
+    },
+    "2005": {
+      "bytes": 156483551,
+      "identity": "5f9ce5f08a9a9f464d0216902dc63ed19467ef8a88f6b0d27d43469f2871c65b"
+    },
+    "2006": {
+      "bytes": 117610171,
+      "identity": "070e524698abcd5c80e369de3c68d5b4780f0babd84be0b2a058c972ded971aa"
+    }
+  }
+}

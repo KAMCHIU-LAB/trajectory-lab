@@ -64,6 +64,10 @@ score 的定义为转化数乘以 CPA 超标惩罚，不能换称收入、ROI �
 名义场景的 score 则低约 8.1%，低估 25% 时违约明显更多。
 这些场景与方法比较未做多重比较校正，需新市场独立确认，不能回写为原来的主假设。
 
+![五种场景中 response 相对反馈基线的 score 和违约频率差异及市场聚类区间](../reports/bidding-analysis/bidding-tradeoffs.svg)
+
+图中保留所有五种场景；原始点及生成器身份见[图表来源](../reports/bidding-analysis/figure.json)。
+
 ## 同检查点控制器研究：验证未晋级
 
 复用原 response 的三个检查点，对照逐时段双价格控制、累计 / 折扣修正、预算价格消融、

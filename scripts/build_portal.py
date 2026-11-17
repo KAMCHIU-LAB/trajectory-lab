@@ -168,6 +168,30 @@ def forecast_audit(reports: Path):
         return None
 
 
+def tradeoff_figure(reports: Path):
+    directory = reports / "bidding-analysis"
+    names = {"bidding-tradeoffs.svg", "bidding-tradeoffs.png"}
+    try:
+        if directory.is_symlink() or not directory.resolve().is_relative_to(reports.resolve()):
+            return None
+        if any((directory / name).is_symlink() for name in names | {"figure.json"}):
+            return None
+        record = read_json(directory / "figure.json")
+        summary = reports / "bidding-main/summary.json"
+        if (
+            set(record["figure_sha256"]) != names
+            or hashlib.sha256(summary.read_bytes()).hexdigest() != record["summary_sha256"]
+            or read_json(summary)["identity"] != record["source_identity"]
+        ):
+            return None
+        for name, expected in record["figure_sha256"].items():
+            if hashlib.sha256((directory / name).read_bytes()).hexdigest() != expected:
+                return None
+        return {"identity": record["source_identity"], "record": "bidding-analysis/figure.json"}
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+
+
 def build(root: Path) -> Path:
     reports = root / "reports"
     studies = [
@@ -228,12 +252,24 @@ def build(root: Path) -> Path:
         if audit
         else ""
     )
+    tradeoffs = tradeoff_figure(reports)
+    tradeoff_panel = (
+        '<section><div class="section-title"><h2>测试取舍 · 优势有场景边界</h2>'
+        '<a href="bidding-analysis/figure.json">图表数据与来源 ↗</a></div>'
+        '<img src="bidding-analysis/bidding-tradeoffs.svg" '
+        'alt="Response minus feedback: score and CPA violation differences across five stress scenarios">'
+        "<p>严重高估场景表现较好，名义及低估场景更差。"
+        "这是 12 个测试市场上的探索性比较，区间条件于三个检查点；不是线上收益。</p></section>"
+        if tradeoffs
+        else ""
+    )
     catalog_data = {
         "completed_runs": total,
         "completed_runs_scope": "offline RL foundation studies only",
         "studies": catalog,
         "bidding_studies": bidding_catalog,
         "bidding_forecast_audit": audit,
+        "bidding_tradeoffs": tradeoffs,
         "mechanism_check": mechanism["status"],
     }
     write_json(reports / "catalog.json", catalog_data)
@@ -259,6 +295,7 @@ section{{margin-top:22px;padding:28px;background:white;border:1px solid #dbe3ea;
 <header><div class="eyebrow">公开模拟 · 预测误差 · 可追溯的实验</div><h1>生成式出价：预测失准时，反馈能改善决策吗？</h1><p>在公开 AuctionNet 的自定义固定对手环境中，比较简单出价、反馈控制与历史条件模型，检验转化、CPA 违约和预算使用的取舍。下面的阶段标签只依据已公开的完整导出；实验完成与预设接受标准是否达到分别标注。</p></header>
 <div class="cards">{bidding}</div>
 <div class="note">当前入口保留开发结果和未通过的研究阶段。尚无完整公开导出的阶段显示待完成，不能从数据生成或训练进度推断收益。所有出价结论均限于该固定对手模拟，不代表官方基准、线上效果或通用安全保证；calibrated 仅表示未额外注入预测偏差。</div>
+{tradeoff_panel}
 {audit_panel}
 <section><div class="section-title"><h2>基础实验 · 离线 RL 与数据诊断</h2><a href="catalog.json">实验索引 / JSON ↗</a></div><p>以下三份已完成的基础实验研究数据选择、公开任务与机制校验，保留完整报告及原始记录。</p><div class="facts"><div><strong>{total}</strong><span>基础实验已完成运行</span></div><div><strong>3</strong><span>基础实验报告</span></div></div><div class="cards">{"".join(cards)}</div>
 <details><summary>展开基础实验的分组回报与机制校验</summary>

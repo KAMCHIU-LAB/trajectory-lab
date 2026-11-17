@@ -23,6 +23,10 @@
       "study": "bidding-pilot"
     }
   ],
+  "bidding_tradeoffs": {
+    "identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+    "record": "bidding-analysis/figure.json"
+  },
   "completed_runs": 39,
   "completed_runs_scope": "offline RL foundation studies only",
   "mechanism_check": "passed",

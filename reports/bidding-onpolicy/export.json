@@ -1,0 +1,13 @@
+{
+  "excluded": "states, traffic, tapes, weights, raw tick labels, machine logs and runner state",
+  "exporter_sha256": "b5b73bdbb73f117bfe8d95590a2a33fc8ee079c53f6f0b8e405dcbd9afb08897",
+  "files_sha256": {
+    "manifest.json": "515befd6a0894a21c8df118f8e002e512f9fd998629792a7455d64aa70c76d11",
+    "report.html": "7e309bfbc44d394d0dc352d99410eab4d123f1daf180901b04732046aaf201e5",
+    "summary.json": "5c6d27dae9d5e046652137610b87d252bfba935b22c02c5ed655578ec1cc6b0b"
+  },
+  "privacy_gate": "allowlisted text scanned for home paths, emails and common credential patterns; not a universal disclosure proof",
+  "run_identity": "562156bb997b91edaeba12da0d397ca11c5f9af9b51904d26ca90ae8a90773fa",
+  "scope": "post-hoc validation-only on-policy forecast and pacing aggregates; no new benefit or causal claim",
+  "verification": "source/protocol/input identity, completion, summary hash, exact aggregate coverage and reported zero replay differences checked; no replay or independent forecast-metric recomputation"
+}
