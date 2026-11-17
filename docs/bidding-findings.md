@@ -8,11 +8,14 @@
 - 小规模配置为 4 个训练市场、2 个验证市场、4 个开发评估市场，每市场请求 50,000 PV，3 个受测广告主，1 个训练种子。
 - DT 和响应模型各训练 1,500 步；参数量分别为 104,513 和 106,664。
 - 最终开发版本完整运行约 183 秒，产出 480 条评估记录。不同开发版本分别留存，不覆盖原始运行身份。
+- 每个方法、每个压力场景只有 4 个开发评估市场 × 3 个广告主，即 12 个周期；480 是跨方法和场景的总记录数，不是 480 个独立市场。
 - 缓存优化核验中，3 种出价下的 7 项输出与公开内核逐数组相等。该核验覆盖声明的案例，不等于对所有输入的形式化证明。
 
 [报告](../reports/bidding-pilot/report.html)、[原始结果](../reports/bidding-pilot/results.csv)、
 [来源与配置](../reports/bidding-pilot/manifest.json)、[导出校验摘要](../reports/bidding-pilot/export.json)。
-报告生成器的后续统计分析版本单独记录在 summary.json 的 renderer_sha256 中；原始评估与运行 manifest 保留。
+运行后补充的统计分析与展示由单独的报告生成器版本生成，其哈希记录在
+[summary.json](../reports/bidding-pilot/summary.json) 的 renderer_sha256 中；原始逐条评估结果与运行 manifest 保留。
+场景名 `calibrated` 表示没有额外注入预测偏差（倍率为 1），不表示已验证公开模拟器的名义 pCVR 严格校准。
 
 ## 三个需要正面面对的发现
 

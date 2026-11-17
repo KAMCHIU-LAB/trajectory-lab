@@ -20,8 +20,8 @@ response/correction/hard-constraint ablations.
 The pilot completes real data generation, MPS training and 480 campaign-level
 evaluations. It **does not establish an advantage for learned bidding**: a simple
 fixed multiplier is strong, and hard forecast constraints can suppress spending.
-The larger three-seed study uses new test markets and is still pending final
-results. This is a custom fixed-opponent simulation, not the official AuctionNet
+The larger three-seed study uses new test markets and is in progress; final
+results are pending. This is a custom fixed-opponent simulation, not the official AuctionNet
 benchmark. No employer code, data or online metrics are used. The independent
 response-model variant is inspired by GRM; it is not a full paper reproduction.
 

@@ -53,9 +53,12 @@ kernel. A runtime equivalence check precedes data generation.
 
 At tick t, a policy receives its current observed pCVR summary, opportunity count,
 budget, target CPA, and past actions/outcomes. It receives no future traffic,
-future price, latent unbiased pCVR, scenario ID, or counterfactual response tape.
+future price, latent conversion probabilities, scenario ID, or counterfactual response tape.
 For stress, multiply only its observed pCVR; leave true conversion generation and
-opponents unchanged. Training uses calibrated observations. Validation scenarios
+opponents unchanged. Training uses nominal pCVR with no additional injected bias.
+The scenario ID `calibrated` denotes this multiplier-one reference, not verified
+probability calibration: upstream samples latent probabilities using potentially
+asymmetric truncated-normal bounds. Validation scenarios
 choose controller settings; held-out market IDs provide the final evaluation.
 
 Dense training targets are **realized** costs/conversions from simulator
