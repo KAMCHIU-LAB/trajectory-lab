@@ -103,3 +103,37 @@ errors need not represent states or chosen actions visited by a new controller.
 Prediction differences cannot establish policy value, isolate history, or prove
 that the controller is the principal bottleneck. Do not select new checkpoints,
 retune frozen policies or change confirmation gates using this audit.
+
+### Point predictions and decision expectations
+
+These losses fit response point predictions, not guaranteed calibrated
+conditional means. For an unrestricted log-MSE predictor of nonnegative `Y`,
+the population optimum is `(exp(E[log(1+sY)|x])-1)/s`, which is at most
+`E[Y|x]` by Jensen's inequality. The neural log-Smooth-L1 objective likewise has
+no conditional arithmetic-mean guarantee; this does **not** prove that a fitted
+neural model must underestimate. Regularization, model capacity, sparse labels
+and distribution shift can also affect aggregate ratios. Using these predictions
+as expected costs/conversions is a controller approximation to evaluate, rather
+than an established calibration property.
+
+### Reproduce the local diagnostics
+
+All three response fits must have completed before the matched audit. These
+commands use existing train/validation caches and local checkpoints:
+
+```bash
+python -m trajectorylab.bidding_context \
+  --main-run artifacts/bidding/main-v2 --output artifacts/bidding/context-v1
+python -m trajectorylab.bidding_predictive \
+  --main-run artifacts/bidding/main-v2 --ridge-run artifacts/bidding/context-v1 \
+  --output artifacts/bidding/predictive-v1
+python scripts/export_bidding_predictive.py \
+  --audit-run artifacts/bidding/predictive-v1 --ridge-run artifacts/bidding/context-v1 \
+  --destination reports/bidding-forecast
+```
+
+The exporter checks completed evidence identities, hashes and coverage, then
+copies an explicit text allowlist and renders the metric table. It does not
+independently recompute predictions or statistics. Model files, traffic caches,
+runner state and machine paths are excluded. The output records the privacy
+pattern checks and their limits.
