@@ -1,0 +1,585 @@
+{
+  "decision": "confirmed",
+  "gates": {
+    "all_three_seed_score_means_positive": true,
+    "conversion_ratio_ci_lower_at_least_0.95": true,
+    "conversion_ratios_all_defined": true,
+    "score_ci_lower_positive": true,
+    "violation_delta_ci_upper_at_most_0.05": true
+  },
+  "groups": [
+    {
+      "budget_utilization": 0.7792558580160424,
+      "conversions": 20.300925925925927,
+      "cost": 2115.1588916243445,
+      "method": "response",
+      "scenario": "calibrated",
+      "score": 15.909308531556778,
+      "violation": 0.49537037037037035,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.7739829951544822,
+      "conversions": 18.868055555555557,
+      "cost": 1939.7110008140112,
+      "method": "feedback",
+      "scenario": "calibrated",
+      "score": 16.534136962853964,
+      "violation": 0.5277777777777778,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.6688075620088489,
+      "conversions": 15.722222222222221,
+      "cost": 1553.5633197104555,
+      "method": "fixed-1",
+      "scenario": "calibrated",
+      "score": 14.803380878260015,
+      "violation": 0.3680555555555556,
+      "zero_conversions": 0.034722222222222224
+    },
+    {
+      "budget_utilization": 0.8303014325519279,
+      "conversions": 18.333333333333332,
+      "cost": 2101.042317589999,
+      "method": "fixed-tuned",
+      "scenario": "calibrated",
+      "score": 14.614077484672926,
+      "violation": 0.7708333333333334,
+      "zero_conversions": 0.006944444444444444
+    },
+    {
+      "budget_utilization": 0.8590909086277086,
+      "conversions": 22.46527777777778,
+      "cost": 2359.106438058681,
+      "method": "response",
+      "scenario": "over_25",
+      "score": 17.50875325166231,
+      "violation": 0.5092592592592593,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8709776568588011,
+      "conversions": 20.243055555555557,
+      "cost": 2282.736225134356,
+      "method": "feedback",
+      "scenario": "over_25",
+      "score": 15.814487526895695,
+      "violation": 0.7152777777777778,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8303014325519279,
+      "conversions": 18.333333333333332,
+      "cost": 2101.042317589999,
+      "method": "fixed-1",
+      "scenario": "over_25",
+      "score": 14.614077484672926,
+      "violation": 0.7708333333333334,
+      "zero_conversions": 0.006944444444444444
+    },
+    {
+      "budget_utilization": 0.9399015465115578,
+      "conversions": 19.78472222222222,
+      "cost": 2548.6476391003234,
+      "method": "fixed-tuned",
+      "scenario": "over_25",
+      "score": 12.550739546272426,
+      "violation": 0.8611111111111112,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8963298504018494,
+      "conversions": 22.891203703703702,
+      "cost": 2473.0286614991314,
+      "method": "response",
+      "scenario": "over_50",
+      "score": 17.510885573015102,
+      "violation": 0.5578703703703703,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9321852482873894,
+      "conversions": 21.118055555555557,
+      "cost": 2525.643301331778,
+      "method": "feedback",
+      "scenario": "over_50",
+      "score": 14.893614238614283,
+      "violation": 0.8055555555555556,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9216542050242256,
+      "conversions": 19.979166666666668,
+      "cost": 2471.240982902857,
+      "method": "fixed-1",
+      "scenario": "over_50",
+      "score": 13.685819057636632,
+      "violation": 0.8333333333333334,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.991605367613825,
+      "conversions": 19.21527777777778,
+      "cost": 2778.0785141862434,
+      "method": "fixed-tuned",
+      "scenario": "over_50",
+      "score": 9.335390141272935,
+      "violation": 0.9305555555555556,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.6224549097250877,
+      "conversions": 15.395833333333334,
+      "cost": 1622.3338495016114,
+      "method": "response",
+      "scenario": "under_25",
+      "score": 12.275072211029636,
+      "violation": 0.5324074074074074,
+      "zero_conversions": 0.023148148148148147
+    },
+    {
+      "budget_utilization": 0.5962947736490195,
+      "conversions": 15.722222222222221,
+      "cost": 1414.8349876820698,
+      "method": "feedback",
+      "scenario": "under_25",
+      "score": 14.847801324485244,
+      "violation": 0.3611111111111111,
+      "zero_conversions": 0.006944444444444444
+    },
+    {
+      "budget_utilization": 0.39208333877945467,
+      "conversions": 10.11111111111111,
+      "cost": 829.0498925929442,
+      "method": "fixed-1",
+      "scenario": "under_25",
+      "score": 9.919454979595947,
+      "violation": 0.3472222222222222,
+      "zero_conversions": 0.2222222222222222
+    },
+    {
+      "budget_utilization": 0.6097122714711021,
+      "conversions": 14.75,
+      "cost": 1381.6261119052765,
+      "method": "fixed-tuned",
+      "scenario": "under_25",
+      "score": 14.2611704958776,
+      "violation": 0.2916666666666667,
+      "zero_conversions": 0.041666666666666664
+    },
+    {
+      "budget_utilization": 0.891574021900626,
+      "conversions": 22.381944444444443,
+      "cost": 2461.0716008387744,
+      "method": "response",
+      "scenario": "mid_over_50",
+      "score": 16.977718591569378,
+      "violation": 0.5578703703703703,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9019957734052038,
+      "conversions": 21.13888888888889,
+      "cost": 2410.6156210717386,
+      "method": "feedback",
+      "scenario": "mid_over_50",
+      "score": 15.703252442074605,
+      "violation": 0.6944444444444444,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8520782922927093,
+      "conversions": 20.291666666666668,
+      "cost": 2200.558431834456,
+      "method": "fixed-1",
+      "scenario": "mid_over_50",
+      "score": 16.672690416316794,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9490491362698023,
+      "conversions": 20.82638888888889,
+      "cost": 2592.4914831102924,
+      "method": "fixed-tuned",
+      "scenario": "mid_over_50",
+      "score": 13.752701333104747,
+      "violation": 0.8402777777777778,
+      "zero_conversions": 0.0
+    }
+  ],
+  "identity": "571eb6c719adcdc96bdba8580ba01527421f8298e94cabbe9820a198b1c7c752",
+  "limits": [
+    "New confirmation declared after main/control discovery; not a reopened controller gate.",
+    "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+    "Only over_50 is primary; other scenarios and fixed baselines are descriptive secondary evidence.",
+    "No training-randomness, deployment or causal architecture/history/bottleneck conclusion."
+  ],
+  "primary_effect": {
+    "conversion_ratio": {
+      "defined_for_all_resamples": true,
+      "market_bootstrap_95": [
+        1.052682639295569,
+        1.1187633807870434
+      ],
+      "mean": 1.0839636084621285
+    },
+    "markets": 24,
+    "method": "response",
+    "reference": "feedback",
+    "scenario": "over_50",
+    "score_delta": {
+      "market_bootstrap_95": [
+        1.8009453459909563,
+        3.4240869558769527
+      ],
+      "mean": 2.617271334400822
+    },
+    "seed_score_deltas": {
+      "11": 3.1517684414221625,
+      "23": 2.3286304288723603,
+      "37": 2.3714151329079423
+    },
+    "uncertainty_scope": "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+    "violation_delta": {
+      "market_bootstrap_95": [
+        -0.3078703703703703,
+        -0.1898148148148148
+      ],
+      "mean": -0.24768518518518515
+    }
+  },
+  "primary_scenario": "over_50",
+  "response_seed_groups": [
+    {
+      "budget_utilization": 0.740646908907974,
+      "conversions": 19.21527777777778,
+      "cost": 1984.103182801932,
+      "scenario": "calibrated",
+      "score": 15.318597803838523,
+      "seed": 11,
+      "violation": 0.4513888888888889,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8418489636884371,
+      "conversions": 21.430555555555557,
+      "cost": 2310.734670843321,
+      "scenario": "calibrated",
+      "score": 16.199884809444512,
+      "seed": 23,
+      "violation": 0.5347222222222222,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.7552717014517157,
+      "conversions": 20.256944444444443,
+      "cost": 2050.63882122778,
+      "scenario": "calibrated",
+      "score": 16.2094429813873,
+      "seed": 37,
+      "violation": 0.5,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8285577724213888,
+      "conversions": 21.541666666666668,
+      "cost": 2256.6274936500577,
+      "scenario": "over_25",
+      "score": 16.84210486443678,
+      "seed": 11,
+      "violation": 0.5,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9022325864830792,
+      "conversions": 23.28472222222222,
+      "cost": 2496.9884165255435,
+      "scenario": "over_25",
+      "score": 17.807209105579496,
+      "seed": 23,
+      "violation": 0.5138888888888888,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.846482366978658,
+      "conversions": 22.569444444444443,
+      "cost": 2323.703404000442,
+      "scenario": "over_25",
+      "score": 17.87694578497066,
+      "seed": 37,
+      "violation": 0.5138888888888888,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8753600014212579,
+      "conversions": 22.930555555555557,
+      "cost": 2404.4870354866057,
+      "scenario": "over_50",
+      "score": 18.045382680036443,
+      "seed": 11,
+      "violation": 0.5625,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9316173587084129,
+      "conversions": 23.25,
+      "cost": 2585.5242756182965,
+      "scenario": "over_50",
+      "score": 17.222244667486642,
+      "seed": 23,
+      "violation": 0.5694444444444444,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8820121910758774,
+      "conversions": 22.493055555555557,
+      "cost": 2429.074673392491,
+      "scenario": "over_50",
+      "score": 17.265029371522225,
+      "seed": 37,
+      "violation": 0.5416666666666666,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.6243014075414557,
+      "conversions": 14.8125,
+      "cost": 1597.3728592776235,
+      "scenario": "under_25",
+      "score": 11.863247111264915,
+      "seed": 11,
+      "violation": 0.5763888888888888,
+      "zero_conversions": 0.034722222222222224
+    },
+    {
+      "budget_utilization": 0.6719706852114671,
+      "conversions": 16.4375,
+      "cost": 1776.1065146799772,
+      "scenario": "under_25",
+      "score": 12.633629625921161,
+      "seed": 23,
+      "violation": 0.5625,
+      "zero_conversions": 0.020833333333333332
+    },
+    {
+      "budget_utilization": 0.5710926364223397,
+      "conversions": 14.9375,
+      "cost": 1493.522174547234,
+      "scenario": "under_25",
+      "score": 12.32833989590284,
+      "seed": 37,
+      "violation": 0.4583333333333333,
+      "zero_conversions": 0.013888888888888888
+    },
+    {
+      "budget_utilization": 0.8640387558489285,
+      "conversions": 21.916666666666668,
+      "cost": 2369.651652131011,
+      "scenario": "mid_over_50",
+      "score": 16.992840056182615,
+      "seed": 11,
+      "violation": 0.5277777777777778,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.9285963509437233,
+      "conversions": 22.9375,
+      "cost": 2578.664714338596,
+      "scenario": "mid_over_50",
+      "score": 16.92627585525099,
+      "seed": 23,
+      "violation": 0.5833333333333334,
+      "zero_conversions": 0.0
+    },
+    {
+      "budget_utilization": 0.8820869589092261,
+      "conversions": 22.291666666666668,
+      "cost": 2434.8984360467184,
+      "scenario": "mid_over_50",
+      "score": 17.014039863274533,
+      "seed": 37,
+      "violation": 0.5625,
+      "zero_conversions": 0.0
+    }
+  ],
+  "sample_size": {
+    "focals_per_market": 6,
+    "markets": 24,
+    "policy_slots": 6,
+    "rows": 4320,
+    "scenarios": 5
+  },
+  "scenario_effects": {
+    "calibrated": {
+      "conversion_ratio": {
+        "defined_for_all_resamples": true,
+        "market_bootstrap_95": [
+          1.0183850385955082,
+          1.1352903861320816
+        ],
+        "mean": 1.0759416022573918
+      },
+      "markets": 24,
+      "method": "response",
+      "reference": "feedback",
+      "scenario": "calibrated",
+      "score_delta": {
+        "market_bootstrap_95": [
+          -1.7648806516873585,
+          0.48912275044575343
+        ],
+        "mean": -0.6248284312971849
+      },
+      "seed_score_deltas": {
+        "11": -1.2155391590154403,
+        "23": -0.33425215340945225,
+        "37": -0.3246939814666623
+      },
+      "uncertainty_scope": "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+      "violation_delta": {
+        "market_bootstrap_95": [
+          -0.11574074074074074,
+          0.041666666666666664
+        ],
+        "mean": -0.03240740740740742
+      }
+    },
+    "mid_over_50": {
+      "conversion_ratio": {
+        "defined_for_all_resamples": true,
+        "market_bootstrap_95": [
+          1.0085951978011427,
+          1.1125410897256118
+        ],
+        "mean": 1.0588042049934299
+      },
+      "markets": 24,
+      "method": "response",
+      "reference": "feedback",
+      "scenario": "mid_over_50",
+      "score_delta": {
+        "market_bootstrap_95": [
+          -0.011979670112980092,
+          2.5395457675050195
+        ],
+        "mean": 1.2744661494947773
+      },
+      "seed_score_deltas": {
+        "11": 1.2895876141080136,
+        "23": 1.2230234131763877,
+        "37": 1.3107874211999304
+      },
+      "uncertainty_scope": "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+      "violation_delta": {
+        "market_bootstrap_95": [
+          -0.20138888888888887,
+          -0.07638888888888891
+        ],
+        "mean": -0.1365740740740741
+      }
+    },
+    "over_25": {
+      "conversion_ratio": {
+        "defined_for_all_resamples": true,
+        "market_bootstrap_95": [
+          1.058933715531667,
+          1.1622715512897084
+        ],
+        "mean": 1.1097770154373932
+      },
+      "markets": 24,
+      "method": "response",
+      "reference": "feedback",
+      "scenario": "over_25",
+      "score_delta": {
+        "market_bootstrap_95": [
+          0.5044442073407082,
+          2.9104319489515156
+        ],
+        "mean": 1.694265724766615
+      },
+      "seed_score_deltas": {
+        "11": 1.027617337541084,
+        "23": 1.992721578683799,
+        "37": 2.062458258074962
+      },
+      "uncertainty_scope": "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+      "violation_delta": {
+        "market_bootstrap_95": [
+          -0.26851851851851855,
+          -0.14583333333333334
+        ],
+        "mean": -0.20601851851851857
+      }
+    },
+    "over_50": {
+      "conversion_ratio": {
+        "defined_for_all_resamples": true,
+        "market_bootstrap_95": [
+          1.052682639295569,
+          1.1187633807870434
+        ],
+        "mean": 1.0839636084621285
+      },
+      "markets": 24,
+      "method": "response",
+      "reference": "feedback",
+      "scenario": "over_50",
+      "score_delta": {
+        "market_bootstrap_95": [
+          1.8009453459909563,
+          3.4240869558769527
+        ],
+        "mean": 2.617271334400822
+      },
+      "seed_score_deltas": {
+        "11": 3.1517684414221625,
+        "23": 2.3286304288723603,
+        "37": 2.3714151329079423
+      },
+      "uncertainty_scope": "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+      "violation_delta": {
+        "market_bootstrap_95": [
+          -0.3078703703703703,
+          -0.1898148148148148
+        ],
+        "mean": -0.24768518518518515
+      }
+    },
+    "under_25": {
+      "conversion_ratio": {
+        "defined_for_all_resamples": true,
+        "market_bootstrap_95": [
+          0.9076909722222224,
+          1.0582149492757196
+        ],
+        "mean": 0.9792402826855127
+      },
+      "markets": 24,
+      "method": "response",
+      "reference": "feedback",
+      "scenario": "under_25",
+      "score_delta": {
+        "market_bootstrap_95": [
+          -3.6752806110068197,
+          -1.4589923153830744
+        ],
+        "mean": -2.5727291134556087
+      },
+      "seed_score_deltas": {
+        "11": -2.9845542132203318,
+        "23": -2.2141716985640865,
+        "37": -2.5194614285824057
+      },
+      "uncertainty_scope": "Market bootstrap after averaging advertisers and training seeds; conditional on three trained checkpoints. Not a full training-seed interval.",
+      "violation_delta": {
+        "market_bootstrap_95": [
+          0.10648148148148144,
+          0.2384259259259259
+        ],
+        "mean": 0.17129629629629628
+      }
+    }
+  }
+}

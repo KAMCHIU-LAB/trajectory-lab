@@ -67,7 +67,7 @@
 .venv/bin/python scripts/run_bidding_background.py --config configs/bidding-main.toml --output artifacts/bidding/background-main
 ```
 
-脚本只为其启动的实验子进程运行 `caffeinate`，不修改 `pmset` 设置；电池电量降至 20% 或以下时会中断子进程，让实验通过 checkpoint 恢复，并在接通电源且电脑唤醒后自动续跑。状态写入输出目录的 `runner.json`。不能据此承诺合盖期间继续运行。
+脚本只为其启动的实验子进程运行 `caffeinate`，不修改 `pmset` 设置；电池电量降至 20% 或以下时会中断子进程，让实验通过 checkpoint 恢复，并在接通电源且电脑唤醒后自动续跑。状态写入输出目录的 `runner.json`。锁屏后进程可继续运行；合盖行为取决于设备和系统电源策略，不能保证实验继续。
 上述命令在当前终端启动运行器；脚本本身不注册后台服务。一次性 launchd 调度应使用 `KeepAlive=false`，避免实验完成后被反复重启。
 
 ## 导出可公开证据
@@ -112,3 +112,48 @@ Pilot 是小规模可行性配置，转化稀疏，只用于检查数据生成�
 公开导出器 `scripts/export_bidding_control.py` 同时支持此状态和完成独立确认的 `complete` 状态，
 只复制声明的文本证据。它核对覆盖、原始记录与统计一致性，并检查常见隐私标识。
 监督器在成功导出后退出并释放计算进程的唤醒断言。
+
+## 独立确认 D
+
+确认 D 使用 `configs/bidding-confirmation.toml` 中冻结的 24 个新市场（3301–3324），预计输出 4,320 条策略评估记录。主比较为 `over_50` 场景的原始 `response` 对 `feedback`；四项固定通过门槛和统计口径见[确认协议](bidding-confirmation-protocol.md)。结果生成中不读取部分策略结果，不因中间走势提前停止或调整门槛。
+
+在仓库根目录前台启动或以相同身份续跑：
+
+```bash
+.venv/bin/python -m trajectorylab.bidding_confirmation --config configs/bidding-confirmation.toml --stage all
+```
+
+也可分开执行数据生成和评估；评估要求全部 24 个市场缓存及身份匹配：
+
+```bash
+.venv/bin/python -m trajectorylab.bidding_confirmation --config configs/bidding-confirmation.toml --stage data
+.venv/bin/python -m trajectorylab.bidding_confirmation --config configs/bidding-confirmation.toml --stage evaluate
+```
+
+中断后重跑相同命令和配置，继续使用 `artifacts/bidding/confirmation-v1`；不要删除、替换或混用不同身份的输出。
+
+低电量后台运行器会按配置生成市场、等待完整市场缓存后评估，并可在低电量暂停后恢复：
+
+```bash
+.venv/bin/python scripts/run_bidding_confirmation_background.py --config configs/bidding-confirmation.toml
+```
+
+只有执行状态为 `complete` 后才导出公开报告和聚合 campaign 记录：
+
+```bash
+.venv/bin/python scripts/export_bidding_confirmation.py --config configs/bidding-confirmation.toml --destination reports/bidding-confirmation
+```
+
+执行 `phase=complete` 表示流程完整结束；科学判定仍可能是 `confirmed`、`not-confirmed` 或 `inconclusive`。`phase=complete` 且 `decision=not-confirmed` 是按预设门槛得到的完整负结果，不是运行失败，仍可导出；数据、身份或执行错误导致的 `phase=failed`/未完成状态不应导出为确认报告。
+
+## 复现范围
+
+1. **公开证据核查：**报告公开汇总和 campaign 级记录，可检查记录覆盖、配对统计、判定门槛和导出哈希；不包含权重或市场缓存。
+2. **重新训练：**公开代码和数据生成/训练流程可用于训练新模型，应保存在独立运行目录；改变配置、数据划分、源码或运行时会产生新实验身份。本轮 D 绑定既有检查点的精确哈希，不能直接换入重训产物并沿用确认结论。
+3. **精确冻结检查点重放：**需要尚未公开的本地候选权重包、匹配的仓库源码与固定运行时；打包命令为：
+
+   ```bash
+   .venv/bin/python scripts/package_bidding_replay.py --output artifacts/bidding/publication/bidding-frozen-inputs.tar.gz
+   ```
+
+   该包是本地发布候选，不是公开报告附件。固定运行时为 Python 3.12.13、NumPy 2.5.5、PyTorch 2.15.0；哈希核验要求见包内说明及[确认协议](bidding-confirmation-protocol.md)。公开报告不含权重，因此不能声称外部读者已能精确重放这三个冻结检查点；跨平台数值等价也未建立。

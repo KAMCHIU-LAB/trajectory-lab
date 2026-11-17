@@ -26,22 +26,27 @@ There is currently no LLM planner in the implemented system.
 | [Formal bidding study](reports/bidding-main/report.html) | Complete: 16 / 6 / 12 training / validation / test markets, three training seeds and 6,480 rows. History correction did not establish a score gain; response-model performance depended on the stress scenario. |
 | [Controller refinement](reports/bidding-control/validation-report/report.html) | Validation complete: 11,340 candidate evaluations. The new controller failed the predeclared promotion gate; no new-market confirmation was conducted. |
 | [Matched forecast audit](reports/bidding-forecast/report.html) | Complete: neural, contextual ridge and empirical forecasts on identical validation trajectories. Lower prediction error does not guarantee accurate conversion totals or better bidding. |
+| [Chosen-action and pacing audit](reports/bidding-onpolicy/report.html) | Complete: 1,080 campaigns replayed exactly. Examines selected actions, forecast-bias direction and early budget spend; a post-hoc validation diagnostic, not a causal result. |
+| [Independent new-market confirmation](reports/bidding-confirmation/report.html) | Complete: 24 new markets and 4,320 rows. Original response passed the frozen score, conversion-retention, violation and seed-consistency gates under 50% overprediction. The failed controller gate remains closed. |
 | [Offline policy-learning foundation](docs/results.md) | Completed: 39 BC/IQL/DT training runs across Pendulum, a public PointMaze subset and an IQL mechanism ablation. |
 
 Campaigns within a market and repeated methods/seeds are correlated. Row counts
 are not independent-market counts. The [findings](docs/bidding-findings.md) retain
 negative results, compute measurements and unresolved mechanisms.
 
-**A useful trade-off:** under 50% pCVR overprediction, response scored 18.3%
-higher than the feedback baseline, with 7.5% more conversions and an 18.1
-percentage-point lower CPA violation rate; all three seed score differences
-were positive. This comparison is exploratory: its nominal-scenario score was
-8.1% lower, so it does not establish an overall advantage. In the primary
-comparison, history correction's score difference was −0.577, with a
-market-clustered 95% interval of [−1.275, 0.095].
+**A replicated, scoped result:** in 24 fresh simulated markets under 50% pCVR
+overprediction, frozen response scored **17.6% higher**, with **8.4% more
+conversions** and a **24.8 percentage-point lower CPA violation rate** than
+frozen feedback. The score difference was +2.617, with a market-bootstrap 95%
+interval of [1.801, 3.424]; all three fixed-model score differences were positive.
+The new allocation was frozen after the original discovery and before generation.
+Intervals are conditional on those three checkpoints. Nominal score was 3.8%
+lower (difference interval crossed zero), and underprediction score was 17.3%
+lower. These results do not establish universal or production gains, and do not
+change the failed history-correction and paced-controller findings.
 [Full statistics and failure boundaries](docs/bidding-findings.md).
 
-![Exploratory score and CPA violation differences across all five stress scenarios](reports/bidding-analysis/bidding-tradeoffs.svg)
+![Discovery and fixed-model confirmation across all five stress scenarios](reports/bidding-replication/replication.svg)
 
 ## What to inspect
 

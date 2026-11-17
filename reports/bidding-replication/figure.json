@@ -1,0 +1,224 @@
+{
+  "figure_sha256": {
+    "replication.png": "f10ee01395b28471f769d949922e5c6199c13af7c4c170672af16c2d93d8bd26",
+    "replication.svg": "33f51fb06b5b0c4ad45d92d4e06adbdab4ae63f271557c814441e9b4c9566ef9"
+  },
+  "generator_sha256": "707a1561b57486f66f1bdc6071ca29454e3f5f6f576f194f9d40031bec545bef",
+  "points": [
+    {
+      "ci95": [
+        -2.567810337644383,
+        -0.07780237187056925
+      ],
+      "mean": -1.353874911020846,
+      "metric": "score",
+      "scenario": "calibrated",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -0.032407407407407406,
+        0.13425925925925927
+      ],
+      "mean": 0.05092592592592593,
+      "metric": "violation",
+      "scenario": "calibrated",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -0.46838952113006144,
+        1.85634532203844
+      ],
+      "mean": 0.7318198308350756,
+      "metric": "score",
+      "scenario": "over_25",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -0.23148148148148148,
+        -0.04166666666666666
+      ],
+      "mean": -0.13425925925925927,
+      "metric": "violation",
+      "scenario": "over_25",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        1.3520771099706002,
+        4.063418961197486
+      ],
+      "mean": 2.644407335305194,
+      "metric": "score",
+      "scenario": "over_50",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -0.28715277777777776,
+        -0.08333333333333333
+      ],
+      "mean": -0.18055555555555558,
+      "metric": "violation",
+      "scenario": "over_50",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -4.007189365985076,
+        -0.9914588094924014
+      ],
+      "mean": -2.484500302093888,
+      "metric": "score",
+      "scenario": "under_25",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        0.15266203703703704,
+        0.41203703703703703
+      ],
+      "mean": 0.2824074074074074,
+      "metric": "violation",
+      "scenario": "under_25",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -0.20108181767053082,
+        2.0864684478506383
+      ],
+      "mean": 1.044084469892185,
+      "metric": "score",
+      "scenario": "mid_over_50",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -0.1712962962962963,
+        -0.05092592592592592
+      ],
+      "mean": -0.1111111111111111,
+      "metric": "violation",
+      "scenario": "mid_over_50",
+      "study": "Discovery (12 markets)"
+    },
+    {
+      "ci95": [
+        -1.7648806516873585,
+        0.48912275044575343
+      ],
+      "mean": -0.6248284312971849,
+      "metric": "score",
+      "scenario": "calibrated",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        -0.11574074074074074,
+        0.041666666666666664
+      ],
+      "mean": -0.03240740740740742,
+      "metric": "violation",
+      "scenario": "calibrated",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        0.5044442073407082,
+        2.9104319489515156
+      ],
+      "mean": 1.694265724766615,
+      "metric": "score",
+      "scenario": "over_25",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        -0.26851851851851855,
+        -0.14583333333333334
+      ],
+      "mean": -0.20601851851851857,
+      "metric": "violation",
+      "scenario": "over_25",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        1.8009453459909563,
+        3.4240869558769527
+      ],
+      "mean": 2.617271334400822,
+      "metric": "score",
+      "scenario": "over_50",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        -0.3078703703703703,
+        -0.1898148148148148
+      ],
+      "mean": -0.24768518518518515,
+      "metric": "violation",
+      "scenario": "over_50",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        -3.6752806110068197,
+        -1.4589923153830744
+      ],
+      "mean": -2.5727291134556087,
+      "metric": "score",
+      "scenario": "under_25",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        0.10648148148148144,
+        0.2384259259259259
+      ],
+      "mean": 0.17129629629629628,
+      "metric": "violation",
+      "scenario": "under_25",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        -0.011979670112980092,
+        2.5395457675050195
+      ],
+      "mean": 1.2744661494947773,
+      "metric": "score",
+      "scenario": "mid_over_50",
+      "study": "Confirmation D (24 markets)"
+    },
+    {
+      "ci95": [
+        -0.20138888888888887,
+        -0.07638888888888891
+      ],
+      "mean": -0.1365740740740741,
+      "metric": "violation",
+      "scenario": "mid_over_50",
+      "study": "Confirmation D (24 markets)"
+    }
+  ],
+  "primary_scope": "Only over_50 is primary in confirmation D; other scenarios are descriptive secondary evidence",
+  "studies": {
+    "Confirmation D (24 markets)": {
+      "decision": "confirmed",
+      "export_sha256": "01969106c7f7fb528c22db88e934beb759e009837763a8b8c9d0aea6bb25fb6c",
+      "identity": "571eb6c719adcdc96bdba8580ba01527421f8298e94cabbe9820a198b1c7c752",
+      "status_sha256": "b8a83b16b6c64293b7a5ab348d042cb882d97a8c6ad45dd61a9d957b8b736b82",
+      "summary_sha256": "437387592b65eb2501ec782bd2ebc4d53f9e0a68c3f9b11cc52b28f2e6e896e1"
+    },
+    "Discovery (12 markets)": {
+      "identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+      "summary_sha256": "ac5bccff6c85f096ec0ffb4c0dbd0bd55d2912c4647c0558e598e2ac67d21251"
+    }
+  },
+  "uncertainty_scope": "95% market-bootstrap intervals conditional on three fixed checkpoints; not training-randomness intervals"
+}

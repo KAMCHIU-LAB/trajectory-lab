@@ -75,10 +75,13 @@ def export(config_path: Path, destination: Path) -> None:
         csv_rows = list(table)
         if len(csv_rows) != len(rows):
             raise RuntimeError("CSV/JSON campaign counts differ")
+        if set(fields) != {key for row in rows for key in row}:
+            raise RuntimeError("CSV headers differ from the union of JSON campaign fields")
         for encoded, row in zip(csv_rows, rows, strict=True):
-            if set(fields) != set(row) or set(encoded) != set(row):
+            if set(encoded) != set(fields):
                 raise RuntimeError("CSV/JSON campaign fields differ")
-            for key, value in row.items():
+            for key in fields:
+                value = row.get(key)
                 actual = encoded[key]
                 same = (
                     actual == ""

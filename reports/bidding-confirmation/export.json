@@ -1,0 +1,18 @@
+{
+  "decision": "confirmed",
+  "excluded": "Traffic, tapes, weights, per-market operational caches and machine logs.",
+  "exporter_sha256": "8c58dd02b70aa1f054569d617130d19b499de4fa27a1f97cfa2c1d827238fb4e",
+  "files_sha256": {
+    "manifest.json": "bde049bd0c543ad64468d13e9315836a0782897e282f9c080eb0cabb57551866",
+    "market-cache.json": "18106bc6d30d8bb4a08a208ba9925c499a681d2bb0874eb3e6a6f7f2d5ce0be0",
+    "report.html": "5cfd3ea46bf0eed915d1a234f207483cc8c0d2e390ed28c4611f9bcf2bb70a37",
+    "results.csv": "11b347871d1fbf887779466c19f9c5318874bff1a4321c726829c254910c7655",
+    "results.json": "db51409113fccef0fd263a4d1017a4871e74a36c677afd11b3ce38f7944cd57e",
+    "status.json": "b8a83b16b6c64293b7a5ab348d042cb882d97a8c6ad45dd61a9d957b8b736b82",
+    "summary.json": "437387592b65eb2501ec782bd2ebc4d53f9e0a68c3f9b11cc52b28f2e6e896e1"
+  },
+  "privacy_gate": "Allowlisted text scanned for home paths, emails and common credential patterns; not proof against every possible disclosure.",
+  "run_identity": "571eb6c719adcdc96bdba8580ba01527421f8298e94cabbe9820a198b1c7c752",
+  "scope": "24 new simulated markets; only over_50 is primary; conditional on three fixed checkpoints. Does not reopen the failed controller gate.",
+  "verification": "Frozen inputs and every completed output hash checked; paired statistics and gates recomputed from all 4,320 rows; CSV/JSON cells compared."
+}

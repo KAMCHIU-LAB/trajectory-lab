@@ -24,18 +24,22 @@
 | [正式出价实验](reports/bidding-main/report.html) | 已完成：16 / 6 / 12 个训练 / 验证 / 测试市场，3 个训练种子，6,480 条记录。历史修正未证实 score 改善；响应模型的优势取决于压力场景。 |
 | [控制器诊断](reports/bidding-control/validation-report/report.html) | 已完成验证：11,340 条候选评估记录；新控制器未通过预设晋级门槛，没有开展新市场确认。 |
 | [同口径预测审计](reports/bidding-forecast/report.html) | 已完成：相同验证轨迹上比较神经模型、上下文 ridge 和经验曲线。预测误差更小，不保证转化总量准确或出价收益更高。 |
+| [所选动作与预算节奏审计](reports/bidding-onpolicy/report.html) | 已完成：1,080 个周期精确重放。检查控制器实际选择的动作、预测误差方向和早期预算消耗；属于事后验证诊断，不是因果证明。 |
+| [新市场独立确认](reports/bidding-confirmation/report.html) | 已完成：24 个新市场、4,320 条记录。高估 50% 场景下，原 response 通过冻结的 score、转化保留、违约和种子一致性门槛；失败控制器的门槛仍未通过。 |
 | [离线策略学习基础实验](docs/results.md) | 已完成：Pendulum、公开 PointMaze 子集和 IQL 机制消融，合计 39 次 BC / IQL / DT 训练。 |
 
 同一市场内的广告主、不同方法和重复种子之间存在相关性，记录条数不是独立市场数。
 [实测发现](docs/bidding-findings.md)保留负结果、计算成本和待验证的机制解释。
 
-**一个有价值的取舍：**在 pCVR 高估 50% 的测试场景，response 相对反馈基线的
-score 高 18.3%，转化高 7.5%，CPA 违约频率低 18.1 个百分点；三个训练种子的
-score 差均为正。这是探索性比较：名义场景的 score 反而低 8.1%，不能宣传全面领先。
-主比较中，历史修正的 score 差为 −0.577，市场聚类 95% 区间为 [−1.275, 0.095]。
+**一个获得独立支持的局部结果：**在 24 个全新模拟市场的 pCVR 高估 50% 场景，
+冻结 response 相对冻结反馈基线的 **score 高 17.6%、转化高 8.4%、CPA 违约频率低
+24.8 个百分点**。score 差为 +2.617，市场 bootstrap 95% 区间为 [1.801, 3.424]；
+三个固定模型的 score 差均为正。新市场方案在旧结果发现后、新数据生成前冻结，
+区间条件于这三个检查点。名义场景 score 低 3.8%（差值区间跨零），低估场景低
+17.3%，不能宣传全面领先或线上收益；历史修正和新控制器的负结果仍然保留。
 [查看完整统计口径和失败边界](docs/bidding-findings.md)。
 
-![五种场景下的 score 与 CPA 违约频率差异：探索性结果及市场聚类区间](reports/bidding-analysis/bidding-tradeoffs.svg)
+![五种场景的旧测试与冻结模型独立确认：score 和 CPA 违约频率差异及市场区间](reports/bidding-replication/replication.svg)
 
 ## 值得检查的实现
 

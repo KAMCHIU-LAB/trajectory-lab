@@ -1,7 +1,32 @@
 {
+  "bidding_confirmation": {
+    "decision": "confirmed",
+    "identity": "571eb6c719adcdc96bdba8580ba01527421f8298e94cabbe9820a198b1c7c752",
+    "report": "bidding-confirmation/report.html"
+  },
   "bidding_forecast_audit": {
     "identity": "2c04e9dfb0b50b97e56c52610287c9c323b6e164376146e5fe7d0e2fefdde6a0",
     "report": "bidding-forecast/report.html"
+  },
+  "bidding_onpolicy_audit": {
+    "identity": "562156bb997b91edaeba12da0d397ca11c5f9af9b51904d26ca90ae8a90773fa",
+    "report": "bidding-onpolicy/report.html"
+  },
+  "bidding_replication": {
+    "record": "bidding-replication/figure.json",
+    "studies": {
+      "Confirmation D (24 markets)": {
+        "decision": "confirmed",
+        "export_sha256": "01969106c7f7fb528c22db88e934beb759e009837763a8b8c9d0aea6bb25fb6c",
+        "identity": "571eb6c719adcdc96bdba8580ba01527421f8298e94cabbe9820a198b1c7c752",
+        "status_sha256": "b8a83b16b6c64293b7a5ab348d042cb882d97a8c6ad45dd61a9d957b8b736b82",
+        "summary_sha256": "437387592b65eb2501ec782bd2ebc4d53f9e0a68c3f9b11cc52b28f2e6e896e1"
+      },
+      "Discovery (12 markets)": {
+        "identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+        "summary_sha256": "ac5bccff6c85f096ec0ffb4c0dbd0bd55d2912c4647c0558e598e2ac67d21251"
+      }
+    }
   },
   "bidding_studies": [
     {

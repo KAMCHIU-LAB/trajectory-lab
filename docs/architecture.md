@@ -34,8 +34,11 @@ to an evaluated policy. Future response labels never enter the observation.
 | `bidding/report.py` | Complete-result checks, market-paired summaries and portable report |
 | `bidding_control.py` | Matched-checkpoint paced control, empirical forecast comparator, validation gate and optional new-market confirmation |
 | `bidding_context.py` / `bidding_predictive.py` | Training-only contextual ridge and matched validation forecast diagnostics; no policy-value inference |
+| `bidding_onpolicy.py` | Post-hoc replay audit of forecasts at the actions chosen by frozen policies; no fitting or causal attribution |
+| `bidding_confirmation.py` | Fresh-market response-versus-feedback confirmation, with all-market data barrier and fixed decision gates |
 | `scripts/run_bidding*_background.py` | Process supervision, low-battery pause/resume and process-bound wake assertions |
 | `scripts/export_bidding*.py` | Declared text allowlists, evidence consistency checks and privacy screening |
+| `scripts/package_bidding_replay.py` | Local candidate archive of allowlisted frozen inference inputs; no automatic publication |
 
 Three different records serve different purposes: the **experiment identity**
 pins sources, configuration and runtime; **checkpoints** preserve optimizer and
@@ -48,6 +51,12 @@ candidate controller must pass a declared validation gate before any new
 confirmation markets are generated. A failed gate is a completed negative
 validation result. See the [first protocol](bidding-protocol.md),
 [controller protocol](bidding-control-protocol.md) and [runbook](bidding-runbook.md).
+
+Confirmation D is a separate question: whether the original response-versus-feedback
+discovery persists in 24 fresh markets. It holds three previously trained models
+fixed, generates and seals every market before evaluating a policy, and applies
+one primary scenario's declared gates. It does not reopen the failed controller
+study. See the [confirmation protocol](bidding-confirmation-protocol.md).
 
 ## Offline policy-learning foundation
 
@@ -91,8 +100,11 @@ A new dataset must satisfy the Episode contract before entering this pipeline.
 - `reports/`: selected portable results for review and eventual publication.
 
 The bidding checkpoint loader uses `weights_only=False` for its own training
-metadata. Load only locally produced, trusted checkpoints; no external model
-checkpoint is needed to reproduce these studies.
+metadata. Load only trusted, hash-verified checkpoints. Running the public training
+pipeline needs no external model checkpoint; replaying the exact frozen models
+requires their matching inference files, which are currently a local publication
+candidate. Public reports alone support evidence inspection, not exact frozen-model
+replay. See the [reproduction scopes](bidding-runbook.md#复现范围).
 
 Run commands from the repository root. CLI defaults Minari's cache to the project's
 artifact directory, while respecting an explicitly configured cache location.

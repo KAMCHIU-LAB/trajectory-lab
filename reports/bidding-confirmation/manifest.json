@@ -1,0 +1,282 @@
+{
+  "core": {
+    "checkpoint_sha256": {
+      "11": "d7c09784f3748e5e880ec0cfe08af3c018458427f47d0a23474ee1bf6bd5baf0",
+      "23": "407a780646b825a48b3700984a711b6c89649ca9849d124e8851867ef63ae9d0",
+      "37": "ae388409c27c21782bc4aa71d8bcc1db88f9e36b7689b385f1b3a27429c855d9"
+    },
+    "config": {
+      "actions": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "biases": [
+        0.75,
+        1.0,
+        1.25,
+        1.5
+      ],
+      "checkpoint_sha256": {
+        "11": "d7c09784f3748e5e880ec0cfe08af3c018458427f47d0a23474ee1bf6bd5baf0",
+        "23": "407a780646b825a48b3700984a711b6c89649ca9849d124e8851867ef63ae9d0",
+        "37": "ae388409c27c21782bc4aa71d8bcc1db88f9e36b7689b385f1b3a27429c855d9"
+      },
+      "control_run": "artifacts/bidding/control-v1",
+      "device": "cpu",
+      "feedback_gain": 0.3,
+      "feedback_prior": 8.0,
+      "fixed_tuned": 1.25,
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "frozen": {
+        "control_manifest_sha256": "25a3ea1bfde8b57e8c29b7cd8d438c12c74ab4a587d60fbd18e09c0d52baf565",
+        "control_selection_sha256": "2e38417cc5a5762675f6fde645d1f221807e26a73674305c80676d5f4c43be88",
+        "control_status_sha256": "aeb991088602e7d2327142ce717e1b0208df1a2f02a16608b297e6122a3d1ca3",
+        "main_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+        "main_manifest_sha256": "7d9c28ac74757affbc97b00398a3fe98e0f3ecf22d2fa95bf37ced6321a80fc4",
+        "main_selection_sha256": "4a11b60b12be6f766c434db2440a40611265ca4c2c42db0a9bdf2871123b3b96",
+        "main_status_sha256": "2f9912396da8f2a181e94a1de046628427c6ca2ba1ae984ecce154febb7485c3"
+      },
+      "main_run": "artifacts/bidding/main-v2",
+      "markets": [
+        3301,
+        3302,
+        3303,
+        3304,
+        3305,
+        3306,
+        3307,
+        3308,
+        3309,
+        3310,
+        3311,
+        3312,
+        3313,
+        3314,
+        3315,
+        3316,
+        3317,
+        3318,
+        3319,
+        3320,
+        3321,
+        3322,
+        3323,
+        3324
+      ],
+      "name": "bidding-independent-confirmation-D",
+      "output": "artifacts/bidding/confirmation-v1",
+      "primary": {
+        "bootstrap_rng": 29117,
+        "bootstrap_samples": 10000,
+        "conversion_ratio_ci_lower_at_least": 0.95,
+        "method": "response",
+        "positive_seed_means_required": 3,
+        "reference": "feedback",
+        "scenario": "over_50",
+        "score_ci_lower_strictly_above": 0.0,
+        "violation_delta_ci_upper_at_most": 0.05
+      },
+      "pv_count": 500000,
+      "scenarios": [
+        "calibrated",
+        "over_25",
+        "over_50",
+        "under_25",
+        "mid_over_50"
+      ],
+      "torch_threads": 2,
+      "training_seeds": [
+        11,
+        23,
+        37
+      ]
+    },
+    "config_sha256": "07afb02c4174b64635c506b94f6cc1c8143cbf5832df4e3a77ae4c88facbcfbf",
+    "control_selection": {
+      "best_rate": [
+        10.0,
+        10.0
+      ],
+      "best_rate_index": 0,
+      "candidate": "response-paced-0",
+      "candidate_metrics": {
+        "budget_utilization": 0.82689776391076,
+        "conversions": 13.781481481481482,
+        "cost": 2225.6989941920483,
+        "score": 6.391579243983001,
+        "violation": 0.9592592592592593,
+        "zero_conversions": 0.0
+      },
+      "gate_scope": "Both pooled scenarios and the primary scenario must pass",
+      "interpretation": "Selection estimates are optimistic; independent confirmation is required.",
+      "matched_empirical": "empirical-paced-0-none",
+      "original_response_metrics": {
+        "budget_utilization": 0.8020376327193551,
+        "conversions": 20.38888888888889,
+        "cost": 2213.8399907606213,
+        "score": 15.384743040888306,
+        "violation": 0.6222222222222222,
+        "zero_conversions": 0.001851851851851852
+      },
+      "primary_candidate_metrics": {
+        "budget_utilization": 0.9076533054943068,
+        "conversions": 13.935185185185185,
+        "cost": 2497.5428357662954,
+        "score": 5.2542910739475985,
+        "violation": 0.9629629629629629,
+        "zero_conversions": 0.0
+      },
+      "primary_original_response_metrics": {
+        "budget_utilization": 0.8930971412314501,
+        "conversions": 23.083333333333332,
+        "cost": 2483.4779096503576,
+        "score": 17.06674783469834,
+        "violation": 0.6203703703703703,
+        "zero_conversions": 0.0
+      },
+      "primary_reference": "feedback",
+      "primary_reference_metrics": {
+        "budget_utilization": 0.9315756827909275,
+        "conversions": 21.666666666666668,
+        "cost": 2529.1540206716963,
+        "score": 15.284709790776617,
+        "violation": 0.7222222222222222,
+        "zero_conversions": 0.0
+      },
+      "primary_scenario": "over_50",
+      "promoted": false,
+      "promotion_rule": {
+        "maximum_violation_increase": 0.05,
+        "minimum_conversion_ratio": 0.95,
+        "minimum_score_ratio": 1.1
+      },
+      "reference": "feedback",
+      "reference_metrics": {
+        "budget_utilization": 0.7998598822684572,
+        "conversions": 19.333333333333332,
+        "cost": 2084.4427241135336,
+        "score": 15.574464680380828,
+        "violation": 0.5777777777777777,
+        "zero_conversions": 0.0
+      },
+      "selected_calibration": "none",
+      "split": "validation only; equal weight per scenario and advertiser, averaged training seeds"
+    },
+    "control_status": {
+      "elapsed_this_session_seconds": 98.71365037499345,
+      "phase": "complete-not-promoted",
+      "reason": "No candidate met the predeclared validation gate",
+      "updated_unix": 1794917602.066647
+    },
+    "design": "independent confirmation D, declared after main/control discovery",
+    "expected_rows": 4320,
+    "frozen_records": {
+      "control_manifest_sha256": "25a3ea1bfde8b57e8c29b7cd8d438c12c74ab4a587d60fbd18e09c0d52baf565",
+      "control_selection_sha256": "2e38417cc5a5762675f6fde645d1f221807e26a73674305c80676d5f4c43be88",
+      "control_status_sha256": "aeb991088602e7d2327142ce717e1b0208df1a2f02a16608b297e6122a3d1ca3",
+      "main_manifest_sha256": "7d9c28ac74757affbc97b00398a3fe98e0f3ecf22d2fa95bf37ced6321a80fc4",
+      "main_selection_sha256": "4a11b60b12be6f766c434db2440a40611265ca4c2c42db0a9bdf2871123b3b96",
+      "main_status_sha256": "2f9912396da8f2a181e94a1de046628427c6ca2ba1ae984ecce154febb7485c3"
+    },
+    "implementation": {
+      "bidding_confirmation.py": "d09ec2c3be7d1ec159a7469828f90ddb0091c68f4ad9f18742d406ab02bc97e0",
+      "bidding_control.py": "dae094b1959eace17bd87d295bb4877e4595eb5d7fa40c731125b6fbd08c1d70",
+      "utils.py": "3672c2a7d3db7ed617fc3a14b90d762bb4fde1f53d913f456687c1563a3ac788"
+    },
+    "main_auction": {
+      "sha256": {
+        "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+        "NeurIPSPvGen.py": "1887bd7f4eea497672d1665e1e5b71e8cee843b6bb18ff94acda24733a0767c4",
+        "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+      },
+      "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+    },
+    "main_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+    "main_implementation": {
+      "__init__.py": "bc5ac7adbc8bc092483800594fe7cee147eef1b41ba693c47e12ed3dfea223a2",
+      "__main__.py": "30858b0efeef0a31d6744f1e83ff614799813b0cfc57b2a759c996d0a283eca1",
+      "experiment.py": "3fde6d87faf8c50f869b2de79c3eaf231b1fc447af3a4440931bbb2266f33c73",
+      "learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+      "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+      "models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+      "report.py": "067b78aa5491dc6b31b864b336c22a6598cf7d3c51d5ed0742c601537c4f2647"
+    },
+    "policy_slots": [
+      [
+        "response",
+        11
+      ],
+      [
+        "response",
+        23
+      ],
+      [
+        "response",
+        37
+      ],
+      [
+        "feedback",
+        -1
+      ],
+      [
+        "fixed-1",
+        -1
+      ],
+      [
+        "fixed-tuned",
+        -1
+      ]
+    ],
+    "protocol_sha256": "ac8238d923ed64f6331fe1c71e114637c6b15caf508f4f8fb4f17420806efd1d",
+    "training_sha256": "96864a2410f3da8fdd052cac1bae381691ab281d3bef1f532406015550adc9ee",
+    "uncertainty_scope": "24 new markets, conditional on three fixed response checkpoints"
+  },
+  "identity": "571eb6c719adcdc96bdba8580ba01527421f8298e94cabbe9820a198b1c7c752",
+  "output_sha256": {
+    "market-cache.json": "18106bc6d30d8bb4a08a208ba9925c499a681d2bb0874eb3e6a6f7f2d5ce0be0",
+    "market-results/3301.json": "1f8a9f554c59a3d617cb5df98cb93574dd8912e850daca4fa2a04329626d586d",
+    "market-results/3302.json": "c0605c36e80b75cb62ab82c8ce255f6befbbee8d3b3d00b2b264a19972fd7652",
+    "market-results/3303.json": "ecf9666dea5ac57e2c2647e3971944849b5ae1b8bcc0e18901cacebc1f30bce3",
+    "market-results/3304.json": "78ccaab7ee6684915f37e2525b11797b5aee7e393865a00d947e116bf9173847",
+    "market-results/3305.json": "34a11341d304e214ff1bb49e5911548005c9724e07d35f47b908ca9f12562d6a",
+    "market-results/3306.json": "799d9dd04fbdbdfa5737ea02417b45b3244f88fed88e13a1249c04ce37d18d8e",
+    "market-results/3307.json": "bb31e52f64da01dc699ff001fad7d147588470d63fd871ad871a89df00c63da1",
+    "market-results/3308.json": "d7a83ff805362ea03376d78972d2b98cc354fbc32bf9a7b2518cbe1272e63db2",
+    "market-results/3309.json": "d5ffb77c660ece1444d66e7e57c1fe56f7820c2e2566854b9722bb88f6c2f858",
+    "market-results/3310.json": "4114a34de619f3ec650608f597a274fed175adce635aa07f0b9d2e8c0c55d097",
+    "market-results/3311.json": "bfd2e830914dda38eca891f376da81e875469f521ce38d0d9aaec32494297143",
+    "market-results/3312.json": "dfb39e45f95ba160e0fa24fb8e1e923d5aee87b0d2f7929ee3f57d64acfda6a1",
+    "market-results/3313.json": "55c2cc66099baa0d4100011624116ea0b1b0ef15a7ffb56db6b4021ed6af99b9",
+    "market-results/3314.json": "b8453c54d6957ce5421e73256a3daa072439b7f558c5bb067f28a1b4e0888eac",
+    "market-results/3315.json": "aade6b178bdb5315b4301feb0fbd10dfd772bb7945652c49cc5f41e54827c162",
+    "market-results/3316.json": "7ea6bc9e17d679b25bd6ba981de0e3d02201be37bad2fe9d667209879d318c43",
+    "market-results/3317.json": "e314a4e075ee4448c50728f165a898597d29e24c88dc5db4776d6608a827ea6b",
+    "market-results/3318.json": "1b645a9aa9ce6dc13e38d92bbb01f7abd8d8725fb903260f2214a581c8f0cac4",
+    "market-results/3319.json": "d8b877ea244e81429904b35f0e261fc5df321740512314c9289ce2dc38835f1d",
+    "market-results/3320.json": "e20507ba2093401d5d3e75320a08361b8b30f7ebdac5ecc457f96b57a3ce1385",
+    "market-results/3321.json": "7e019fc06067ac2d76194659747d1cf95a2db3c3c7443a64bee30197dedf485f",
+    "market-results/3322.json": "c2f7543e0c41b208239407ee424e33f7c748f0688b9f8bb6eb29cc8db424c7b1",
+    "market-results/3323.json": "ff27141de49684f9e9637305cb1519fd0aa64c805517106187322086140f5f0e",
+    "market-results/3324.json": "c9eb3d268a3ce16537509931d0f697215dbc28e8ece06b41ebbbea19f44e9d85",
+    "report.html": "5cfd3ea46bf0eed915d1a234f207483cc8c0d2e390ed28c4611f9bcf2bb70a37",
+    "results.csv": "11b347871d1fbf887779466c19f9c5318874bff1a4321c726829c254910c7655",
+    "results.json": "db51409113fccef0fd263a4d1017a4871e74a36c677afd11b3ce38f7944cd57e",
+    "summary.json": "437387592b65eb2501ec782bd2ebc4d53f9e0a68c3f9b11cc52b28f2e6e896e1"
+  }
+}
