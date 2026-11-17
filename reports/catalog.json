@@ -1,5 +1,24 @@
 {
+  "bidding_studies": [
+    {
+      "report": null,
+      "stage": "\u6b63\u5f0f\u7814\u7a76\u5f85\u5b8c\u6210",
+      "study": "bidding-main"
+    },
+    {
+      "report": null,
+      "stage": "\u7b49\u5f85\u5b8c\u6574\u516c\u5f00\u5bfc\u51fa",
+      "study": "bidding-control"
+    },
+    {
+      "identity": "0246e0596c6e602f18ba70da06952f9c5405e83ae73478f0cd13217e4831da23",
+      "report": "bidding-pilot/report.html",
+      "stage": "\u5f00\u53d1\u7ed3\u679c \u00b7 \u53ef\u884c\u6027\u5b9e\u9a8c",
+      "study": "bidding-pilot"
+    }
+  ],
   "completed_runs": 39,
+  "completed_runs_scope": "offline RL foundation studies only",
   "mechanism_check": "passed",
   "studies": [
     {

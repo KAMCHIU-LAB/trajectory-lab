@@ -1,150 +1,95 @@
 # TrajectoryLab
 
-**面向生成式出价与离线策略学习的公开、可复核实验。**
+**可控生成式出价：响应预测、预算 / CPA 控制与可复核的压力评测。**
 
-[English](README.md) · [实验协议](docs/protocol.md) · [实测结论](docs/results.md) ·
-[架构](docs/architecture.md)
+[English](README.md) · [研究定位](docs/bidding-research-map.md) ·
+[出价实验协议](docs/bidding-protocol.md) · [架构](docs/architecture.md)
 
-## 当前主线：预测失准下的可控生成式出价
+## 研究什么
 
-问题是：当可见 pCVR 高估、低估或在周期中变化时，历史反馈修正能否改善响应模型出价的转化与 CPA 约束权衡？
-使用公开 AuctionNet 流量生成器和拍卖内核，独立实现小型 DT、响应预测模型及数值控制器；
-用固定出价、验证集调参、反馈控制，以及同检查点下的反馈修正、硬/软 CPA 决策作对照。
+出价策略看到的是预测转化率，花掉的是真实预算，收到的转化反馈又有噪声。
+当预测发生偏移时，学习到的响应模型能否比调过参的固定乘数、简单反馈控制器，
+取得更好的转化与 CPA 约束权衡？
 
-- [实验协议与主比较](docs/bidding-protocol.md)：先声明信息边界、指标和结论适用范围。
-- [研究定位及与 GRM / AIGB-R1 的差异](docs/bidding-research-map.md)。
-- [本地运行与断点恢复](docs/bidding-runbook.md)。
-- [第二轮：控制器诊断与独立确认方案](docs/bidding-control-protocol.md)，在正式测试结果查看前写下。
-- [已完成的可行性报告](reports/bidding-pilot/report.html) · [实测发现与开发记录](docs/bidding-findings.md)。
+本项目用公开 AuctionNet 流量生成器和拍卖代码研究这个问题。
+小型因果序列模型预测候选动作对应的成本 / 转化曲线，独立的数值控制器选择出价。
+把预测与控制分开，才能在同一模型检查点下判断反馈修正、决策规则各自的作用。
+当前实现中没有 LLM 规划器。
 
-小规模版本已完成真实数据生成、MPS 训练和 480 条逐广告主评估记录。
-**目前没有证明学习模型优于简单出价**：固定乘数基线很强，硬筛预测 CPA 还可能压低消耗。
-三种子、更大流量、全新测试市场的实验正在执行，最终结论待完整结果。
-这是自定义固定对手研究，不是官方 AuctionNet 排行榜复现；响应模型参考 GRM 思路，未复现其完整规模。
-不包含公司代码、数据或线上指标；保留 AI 辅助开发说明。
+## 当前证据
 
-## 已完成的离线策略学习基础实验
+| 研究 | 状态与可查看的证据 |
+| --- | --- |
+| [出价可行性实验](reports/bidding-pilot/report.html) | 已完成：1 个训练种子，480 条广告主周期评估记录。**尚未证明学习策略更优**；固定出价有竞争力，硬筛预测 CPA 会压低消耗。 |
+| [扩大出价实验](docs/bidding-protocol.md) | 执行中：16 个训练、6 个验证、12 个新测试市场；6 个受测广告主、3 个训练种子、5 种场景。最终效果结论待完整结果。 |
+| [控制器诊断](docs/bidding-control-protocol.md) | 已实现并排队：复用冻结的响应模型检查点，验证集达到预先声明的门槛后，才生成 24 个独立确认市场。 |
+| [离线策略学习基础实验](docs/results.md) | 已完成：Pendulum、公开 PointMaze 子集和 IQL 机制消融，合计 39 次 BC / IQL / DT 训练。 |
 
-核心问题：在明确的小规模训练预算下，筛选高回报轨迹是否一定有利于策略学习？
-这种影响是否会随行为克隆、隐式价值学习和回报条件序列建模而改变？
+同一市场内的广告主、不同方法和重复种子之间存在相关性，记录条数不是独立市场数。
+[实测发现](docs/bidding-findings.md)保留负结果、计算成本和待验证的机制解释。
 
-这里提供 BC、IQL 和轻量 DT 的独立实现，以及能够追踪到原始数据、配置和逐次实验的证据链。
-项目使用公开环境和公开数据，未使用雇主代码、内部数据、公司通讯软件或线上业务指标。
+## 值得检查的实现
 
-## 先看什么
+| 部分 | 实现及作用 |
+| --- | --- |
+| 精确拍卖响应缓存 | [市场适配器](src/trajectorylab/bidding/market.py)：在声明的动作网格上缓存公开内核输出，各策略复用相同随机市场结果 |
+| 学习策略 | [训练与执行](src/trajectorylab/bidding/learning.py)：因果 DT、单调响应模型；归一化只拟合训练市场 |
+| 预测与控制的分离 | [逐时段控制研究](src/trajectorylab/bidding_control.py)：同一检查点比较控制器、经验响应曲线，以及完整的简单策略参数网格 |
+| 反馈信息边界 | 策略只接收当前观测和过去实际反馈；发生预算截断的反馈不进入未截断预测的比例修正 |
+| 证据与恢复 | 源码 / 配置指纹、优化器与随机状态检查点、按市场配对统计、原始 CSV / JSON 和可公开的文本导出 |
 
-1. [实测结论与失败分析](docs/results.md)：先判断结论是否值得相信。
-2. [实验协议](docs/protocol.md)：理解数据划分、训练预算、算法变体和统计口径。
-3. [BC / IQL 损失](src/trajectorylab/algorithms.py) 与 [DT 因果结构](src/trajectorylab/models.py)。
-4. [正确性与端到端测试](tests/)：检查实现是否满足声明的约束。
-5. [实验报告](reports/index.html)：表格、曲线、覆盖投影和原始记录。
+响应模型使用模拟器干预产生的密集反事实标签，DT 使用行为策略轨迹，两者监督不同，
+不能直接把分数差归因于架构。各方法能看到什么、主比较是什么、哪些分析属于探索，
+都写在[实验协议](docs/bidding-protocol.md)中。
 
-## 实验设计
+## 本地运行
 
-| 实验 | 设计 | 能回答的问题 |
-| --- | --- | --- |
-| Pendulum 受控实验 | 三种完整轨迹选择方式，每组 12,000 条 transition；三种算法、三个训练种子 | 同一数据预算下，轨迹回报筛选与算法表现的关系 |
-| PointMaze 外部检查 | Minari 公开数据固定抽取 600 条源轨迹，再划分并选择 20,000 条训练 transition | 数据接口和实现能否运行在另一个标准公开任务上 |
-| IQL 权重消融 | 三个种子，优势温度设为零 | 加权 actor 更新是否按预期退化为 BC |
-
-三组正式实验合计 39 次训练；每次 10,000 次梯度更新，用相同的八个最终环境种子评测。
-误差为**三个训练种子的均值之间的样本标准差**，不把评测回合当成更多训练种子。
-
-公开 PointMaze 使用上游恢复的评测环境。它与训练片段的目标切换方式和长度不同，
-不能直接把本项目的子集回报与论文全量榜单比较。详细影响见实测分析。
-
-## 这组实验能给出什么判断
-
-在 Pendulum 上按训练种子配对后，高回报筛选使 BC、IQL 的回报在 3 个种子上都高于均匀抽样；
-DT 的平均差为 +34.55，但三个种子差值的样本标准差为 67.85，且只有 2/3 个种子上升，不能据此说收益稳定。
-按回报分层抽样没有超过均匀抽样。PointMaze 上 DT 均值较高，但三种方法的“是否到过目标”都达到 100%，
-这个成功率口径已经失去区分度。把结果、波动和未解决的问题放在一起，可以看出这些发现适用于哪些设置。
-
-对生成式出价，可以把这些发现转成待检验的研究假设：高价值日志筛选会不会
-降低低频流量场景的样本覆盖？模型的回报目标与实际预算周期是否一致？策略离线表现好时，是否仍在日志可支持
-的状态和动作范围内？新主线使用公开模拟器研究更具体的预测失准问题；真实业务结论仍需独立实验。本项目不包含公司数据，也不声称
-验证过业务收益。Pendulum / PointMaze 的分数只描述这两个模拟任务。
-
-## 本地启动
-
-在仓库根目录执行，建议 Python 3.12：
+在仓库根目录执行。参考环境是 Apple M1、Python 3.12，出价配置使用 MPS。
+其他设备需在独立本地配置中明确声明，形成新的实验身份。
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e '.[dev]'
-make doctor
-make check
-make smoke
-make report
-make serve
+python -m pip install -e .
+python -m trajectorylab.bidding --config configs/bidding-pilot.toml
 ```
 
-打开 `http://127.0.0.1:8765`。烟雾实验会真实训练并评测三种算法，但只有 100 次更新，
-只能证明链路运行，不能用于判断算法优劣。
+这会真实生成数据、训练并评估，输出目录在日志中打印。Pilot 用于检查链路，不能证明算法优势。
+完整实验、分阶段执行、断点恢复和低电量后台运行见[运行指南](docs/bidding-runbook.md)。
 
-`make report` / `make serve` 展示最近调用的单个实验套件，目录是 `reports/latest`。
-已安装环境后，用 `make demo` 打开三组正式结果的总入口；`make portal` 根据已导出的
-正式实验记录重新生成入口页。
-
-如果只想查看已提交的正式结果，无需安装任何训练依赖：
+只查看已提交的报告，无需安装机器学习依赖：
 
 ```bash
 python3 -m http.server 8765 --bind 127.0.0.1 --directory reports
+# 打开 http://127.0.0.1:8765
 ```
 
-正式复现实验：
+报告不依赖账号、API Key 或在线后端。公开导出不包含模型权重、流量数组、本机日志和运行器状态。
+GitHub 显示 HTML 源码，查看页面请本地启动上述服务。
 
-```bash
-make study
-make ablation
-python -m pip install -e '.[benchmark]'
-make pointmaze
-```
+## 离线策略学习基础
 
-首次运行 PointMaze 会下载约 530 MiB 的公开数据。本机采用 Apple M1、CPU 单线程训练；
-DT 是主要耗时项。安装环境、数据、checkpoint 总共应预留数 GB 空间。
+这部分展示轨迹选择、算法实现和实验判断能力，分数只描述对应模拟任务。
 
-每个套件有自己的配置、代码、数据与运行时指纹。中断后重新执行同一命令，会从最近
-checkpoint 恢复；完成后重复执行会复用结果。套件目录在日志中打印。
+- **Pendulum：**高回报筛选使 BC / IQL 的三个配对种子都上升；DT 平均差为 +34.55，
+  但差值标准差为 67.85，仅 2/3 种子上升，不能认为收益稳定。
+- **PointMaze：**DT 平均回报较高，但所有方法的“是否曾到达目标”成功率都是 100%，指标已经饱和。
+- **IQL 消融：**优势温度设为零时，在声明的实现和种子下恢复匹配的 BC actor 更新。
 
-已停止的 CPU 套件也可并行续跑：
+[结果与限制](docs/results.md) · [复现实验](docs/offline-policy-guide.md) ·
+[离线学习协议](docs/protocol.md)
 
-```bash
-python scripts/complete_suite.py --suite artifacts/suites/<日志里的套件目录名> --workers 3
-```
+## 适用范围与来源
 
-先停止原运行器；同一套件不可同时使用两个运行器。并行工具记录自身源码摘要、进程数和
-每个训练任务的线程数，沿用同一学习器与随机状态恢复逻辑。多任务同时运行会影响耗时，
-因此这里不声称得到严格隔离的算法速度比较。
+这是从 AuctionNet 派生的自定义固定对手模拟，采用自定义硬预算结算规则。
+对手不适应策略，也不执行自身预算；项目不是官方排行榜复现。
+模拟分数不能直接证明生产收益或业务因果效果。仓库不包含雇主代码、数据、内部集成或线上指标。
 
-### 网络与环境
+- [AuctionNet 来源与保留许可](third_party/auctionnet/README.md)。
+- [GRM](https://arxiv.org/abs/2605.27811)：响应建模路线的研究参考，本项目未复现完整论文。
+- [AIGB-R1](https://arxiv.org/abs/2607.17281)：规划 / 执行式出价 Agent 的研究背景，当前没有实现其 LLM Planner、PromptDT 或 D-GRPO。
+- [IQL](https://arxiv.org/abs/2110.06169)、[Decision Transformer](https://arxiv.org/abs/2106.01345)、[Gymnasium Pendulum](https://gymnasium.farama.org/environments/classic_control/pendulum/) 与 [Minari PointMaze](https://minari.farama.org/main/datasets/D4RL/pointmaze/umaze-v2/)。
 
-- 下载失败时可使用你自己的网络代理，对当前安装或运行命令设置代理即可。
-- 项目不要求 Hugging Face 登录、模型 API Key 或其他账号，也不写入代理地址和凭据。
-- `requirements.lock` 是本次本机验证环境的精确记录；跨系统安装优先按 `pyproject.toml`
-  解析适配本机的依赖。跨版本、跨加速器的逐位一致性未作保证。
-
-## 实现中值得检查的地方
-
-- 数据以完整轨迹划分；相同内容的轨迹先分组，避免重复样本跨集合。
-- 状态归一化只拟合训练数据，绘图投影也不使用测试数据。
-- IQL 区分真正终止与时间截断；actor 与 BC 共用结构和似然目标。
-- DT 使用 `return → state → action` token 顺序；预测当前动作时无法读取动作标签。
-- 验证种子与最终测试种子分离；固定预算后评测最后一个 checkpoint，不按测试分数挑模型。
-- checkpoint 保存模型、优化器、NumPy / Torch 随机状态和训练进度。
-- 报告拒绝不完整套件、重复身份、评测种子变更及原始回报与汇总不一致的结果。
-- 支持距离只是描述性诊断，不能当成可靠的分布外判别器或安全证明。
-
-## 能说明和不能说明的事情
-
-这个项目展示离线 RL 的实现、数据处理、实验设计和结果审查能力。当前任务和训练预算都较小，
-三个种子也不足以支持普遍结论。现有证据只描述这两个模拟任务与指定配置，没有验证真实业务收益、算法排名或论文原分数。
-项目价值也体现在从公开证据里提出下一轮实验：检验 PointMaze 的回报条件偏移，再比较回报质量与状态覆盖。
-后续问题、控制变量和评测隔离方案见[维护路线](docs/roadmap.md)。
-
-方法与数据的原始来源在 [README](README.md#references-and-attribution) 和[实验协议](docs/protocol.md)中列出。
-开发使用了 AI 编程辅助；公开方法及其名称不作为项目的算法创新。
-
-代码使用 MIT 许可；公开数据遵循上游条款，仓库不重新分发上游数据和训练 checkpoint。
-保留的 AuctionNet 源码子集使用独立的 [Apache-2.0 许可与来源声明](third_party/auctionnet/README.md)。
+算法来自公开方法，项目贡献是独立实现和可检查的实验；开发使用了 AI 编程辅助。
+代码使用 [MIT](LICENSE)，AuctionNet 子集保留独立的 [Apache-2.0 条款](third_party/auctionnet/README.md)，
+上游数据遵循各自条款，不在仓库重新分发。
