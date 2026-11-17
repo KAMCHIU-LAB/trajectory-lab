@@ -133,6 +133,41 @@ def bidding_cards(reports: Path):
     return "".join(cards), catalog
 
 
+def forecast_audit(reports: Path):
+    directory = reports / "bidding-forecast"
+    try:
+        if directory.is_symlink() or not directory.resolve().is_relative_to(reports.resolve()):
+            return None
+        for name in ("export.json", "manifest.json", "summary.json"):
+            if not (directory / name).resolve().is_relative_to(directory.resolve()):
+                return None
+        record = read_json(directory / "export.json")
+        manifest = read_json(directory / "manifest.json")
+        summary = read_json(directory / "summary.json")
+        required = {
+            "manifest.json",
+            "summary.json",
+            "ridge-manifest.json",
+            "ridge-summary.json",
+            "report.html",
+        }
+        if (
+            set(record["files_sha256"]) != required
+            or record["run_identity"] != manifest["identity"]
+            or summary["identity"] != manifest["identity"]
+        ):
+            return None
+        for name, expected in record["files_sha256"].items():
+            path = directory / name
+            if not path.resolve().is_relative_to(directory.resolve()):
+                return None
+            if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+                return None
+        return {"identity": manifest["identity"], "report": "bidding-forecast/report.html"}
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+
+
 def build(root: Path) -> Path:
     reports = root / "reports"
     studies = [
@@ -182,11 +217,23 @@ def build(root: Path) -> Path:
         raise ValueError("The mechanism check has not passed")
     total = sum(study["runs"] for study in catalog)
     bidding, bidding_catalog = bidding_cards(reports)
+    audit = forecast_audit(reports)
+    audit_panel = (
+        '<section><div class="section-title"><h2>预测审计 · 误差与总量偏差</h2>'
+        '<a href="bidding-forecast/report.html">同口径验证报告 ↗</a></div>'
+        "<p>在相同验证行为轨迹上比较三个神经模型种子、ridge 与训练集经验曲线。"
+        "经验曲线仅有当前时段预测。"
+        "分别查看当前／剩余响应的误差和预测总量比，检查预测是否适合资源决策。"
+        "这是已用于模型选择的验证集诊断，不能单独证明出价收益或控制器瓶颈。</p></section>"
+        if audit
+        else ""
+    )
     catalog_data = {
         "completed_runs": total,
         "completed_runs_scope": "offline RL foundation studies only",
         "studies": catalog,
         "bidding_studies": bidding_catalog,
+        "bidding_forecast_audit": audit,
         "mechanism_check": mechanism["status"],
     }
     write_json(reports / "catalog.json", catalog_data)
@@ -212,6 +259,7 @@ section{{margin-top:22px;padding:28px;background:white;border:1px solid #dbe3ea;
 <header><div class="eyebrow">公开模拟 · 预测误差 · 可追溯的实验</div><h1>生成式出价：预测失准时，反馈能改善决策吗？</h1><p>在公开 AuctionNet 的自定义固定对手环境中，比较简单出价、反馈控制与历史条件模型，检验转化、CPA 违约和预算使用的取舍。下面的阶段标签只依据已公开的完整导出；实验完成与预设接受标准是否达到分别标注。</p></header>
 <div class="cards">{bidding}</div>
 <div class="note">当前入口保留开发结果和未通过的研究阶段。尚无完整公开导出的阶段显示待完成，不能从数据生成或训练进度推断收益。所有出价结论均限于该固定对手模拟，不代表官方基准、线上效果或通用安全保证；calibrated 仅表示未额外注入预测偏差。</div>
+{audit_panel}
 <section><div class="section-title"><h2>基础实验 · 离线 RL 与数据诊断</h2><a href="catalog.json">实验索引 / JSON ↗</a></div><p>以下三份已完成的基础实验研究数据选择、公开任务与机制校验，保留完整报告及原始记录。</p><div class="facts"><div><strong>{total}</strong><span>基础实验已完成运行</span></div><div><strong>3</strong><span>基础实验报告</span></div></div><div class="cards">{"".join(cards)}</div>
 <details><summary>展开基础实验的分组回报与机制校验</summary>
 {"".join(tables)}

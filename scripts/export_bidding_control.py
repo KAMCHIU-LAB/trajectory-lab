@@ -278,7 +278,13 @@ def export(source: Path, destination: Path) -> None:
         expected_csv = [
             {key: "" if row.get(key) is None else str(row[key]) for key in fields} for row in rows
         ]
-        if reader.fieldnames != fields or csv_rows != expected_csv:
+        # JSON serialization sorts keys; CSV preserves the original column order.
+        if (
+            reader.fieldnames is None
+            or len(reader.fieldnames) != len(set(reader.fieldnames))
+            or set(reader.fieldnames) != set(fields)
+            or csv_rows != expected_csv
+        ):
             raise RuntimeError("CSV differs from JSON raw evidence")
         counts[split] = len(rows)
 

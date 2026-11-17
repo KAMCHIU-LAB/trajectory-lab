@@ -1,0 +1,528 @@
+{
+  "checkpoint_sha256": {
+    "11": "d7c09784f3748e5e880ec0cfe08af3c018458427f47d0a23474ee1bf6bd5baf0",
+    "23": "407a780646b825a48b3700984a711b6c89649ca9849d124e8851867ef63ae9d0",
+    "37": "ae388409c27c21782bc4aa71d8bcc1db88f9e36b7689b385f1b3a27429c855d9"
+  },
+  "config": {
+    "calibration_prior": 3.0,
+    "confirmation": {
+      "bootstrap_samples": 10000,
+      "maximum_violation_increase": 0.05,
+      "minimum_conversion_ratio": 0.95,
+      "minimum_positive_seeds": 3,
+      "minimum_score_delta": 0.0
+    },
+    "confirmation_markets": [
+      3201,
+      3202,
+      3203,
+      3204,
+      3205,
+      3206,
+      3207,
+      3208,
+      3209,
+      3210,
+      3211,
+      3212,
+      3213,
+      3214,
+      3215,
+      3216,
+      3217,
+      3218,
+      3219,
+      3220,
+      3221,
+      3222,
+      3223,
+      3224
+    ],
+    "discount_half_life": 8.0,
+    "dual_rates": [
+      [
+        10.0,
+        10.0
+      ],
+      [
+        10.0,
+        50.0
+      ],
+      [
+        50.0,
+        10.0
+      ],
+      [
+        50.0,
+        50.0
+      ]
+    ],
+    "main_run": "artifacts/bidding/main-v2",
+    "name": "paced-response-control-v1",
+    "output": "artifacts/bidding/control-v1",
+    "primary_scenario": "over_50",
+    "promotion": {
+      "maximum_violation_increase": 0.05,
+      "minimum_conversion_ratio": 0.95,
+      "minimum_score_ratio": 1.1
+    }
+  },
+  "evidence_layout": {
+    "confirmation_markets": [
+      3201,
+      3202,
+      3203,
+      3204,
+      3205,
+      3206,
+      3207,
+      3208,
+      3209,
+      3210,
+      3211,
+      3212,
+      3213,
+      3214,
+      3215,
+      3216,
+      3217,
+      3218,
+      3219,
+      3220,
+      3221,
+      3222,
+      3223,
+      3224
+    ],
+    "confirmation_policies": [
+      [
+        "empirical-paced-0-none",
+        -1
+      ],
+      [
+        "feedback",
+        -1
+      ],
+      [
+        "fixed-1",
+        -1
+      ],
+      [
+        "fixed-tuned",
+        -1
+      ],
+      [
+        "response",
+        11
+      ],
+      [
+        "response",
+        23
+      ],
+      [
+        "response",
+        37
+      ],
+      [
+        "response+correction",
+        11
+      ],
+      [
+        "response+correction",
+        23
+      ],
+      [
+        "response+correction",
+        37
+      ],
+      [
+        "response-paced-0",
+        11
+      ],
+      [
+        "response-paced-0",
+        23
+      ],
+      [
+        "response-paced-0",
+        37
+      ],
+      [
+        "response-paced-budget-only",
+        11
+      ],
+      [
+        "response-paced-budget-only",
+        23
+      ],
+      [
+        "response-paced-budget-only",
+        37
+      ],
+      [
+        "response-paced-cumulative",
+        11
+      ],
+      [
+        "response-paced-cumulative",
+        23
+      ],
+      [
+        "response-paced-cumulative",
+        37
+      ],
+      [
+        "response-paced-discounted",
+        11
+      ],
+      [
+        "response-paced-discounted",
+        23
+      ],
+      [
+        "response-paced-discounted",
+        37
+      ]
+    ],
+    "focal_agents": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40
+    ],
+    "scenarios": [
+      "calibrated",
+      "over_25",
+      "over_50",
+      "under_25",
+      "mid_over_50"
+    ],
+    "training_seeds": [
+      11,
+      23,
+      37
+    ],
+    "validation_markets": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006
+    ],
+    "validation_policies": [
+      [
+        "empirical-paced-0-budget-only",
+        -1
+      ],
+      [
+        "empirical-paced-0-cumulative",
+        -1
+      ],
+      [
+        "empirical-paced-0-discounted",
+        -1
+      ],
+      [
+        "empirical-paced-0-none",
+        -1
+      ],
+      [
+        "empirical-paced-1-budget-only",
+        -1
+      ],
+      [
+        "empirical-paced-1-cumulative",
+        -1
+      ],
+      [
+        "empirical-paced-1-discounted",
+        -1
+      ],
+      [
+        "empirical-paced-1-none",
+        -1
+      ],
+      [
+        "empirical-paced-2-budget-only",
+        -1
+      ],
+      [
+        "empirical-paced-2-cumulative",
+        -1
+      ],
+      [
+        "empirical-paced-2-discounted",
+        -1
+      ],
+      [
+        "empirical-paced-2-none",
+        -1
+      ],
+      [
+        "empirical-paced-3-budget-only",
+        -1
+      ],
+      [
+        "empirical-paced-3-cumulative",
+        -1
+      ],
+      [
+        "empirical-paced-3-discounted",
+        -1
+      ],
+      [
+        "empirical-paced-3-none",
+        -1
+      ],
+      [
+        "feedback",
+        -1
+      ],
+      [
+        "feedback-grid-g0.3-p1",
+        -1
+      ],
+      [
+        "feedback-grid-g0.3-p3",
+        -1
+      ],
+      [
+        "feedback-grid-g0.7-p1",
+        -1
+      ],
+      [
+        "feedback-grid-g0.7-p3",
+        -1
+      ],
+      [
+        "feedback-grid-g0.7-p8",
+        -1
+      ],
+      [
+        "feedback-grid-g1.2-p1",
+        -1
+      ],
+      [
+        "feedback-grid-g1.2-p3",
+        -1
+      ],
+      [
+        "feedback-grid-g1.2-p8",
+        -1
+      ],
+      [
+        "fixed-1",
+        -1
+      ],
+      [
+        "fixed-grid-0",
+        -1
+      ],
+      [
+        "fixed-grid-0.25",
+        -1
+      ],
+      [
+        "fixed-grid-0.5",
+        -1
+      ],
+      [
+        "fixed-grid-0.75",
+        -1
+      ],
+      [
+        "fixed-grid-1.5",
+        -1
+      ],
+      [
+        "fixed-grid-1.75",
+        -1
+      ],
+      [
+        "fixed-grid-2",
+        -1
+      ],
+      [
+        "fixed-grid-2.5",
+        -1
+      ],
+      [
+        "fixed-grid-3",
+        -1
+      ],
+      [
+        "fixed-tuned",
+        -1
+      ],
+      [
+        "response",
+        11
+      ],
+      [
+        "response",
+        23
+      ],
+      [
+        "response",
+        37
+      ],
+      [
+        "response+correction",
+        11
+      ],
+      [
+        "response+correction",
+        23
+      ],
+      [
+        "response+correction",
+        37
+      ],
+      [
+        "response-paced-0",
+        11
+      ],
+      [
+        "response-paced-0",
+        23
+      ],
+      [
+        "response-paced-0",
+        37
+      ],
+      [
+        "response-paced-1",
+        11
+      ],
+      [
+        "response-paced-1",
+        23
+      ],
+      [
+        "response-paced-1",
+        37
+      ],
+      [
+        "response-paced-2",
+        11
+      ],
+      [
+        "response-paced-2",
+        23
+      ],
+      [
+        "response-paced-2",
+        37
+      ],
+      [
+        "response-paced-3",
+        11
+      ],
+      [
+        "response-paced-3",
+        23
+      ],
+      [
+        "response-paced-3",
+        37
+      ],
+      [
+        "response-paced-budget-only",
+        11
+      ],
+      [
+        "response-paced-budget-only",
+        23
+      ],
+      [
+        "response-paced-budget-only",
+        37
+      ],
+      [
+        "response-paced-cumulative",
+        11
+      ],
+      [
+        "response-paced-cumulative",
+        23
+      ],
+      [
+        "response-paced-cumulative",
+        37
+      ],
+      [
+        "response-paced-discounted",
+        11
+      ],
+      [
+        "response-paced-discounted",
+        23
+      ],
+      [
+        "response-paced-discounted",
+        37
+      ]
+    ]
+  },
+  "experiment_kind": "validation-selected controller refinement with untouched confirmation markets",
+  "identity": "5245690cf800d87dc3bcf5141c759e103b912186b52b766267e7bbb0cc0d5d45",
+  "implementation_sha256": "dae094b1959eace17bd87d295bb4877e4595eb5d7fa40c731125b6fbd08c1d70",
+  "main_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+  "main_selection": {
+    "correction": {
+      "dt": {
+        "prior": 8.0,
+        "validation_scores": {
+          "1.0": 5.885979578925994,
+          "3.0": 8.61389491519447,
+          "8.0": 10.825538125644552
+        }
+      },
+      "response": {
+        "prior": 8.0,
+        "validation_scores": {
+          "1.0": 14.417980787629253,
+          "3.0": 14.58297376644148,
+          "8.0": 14.956385182197412
+        }
+      }
+    },
+    "feedback": {
+      "gain": 0.3,
+      "prior": 8.0
+    },
+    "feedback_validation_scores": {
+      "g0.3-p1.0": 14.967983404792818,
+      "g0.3-p3.0": 15.523508212615608,
+      "g0.3-p8.0": 15.574464680380828,
+      "g0.7-p1.0": 14.431063109647647,
+      "g0.7-p3.0": 14.661270003549271,
+      "g0.7-p8.0": 14.767854111847717,
+      "g1.2-p1.0": 12.915587795889802,
+      "g1.2-p3.0": 13.676825114000005,
+      "g1.2-p8.0": 14.246813644843405
+    },
+    "fixed": {
+      "action": 1.25,
+      "validation_scores": {
+        "0.0": 0.0,
+        "0.25": 0.08888888888888889,
+        "0.5": 3.6332880732737736,
+        "0.75": 9.493031662109388,
+        "1.0": 12.273150235482232,
+        "1.25": 12.770261695189657,
+        "1.5": 11.191119459261124,
+        "1.75": 9.50244292622217,
+        "2.0": 7.647559246776574,
+        "2.5": 5.193738968719933,
+        "3.0": 4.111271527752276
+      }
+    },
+    "selection_split": "validation only; equal weight per scenario/campaign"
+  },
+  "main_selection_sha256": "4a11b60b12be6f766c434db2440a40611265ca4c2c42db0a9bdf2871123b3b96"
+}

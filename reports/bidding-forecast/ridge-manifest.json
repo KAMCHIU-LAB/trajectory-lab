@@ -1,0 +1,149 @@
+{
+  "actions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "data": {
+    "train": {
+      "market_identities": {
+        "1001": "2ebc40efe2011bc26d82c8d194a81b2d089c6e873cfce464ba1be950fc0cb6ee",
+        "1002": "b928037496b9e5343aef4bbfee0b7293fd7e70eeeab78589c4104f588bd4c9bc",
+        "1003": "b8f2aca42d77c40c595bb4966a5d473e91331378e9919763f431d18877625bc4",
+        "1004": "319043cdde5922b74afefdb37843e7809480b29169ba1bb0fd82d45cbbddc9f7",
+        "1005": "c7d50efabd0889eeab3e1a5e0e8aeef7a543c5f5c9a9d432dd707f2d219710aa",
+        "1006": "95d3fb3b4744e9b19ded808702fa59e2916f5317a48cd14d63a2324a388fe8fa",
+        "1007": "738b18018e60cd5670943c49372ee7cf016ead046127937e23e6f4c2110c5f1f",
+        "1008": "49ce3627bd64685285f7ca7e9f83b0ebe5081a2a325efd383f26164adbf31a59",
+        "1009": "e08c736cc61e3fd0ce45beb31149d765b6ce791dbe864cbf5ffe960c7d63f133",
+        "1010": "75692d46fb8aa7b1c59b10f0dc8a8ed62ce2ca29b09a7cc47bfeb4bc57a44ada",
+        "1011": "31869151c4771b894d5b25ece1ca7585f76444d42631e02b484fadc045adc434",
+        "1012": "78bc19292ee770c7195987168d03afc42e29dfe7b7eae7a38f062bf9d8f2f482",
+        "1013": "5e32e21833142cedaf446d9b8e368da2f67d0223d8952ad5320752e0c7484ebc",
+        "1014": "5f76208146b6f6b398d1c9cebd285bb655147235619f30442311b5cfa4165938",
+        "1015": "f6013f065cc56104fa87c593b3c5c492a95a8682d50f796b9a0769b00546910f",
+        "1016": "ffc4621daa622af2c23414a268dadf17f98749594bc8042a708c1269f4aa79ae"
+      },
+      "market_ids": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1014,
+        1015,
+        1016
+      ]
+    },
+    "validation": {
+      "market_identities": {
+        "2001": "9717badc80943ac6942265e34456fe3fe2bf3ff7a0fff3fcce642d885db93155",
+        "2002": "3b24a1a746d7d7e367589fe8d539759e3d8e210c922dfccbf4c63be406177ce3",
+        "2003": "7ec177241cd8c62d726295091b75249db574ca86a2789501ec4142db3b959c4c",
+        "2004": "17044e5f536450182fcd4b969dd2e750bcf1afc9e9cd752452f17d53d31a0461",
+        "2005": "5f9ce5f08a9a9f464d0216902dc63ed19467ef8a88f6b0d27d43469f2871c65b",
+        "2006": "070e524698abcd5c80e369de3c68d5b4780f0babd84be0b2a058c972ded971aa"
+      },
+      "market_ids": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006
+      ]
+    }
+  },
+  "focal_agents": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40
+  ],
+  "identity": "a43d76c67541a779b99c22ef292a524520bdadc2c1baa8faffa2bfa61432b203",
+  "main_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+  "main_implementation": {
+    "__init__.py": "bc5ac7adbc8bc092483800594fe7cee147eef1b41ba693c47e12ed3dfea223a2",
+    "__main__.py": "30858b0efeef0a31d6744f1e83ff614799813b0cfc57b2a759c996d0a283eca1",
+    "experiment.py": "3fde6d87faf8c50f869b2de79c3eaf231b1fc447af3a4440931bbb2266f33c73",
+    "learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+    "report.py": "067b78aa5491dc6b31b864b336c22a6598cf7d3c51d5ed0742c601537c4f2647"
+  },
+  "model_sha256": "c59a548bd913316a7c3ac4f6a16c78e24867e16593dd1afe27cad13244e43a23",
+  "numpy_version": "2.5.5",
+  "purpose": "current-state quadratic ridge validation diagnostic",
+  "schema_version": 1,
+  "selected_lambda": 1e-06,
+  "settings": {
+    "action_count": 11,
+    "behavior_trajectories_per_focal_market": 10,
+    "feature_dim": 105,
+    "features": "intercept, z[0:13], z[i]*z[j] in lexicographic i<=j order",
+    "group_ratio": "sum projected normalized predictions / sum normalized labels over rows/actions",
+    "groups": [
+      "current_cost",
+      "current_conversion",
+      "remaining_cost",
+      "remaining_conversion"
+    ],
+    "label_units": "cost/budget and conversions*cpa/budget; current then remaining",
+    "loss_weighting": "equal weight per row, group, and action; all 4 groups and all 11 actions",
+    "normalization": "training-row population mean/std; std floored before clipping",
+    "numerical_dtype": "float64 for normalization, features, fitting, projection, and metrics",
+    "prediction_log_clip": [
+      0.0,
+      20.0
+    ],
+    "prediction_log_clip_reason": "fixed numerical protection; independent of validation labels",
+    "projection": "clip log, expm1/scale, action zero=0, cumulative maximum over actions",
+    "ridge_lambdas": [
+      1e-06,
+      0.0001,
+      0.01,
+      1.0
+    ],
+    "ridge_objective": "XTX/N + lambda*diag(0,1,...,1); intercept unpenalized",
+    "ridge_solver": "numpy.linalg.solve with all training rows and 44 simultaneous targets",
+    "selection": "minimum mean squared log-space error after actual projection; validation only",
+    "standardized_state_clip": [
+      -8.0,
+      8.0
+    ],
+    "state_dim": 13,
+    "std_floor": 0.05,
+    "target": "log1p(normalized_labels * target_scales)",
+    "target_scales": [
+      48.0,
+      48.0,
+      1.0,
+      1.0
+    ],
+    "ticks_per_trajectory": 48,
+    "tie_break": "first lambda in declared order, with exact floating-point ties",
+    "trajectory_source": "unchanged learning.trajectories on main train/validation caches",
+    "undefined_ratio": "null when the true aggregate is zero"
+  },
+  "source_sha256": "5575a45d7dbcecec6205bc46f4c20af2f601b575cf5e633977b7652dd35f506c",
+  "summary_sha256": "01c497da998bdc2460b3c13e021ed60a9711722c7be5ad8a4e2100d3991b656c",
+  "utils_sha256": "3672c2a7d3db7ed617fc3a14b90d762bb4fde1f53d913f456687c1563a3ac788"
+}

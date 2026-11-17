@@ -1,0 +1,70 @@
+{
+  "best_rate": [
+    10.0,
+    10.0
+  ],
+  "best_rate_index": 0,
+  "candidate": "response-paced-0",
+  "candidate_metrics": {
+    "budget_utilization": 0.82689776391076,
+    "conversions": 13.781481481481482,
+    "cost": 2225.6989941920483,
+    "score": 6.391579243983001,
+    "violation": 0.9592592592592593,
+    "zero_conversions": 0.0
+  },
+  "gate_scope": "Both pooled scenarios and the primary scenario must pass",
+  "interpretation": "Selection estimates are optimistic; independent confirmation is required.",
+  "matched_empirical": "empirical-paced-0-none",
+  "original_response_metrics": {
+    "budget_utilization": 0.8020376327193551,
+    "conversions": 20.38888888888889,
+    "cost": 2213.8399907606213,
+    "score": 15.384743040888306,
+    "violation": 0.6222222222222222,
+    "zero_conversions": 0.001851851851851852
+  },
+  "primary_candidate_metrics": {
+    "budget_utilization": 0.9076533054943068,
+    "conversions": 13.935185185185185,
+    "cost": 2497.5428357662954,
+    "score": 5.2542910739475985,
+    "violation": 0.9629629629629629,
+    "zero_conversions": 0.0
+  },
+  "primary_original_response_metrics": {
+    "budget_utilization": 0.8930971412314501,
+    "conversions": 23.083333333333332,
+    "cost": 2483.4779096503576,
+    "score": 17.06674783469834,
+    "violation": 0.6203703703703703,
+    "zero_conversions": 0.0
+  },
+  "primary_reference": "feedback",
+  "primary_reference_metrics": {
+    "budget_utilization": 0.9315756827909275,
+    "conversions": 21.666666666666668,
+    "cost": 2529.1540206716963,
+    "score": 15.284709790776617,
+    "violation": 0.7222222222222222,
+    "zero_conversions": 0.0
+  },
+  "primary_scenario": "over_50",
+  "promoted": false,
+  "promotion_rule": {
+    "maximum_violation_increase": 0.05,
+    "minimum_conversion_ratio": 0.95,
+    "minimum_score_ratio": 1.1
+  },
+  "reference": "feedback",
+  "reference_metrics": {
+    "budget_utilization": 0.7998598822684572,
+    "conversions": 19.333333333333332,
+    "cost": 2084.4427241135336,
+    "score": 15.574464680380828,
+    "violation": 0.5777777777777777,
+    "zero_conversions": 0.0
+  },
+  "selected_calibration": "none",
+  "split": "validation only; equal weight per scenario and advertiser, averaged training seeds"
+}

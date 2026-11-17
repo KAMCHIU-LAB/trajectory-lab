@@ -1,0 +1,15 @@
+{
+  "excluded": "model weights, traffic tapes, runner state, machine logs and absolute local paths",
+  "exporter_sha256": "02c2527446d4dd5991097fbe1c795ab81ecf4e7d304a87cc6d64fc84f5b21adb",
+  "files_sha256": {
+    "manifest.json": "65443cbda8dc75382426b5b3d6442a45a6184b254a82c15730b0cf414790d05b",
+    "report.html": "723367b1475e2beeb7b563cf55d52ace405a69ec1c9fe5bc02ed8282ea392ead",
+    "ridge-manifest.json": "8bfc8172a575a83e12ea5e2d96162745d544c010f3ab34c05b91bf5e830df8cc",
+    "ridge-summary.json": "01c497da998bdc2460b3c13e021ed60a9711722c7be5ad8a4e2100d3991b656c",
+    "summary.json": "4dc2d4aa29943772136d688eb812c5b853642410fde963a6b70c8e5e848b6a59"
+  },
+  "privacy_gate": "allowlisted text checked for home paths, email addresses and common credential patterns; not a proof against every disclosure",
+  "run_identity": "2c04e9dfb0b50b97e56c52610287c9c323b6e164376146e5fe7d0e2fefdde6a0",
+  "scope": "completed validation-only predictive diagnostics; no policy-value claim",
+  "verification": "identity, evidence hashes and coverage checked; metrics are not independently recomputed"
+}

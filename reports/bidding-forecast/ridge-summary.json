@@ -1,0 +1,114 @@
+{
+  "candidates": [
+    {
+      "ridge_lambda": 1e-06,
+      "train": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.7502865905550302,
+          "current_cost": 0.8751934689201454,
+          "remaining_conversion": 0.8304465049094916,
+          "remaining_cost": 0.8530791751199555
+        },
+        "log_mse": 0.22415820350365204
+      },
+      "validation": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.778694418757678,
+          "current_cost": 0.8848929006916637,
+          "remaining_conversion": 0.8408368472093319,
+          "remaining_cost": 0.8529401466890794
+        },
+        "log_mse": 0.24914155860140064
+      }
+    },
+    {
+      "ridge_lambda": 0.0001,
+      "train": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.7501833227146054,
+          "current_cost": 0.8750790670882084,
+          "remaining_conversion": 0.8303904707199082,
+          "remaining_cost": 0.8530209091451013
+        },
+        "log_mse": 0.22416058450683737
+      },
+      "validation": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.7785720716945108,
+          "current_cost": 0.8847616195083003,
+          "remaining_conversion": 0.8407844760651015,
+          "remaining_cost": 0.8528835585125755
+        },
+        "log_mse": 0.24914665807502354
+      }
+    },
+    {
+      "ridge_lambda": 0.01,
+      "train": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.741553643755901,
+          "current_cost": 0.8655405538391497,
+          "remaining_conversion": 0.8259797970398081,
+          "remaining_cost": 0.8484245633266497
+        },
+        "log_mse": 0.22465357804629615
+      },
+      "validation": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.768895234965249,
+          "current_cost": 0.874349854996252,
+          "remaining_conversion": 0.8367927861443222,
+          "remaining_cost": 0.8485280163935522
+        },
+        "log_mse": 0.24972579204663012
+      }
+    },
+    {
+      "ridge_lambda": 1.0,
+      "train": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.5552077270974523,
+          "current_cost": 0.659799967697421,
+          "remaining_conversion": 0.7415780473665257,
+          "remaining_cost": 0.7538283671899089
+        },
+        "log_mse": 0.2961264770746471
+      },
+      "validation": {
+        "aggregate_predicted_to_true_ratio": {
+          "current_conversion": 0.5825341256126714,
+          "current_cost": 0.6752252472806672,
+          "remaining_conversion": 0.7524663430577232,
+          "remaining_cost": 0.7524861016960607
+        },
+        "log_mse": 0.31391731541875967
+      }
+    }
+  ],
+  "identity": "a43d76c67541a779b99c22ef292a524520bdadc2c1baa8faffa2bfa61432b203",
+  "limitations": [
+    "Current state contains cumulative and previous-tick feedback; it is not history-free.",
+    "Behavior trajectories repeat action-curve labels; rows within markets and trajectories are correlated.",
+    "Validation selects lambda and reports its error on the same validation data; the selected estimate is optimistic.",
+    "No test or confirmation market is read and no held-out policy improvement is established.",
+    "This comparator cannot establish a single-factor causal conclusion about history or model architecture.",
+    "Aggregate curve ratios are descriptive normalized-label diagnostics, not rollout spend or conversion guarantees."
+  ],
+  "main_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+  "model_sha256": "c59a548bd913316a7c3ac4f6a16c78e24867e16593dd1afe27cad13244e43a23",
+  "sample_counts": {
+    "train": {
+      "behavior_trajectories": 960,
+      "independent_markets": 16,
+      "market_focal_pairs": 96,
+      "rows": 46080
+    },
+    "validation": {
+      "behavior_trajectories": 360,
+      "independent_markets": 6,
+      "market_focal_pairs": 36,
+      "rows": 17280
+    }
+  },
+  "selected_lambda": 1e-06
+}

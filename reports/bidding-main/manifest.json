@@ -1,0 +1,137 @@
+{
+  "auction": {
+    "sha256": {
+      "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+      "NeurIPSPvGen.py": "1887bd7f4eea497672d1665e1e5b71e8cee843b6bb18ff94acda24733a0767c4",
+      "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+    },
+    "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+  },
+  "config": {
+    "evaluation": {
+      "correction_priors": [
+        1.0,
+        3.0,
+        8.0
+      ],
+      "feedback_gains": [
+        0.3,
+        0.7,
+        1.2
+      ],
+      "scenarios": [
+        "calibrated",
+        "over_25",
+        "over_50",
+        "under_25",
+        "mid_over_50"
+      ]
+    },
+    "study": {
+      "actions": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "biases": [
+        0.75,
+        1.0,
+        1.25,
+        1.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "name": "bidding-prediction-error",
+      "purpose": "custom-fixed-opponent-study",
+      "pv_count": 500000,
+      "test_markets": [
+        3101,
+        3102,
+        3103,
+        3104,
+        3105,
+        3106,
+        3107,
+        3108,
+        3109,
+        3110,
+        3111,
+        3112
+      ],
+      "train_markets": [
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1014,
+        1015,
+        1016
+      ],
+      "training_seeds": [
+        11,
+        23,
+        37
+      ],
+      "validation_markets": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006
+      ]
+    },
+    "training": {
+      "batch_size": 32,
+      "checkpoint_every": 1000,
+      "context": 24,
+      "device": "mps",
+      "heads": 4,
+      "layers": 2,
+      "learning_rate": 0.0003,
+      "log_every": 250,
+      "steps": 15000,
+      "threads": 2,
+      "width": 128
+    }
+  },
+  "identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+  "implementation": {
+    "__init__.py": "bc5ac7adbc8bc092483800594fe7cee147eef1b41ba693c47e12ed3dfea223a2",
+    "__main__.py": "30858b0efeef0a31d6744f1e83ff614799813b0cfc57b2a759c996d0a283eca1",
+    "experiment.py": "3fde6d87faf8c50f869b2de79c3eaf231b1fc447af3a4440931bbb2266f33c73",
+    "learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+    "report.py": "067b78aa5491dc6b31b864b336c22a6598cf7d3c51d5ed0742c601537c4f2647"
+  },
+  "runtime": {
+    "device": "mps",
+    "numpy": "2.5.5",
+    "python": "3.12.13",
+    "torch": "2.15.0"
+  }
+}

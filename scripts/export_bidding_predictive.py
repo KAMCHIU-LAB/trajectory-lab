@@ -99,7 +99,8 @@ table{{border-collapse:collapse;font-size:14px}}th,td{{border:1px solid #d8dce5;
 <h2>当前时段：所有预测器使用相同标签</h2>
 {table(columns, current)}
 <p>误差越小越好；总量比接近 1 表示该口径下总量更接近真实值，不代表逐状态校准。
-这些是按初始预算／目标 CPA 归一化后的标签总量比，不是原始总花费或总转化的比率。
+先将成本除以初始预算、将转化乘以目标 CPA 再除以初始预算，
+然后分别求预测总和与真实总和之比；它们不是原始总花费或总转化的比率。
 零动作仍以相同权重进入误差。</p>
 <h2>剩余时段：神经模型与 ridge</h2>
 {table(columns, remaining)}

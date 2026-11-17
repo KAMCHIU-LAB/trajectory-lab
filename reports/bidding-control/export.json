@@ -1,0 +1,22 @@
+{
+  "csv_line_endings": "LF; raw run CSV retained separately",
+  "excluded": "traffic tapes, model checkpoints, runner state, machine logs",
+  "exporter_sha256": "470a3dd6b75b429708692eaabd9f254cd9370df54570b99c923dbd49359f4732",
+  "files_sha256": {
+    "empirical-rates.json": "823eeebd81023305a0e7d393ce9bde3e8525d69ce2940edea317107f90b31d7e",
+    "manifest.json": "25a3ea1bfde8b57e8c29b7cd8d438c12c74ab4a587d60fbd18e09c0d52baf565",
+    "selection.json": "2e38417cc5a5762675f6fde645d1f221807e26a73674305c80676d5f4c43be88",
+    "status.json": "aeb991088602e7d2327142ce717e1b0208df1a2f02a16608b297e6122a3d1ca3",
+    "validation-report/manifest.json": "25a3ea1bfde8b57e8c29b7cd8d438c12c74ab4a587d60fbd18e09c0d52baf565",
+    "validation-report/report.html": "0229309347f8540d8c1a6674dc95d73b261465e3982a786d9bd76a535f7ae8c3",
+    "validation-report/results.csv": "6a6bdfa74ccc5e31c7181e4d565db0a5b87bb77705075e4ce665a01147bee079",
+    "validation-report/results.json": "7889875ce2effee22054eebaeb3f8e69e6ef13e59f74fcf073c022adca108ce2",
+    "validation-report/summary.json": "656566426742347451ec6807c9a05582ed4d4bc0df166d50540bbc3eb3bd2678"
+  },
+  "phase": "complete-not-promoted",
+  "privacy_gate": "allowlisted text evidence; local-home paths, email addresses, common credential formats checked; not a proof against all privacy disclosures",
+  "rows": {
+    "validation": 11340
+  },
+  "run_identity": "5245690cf800d87dc3bcf5141c759e103b912186b52b766267e7bbb0cc0d5d45"
+}

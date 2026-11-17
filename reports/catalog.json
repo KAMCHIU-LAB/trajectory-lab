@@ -1,13 +1,19 @@
 {
+  "bidding_forecast_audit": {
+    "identity": "2c04e9dfb0b50b97e56c52610287c9c323b6e164376146e5fe7d0e2fefdde6a0",
+    "report": "bidding-forecast/report.html"
+  },
   "bidding_studies": [
     {
-      "report": null,
-      "stage": "\u6b63\u5f0f\u7814\u7a76\u5f85\u5b8c\u6210",
+      "identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+      "report": "bidding-main/report.html",
+      "stage": "\u6b63\u5f0f\u7814\u7a76\u5df2\u5b8c\u6210 \u00b7 \u5df2\u516c\u5f00\u5bfc\u51fa",
       "study": "bidding-main"
     },
     {
-      "report": null,
-      "stage": "\u7b49\u5f85\u5b8c\u6574\u516c\u5f00\u5bfc\u51fa",
+      "identity": "5245690cf800d87dc3bcf5141c759e103b912186b52b766267e7bbb0cc0d5d45",
+      "report": "bidding-control/validation-report/report.html",
+      "stage": "\u9a8c\u8bc1\u5df2\u5b8c\u6210 \u00b7 \u672a\u664b\u7ea7",
       "study": "bidding-control"
     },
     {

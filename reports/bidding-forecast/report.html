@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>出价响应预测：同口径验证审计</title>
+<style>body{font:16px/1.7 system-ui;max-width:1050px;margin:32px auto;padding:0 20px;color:#202735}
+table{border-collapse:collapse;font-size:14px}th,td{border:1px solid #d8dce5;padding:8px;text-align:left}
+.scroll{overflow-x:auto}code{overflow-wrap:anywhere}h2{margin-top:32px}</style>
+<h1>出价响应预测：同口径验证审计</h1>
+<p>问题：小的预测误差，是否同时意味着成本与转化总量预测准确？
+这是公开 AuctionNet 自定义固定对手模拟中的验证集诊断，不是出价收益评估。</p>
+<p>6 个验证市场，36 个市场—广告主组合，360 条名义行为轨迹，17,280 行。
+每行包含 11 个动作；行和动作不构成独立实验。训练市场为 16 个。
+三个神经模型分别计算误差，没有集成预测。</p>
+<h2>当前时段：所有预测器使用相同标签</h2>
+<div class='scroll'><table><tr><th>预测器 / 种子</th><th>log MSE</th><th>Smooth L1</th><th>成本预测/真实</th><th>转化预测/真实</th></tr><tr><td>empirical</td><td>0.8053</td><td>0.3410</td><td>1.0091</td><td>1.0428</td></tr><tr><td>ridge</td><td>0.3056</td><td>0.1439</td><td>0.8849</td><td>0.7787</td></tr><tr><td>response / seed 11</td><td>0.2609</td><td>0.1204</td><td>0.9722</td><td>0.8406</td></tr><tr><td>response / seed 23</td><td>0.2556</td><td>0.1185</td><td>0.8908</td><td>0.7719</td></tr><tr><td>response / seed 37</td><td>0.2591</td><td>0.1196</td><td>0.9499</td><td>0.8706</td></tr></table></div>
+<p>误差越小越好；总量比接近 1 表示该口径下总量更接近真实值，不代表逐状态校准。
+先将成本除以初始预算、将转化乘以目标 CPA 再除以初始预算，
+然后分别求预测总和与真实总和之比；它们不是原始总花费或总转化的比率。
+零动作仍以相同权重进入误差。</p>
+<h2>剩余时段：神经模型与 ridge</h2>
+<div class='scroll'><table><tr><th>预测器 / 种子</th><th>log MSE</th><th>Smooth L1</th><th>成本预测/真实</th><th>转化预测/真实</th></tr><tr><td>ridge</td><td>0.1927</td><td>0.0953</td><td>0.8529</td><td>0.8408</td></tr><tr><td>response / seed 11</td><td>0.1561</td><td>0.0773</td><td>0.9673</td><td>0.9437</td></tr><tr><td>response / seed 23</td><td>0.1554</td><td>0.0766</td><td>0.8873</td><td>0.8813</td></tr><tr><td>response / seed 37</td><td>0.1491</td><td>0.0739</td><td>0.9217</td><td>0.9197</td></tr></table></div>
+<h2>Ridge 的验证选择记录</h2>
+<p>选择 lambda = 1e-06；下表包含所有已声明候选。</p>
+<div class='scroll'><table><tr><th>lambda</th><th>训练 log MSE</th><th>验证 log MSE</th></tr><tr><td>1e-06</td><td>0.2242</td><td>0.2491</td></tr><tr><td>0.0001</td><td>0.2242</td><td>0.2491</td></tr><tr><td>0.01</td><td>0.2247</td><td>0.2497</td></tr><tr><td>1.0</td><td>0.2961</td><td>0.3139</td></tr></table></div>
+<h2>如何使用这些结果</h2>
+<p>模型输出是响应点预测。log 空间损失不保证得到已校准的条件算术均值；
+控制器将它们用于成本／价值决策，是需要检验的近似。误差与总量比可以支持偏差诊断，
+不能单独证明控制器瓶颈、序列模型价值或实际投放收益。</p>
+<ul><li>Current state includes cumulative and previous-tick feedback; this is not a history-free comparison.</li><li>Neural checkpoints and ridge lambda were selected using validation data; these are descriptive selected-validation estimates.</li><li>One prediction uses each row&#x27;s maximum causal context; sampled-window token weighting in training logs differs, so reported losses do not reproduce checkpoint validation losses.</li><li>Behavior trajectories repeat labels; rows within trajectories, focal campaigns, and markets are correlated.</li><li>Neural seeds are reported separately and are not an ensemble or independent validation markets.</li><li>Current curves are comparable across all methods; empirical has no remaining-horizon curves.</li><li>Forecast errors do not establish policy superiority or attribute a performance bottleneck to one cause.</li><li>No test or confirmation market, main selection, or main policy outcome is read.</li></ul>
+<p><a href="summary.json">完整指标与逐市场结果</a> · <a href="manifest.json">审计来源</a> ·
+<a href="ridge-summary.json">Ridge 拟合记录</a> · <a href="ridge-manifest.json">Ridge 来源</a> ·
+<a href="export.json">导出文件校验</a></p></html>
