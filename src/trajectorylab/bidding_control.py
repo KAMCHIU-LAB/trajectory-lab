@@ -438,6 +438,17 @@ def run(config_path):
     policies["feedback", -1] = Feedback(actions, **main_selection["feedback"])
     for name, action in (("fixed-1", 1.0), ("fixed-tuned", main_selection["fixed"]["action"])):
         policies[name, -1] = lambda s, u, r, b, c, k=action: (k, {})
+    # Keep the complete already-declared cheap baseline grids. A primary-scenario
+    # reference need not share the first study's pooled-scenario optimum.
+    for action in actions:
+        if float(action) not in (1.0, main_selection["fixed"]["action"]):
+            policies[f"fixed-grid-{action:g}", -1] = lambda s, u, r, b, c, k=float(action): (k, {})
+    for gain in config["evaluation"]["feedback_gains"]:
+        for feedback_prior in config["evaluation"]["correction_priors"]:
+            if {"gain": gain, "prior": feedback_prior} != main_selection["feedback"]:
+                policies[f"feedback-grid-g{gain:g}-p{feedback_prior:g}", -1] = Feedback(
+                    actions, gain, feedback_prior
+                )
     for seed in study["training_seeds"]:
         for corrected in (False, True):
             name = "response+correction" if corrected else "response"
@@ -476,7 +487,7 @@ def run(config_path):
     ]
     candidate = max(candidates, key=lambda m: metrics(rows, m)["score"])
     simple = ["feedback", "fixed-1", "fixed-tuned"] + sorted(
-        {method for method, _ in policies if method.startswith("empirical-paced-")}
+        {method for method, seed in policies if seed == -1} - {"feedback", "fixed-1", "fixed-tuned"}
     )
     reference = max(simple, key=lambda m: metrics(rows, m)["score"])
     primary_scenario = opts["primary_scenario"]

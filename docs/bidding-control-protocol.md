@@ -80,10 +80,14 @@ labels or counterfactual unchosen-action feedback reaches a policy.
    since these deterministic evaluations are cheap. Retain the empirical
    variant matching the selected neural controller's pair and correction mode
    for a separate forecast-value diagnostic.
-5. Also retain multiplier one, the first study's validation-tuned fixed
-   multiplier and numerical feedback controller. Select a pooled simple reference
-   by pooled validation score and a primary simple reference by validation
-   `over_50` score. Both references are frozen before confirmation.
+5. Also evaluate every nominal fixed multiplier and the first study's full
+   declared feedback grid (three gains × three shrinkage priors). Preserve the
+   first study's pooled-tuned settings as named aliases and omit matching grid
+   duplicates. Select a pooled simple reference by pooled validation score and
+   a primary simple reference by validation `over_50` score across these and all
+   empirical controllers. Both references are frozen before confirmation. This
+   prevents a scenario-specific result from benefiting from an under-tuned simple
+   comparator. The baseline search uses no further neural model fits.
 6. Preserve the original response and response+correction policies. Their
    settings remain those selected in the first study; they are controller
    ablations, not additional checkpoint searches.
