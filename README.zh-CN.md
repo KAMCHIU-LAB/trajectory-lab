@@ -12,6 +12,7 @@
 用固定出价、验证集调参、反馈控制，以及同检查点下的反馈修正、硬/软 CPA 决策作对照。
 
 - [实验协议与主比较](docs/bidding-protocol.md)：先声明信息边界、指标和结论适用范围。
+- [研究定位及与 GRM / AIGB-R1 的差异](docs/bidding-research-map.md)。
 - [本地运行与断点恢复](docs/bidding-runbook.md)。
 - [第二轮：控制器诊断与独立确认方案](docs/bidding-control-protocol.md)，在正式测试结果查看前写下。
 - [已完成的可行性报告](reports/bidding-pilot/report.html) · [实测发现与开发记录](docs/bidding-findings.md)。

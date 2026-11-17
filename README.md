@@ -14,6 +14,7 @@ fixed/tuned multipliers, numerical feedback, DT, and matched-checkpoint
 response/correction/hard-constraint ablations.
 
 - [Question, information boundaries and primary comparison](docs/bidding-protocol.md)
+- [Research position and differences from GRM / AIGB-R1](docs/bidding-research-map.md)
 - [Run and resume locally](docs/bidding-runbook.md)
 - [Predeclared controller refinement and independent confirmation](docs/bidding-control-protocol.md)
 - [Completed feasibility report](reports/bidding-pilot/report.html) · [Development findings](docs/bidding-findings.md)
