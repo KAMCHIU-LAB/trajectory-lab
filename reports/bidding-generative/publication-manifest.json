@@ -1,0 +1,79 @@
+{
+  "scope": "Read-only export of a stopped development replication and completed zero-fit diagnostics. No independent Flow confirmation.",
+  "replication_identity": "b06b988bea3ebb76ce18bca9b6a6eb2291345bd70af4de17fede7a4df42f8f03",
+  "registered_replication_config": {
+    "calibration_cases_per_market_scene": 8,
+    "evaluation_threads": 1,
+    "integration_steps": 8,
+    "main_run": "artifacts/bidding/main-v2",
+    "nominal_score_min": 0.98,
+    "output": "artifacts/bidding/generative-replication-v1",
+    "primary_scenarios": [
+      "over_25",
+      "over_50",
+      "under_25"
+    ],
+    "relative_config": "configs/bidding-generative-relative.toml",
+    "robust_run": "artifacts/bidding/robust-v1",
+    "samples": 64,
+    "sampling_seed": 91347,
+    "scenarios": [
+      "calibrated",
+      "over_25",
+      "over_50",
+      "under_25",
+      "mid_over_50"
+    ],
+    "seeds": [
+      11,
+      23,
+      37
+    ],
+    "selected_expected": {
+      "quantile": 0.5,
+      "radius": 1.0
+    },
+    "selected_plugin": {
+      "radius": 0.25
+    },
+    "selected_point": {
+      "radius": 1.0
+    },
+    "steps": 15000,
+    "stress_conversion_min": 0.97,
+    "stress_score_min": 1.03,
+    "stress_violation_delta_max": 0.03,
+    "value_each_score_ratio_min": 0.98,
+    "value_mean_score_ratio_min": 1.01
+  },
+  "source_sha256": {
+    "src/trajectorylab/bidding/__init__.py": "bc5ac7adbc8bc092483800594fe7cee147eef1b41ba693c47e12ed3dfea223a2",
+    "src/trajectorylab/bidding/__main__.py": "30858b0efeef0a31d6744f1e83ff614799813b0cfc57b2a759c996d0a283eca1",
+    "src/trajectorylab/bidding/experiment.py": "3fde6d87faf8c50f869b2de79c3eaf231b1fc447af3a4440931bbb2266f33c73",
+    "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "src/trajectorylab/bidding/report.py": "067b78aa5491dc6b31b864b336c22a6598cf7d3c51d5ed0742c601537c4f2647",
+    "src/trajectorylab/bidding_control.py": "dae094b1959eace17bd87d295bb4877e4595eb5d7fa40c731125b6fbd08c1d70",
+    "src/trajectorylab/bidding_generative.py": "137e5024fbb067c72ad45d62712bedcb381c58ae17fce15db2777c41125611ae",
+    "src/trajectorylab/bidding_generative_control.py": "124cb2450f8864df865a06cb275cdc677be9ec2a25546d8b3eb23c536c88754a",
+    "src/trajectorylab/bidding_generative_learning.py": "3524d6b77df4d4721ee7c651ba9490771e6d12071d7d1616c710780548846dc5",
+    "src/trajectorylab/bidding_generative_relative.py": "05ad1247bb78a5cf13f0d721bfd2264f7f7c472c80bcd7443fb0769633388046",
+    "src/trajectorylab/bidding_generative_replication.py": "d47408816bdcf4fc0ff4dc9ea95877de4062263e72351c3674d320f475d5cb42",
+    "src/trajectorylab/bidding_robust.py": "c2b9933950dc081a36cf44c634d3da4ab2bf8c7262b03d24d14a10b730eddb4c",
+    "src/trajectorylab/bidding_robust_data.py": "a421e05c016d7e20f21de38ccf1760233779b91733c51b6866e4b696ec445328",
+    "src/trajectorylab/bidding_robust_learning.py": "b3028841b43e89f6911f04bcd58292624fc92778f76f86e3388a078e3e1585bb",
+    "src/trajectorylab/models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+    "src/trajectorylab/utils.py": "3672c2a7d3db7ed617fc3a14b90d762bb4fde1f53d913f456687c1563a3ac788"
+  },
+  "evidence_sha256": {
+    "artifacts/bidding/generative-replication-v1/summary.json": "6e213822ec3c0ebbb4c3f002088ee259b7cf039e5c46b7f8cf72661d32ea69cd",
+    "artifacts/bidding/numerical-audits/generative-horizon-v1/registered-interpretation.json": "2e8acd01aa8b633d7d70201fa1d6c620fcecc0552273fdb6259550198e007e53",
+    "artifacts/bidding/numerical-audits/feedback-compensation-v1/summary.json": "c1714ba532d12aafc7c50f3045b6f7fd0a42baa654491bcbf1013ec626d6625c"
+  },
+  "exports": {
+    "feedback-compensation.json": "f94930022713b1e3395a5ccfd1831697ec3465fc1b365091ced5f6d7879d149b",
+    "horizon-interpretation.json": "2e8acd01aa8b633d7d70201fa1d6c620fcecc0552273fdb6259550198e007e53",
+    "summary.json": "6e213822ec3c0ebbb4c3f002088ee259b7cf039e5c46b7f8cf72661d32ea69cd"
+  },
+  "excluded": "Checkpoints, traffic arrays, local runner state, logs, raw decision traces and ongoing research. Source hashes identify the completed run; they do not redistribute its local artifacts."
+}

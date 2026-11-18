@@ -1,0 +1,12 @@
+main_run = "artifacts/bidding/main-v2"
+robust_run = "artifacts/bidding/robust-v1"
+output = "artifacts/bidding/generative-v1"
+pilot_steps = 4000
+final_steps = 15000
+seeds = [11, 23, 37]
+scenarios = ["calibrated", "over_25", "over_50", "under_25", "mid_over_50"]
+primary_scenarios = ["over_25", "over_50", "under_25"]
+samples = 64
+integration_steps = 8
+sampling_seed = 91347
+calibration_cases_per_market_scene = 8

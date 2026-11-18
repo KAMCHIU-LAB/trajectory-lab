@@ -1,0 +1,29 @@
+main_run = "artifacts/bidding/main-v2"
+robust_run = "artifacts/bidding/robust-v1"
+relative_config = "configs/bidding-generative-relative.toml"
+output = "artifacts/bidding/generative-replication-v1"
+seeds = [11, 23, 37]
+steps = 15000
+scenarios = ["calibrated", "over_25", "over_50", "under_25", "mid_over_50"]
+primary_scenarios = ["over_25", "over_50", "under_25"]
+samples = 64
+integration_steps = 8
+sampling_seed = 91347
+evaluation_threads = 1
+calibration_cases_per_market_scene = 8
+stress_score_min = 1.03
+stress_conversion_min = 0.97
+stress_violation_delta_max = 0.03
+nominal_score_min = 0.98
+value_mean_score_ratio_min = 1.01
+value_each_score_ratio_min = 0.98
+
+[selected_expected]
+radius = 1.0
+quantile = 0.5
+
+[selected_plugin]
+radius = 0.25
+
+[selected_point]
+radius = 1.0

@@ -5,6 +5,12 @@
 [English](README.md) · [研究定位](docs/bidding-research-map.md) ·
 [出价实验协议](docs/bidding-protocol.md) · [架构](docs/architecture.md)
 
+## 先看这里
+
+- **已确认的局部收益：**高估 50% 时，3 个冻结响应模型在 24 个新模拟市场相对冻结反馈的 score **+17.6%**、转化 **+8.4%**、CPA 违约频率 **−24.8 个百分点**。[统计口径及失败边界](docs/bidding-findings.md)。
+- **生成式分支：**已实现条件 Flow Matching、分位筛选与反馈回退；第二训练种子未通过业务门槛，生成分布带来的额外决策价值尚未确认。[已完成的种子复核与机制诊断](docs/bidding-generative-findings.md)。
+- **实现入口：**[拍卖结算](src/trajectorylab/bidding/market.py)、[响应学习](src/trajectorylab/bidding/learning.py)、[Flow 采样器](src/trajectorylab/bidding_generative_learning.py)、[公开记录](reports/bidding-generative/README.md)。
+
 ## 研究什么
 
 出价策略看到的是预测转化率，花掉的是真实预算，收到的转化反馈又有噪声。
@@ -26,6 +32,7 @@
 | [同口径预测审计](reports/bidding-forecast/report.html) | 已完成：相同验证轨迹上比较神经模型、上下文 ridge 和经验曲线。预测误差更小，不保证转化总量准确或出价收益更高。 |
 | [所选动作与预算节奏审计](reports/bidding-onpolicy/report.html) | 已完成：1,080 个周期精确重放。检查控制器实际选择的动作、预测误差方向和早期预算消耗；属于事后验证诊断，不是因果证明。 |
 | [新市场独立确认](reports/bidding-confirmation/report.html) | 已完成：24 个新市场、4,320 条记录。高估 50% 场景下，原 response 通过冻结的 score、转化保留、违约和种子一致性门槛；失败控制器的门槛仍未通过。 |
+| [生成式响应开发复核](docs/bidding-generative-findings.md) | 复用 6 个开发市场，按规则在训练种子 23 后停止；业务复现与生成增量均未通过，附已完成的零拟合机制审计。 |
 | [离线策略学习基础实验](docs/results.md) | 已完成：Pendulum、公开 PointMaze 子集和 IQL 机制消融，合计 39 次 BC / IQL / DT 训练。 |
 
 同一市场内的广告主、不同方法和重复种子之间存在相关性，记录条数不是独立市场数。

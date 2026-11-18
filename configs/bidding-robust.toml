@@ -1,0 +1,13 @@
+main_run = "artifacts/bidding/main-v2"
+output = "artifacts/bidding/robust-v1"
+pilot_steps = 4000
+final_steps = 15000
+seeds = [11, 23, 37]
+scenarios = ["calibrated", "over_25", "over_50", "under_25", "mid_over_50"]
+primary_scenarios = ["over_25", "over_50", "under_25"]
+feedback_gains = [0.1, 0.3, 0.7, 1.2]
+feedback_priors = [1.0, 3.0, 8.0, 16.0]
+confirmation_markets = [4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115, 4116, 4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124]
+bootstrap_samples = 20000
+bootstrap_rng = 29118
+alpha = 0.025

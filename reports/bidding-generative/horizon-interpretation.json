@@ -1,0 +1,325 @@
+{
+  "identity": "4d0bf5fd3794fef3e76739f5d386cd724598a20b8ed2734e007b42a5c98d79b9",
+  "rule_source": "registered protocol; score ranking diagnosis only; original business/attribution failure unchanged",
+  "by_horizon": {
+    "P": {
+      "by_seed": {
+        "11": {
+          "plugin": {
+            "ratios": {
+              "over_25": 1.093003439105373,
+              "over_50": 1.0013756883052765,
+              "under_25": 1.1331449434551772
+            },
+            "mean_ratio": 1.0758413569552754,
+            "market_mean_stress_score_delta": {
+              "2001": 0.7443515827493515,
+              "2002": 1.506829135092973,
+              "2003": 1.1205395739276378,
+              "2004": 0.5961207233973455,
+              "2005": 0.4603618689061362,
+              "2006": 1.010569496793055
+            },
+            "positive_markets": 6,
+            "gates": {
+              "mean_ratio_1p01": true,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": true
+          },
+          "point": {
+            "ratios": {
+              "over_25": 1.0502883644684309,
+              "over_50": 0.9897799890454382,
+              "under_25": 0.9650263072154502
+            },
+            "mean_ratio": 1.0016982202431064,
+            "market_mean_stress_score_delta": {
+              "2001": -0.058425588907201335,
+              "2002": 0.6242134337832193,
+              "2003": 0.18560828623714057,
+              "2004": -0.17625050895934583,
+              "2005": -0.11088387371367296,
+              "2006": -0.042312273662907206
+            },
+            "positive_markets": 2,
+            "gates": {
+              "mean_ratio_1p01": false,
+              "each_ratio_0p98": false,
+              "positive_market_4_of_6": false,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          }
+        },
+        "23": {
+          "plugin": {
+            "ratios": {
+              "over_25": 1.048216776465585,
+              "over_50": 0.9852285295336343,
+              "under_25": 1.066336090819887
+            },
+            "mean_ratio": 1.0332604656063686,
+            "market_mean_stress_score_delta": {
+              "2001": 0.6283102382295999,
+              "2002": 0.18691643662169677,
+              "2003": 1.0683309767854443,
+              "2004": 0.3262027045432468,
+              "2005": 0.21235940410087983,
+              "2006": 0.013211001082082138
+            },
+            "positive_markets": 6,
+            "gates": {
+              "mean_ratio_1p01": true,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": true
+          },
+          "point": {
+            "ratios": {
+              "over_25": 1.0637419985569445,
+              "over_50": 0.9876365289164533,
+              "under_25": 0.981580905858117
+            },
+            "mean_ratio": 1.0109864777771718,
+            "market_mean_stress_score_delta": {
+              "2001": 0.24048774484813995,
+              "2002": 0.34242775570508543,
+              "2003": 1.1115165294536595,
+              "2004": -0.0647857695180943,
+              "2005": -0.2656754203281399,
+              "2006": -0.24992780173265985
+            },
+            "positive_markets": 3,
+            "gates": {
+              "mean_ratio_1p01": true,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": false,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          }
+        }
+      },
+      "stable_increment": false
+    },
+    "C": {
+      "by_seed": {
+        "11": {
+          "plugin": {
+            "ratios": {
+              "over_25": 1.089399735587381,
+              "over_50": 1.0192629848556505,
+              "under_25": 1.1263439934212407
+            },
+            "mean_ratio": 1.0783355712880907,
+            "market_mean_stress_score_delta": {
+              "2001": 0.48061647719667344,
+              "2002": 1.3829381292712235,
+              "2003": 1.0282191085088652,
+              "2004": 0.5918421257236142,
+              "2005": 0.5572956896325111,
+              "2006": 1.7881623878373996
+            },
+            "positive_markets": 6,
+            "gates": {
+              "mean_ratio_1p01": true,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": true
+          },
+          "point": {
+            "ratios": {
+              "over_25": 1.0390150675454135,
+              "over_50": 0.9916493212527914,
+              "under_25": 0.9787201713587675
+            },
+            "mean_ratio": 1.003128186718991,
+            "market_mean_stress_score_delta": {
+              "2001": -0.18244332361149995,
+              "2002": 0.7719615143357191,
+              "2003": 0.09380576844436368,
+              "2004": -0.06553469155060787,
+              "2005": -0.36698238363327756,
+              "2006": 0.22442269494455314
+            },
+            "positive_markets": 3,
+            "gates": {
+              "mean_ratio_1p01": false,
+              "each_ratio_0p98": false,
+              "positive_market_4_of_6": false,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          }
+        },
+        "23": {
+          "plugin": {
+            "ratios": {
+              "over_25": 1.0574925525583614,
+              "over_50": 0.998743557681453,
+              "under_25": 1.076898696697524
+            },
+            "mean_ratio": 1.0443782689791128,
+            "market_mean_stress_score_delta": {
+              "2001": 0.8266290935108778,
+              "2002": 0.1490489440618857,
+              "2003": 1.0898867519573248,
+              "2004": 0.37725694323894055,
+              "2005": 0.37063964455758863,
+              "2006": 0.5545273743530656
+            },
+            "positive_markets": 6,
+            "gates": {
+              "mean_ratio_1p01": true,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": true
+          },
+          "point": {
+            "ratios": {
+              "over_25": 1.060494736140373,
+              "over_50": 0.98657383232685,
+              "under_25": 0.9819871397180863
+            },
+            "mean_ratio": 1.0096852360617696,
+            "market_mean_stress_score_delta": {
+              "2001": 0.27163610158870743,
+              "2002": 0.08524157554568834,
+              "2003": 1.2709923442778337,
+              "2004": 0.01695889490724219,
+              "2005": -0.4999525931145083,
+              "2006": -0.1259507829841299
+            },
+            "positive_markets": 4,
+            "gates": {
+              "mean_ratio_1p01": false,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          }
+        }
+      },
+      "stable_increment": false
+    },
+    "F": {
+      "by_seed": {
+        "11": {
+          "plugin": {
+            "ratios": {
+              "over_25": 1.0218103039330595,
+              "over_50": 1.0052383909403206,
+              "under_25": 1.0066044153341258
+            },
+            "mean_ratio": 1.0112177034025018,
+            "market_mean_stress_score_delta": {
+              "2001": 0.533278088927561,
+              "2002": 0.33546825476245984,
+              "2003": 0.06713234636414393,
+              "2004": -0.21447918686075687,
+              "2005": 0.286669850789725,
+              "2006": 0.05658237443913886
+            },
+            "positive_markets": 5,
+            "gates": {
+              "mean_ratio_1p01": true,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": true
+          },
+          "point": {
+            "ratios": {
+              "over_25": 1.005072946398481,
+              "over_50": 0.997602015813375,
+              "under_25": 1.0051790103246372
+            },
+            "mean_ratio": 1.0026179908454977,
+            "market_mean_stress_score_delta": {
+              "2001": 0.18806470432707253,
+              "2002": 0.2823078208462695,
+              "2003": -0.11587471048747805,
+              "2004": -0.11724993888052208,
+              "2005": -0.029756679222449817,
+              "2006": 0.029731100657946482
+            },
+            "positive_markets": 3,
+            "gates": {
+              "mean_ratio_1p01": false,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": false,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          }
+        },
+        "23": {
+          "plugin": {
+            "ratios": {
+              "over_25": 1.0078218984589011,
+              "over_50": 1.0055664609880723,
+              "under_25": 1.0012359278709069
+            },
+            "mean_ratio": 1.0048747624392933,
+            "market_mean_stress_score_delta": {
+              "2001": 0.21474384712870173,
+              "2002": 0.15117323963963672,
+              "2003": 0.03743775661946378,
+              "2004": -0.1425313397133112,
+              "2005": 0.1013440653007714,
+              "2006": 0.1022528289368992
+            },
+            "positive_markets": 5,
+            "gates": {
+              "mean_ratio_1p01": false,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": true,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          },
+          "point": {
+            "ratios": {
+              "over_25": 1.0081621729455,
+              "over_50": 1.0006544914497129,
+              "under_25": 1.0019605473933917
+            },
+            "mean_ratio": 1.0035924039295347,
+            "market_mean_stress_score_delta": {
+              "2001": 0.2825392663639864,
+              "2002": -0.0030358527270763123,
+              "2003": 0.0861835109175817,
+              "2004": -0.17300894852331306,
+              "2005": -0.05270329227803611,
+              "2006": 0.20656726638159417
+            },
+            "positive_markets": 3,
+            "gates": {
+              "mean_ratio_1p01": false,
+              "each_ratio_0p98": true,
+              "positive_market_4_of_6": false,
+              "seed_direction_positive": true
+            },
+            "passed": false
+          }
+        }
+      },
+      "stable_increment": false
+    }
+  },
+  "generative_value_confirmed": false,
+  "business_replicated": false,
+  "decision": "stop_current_tail_signal_destroyed_by_horizon_hypothesis",
+  "next_training_authorized_by_this_diagnostic": false
+}

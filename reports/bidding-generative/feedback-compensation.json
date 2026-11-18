@@ -1,0 +1,491 @@
+{
+  "identity": "e9580976e0f44461bc67ed0104d0d12adcf2e668dfce3f008e0c148c701d3fff",
+  "authorizes_fitting": false,
+  "generative_value_confirmed": false,
+  "checks": {
+    "contexts": 1980,
+    "max_abs_cost_delta_residual": 8.482103908136196e-13,
+    "max_abs_integer_conversion_delta_residual": 0,
+    "max_abs_recomputed_score_residual": 2.1316282072803006e-14,
+    "max_budget_excess": -5.112647158966865e-07,
+    "min_current_conversions": 0,
+    "min_current_cost": 0.0,
+    "min_future_conversions": 0,
+    "min_future_cost": -4.547473508864641e-13,
+    "recomputed_violation_mismatches": 0,
+    "same_current_exact_cells_including_baseline": 6269,
+    "same_current_terminal_mismatches": 0,
+    "unique_contexts_without_seed_duplication": 1980
+  },
+  "interpretation": "Only cost and integer conversion deltas decompose additively. Immediate and terminal score signs are compared, not added. Fixed causal state groups are descriptive; simulator bias and exact outcomes are offline diagnostics, never model features. Guarded hindsight headroom and compensation do not establish causal learnability, new-market generalization, deployed gains or safety under repeated replanning.",
+  "protocol": {
+    "contexts": {
+      "train": 1440,
+      "validation": 540
+    },
+    "conversion_accounting": "integer cached terminal conversions minus integer past and current conversions",
+    "cost_tolerance": 1e-08,
+    "cpu_threads": 1,
+    "observed_groups": {
+      "CPA_debt_state_column_5": [
+        0.0
+      ],
+      "remaining_budget_state_column_2": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "ticks": [
+        0,
+        16,
+        32
+      ]
+    },
+    "oracle": "radius 1; guarded terminal conversions >= .97 baseline and terminal violation <= baseline; unprotected score upper bound also reported; baseline always legal and wins exact ties; single intervention followed by feedback only",
+    "radius": 1.0,
+    "scenarios": [
+      "calibrated",
+      "over_25",
+      "over_50",
+      "under_25",
+      "mid_over_50"
+    ],
+    "scope": "descriptive fixed-feedback intervention audit; no seed duplication, IID inference, new markets, fitting, learnability or repeated-replanning claim",
+    "score_plateau": "positive equal integer terminal conversions and cost <= CPA*conversions on both branches; no violation tolerance substituted",
+    "terminal_cost": "recovered from original float64 normalized endpoint and float64 budget/spent; no rounding or float32 conversion",
+    "ticks": [
+      0,
+      16,
+      32
+    ],
+    "utility_partition": "positive > tolerance; strict zero == 0; numerical near tie 0 < abs(delta) <= tolerance; negative < -tolerance",
+    "utility_tolerance": 1e-12,
+    "zero_partition_priority": [
+      "same_current_outcome",
+      "different_current_same_terminal_outcome",
+      "different_terminal_both_zero_conversions",
+      "different_terminal_same_positive_conversions_both_on_score_plateau",
+      "other_zero_utility"
+    ]
+  },
+  "scope": "Existing train/development contexts; one intervention then fixed feedback continuation; no new training or independent confirmation.",
+  "by_split_overall": {
+    "train": {
+      "action_cell_denominator": 10881,
+      "contexts": 1440,
+      "contexts_with_selected_cells": 1440,
+      "current_reward_vs_terminal_direction": {
+        "-1/-1": 2362,
+        "-1/0": 154,
+        "-1/1": 596,
+        "0/-1": 766,
+        "0/0": 3297,
+        "0/1": 908,
+        "1/-1": 995,
+        "1/0": 150,
+        "1/1": 1653
+      },
+      "current_vs_future_direction": {
+        "conversions": {
+          "-1/-1": 179,
+          "-1/0": 627,
+          "-1/1": 1202,
+          "0/-1": 739,
+          "0/0": 5104,
+          "0/1": 602,
+          "1/-1": 1852,
+          "1/0": 461,
+          "1/1": 115
+        },
+        "cost": {
+          "-1/-1": 173,
+          "-1/0": 819,
+          "-1/1": 3114,
+          "0/-1": 0,
+          "0/0": 2615,
+          "0/1": 0,
+          "1/-1": 3620,
+          "1/0": 432,
+          "1/1": 108
+        }
+      },
+      "flags": {
+        "CPA_boundary_near_tie": 0,
+        "current_future_conversion_sign_reversal": 3054,
+        "current_future_cost_sign_reversal": 6734,
+        "current_terminal_conversion_sign_reversal": 1531,
+        "current_terminal_cost_sign_reversal": 3182,
+        "current_terminal_reward_sign_reversal": 1591,
+        "exact_conversion_cancellation": 573,
+        "exact_cost_cancellation": 0,
+        "numeric_utility_near_tie": 0,
+        "same_current_cost_tolerance_only": 0,
+        "same_current_exact": 2615,
+        "same_terminal_exact": 2615
+      },
+      "guarded_oracle_only": {
+        "by_market": {
+          "1001": {
+            "contexts": 90,
+            "mean_headroom": 1.3955276255347697,
+            "positive_contexts": 54
+          },
+          "1002": {
+            "contexts": 90,
+            "mean_headroom": 2.118147191658217,
+            "positive_contexts": 51
+          },
+          "1003": {
+            "contexts": 90,
+            "mean_headroom": 1.6769412736719918,
+            "positive_contexts": 45
+          },
+          "1004": {
+            "contexts": 90,
+            "mean_headroom": 1.547504088096955,
+            "positive_contexts": 66
+          },
+          "1005": {
+            "contexts": 90,
+            "mean_headroom": 1.5534977631302576,
+            "positive_contexts": 53
+          },
+          "1006": {
+            "contexts": 90,
+            "mean_headroom": 1.9034276964218984,
+            "positive_contexts": 47
+          },
+          "1007": {
+            "contexts": 90,
+            "mean_headroom": 1.3063696675646086,
+            "positive_contexts": 33
+          },
+          "1008": {
+            "contexts": 90,
+            "mean_headroom": 1.450255444380775,
+            "positive_contexts": 46
+          },
+          "1009": {
+            "contexts": 90,
+            "mean_headroom": 1.8181342061389263,
+            "positive_contexts": 54
+          },
+          "1010": {
+            "contexts": 90,
+            "mean_headroom": 1.231733969087199,
+            "positive_contexts": 61
+          },
+          "1011": {
+            "contexts": 90,
+            "mean_headroom": 1.977155608280984,
+            "positive_contexts": 53
+          },
+          "1012": {
+            "contexts": 90,
+            "mean_headroom": 1.8267494529777037,
+            "positive_contexts": 56
+          },
+          "1013": {
+            "contexts": 90,
+            "mean_headroom": 1.6643225508901756,
+            "positive_contexts": 58
+          },
+          "1014": {
+            "contexts": 90,
+            "mean_headroom": 2.6460765348379764,
+            "positive_contexts": 61
+          },
+          "1015": {
+            "contexts": 90,
+            "mean_headroom": 1.3863601712325546,
+            "positive_contexts": 46
+          },
+          "1016": {
+            "contexts": 90,
+            "mean_headroom": 1.3988899065208096,
+            "positive_contexts": 55
+          }
+        },
+        "contexts": 1440,
+        "mean_headroom": 1.6813183219016126,
+        "positive_contexts": 839
+      },
+      "mean_deltas": {
+        "current_reward_score_delta": -0.19126459054851538,
+        "delta_current_conversions": 0.08574579542321478,
+        "delta_current_cost": 55.039881620231576,
+        "delta_future_conversions": -0.46833930704898447,
+        "delta_future_cost": -50.18065307705166,
+        "delta_terminal_conversions": -0.3825935116257697,
+        "delta_terminal_cost": 4.859228543179899,
+        "terminal_utility_delta": -0.622359291991997
+      },
+      "terminal_utility_counts": {
+        "negative": 4123,
+        "numeric_near_tie": 0,
+        "positive": 3157,
+        "strict_zero": 3601
+      },
+      "unprotected_single_intervention_upper_bound": {
+        "by_market": {
+          "1001": {
+            "contexts": 90,
+            "mean_headroom": 1.3955276255347697,
+            "positive_contexts": 54
+          },
+          "1002": {
+            "contexts": 90,
+            "mean_headroom": 2.118147191658217,
+            "positive_contexts": 51
+          },
+          "1003": {
+            "contexts": 90,
+            "mean_headroom": 1.6867347282321912,
+            "positive_contexts": 46
+          },
+          "1004": {
+            "contexts": 90,
+            "mean_headroom": 1.547504088096955,
+            "positive_contexts": 66
+          },
+          "1005": {
+            "contexts": 90,
+            "mean_headroom": 1.5534977631302576,
+            "positive_contexts": 53
+          },
+          "1006": {
+            "contexts": 90,
+            "mean_headroom": 1.9034276964218984,
+            "positive_contexts": 47
+          },
+          "1007": {
+            "contexts": 90,
+            "mean_headroom": 1.3121956523801588,
+            "positive_contexts": 34
+          },
+          "1008": {
+            "contexts": 90,
+            "mean_headroom": 1.450255444380775,
+            "positive_contexts": 46
+          },
+          "1009": {
+            "contexts": 90,
+            "mean_headroom": 1.8181342061389263,
+            "positive_contexts": 54
+          },
+          "1010": {
+            "contexts": 90,
+            "mean_headroom": 1.231733969087199,
+            "positive_contexts": 61
+          },
+          "1011": {
+            "contexts": 90,
+            "mean_headroom": 1.9924421637553178,
+            "positive_contexts": 55
+          },
+          "1012": {
+            "contexts": 90,
+            "mean_headroom": 1.8267494529777037,
+            "positive_contexts": 56
+          },
+          "1013": {
+            "contexts": 90,
+            "mean_headroom": 1.6643225508901756,
+            "positive_contexts": 58
+          },
+          "1014": {
+            "contexts": 90,
+            "mean_headroom": 2.6460765348379764,
+            "positive_contexts": 61
+          },
+          "1015": {
+            "contexts": 90,
+            "mean_headroom": 1.3863601712325546,
+            "positive_contexts": 46
+          },
+          "1016": {
+            "contexts": 90,
+            "mean_headroom": 1.4125042352317771,
+            "positive_contexts": 56
+          }
+        },
+        "contexts": 1440,
+        "mean_headroom": 1.684100842124178,
+        "positive_contexts": 844
+      },
+      "zero_equality_counts": {
+        "different_current_same_terminal_outcome/cost_tolerance_only": 0,
+        "different_current_same_terminal_outcome/exact": 0,
+        "same_current_outcome/cost_tolerance_only": 0,
+        "same_current_outcome/exact": 2615
+      },
+      "zero_utility_denominator": 3601,
+      "zero_utility_types": {
+        "different_current_same_terminal_outcome": 0,
+        "different_terminal_both_zero_conversions": 36,
+        "different_terminal_same_positive_conversions_both_on_score_plateau": 950,
+        "other_zero_utility": 0,
+        "same_current_outcome": 2615
+      }
+    },
+    "validation": {
+      "action_cell_denominator": 4107,
+      "contexts": 540,
+      "contexts_with_selected_cells": 540,
+      "current_reward_vs_terminal_direction": {
+        "-1/-1": 913,
+        "-1/0": 73,
+        "-1/1": 218,
+        "0/-1": 220,
+        "0/0": 1195,
+        "0/1": 304,
+        "1/-1": 395,
+        "1/0": 123,
+        "1/1": 666
+      },
+      "current_vs_future_direction": {
+        "conversions": {
+          "-1/-1": 45,
+          "-1/0": 194,
+          "-1/1": 452,
+          "0/-1": 271,
+          "0/0": 1999,
+          "0/1": 159,
+          "1/-1": 755,
+          "1/0": 206,
+          "1/1": 26
+        },
+        "cost": {
+          "-1/-1": 63,
+          "-1/0": 384,
+          "-1/1": 1119,
+          "0/-1": 0,
+          "0/0": 895,
+          "0/1": 0,
+          "1/-1": 1383,
+          "1/0": 217,
+          "1/1": 46
+        }
+      },
+      "flags": {
+        "CPA_boundary_near_tie": 0,
+        "current_future_conversion_sign_reversal": 1207,
+        "current_future_cost_sign_reversal": 2502,
+        "current_terminal_conversion_sign_reversal": 592,
+        "current_terminal_cost_sign_reversal": 1192,
+        "current_terminal_reward_sign_reversal": 613,
+        "exact_conversion_cancellation": 244,
+        "exact_cost_cancellation": 0,
+        "numeric_utility_near_tie": 0,
+        "same_current_cost_tolerance_only": 0,
+        "same_current_exact": 895,
+        "same_terminal_exact": 895
+      },
+      "guarded_oracle_only": {
+        "by_market": {
+          "2001": {
+            "contexts": 90,
+            "mean_headroom": 1.4289624082913086,
+            "positive_contexts": 53
+          },
+          "2002": {
+            "contexts": 90,
+            "mean_headroom": 1.2821344166914956,
+            "positive_contexts": 41
+          },
+          "2003": {
+            "contexts": 90,
+            "mean_headroom": 1.1254509389486351,
+            "positive_contexts": 53
+          },
+          "2004": {
+            "contexts": 90,
+            "mean_headroom": 1.2566219354553014,
+            "positive_contexts": 53
+          },
+          "2005": {
+            "contexts": 90,
+            "mean_headroom": 1.7712094985909195,
+            "positive_contexts": 62
+          },
+          "2006": {
+            "contexts": 90,
+            "mean_headroom": 1.4150359965231547,
+            "positive_contexts": 47
+          }
+        },
+        "contexts": 540,
+        "mean_headroom": 1.3799025324168026,
+        "positive_contexts": 309
+      },
+      "mean_deltas": {
+        "current_reward_score_delta": -0.13472566239111666,
+        "delta_current_conversions": 0.21256391526661797,
+        "delta_current_cost": 76.64173283544466,
+        "delta_future_conversions": -0.6839542244947651,
+        "delta_future_cost": -66.91807787857724,
+        "delta_terminal_conversions": -0.47139030922814706,
+        "delta_terminal_cost": 9.723654956867422,
+        "terminal_utility_delta": -0.8253153398198164
+      },
+      "terminal_utility_counts": {
+        "negative": 1528,
+        "numeric_near_tie": 0,
+        "positive": 1188,
+        "strict_zero": 1391
+      },
+      "unprotected_single_intervention_upper_bound": {
+        "by_market": {
+          "2001": {
+            "contexts": 90,
+            "mean_headroom": 1.4289624082913086,
+            "positive_contexts": 53
+          },
+          "2002": {
+            "contexts": 90,
+            "mean_headroom": 1.2821344166914956,
+            "positive_contexts": 41
+          },
+          "2003": {
+            "contexts": 90,
+            "mean_headroom": 1.1254509389486351,
+            "positive_contexts": 53
+          },
+          "2004": {
+            "contexts": 90,
+            "mean_headroom": 1.2650045258227844,
+            "positive_contexts": 53
+          },
+          "2005": {
+            "contexts": 90,
+            "mean_headroom": 1.7712094985909195,
+            "positive_contexts": 62
+          },
+          "2006": {
+            "contexts": 90,
+            "mean_headroom": 1.4150359965231547,
+            "positive_contexts": 47
+          }
+        },
+        "contexts": 540,
+        "mean_headroom": 1.381299630811383,
+        "positive_contexts": 309
+      },
+      "zero_equality_counts": {
+        "different_current_same_terminal_outcome/cost_tolerance_only": 0,
+        "different_current_same_terminal_outcome/exact": 0,
+        "same_current_outcome/cost_tolerance_only": 0,
+        "same_current_outcome/exact": 895
+      },
+      "zero_utility_denominator": 1391,
+      "zero_utility_types": {
+        "different_current_same_terminal_outcome": 0,
+        "different_terminal_both_zero_conversions": 0,
+        "different_terminal_same_positive_conversions_both_on_score_plateau": 496,
+        "other_zero_utility": 0,
+        "same_current_outcome": 895
+      }
+    }
+  },
+  "source_sha256": "c1714ba532d12aafc7c50f3045b6f7fd0a42baa654491bcbf1013ec626d6625c"
+}
