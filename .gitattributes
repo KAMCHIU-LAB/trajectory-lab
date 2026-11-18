@@ -1,0 +1,7 @@
+# Generated experiment reports are artifacts rather than application source.
+reports/**/*.html linguist-generated=true
+reports/**/*.svg linguist-generated=true
+reports/**/*.png linguist-generated=true
+
+# Keep upstream simulator files attributed as vendored code.
+third_party/** linguist-vendored=true
