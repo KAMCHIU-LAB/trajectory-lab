@@ -35,6 +35,8 @@ There is currently no LLM planner in the implemented system.
 | [Chosen-action and pacing audit](reports/bidding-onpolicy/report.html) | Complete: 1,080 campaigns replayed exactly. Examines selected actions, forecast-bias direction and early budget spend; a post-hoc validation diagnostic, not a causal result. |
 | [Independent new-market confirmation](reports/bidding-confirmation/report.html) | Complete: 24 new markets and 4,320 rows. Original response passed the frozen score, conversion-retention, violation and seed-consistency gates under 50% overprediction. The failed controller gate remains closed. |
 | [Generative response development](docs/bidding-generative-findings.md) | Stopped at training seed 23 on six existing development markets; business replication and generative-value gates failed. Includes completed zero-fit mechanism audits. |
+| [Information and feedback-coordination ablations](docs/bidding-evolution-audits.md) | Complete and independently checked: causal winner-log information on four training markets, and a control-mechanism comparison on four training/six seen development markets. Both candidates failed their frozen gates; scalar evidence and comparison plots are exported. |
+| [Action-decoder structural comparison](docs/bidding-decoder-findings.md) | Complete: three matched 2,000-update arms; the product-feature candidate failed the frozen prediction gate against strong controls. Policy evaluation was skipped. |
 | [Offline policy-learning foundation](docs/results.md) | Completed: 39 BC/IQL/DT training runs across Pendulum, a public PointMaze subset and an IQL mechanism ablation. |
 
 Campaigns within a market and repeated methods/seeds are correlated. Row counts
@@ -123,6 +125,8 @@ hard-budget settlement rule. It is not an official leaderboard reproduction;
 opponents do not adapt or exhaust budgets. Simulator scores do not establish
 production revenue or causal business impact. No employer code, data, internal
 integrations or online metrics are included.
+
+[Code/data provenance and publication boundary](docs/code-and-data-provenance.md).
 
 ## References and attribution
 

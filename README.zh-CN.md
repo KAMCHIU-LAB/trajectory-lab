@@ -33,6 +33,8 @@
 | [所选动作与预算节奏审计](reports/bidding-onpolicy/report.html) | 已完成：1,080 个周期精确重放。检查控制器实际选择的动作、预测误差方向和早期预算消耗；属于事后验证诊断，不是因果证明。 |
 | [新市场独立确认](reports/bidding-confirmation/report.html) | 已完成：24 个新市场、4,320 条记录。高估 50% 场景下，原 response 通过冻结的 score、转化保留、违约和种子一致性门槛；失败控制器的门槛仍未通过。 |
 | [生成式响应开发复核](docs/bidding-generative-findings.md) | 复用 6 个开发市场，按规则在训练种子 23 后停止；业务复现与生成增量均未通过，附已完成的零拟合机制审计。 |
+| [信息价值与反馈协调消融](docs/bidding-evolution-audits.md) | 已完成并独立复核：4 个训练市场上的历史赢家信息对照，以及 4 个训练 / 6 个已见开发市场上的控制机制对照。两个候选均未通过冻结门槛，公开摘录保留对照表、图和来源哈希。 |
+| [动作解码器结构对照](docs/bidding-decoder-findings.md) | 三组各2,000步对照已完成并复核；乘积特征候选未胜过强对照，预测门失败，未进入策略评估。 |
 | [离线策略学习基础实验](docs/results.md) | 已完成：Pendulum、公开 PointMaze 子集和 IQL 机制消融，合计 39 次 BC / IQL / DT 训练。 |
 
 同一市场内的广告主、不同方法和重复种子之间存在相关性，记录条数不是独立市场数。
@@ -113,3 +115,5 @@ GitHub 显示 HTML 源码，查看页面请本地启动上述服务。
 算法来自公开方法，项目贡献是独立实现和可检查的实验；开发使用了 AI 编程辅助。
 代码使用 [MIT](LICENSE)，AuctionNet 子集保留独立的 [Apache-2.0 条款](third_party/auctionnet/README.md)，
 上游数据遵循各自条款，不在仓库重新分发。
+
+[代码、数据来源与发布边界](docs/code-and-data-provenance.md)。

@@ -1,0 +1,37 @@
+{
+  "exporter_sha256": "12c03d6f9a9b6237c4c45d3c047fc0de2ac42dc3db1d21d2bd85e90cea2fb5c2",
+  "input_sha256": {
+    ".omx/state/bidding-v2/feedback-coordination-independent-verification.json": "1a5d57699f4b303353d234fb5d03681bada17615f71e16de72bde5322878c580",
+    ".omx/state/bidding-v2/information-value-independent-verification.json": "0132afbd1349dde826a6ad3e5c3d85df43212c306445a6c8d04b731e16953231",
+    "artifacts/bidding/numerical-audits/feedback-coordination-v1/manifest.json": "d3d148fdefdb2d3783615fe3c101c555de433f054e66e6139705ed6a26bb854f",
+    "artifacts/bidding/numerical-audits/feedback-coordination-v1/seal.json": "84754b4c1798b650a01798d7242d43a97014a15ae306ccc840df87fc517649fa",
+    "artifacts/bidding/numerical-audits/feedback-coordination-v1/summary.json": "b2ebea5e9a90c6c9cade0c3098238f4f3bcb162c1067622c2dce0c029213665c",
+    "artifacts/bidding/numerical-audits/feedback-coordination-v1/terminals.json": "4b9e0e9302e226e50a2cf6b26e5007a01e71ebab875db2acb18dcb837547b59d",
+    "artifacts/bidding/numerical-audits/feedback-coordination-v1/tick-logs.jsonl": "a9577efaca81488e9b9f8f504b21cd1e0518b44980a88e93b758e26ef7d1f6bf",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1002.json": "3dac2bf663a75a8e5fdc65adb14e328e9910cd3104038ace685ae7b3946ec3a8",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1002.npz": "a7e6248cdec50573d100294adc48a93e8e9a2cd0de021a4a30d409e27fbc776e",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1006.json": "da162633730cf0477c80415a276e1f3c1711d048062b93d6406ce4d06ddf182c",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1006.npz": "4cc32d844311d74c3bdbac7de283ab8bdb453dd2d4e52f5cbf01ac663cb60bd7",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1010.json": "0a0177245251906515da174a5b755b1e53c90cb71f55bc9b0a353a1404eafd0f",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1010.npz": "80a2d3755e11b62682d3bfe81367198bf1b164d4e3a4d93e117ffc529cb726ad",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1014.json": "7fab9ce21788e8cce8c0b0f0493b3942924e44131c46dd31b3edd76e94fff6be",
+    "artifacts/bidding/numerical-audits/information-value-v1/held-1014.npz": "b46f05d2663e74c98fa67fa2ab5786734b10f0a36c0991d3b7f31bc50a6b21b5",
+    "artifacts/bidding/numerical-audits/information-value-v1/join.json": "47289e74794267e129436e8841125669eb7dd553178b13efca3b807be2c9a4a5",
+    "artifacts/bidding/numerical-audits/information-value-v1/manifest.json": "ce497274a8e3a628c1bfe51041277174672caa4ee49162326c95609902494886",
+    "artifacts/bidding/numerical-audits/information-value-v1/protocol.json": "16f98bb5635e6a069a61d7e8edce6cf1b4cd25431570a8ed25737482ee9534d9",
+    "artifacts/bidding/numerical-audits/information-value-v1/resources.json": "07ff33a68103123b72175348a6e62fb9f27ebeba14d999a21b59104bdaf1e2ff",
+    "artifacts/bidding/numerical-audits/information-value-v1/seal.json": "c6b2f449b3babd6c200fadea99df43bc1ca059edda958411cdee95339d58beff",
+    "artifacts/bidding/numerical-audits/information-value-v1/summary.json": "e417ce674d5be9037ce2eab6310f29e2385f53713e815ba61b29edd42aac9e2f"
+  },
+  "output_sha256": {
+    "comparison.svg": "a241181fb780a4cb013a7d7eeec8ab698ab6f999717ca2f0aaa16a7911bf86c1",
+    "results.csv": "a84f800a40c5837e4fa3a13e44bb03595e7bd29cdce64c6a193e885abfcf7052",
+    "summary.json": "bef93c936336604f6e1864bddb9bf98abad7701d243c16b1f7bf1280f5c3c061"
+  },
+  "privacy_boundary": "Only explicitly selected scalar metrics, static explanatory text and provenance hashes are public. No implementation source, full manifests, machine paths, logs, weights, traffic or exposure records are copied.",
+  "privacy_scan": "Existing PRIVACY_PATTERNS plus absolute filesystem path checks applied to every output; scanning is supplementary to the scalar allowlist.",
+  "record_hash_boundary": "This record is excluded from its own output hashes to avoid circular hashing.",
+  "schema_version": 1,
+  "scientific_boundary": "Both candidates failed; diagnostics are ineligible; seen development is not independent confirmation; no generative gain is established.",
+  "tool": "bidding-evolution-scalar-export-v1"
+}

@@ -1,3 +1,7 @@
+# AuctionNet source, revision c20de631a40e24669d1d6a8e2acefd8f492f172d.
+# Distributed under Apache-2.0; see LICENSE.txt and README.md in this directory.
+# Modification notice (TrajectoryLab, 2026-11-18): blank-line formatting and
+# this attribution header differ from upstream. Executable code is unchanged.
 import numpy as np
 import random
 import logging

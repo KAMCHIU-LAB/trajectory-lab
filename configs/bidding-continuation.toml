@@ -1,0 +1,16 @@
+main_run = "artifacts/bidding/main-v2"
+data = "artifacts/bidding/numerical-audits/continuation-feasibility-v1"
+encoder = "artifacts/bidding/robust-v1/models/response-log-11/best.pt"
+output = "artifacts/bidding/continuation-feasibility-v1"
+seed = 11
+scenarios = ["calibrated", "over_25", "over_50", "under_25", "mid_over_50"]
+primary_scenarios = ["over_25", "over_50", "under_25"]
+ticks = [0, 16, 32]
+
+[training]
+steps = 2000
+batch_size = 128
+learning_rate = 0.0003
+threads = 2
+context = 24
+device = "cpu"

@@ -23,7 +23,9 @@ Use its NeurIPS traffic generator and three-slot auction kernel with 48
 advertisers and 48 ticks. Reserve price is 0.0001, matching upstream test.gin.
 The vendored auction file removes gin's import and decorator and adds a
 modification/license notice; constructor arguments are supplied explicitly.
-The generator is unmodified.
+The generator differs in blank-line formatting and a local attribution header;
+its executable AST matches the pinned upstream source. The header was added
+after the recorded runs; see [publication provenance](code-and-data-provenance.md).
 
 This is a **custom fixed-opponent study derived from AuctionNet**, not the
 official trained-opponent benchmark or a reproduction of published scores.

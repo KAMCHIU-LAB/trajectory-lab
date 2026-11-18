@@ -17,3 +17,22 @@ reports/iql-unweighted-ablation-*/
 .env
 .env.*
 !.env.example
+
+# Local research orchestration, raw arrays, models and private runtime files.
+.omx/
+.codex/
+/data/
+/datasets/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.parquet
+*.h5
+*.hdf5
+*.sqlite
+*.sqlite3
+*.log
+*.pem
+*.key

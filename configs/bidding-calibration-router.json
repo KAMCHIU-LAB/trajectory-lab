@@ -1,0 +1,14 @@
+{
+  "version": "calibration-router-v1",
+  "train_markets": [1002, 1006, 1010, 1014],
+  "evaluation_markets": [2001, 2002, 2003, 2004, 2005, 2006],
+  "scenarios": ["calibrated", "over_25", "over_50", "under_25", "mid_over_50"],
+  "scales": [0.5, 0.6666666666666666, 0.75, 1.0, 1.25, 1.3333333333333333, 1.5],
+  "gate_scale_selection_scenarios": ["over_25", "over_50"],
+  "seeds": [11, 23, 37],
+  "minimum_expected": 8.0,
+  "probability": 0.95,
+  "margin": 0.1,
+  "wall_limit_seconds": 1800,
+  "output": "artifacts/bidding/numerical-audits/calibration-router-v1"
+}

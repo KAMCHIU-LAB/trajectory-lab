@@ -1,0 +1,914 @@
+{
+  "candidate_verdict": "BOTH_FAIL",
+  "comparison_boundary": "Different protocols, populations and terminal units; do not pool across studies.",
+  "export_validation": "All sealed file hashes, exact file sets, no symlinks, producer identities, freeze and verifier verdicts checked. Experiments were not rerun.",
+  "generative_contribution": false,
+  "independent_confirmation": false,
+  "schema_version": 1,
+  "scope": "Public descriptive scalar summaries from two sealed, independently checked studies.",
+  "studies": {
+    "feedback-coordination-v1": {
+      "candidate": "minimum",
+      "candidate_verdict": "FAIL",
+      "generative_contribution": false,
+      "independent_confirmation": false,
+      "limitations": [
+        "All ten markets are historically seen training or development data; seen development is not independent confirmation.",
+        "Failed scientific gates close minimum; pacing-only and quality-only arms remain diagnostic.",
+        "This is an ablation using the minimum of two existing feedback signals, not the complete min-pacing algorithm or its theorem.",
+        "No statistical significance, new-market generalization, or generative contribution is established.",
+        "Archived wall time starts after module import; full launcher wall duration is unavailable."
+      ],
+      "minimum_non_fb_decision_count": 7882,
+      "provenance": {
+        "freeze_sha256": "3856014fa819f76032596d4d30be3c75f7bf73eb3811301c56088a372b451031",
+        "integrity_verdict": "PASS",
+        "scientific_gate_verdict": "FAIL",
+        "seal_file_sha256": "84754b4c1798b650a01798d7242d43a97014a15ae306ccc840df87fc517649fa",
+        "seal_identity_sha256": "9deab241292a59b9157859fa9e550d0467413e54b54dc8b9b0b661991bc1a535",
+        "verifier_sha256": "1a5d57699f4b303353d234fb5d03681bada17615f71e16de72bde5322878c580"
+      },
+      "scope": "Four training and six seen development markets; frozen full policy replay.",
+      "splits": {
+        "seen_development": {
+          "arms": {
+            "FB": {
+              "candidate_eligible": false,
+              "five_scene_macro": 1.0,
+              "physical_delta_mse": null,
+              "role": "baseline",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 665,
+                  "conversion_mean": 18.47222222222222,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 665,
+                  "fb_conversion_mean": 18.47222222222222,
+                  "fb_risk_count": 18,
+                  "fb_score_mean": 16.230886393774885,
+                  "risk_count": 18,
+                  "score_mean": 16.230886393774885,
+                  "score_ratio": 1.0,
+                  "terminal_count": 36
+                },
+                "mid_over_50": {
+                  "conversion_count": 758,
+                  "conversion_mean": 21.055555555555557,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 758,
+                  "fb_conversion_mean": 21.055555555555557,
+                  "fb_risk_count": 23,
+                  "fb_score_mean": 15.727632211361104,
+                  "risk_count": 23,
+                  "score_mean": 15.727632211361104,
+                  "score_ratio": 1.0,
+                  "terminal_count": 36
+                },
+                "over_25": {
+                  "conversion_count": 757,
+                  "conversion_mean": 21.02777777777778,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 757,
+                  "fb_conversion_mean": 21.02777777777778,
+                  "fb_risk_count": 22,
+                  "fb_score_mean": 17.211978864315014,
+                  "risk_count": 22,
+                  "score_mean": 17.211978864315014,
+                  "score_ratio": 1.0,
+                  "terminal_count": 36
+                },
+                "over_50": {
+                  "conversion_count": 780,
+                  "conversion_mean": 21.666666666666668,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 780,
+                  "fb_conversion_mean": 21.666666666666668,
+                  "fb_risk_count": 26,
+                  "fb_score_mean": 15.284709790776617,
+                  "risk_count": 26,
+                  "score_mean": 15.284709790776617,
+                  "score_ratio": 1.0,
+                  "terminal_count": 36
+                },
+                "under_25": {
+                  "conversion_count": 520,
+                  "conversion_mean": 14.444444444444445,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 520,
+                  "fb_conversion_mean": 14.444444444444445,
+                  "fb_risk_count": 15,
+                  "fb_score_mean": 13.417116141676537,
+                  "risk_count": 15,
+                  "score_mean": 13.417116141676537,
+                  "score_ratio": 1.0,
+                  "terminal_count": 36
+                }
+              }
+            },
+            "minimum": {
+              "candidate_eligible": true,
+              "five_scene_macro": 0.8135826488112519,
+              "physical_delta_mse": null,
+              "role": "candidate",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 511,
+                  "conversion_mean": 14.194444444444445,
+                  "conversion_ratio": 0.768421052631579,
+                  "fb_conversion_count": 665,
+                  "fb_conversion_mean": 18.47222222222222,
+                  "fb_risk_count": 18,
+                  "fb_score_mean": 16.230886393774885,
+                  "risk_count": 15,
+                  "score_mean": 12.834971307278405,
+                  "score_ratio": 0.7907745144591158,
+                  "terminal_count": 36
+                },
+                "mid_over_50": {
+                  "conversion_count": 646,
+                  "conversion_mean": 17.944444444444443,
+                  "conversion_ratio": 0.8522427440633245,
+                  "fb_conversion_count": 758,
+                  "fb_conversion_mean": 21.055555555555557,
+                  "fb_risk_count": 23,
+                  "fb_score_mean": 15.727632211361104,
+                  "risk_count": 27,
+                  "score_mean": 13.089141974025527,
+                  "score_ratio": 0.8322385593789748,
+                  "terminal_count": 36
+                },
+                "over_25": {
+                  "conversion_count": 673,
+                  "conversion_mean": 18.694444444444443,
+                  "conversion_ratio": 0.8890356671070012,
+                  "fb_conversion_count": 757,
+                  "fb_conversion_mean": 21.02777777777778,
+                  "fb_risk_count": 22,
+                  "fb_score_mean": 17.211978864315014,
+                  "risk_count": 21,
+                  "score_mean": 15.320829289202699,
+                  "score_ratio": 0.8901259645959031,
+                  "terminal_count": 36
+                },
+                "over_50": {
+                  "conversion_count": 778,
+                  "conversion_mean": 21.61111111111111,
+                  "conversion_ratio": 0.9974358974358973,
+                  "fb_conversion_count": 780,
+                  "fb_conversion_mean": 21.666666666666668,
+                  "fb_risk_count": 26,
+                  "fb_score_mean": 15.284709790776617,
+                  "risk_count": 26,
+                  "score_mean": 15.701187444464182,
+                  "score_ratio": 1.027247992234624,
+                  "terminal_count": 36
+                },
+                "under_25": {
+                  "conversion_count": 264,
+                  "conversion_mean": 7.333333333333333,
+                  "conversion_ratio": 0.5076923076923077,
+                  "fb_conversion_count": 520,
+                  "fb_conversion_mean": 14.444444444444445,
+                  "fb_risk_count": 15,
+                  "fb_score_mean": 13.417116141676537,
+                  "risk_count": 16,
+                  "score_mean": 7.077880472800824,
+                  "score_ratio": 0.5275262133876413,
+                  "terminal_count": 36
+                }
+              }
+            },
+            "pacing_only": {
+              "candidate_eligible": false,
+              "five_scene_macro": 1.0016203012779645,
+              "physical_delta_mse": null,
+              "role": "diagnostic",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 695,
+                  "conversion_mean": 19.305555555555557,
+                  "conversion_ratio": 1.0451127819548873,
+                  "fb_conversion_count": 665,
+                  "fb_conversion_mean": 18.47222222222222,
+                  "fb_risk_count": 18,
+                  "fb_score_mean": 16.230886393774885,
+                  "risk_count": 18,
+                  "score_mean": 16.843415186761476,
+                  "score_ratio": 1.0377384683822024,
+                  "terminal_count": 36
+                },
+                "mid_over_50": {
+                  "conversion_count": 765,
+                  "conversion_mean": 21.25,
+                  "conversion_ratio": 1.0092348284960422,
+                  "fb_conversion_count": 758,
+                  "fb_conversion_mean": 21.055555555555557,
+                  "fb_risk_count": 23,
+                  "fb_score_mean": 15.727632211361104,
+                  "risk_count": 24,
+                  "score_mean": 15.29637671946991,
+                  "score_ratio": 0.9725797573280185,
+                  "terminal_count": 36
+                },
+                "over_25": {
+                  "conversion_count": 774,
+                  "conversion_mean": 21.5,
+                  "conversion_ratio": 1.0224570673712021,
+                  "fb_conversion_count": 757,
+                  "fb_conversion_mean": 21.02777777777778,
+                  "fb_risk_count": 22,
+                  "fb_score_mean": 17.211978864315014,
+                  "risk_count": 23,
+                  "score_mean": 17.331601569482253,
+                  "score_ratio": 1.006949968165209,
+                  "terminal_count": 36
+                },
+                "over_50": {
+                  "conversion_count": 800,
+                  "conversion_mean": 22.22222222222222,
+                  "conversion_ratio": 1.0256410256410255,
+                  "fb_conversion_count": 780,
+                  "fb_conversion_mean": 21.666666666666668,
+                  "fb_risk_count": 26,
+                  "fb_score_mean": 15.284709790776617,
+                  "risk_count": 27,
+                  "score_mean": 15.092594526994308,
+                  "score_ratio": 0.9874308857405825,
+                  "terminal_count": 36
+                },
+                "under_25": {
+                  "conversion_count": 517,
+                  "conversion_mean": 14.36111111111111,
+                  "conversion_ratio": 0.9942307692307691,
+                  "fb_conversion_count": 520,
+                  "fb_conversion_mean": 14.444444444444445,
+                  "fb_risk_count": 15,
+                  "fb_score_mean": 13.417116141676537,
+                  "risk_count": 13,
+                  "score_mean": 13.462766896864292,
+                  "score_ratio": 1.0034024267738098,
+                  "terminal_count": 36
+                }
+              }
+            },
+            "quality_only": {
+              "candidate_eligible": false,
+              "five_scene_macro": 0.7778326533681846,
+              "physical_delta_mse": null,
+              "role": "diagnostic",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 501,
+                  "conversion_mean": 13.916666666666666,
+                  "conversion_ratio": 0.7533834586466165,
+                  "fb_conversion_count": 665,
+                  "fb_conversion_mean": 18.47222222222222,
+                  "fb_risk_count": 18,
+                  "fb_score_mean": 16.230886393774885,
+                  "risk_count": 16,
+                  "score_mean": 12.472246201154753,
+                  "score_ratio": 0.7684266834581689,
+                  "terminal_count": 36
+                },
+                "mid_over_50": {
+                  "conversion_count": 636,
+                  "conversion_mean": 17.666666666666668,
+                  "conversion_ratio": 0.8390501319261213,
+                  "fb_conversion_count": 758,
+                  "fb_conversion_mean": 21.055555555555557,
+                  "fb_risk_count": 23,
+                  "fb_score_mean": 15.727632211361104,
+                  "risk_count": 27,
+                  "score_mean": 12.83885614003423,
+                  "score_ratio": 0.8163247949529159,
+                  "terminal_count": 36
+                },
+                "over_25": {
+                  "conversion_count": 667,
+                  "conversion_mean": 18.52777777777778,
+                  "conversion_ratio": 0.8811096433289299,
+                  "fb_conversion_count": 757,
+                  "fb_conversion_mean": 21.02777777777778,
+                  "fb_risk_count": 22,
+                  "fb_score_mean": 17.211978864315014,
+                  "risk_count": 22,
+                  "score_mean": 15.12964844619175,
+                  "score_ratio": 0.8790185350250176,
+                  "terminal_count": 36
+                },
+                "over_50": {
+                  "conversion_count": 741,
+                  "conversion_mean": 20.583333333333332,
+                  "conversion_ratio": 0.9499999999999998,
+                  "fb_conversion_count": 780,
+                  "fb_conversion_mean": 21.666666666666668,
+                  "fb_risk_count": 26,
+                  "fb_score_mean": 15.284709790776617,
+                  "risk_count": 30,
+                  "score_mean": 13.881858646177323,
+                  "score_ratio": 0.908218660098746,
+                  "terminal_count": 36
+                },
+                "under_25": {
+                  "conversion_count": 259,
+                  "conversion_mean": 7.194444444444445,
+                  "conversion_ratio": 0.4980769230769231,
+                  "fb_conversion_count": 520,
+                  "fb_conversion_mean": 14.444444444444445,
+                  "fb_risk_count": 15,
+                  "fb_score_mean": 13.417116141676537,
+                  "risk_count": 16,
+                  "score_mean": 6.9389915839119345,
+                  "score_ratio": 0.5171745933060747,
+                  "terminal_count": 36
+                }
+              }
+            }
+          },
+          "campaigns_per_arm": 180,
+          "candidate_verdict": "FAIL",
+          "gate_flags": {
+            "macro": false,
+            "market_direction": false,
+            "over50": false,
+            "protections": false,
+            "under25": false
+          },
+          "market_count": 6
+        },
+        "train": {
+          "arms": {
+            "FB": {
+              "candidate_eligible": false,
+              "five_scene_macro": 1.0,
+              "physical_delta_mse": null,
+              "role": "baseline",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 495,
+                  "conversion_mean": 20.625,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 495,
+                  "fb_conversion_mean": 20.625,
+                  "fb_risk_count": 13,
+                  "fb_score_mean": 18.054023959458444,
+                  "risk_count": 13,
+                  "score_mean": 18.054023959458444,
+                  "score_ratio": 1.0,
+                  "terminal_count": 24
+                },
+                "mid_over_50": {
+                  "conversion_count": 526,
+                  "conversion_mean": 21.916666666666668,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 526,
+                  "fb_conversion_mean": 21.916666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.06869555312041,
+                  "risk_count": 17,
+                  "score_mean": 17.06869555312041,
+                  "score_ratio": 1.0,
+                  "terminal_count": 24
+                },
+                "over_25": {
+                  "conversion_count": 517,
+                  "conversion_mean": 21.541666666666668,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 517,
+                  "fb_conversion_mean": 21.541666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.145440703892152,
+                  "risk_count": 17,
+                  "score_mean": 17.145440703892152,
+                  "score_ratio": 1.0,
+                  "terminal_count": 24
+                },
+                "over_50": {
+                  "conversion_count": 538,
+                  "conversion_mean": 22.416666666666668,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 538,
+                  "fb_conversion_mean": 22.416666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 16.940953761706027,
+                  "risk_count": 17,
+                  "score_mean": 16.940953761706027,
+                  "score_ratio": 1.0,
+                  "terminal_count": 24
+                },
+                "under_25": {
+                  "conversion_count": 365,
+                  "conversion_mean": 15.208333333333334,
+                  "conversion_ratio": 1.0,
+                  "fb_conversion_count": 365,
+                  "fb_conversion_mean": 15.208333333333334,
+                  "fb_risk_count": 10,
+                  "fb_score_mean": 14.25056815892689,
+                  "risk_count": 10,
+                  "score_mean": 14.25056815892689,
+                  "score_ratio": 1.0,
+                  "terminal_count": 24
+                }
+              }
+            },
+            "minimum": {
+              "candidate_eligible": true,
+              "five_scene_macro": 0.9021652871332677,
+              "physical_delta_mse": null,
+              "role": "candidate",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 418,
+                  "conversion_mean": 17.416666666666668,
+                  "conversion_ratio": 0.8444444444444446,
+                  "fb_conversion_count": 495,
+                  "fb_conversion_mean": 20.625,
+                  "fb_risk_count": 13,
+                  "fb_score_mean": 18.054023959458444,
+                  "risk_count": 7,
+                  "score_mean": 16.4137881067286,
+                  "score_ratio": 0.909148461505695,
+                  "terminal_count": 24
+                },
+                "mid_over_50": {
+                  "conversion_count": 496,
+                  "conversion_mean": 20.666666666666668,
+                  "conversion_ratio": 0.9429657794676806,
+                  "fb_conversion_count": 526,
+                  "fb_conversion_mean": 21.916666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.06869555312041,
+                  "risk_count": 13,
+                  "score_mean": 17.41454354314845,
+                  "score_ratio": 1.0202621219033234,
+                  "terminal_count": 24
+                },
+                "over_25": {
+                  "conversion_count": 488,
+                  "conversion_mean": 20.333333333333332,
+                  "conversion_ratio": 0.943907156673114,
+                  "fb_conversion_count": 517,
+                  "fb_conversion_mean": 21.541666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.145440703892152,
+                  "risk_count": 13,
+                  "score_mean": 17.610798687416235,
+                  "score_ratio": 1.0271417918944739,
+                  "terminal_count": 24
+                },
+                "over_50": {
+                  "conversion_count": 545,
+                  "conversion_mean": 22.708333333333332,
+                  "conversion_ratio": 1.0130111524163568,
+                  "fb_conversion_count": 538,
+                  "fb_conversion_mean": 22.416666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 16.940953761706027,
+                  "risk_count": 17,
+                  "score_mean": 18.2433483373902,
+                  "score_ratio": 1.076878468237612,
+                  "terminal_count": 24
+                },
+                "under_25": {
+                  "conversion_count": 169,
+                  "conversion_mean": 7.041666666666667,
+                  "conversion_ratio": 0.46301369863013697,
+                  "fb_conversion_count": 365,
+                  "fb_conversion_mean": 15.208333333333334,
+                  "fb_risk_count": 10,
+                  "fb_score_mean": 14.25056815892689,
+                  "risk_count": 10,
+                  "score_mean": 6.803158424351902,
+                  "score_ratio": 0.4773955921252335,
+                  "terminal_count": 24
+                }
+              }
+            },
+            "pacing_only": {
+              "candidate_eligible": false,
+              "five_scene_macro": 1.0139518468243953,
+              "physical_delta_mse": null,
+              "role": "diagnostic",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 500,
+                  "conversion_mean": 20.833333333333332,
+                  "conversion_ratio": 1.01010101010101,
+                  "fb_conversion_count": 495,
+                  "fb_conversion_mean": 20.625,
+                  "fb_risk_count": 13,
+                  "fb_score_mean": 18.054023959458444,
+                  "risk_count": 10,
+                  "score_mean": 18.53677380953864,
+                  "score_ratio": 1.0267391829746235,
+                  "terminal_count": 24
+                },
+                "mid_over_50": {
+                  "conversion_count": 548,
+                  "conversion_mean": 22.833333333333332,
+                  "conversion_ratio": 1.041825095057034,
+                  "fb_conversion_count": 526,
+                  "fb_conversion_mean": 21.916666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.06869555312041,
+                  "risk_count": 15,
+                  "score_mean": 17.405753760668446,
+                  "score_ratio": 1.0197471568052203,
+                  "terminal_count": 24
+                },
+                "over_25": {
+                  "conversion_count": 539,
+                  "conversion_mean": 22.458333333333332,
+                  "conversion_ratio": 1.0425531914893615,
+                  "fb_conversion_count": 517,
+                  "fb_conversion_mean": 21.541666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.145440703892152,
+                  "risk_count": 17,
+                  "score_mean": 17.818851661760263,
+                  "score_ratio": 1.0392763866206858,
+                  "terminal_count": 24
+                },
+                "over_50": {
+                  "conversion_count": 562,
+                  "conversion_mean": 23.416666666666668,
+                  "conversion_ratio": 1.0446096654275092,
+                  "fb_conversion_count": 538,
+                  "fb_conversion_mean": 22.416666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 16.940953761706027,
+                  "risk_count": 18,
+                  "score_mean": 17.39197601495843,
+                  "score_ratio": 1.0266231913265658,
+                  "terminal_count": 24
+                },
+                "under_25": {
+                  "conversion_count": 351,
+                  "conversion_mean": 14.625,
+                  "conversion_ratio": 0.9616438356164383,
+                  "fb_conversion_count": 365,
+                  "fb_conversion_mean": 15.208333333333334,
+                  "fb_risk_count": 10,
+                  "fb_score_mean": 14.25056815892689,
+                  "risk_count": 7,
+                  "score_mean": 13.643113698823134,
+                  "score_ratio": 0.9573733163948812,
+                  "terminal_count": 24
+                }
+              }
+            },
+            "quality_only": {
+              "candidate_eligible": false,
+              "five_scene_macro": 0.8452889741020865,
+              "physical_delta_mse": null,
+              "role": "diagnostic",
+              "scenes": {
+                "calibrated": {
+                  "conversion_count": 396,
+                  "conversion_mean": 16.5,
+                  "conversion_ratio": 0.8,
+                  "fb_conversion_count": 495,
+                  "fb_conversion_mean": 20.625,
+                  "fb_risk_count": 13,
+                  "fb_score_mean": 18.054023959458444,
+                  "risk_count": 10,
+                  "score_mean": 15.295254410362267,
+                  "score_ratio": 0.8471936475053327,
+                  "terminal_count": 24
+                },
+                "mid_over_50": {
+                  "conversion_count": 481,
+                  "conversion_mean": 20.041666666666668,
+                  "conversion_ratio": 0.9144486692015209,
+                  "fb_conversion_count": 526,
+                  "fb_conversion_mean": 21.916666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.06869555312041,
+                  "risk_count": 15,
+                  "score_mean": 16.639989891344936,
+                  "score_ratio": 0.9748835134799096,
+                  "terminal_count": 24
+                },
+                "over_25": {
+                  "conversion_count": 495,
+                  "conversion_mean": 20.625,
+                  "conversion_ratio": 0.9574468085106382,
+                  "fb_conversion_count": 517,
+                  "fb_conversion_mean": 21.541666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 17.145440703892152,
+                  "risk_count": 13,
+                  "score_mean": 18.134953977611627,
+                  "score_ratio": 1.0577129098521711,
+                  "terminal_count": 24
+                },
+                "over_50": {
+                  "conversion_count": 493,
+                  "conversion_mean": 20.541666666666668,
+                  "conversion_ratio": 0.9163568773234201,
+                  "fb_conversion_count": 538,
+                  "fb_conversion_mean": 22.416666666666668,
+                  "fb_risk_count": 17,
+                  "fb_score_mean": 16.940953761706027,
+                  "risk_count": 21,
+                  "score_mean": 14.577481109204042,
+                  "score_ratio": 0.8604876274531563,
+                  "terminal_count": 24
+                },
+                "under_25": {
+                  "conversion_count": 172,
+                  "conversion_mean": 7.166666666666667,
+                  "conversion_ratio": 0.4712328767123288,
+                  "fb_conversion_count": 365,
+                  "fb_conversion_mean": 15.208333333333334,
+                  "fb_risk_count": 10,
+                  "fb_score_mean": 14.25056815892689,
+                  "risk_count": 10,
+                  "score_mean": 6.928158424351902,
+                  "score_ratio": 0.4861671722198627,
+                  "terminal_count": 24
+                }
+              }
+            }
+          },
+          "campaigns_per_arm": 120,
+          "candidate_verdict": "FAIL",
+          "gate_flags": {
+            "macro": false,
+            "market_direction": false,
+            "over50": true,
+            "protections": false,
+            "under25": false
+          },
+          "market_count": 4
+        }
+      },
+      "terminal_unit": "Campaign terminal; six campaigns per market and scene."
+    },
+    "information-value-v1": {
+      "arms": {
+        "actual_E": {
+          "candidate_eligible": true,
+          "five_scene_macro": 1.0083159139092988,
+          "physical_delta_mse": 0.020948451087750425,
+          "role": "candidate",
+          "scenes": {
+            "calibrated": {
+              "conversion_count": 1484,
+              "conversion_mean": 20.611111111111114,
+              "conversion_ratio": 0.9993265993265995,
+              "fb_conversion_count": 1485,
+              "fb_conversion_mean": 20.625,
+              "fb_risk_count": 39,
+              "fb_score_mean": 18.05402395945844,
+              "risk_count": 38,
+              "score_mean": 18.10133956719369,
+              "score_ratio": 1.0026207790485655,
+              "terminal_count": 72
+            },
+            "mid_over_50": {
+              "conversion_count": 1590,
+              "conversion_mean": 22.083333333333332,
+              "conversion_ratio": 1.0076045627376424,
+              "fb_conversion_count": 1578,
+              "fb_conversion_mean": 21.916666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 17.068695553120413,
+              "risk_count": 51,
+              "score_mean": 17.257371277073243,
+              "score_ratio": 1.0110539041115147,
+              "terminal_count": 72
+            },
+            "over_25": {
+              "conversion_count": 1563,
+              "conversion_mean": 21.708333333333332,
+              "conversion_ratio": 1.0077369439071566,
+              "fb_conversion_count": 1551,
+              "fb_conversion_mean": 21.541666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 17.145440703892152,
+              "risk_count": 51,
+              "score_mean": 17.346553081616364,
+              "score_ratio": 1.0117297875976181,
+              "terminal_count": 72
+            },
+            "over_50": {
+              "conversion_count": 1620,
+              "conversion_mean": 22.5,
+              "conversion_ratio": 1.003717472118959,
+              "fb_conversion_count": 1614,
+              "fb_conversion_mean": 22.416666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 16.94095376170603,
+              "risk_count": 49,
+              "score_mean": 17.15408407294261,
+              "score_ratio": 1.012580774036368,
+              "terminal_count": 72
+            },
+            "under_25": {
+              "conversion_count": 1097,
+              "conversion_mean": 15.23611111111111,
+              "conversion_ratio": 1.0018264840182647,
+              "fb_conversion_count": 1095,
+              "fb_conversion_mean": 15.208333333333334,
+              "fb_risk_count": 30,
+              "fb_score_mean": 14.250568158926892,
+              "risk_count": 29,
+              "score_mean": 14.30178932879667,
+              "score_ratio": 1.0035943247524268,
+              "terminal_count": 72
+            }
+          },
+          "switch_count": 190
+        },
+        "pseudo_E": {
+          "candidate_eligible": false,
+          "five_scene_macro": 1.006931288311737,
+          "physical_delta_mse": 0.020444633528960744,
+          "role": "diagnostic",
+          "scenes": {
+            "calibrated": {
+              "conversion_count": 1475,
+              "conversion_mean": 20.486111111111114,
+              "conversion_ratio": 0.9932659932659934,
+              "fb_conversion_count": 1485,
+              "fb_conversion_mean": 20.625,
+              "fb_risk_count": 39,
+              "fb_score_mean": 18.05402395945844,
+              "risk_count": 38,
+              "score_mean": 17.9761806142069,
+              "score_ratio": 0.9956883105159081,
+              "terminal_count": 72
+            },
+            "mid_over_50": {
+              "conversion_count": 1590,
+              "conversion_mean": 22.083333333333332,
+              "conversion_ratio": 1.0076045627376424,
+              "fb_conversion_count": 1578,
+              "fb_conversion_mean": 21.916666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 17.068695553120413,
+              "risk_count": 51,
+              "score_mean": 17.257376271429408,
+              "score_ratio": 1.0110541967147866,
+              "terminal_count": 72
+            },
+            "over_25": {
+              "conversion_count": 1558,
+              "conversion_mean": 21.63888888888889,
+              "conversion_ratio": 1.0045132172791746,
+              "fb_conversion_count": 1551,
+              "fb_conversion_mean": 21.541666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 17.145440703892152,
+              "risk_count": 51,
+              "score_mean": 17.276248181133905,
+              "score_ratio": 1.0076292863800262,
+              "terminal_count": 72
+            },
+            "over_50": {
+              "conversion_count": 1626,
+              "conversion_mean": 22.583333333333332,
+              "conversion_ratio": 1.007434944237918,
+              "fb_conversion_count": 1614,
+              "fb_conversion_mean": 22.416666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 16.94095376170603,
+              "risk_count": 49,
+              "score_mean": 17.262457238531162,
+              "score_ratio": 1.018977885268294,
+              "terminal_count": 72
+            },
+            "under_25": {
+              "conversion_count": 1095,
+              "conversion_mean": 15.208333333333334,
+              "conversion_ratio": 1.0,
+              "fb_conversion_count": 1095,
+              "fb_conversion_mean": 15.208333333333334,
+              "fb_risk_count": 30,
+              "fb_score_mean": 14.250568158926892,
+              "risk_count": 29,
+              "score_mean": 14.269190269561074,
+              "score_ratio": 1.0013067626796701,
+              "terminal_count": 72
+            }
+          },
+          "switch_count": 194
+        },
+        "zero_E": {
+          "candidate_eligible": false,
+          "five_scene_macro": 1.006721556406201,
+          "physical_delta_mse": 0.020441998083261265,
+          "role": "reference",
+          "scenes": {
+            "calibrated": {
+              "conversion_count": 1475,
+              "conversion_mean": 20.486111111111114,
+              "conversion_ratio": 0.9932659932659934,
+              "fb_conversion_count": 1485,
+              "fb_conversion_mean": 20.625,
+              "fb_risk_count": 39,
+              "fb_score_mean": 18.05402395945844,
+              "risk_count": 38,
+              "score_mean": 17.97633956719369,
+              "score_ratio": 0.9956971148127866,
+              "terminal_count": 72
+            },
+            "mid_over_50": {
+              "conversion_count": 1588,
+              "conversion_mean": 22.055555555555557,
+              "conversion_ratio": 1.0063371356147022,
+              "fb_conversion_count": 1578,
+              "fb_conversion_mean": 21.916666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 17.068695553120413,
+              "risk_count": 51,
+              "score_mean": 17.234720240907276,
+              "score_ratio": 1.0097268527211214,
+              "terminal_count": 72
+            },
+            "over_25": {
+              "conversion_count": 1561,
+              "conversion_mean": 21.680555555555557,
+              "conversion_ratio": 1.006447453255964,
+              "fb_conversion_count": 1551,
+              "fb_conversion_mean": 21.541666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 17.145440703892152,
+              "risk_count": 51,
+              "score_mean": 17.31791484780057,
+              "score_ratio": 1.010059475687275,
+              "terminal_count": 72
+            },
+            "over_50": {
+              "conversion_count": 1620,
+              "conversion_mean": 22.5,
+              "conversion_ratio": 1.003717472118959,
+              "fb_conversion_count": 1614,
+              "fb_conversion_mean": 22.416666666666668,
+              "fb_risk_count": 51,
+              "fb_score_mean": 16.94095376170603,
+              "risk_count": 49,
+              "score_mean": 17.15408407294261,
+              "score_ratio": 1.012580774036368,
+              "terminal_count": 72
+            },
+            "under_25": {
+              "conversion_count": 1099,
+              "conversion_mean": 15.263888888888888,
+              "conversion_ratio": 1.0036529680365296,
+              "fb_conversion_count": 1095,
+              "fb_conversion_mean": 15.208333333333334,
+              "fb_risk_count": 30,
+              "fb_score_mean": 14.250568158926892,
+              "risk_count": 29,
+              "score_mean": 14.329567106574446,
+              "score_ratio": 1.0055435647734554,
+              "terminal_count": 72
+            }
+          },
+          "switch_count": 189
+        }
+      },
+      "campaign_count": 120,
+      "candidate": "actual_E",
+      "candidate_verdict": "FAIL",
+      "context_count": 360,
+      "full_policy_rollout": false,
+      "gate_flags": {
+        "macro_FB": true,
+        "macro_zero_E": true,
+        "markets_FB": true,
+        "markets_zero_E": true,
+        "mse": false,
+        "nonfeedback": true,
+        "scene_protections": true
+      },
+      "generative_contribution": false,
+      "independent_confirmation": false,
+      "limitations": [
+        "Descriptive feasibility on four seen markets with overlapping training folds; no significance or generalization claim.",
+        "The failed prediction MSE gate closes this candidate despite positive descriptive score ratios.",
+        "Pseudo E uses random training donors; it is diagnostic and is never an eligible candidate or an independence test.",
+        "Guard weights were not archived; verifier rebuilds matched saved predictions but reused the frozen optimizer helper.",
+        "E was reconstructed from strictly prior saved aggregate predicted sums; individual exposure probabilities were not archived.",
+        "Recorded artifact byte sampling was stale; the verifier separately counted sealed bytes."
+      ],
+      "market_count": 4,
+      "mse_relative_improvement": -0.0247751223939241,
+      "positive_markets_vs_fb": 4,
+      "positive_markets_vs_zero_e": 3,
+      "provenance": {
+        "freeze_sha256": "dd9e641758e164a7a67e477cd753c7bfc64c70fbd1ba8d50476d647e77df2eaf",
+        "integrity_verdict": "PASS",
+        "scientific_gate_verdict": "FAIL",
+        "seal_file_sha256": "c6b2f449b3babd6c200fadea99df43bc1ca059edda958411cdee95339d58beff",
+        "seal_identity_sha256": "78bb7ef40686f4adb094f5ff6d25ab023b653b5ff46051f9d0d8afca6505b080",
+        "verifier_sha256": "0132afbd1349dde826a6ad3e5c3d85df43212c306445a6c8d04b731e16953231"
+      },
+      "scope": "Four seen training markets; leave-one-market fits; one intervention then FB.",
+      "terminal_unit": "Overlapping intervention context; three contexts per campaign."
+    }
+  },
+  "tool": "bidding-evolution-scalar-export-v1"
+}
