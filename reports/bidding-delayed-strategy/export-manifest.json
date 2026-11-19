@@ -1,0 +1,15 @@
+{
+  "files": {
+    "README.md": "d1a90123ab4d2d9e4d8552d945da10f2a07a96f6ee89cb40d91ab34d86fcc44f",
+    "selection.json": "b5164c72331e20fc33d775e934e51d9a76724038a4c490fa5ab249931571a80c",
+    "validation-cells.csv": "c162cf68a16b15683a47e33cffc1e61e53d9f81effe6c7e16d54a91ee195c8c3",
+    "validation-markets.csv": "bca2c5e5d3297ca2536405c716d71b2e95202d85353a98d1fb6b0b6ba18a7552",
+    "validation.csv": "6f615123f9cdbcad3a85acea589e7ca1c0ccd661a801009823a26ddedd3d1d10",
+    "validation/manifest.json": "fe69c7e4013f3104f99b5747933b6fc855c501a415da92e373829cecbb852d00",
+    "validation/status.json": "7093dcdb48af4b7bfa825041e002e5264b04c320bc8cc5a6cdd38d01ddbe8175",
+    "validation/summary.json": "b4868eafb25325febc1b54c6c78be6ac0e8e0795721d4ebbf018270b56a66c70"
+  },
+  "run_identity": "e17064ba73b111df13d7f8877963d2876a21b8db38ed571092d2267fd0ddde43",
+  "schema": "delayed-strategy-development-export-v1",
+  "selection_identity": "49bf3a74ecacdcd014766ce45911bddb1c60134ea6139c80c7c9d3a0ac381329"
+}

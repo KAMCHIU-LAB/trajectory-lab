@@ -1,0 +1,34 @@
+{
+  "description": "CPU estimator microbenchmark, 188 cohorts, 81 calibration-grid points; excludes auction, feature assembly and model training",
+  "environment": "Apple M1, 16 GB, Python3.12; concurrent experiment load",
+  "results": {
+    "delay_corrected": {
+      "calls": 300,
+      "median_ms": 0.4228750185575336,
+      "p95_ms": 0.44046011025784537
+    },
+    "mature_only": {
+      "calls": 300,
+      "median_ms": 0.4460420022951439,
+      "p95_ms": 0.4656910023186356
+    },
+    "naive": {
+      "calls": 300,
+      "median_ms": 0.07920799544081092,
+      "p95_ms": 0.08216911082854494
+    },
+    "posterior": {
+      "calls": 300,
+      "median_ms": 0.42295848834328353,
+      "p95_ms": 0.4516119108302519
+    }
+  },
+  "source": {
+    "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "src/trajectorylab/bidding_delayed_experiment.py": "e1c8f7ad0861acaf42bed041405353377591e21c369e0eafc449635f40ca7fbc",
+    "src/trajectorylab/bidding_delayed_feedback.py": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+    "src/trajectorylab/bidding_delayed_statistics.py": "198780e0a2f1ed55ba90bd321a7141b112b1179dd286e1229b5b3c76de9e3526",
+    "src/trajectorylab/bidding_pending_response.py": "2899e437654c9ce7f646d63c03dd98289758a179dff6ced75dafe3d6772bbbfd"
+  }
+}

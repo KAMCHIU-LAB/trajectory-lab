@@ -1,0 +1,35 @@
+[study]
+name = "delayed-feedback-v1"
+purpose = "custom-fixed-opponent-public-mechanism-study"
+train_markets = [1001, 1002, 1003, 1004]
+validation_markets = [2001, 2002, 2003, 2004, 2005, 2006]
+confirmation_markets = [6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118, 6119, 6120, 6121, 6122, 6123, 6124]
+focal_agents = [0, 8, 16, 24, 32, 40]
+pv_count = 500000
+actions = [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
+biases = [0.75, 1.0, 1.5]
+
+[evaluation]
+arrival_seeds = [11, 23, 37]
+regimes = ["immediate", "short", "long"]
+gains = [0.3, 0.7, 0.3, 1.2]
+priors = [8.0, 8.0, 3.0, 8.0]
+methods = ["naive", "mature_only", "delay_corrected", "posterior", "oracle_past"]
+probability_bin_edges = [0.0001, 0.0005, 0.002]
+bootstrap_draws = 10000
+bootstrap_seed = 20261119
+
+[history]
+arrival_seed = 731
+maturity_window = 48
+total_delay_pseudocount = 0.5
+calibration_prior_log_sd = 0.5
+regime_assumption = "same mature training history delay regime; no hidden test delay parameters"
+
+[limits]
+maximum_neural_configurations = 4
+maximum_neural_seeds = 3
+maximum_neural_training_hours = 12
+minimum_confirmation_markets = 24
+oracle_diagnostic_gain = 0.02
+oracle_diagnostic_action_change = 0.10

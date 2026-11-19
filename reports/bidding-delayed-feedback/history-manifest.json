@@ -1,0 +1,71 @@
+{
+  "core": {
+    "behavior": "arrived-only feedback, gain=.3, prior=8, nominal prediction; selected winners only",
+    "config_identity": "8c68cb7dfdd0c42ce6a28a7995375313e3c0e74df42f26703aea8c989ddf2b66",
+    "context_contract": "separate mature training logs per stable deployment context; no test observations fitted",
+    "markets": {
+      "1001": {
+        "identity": "f27ab86e37bc412ccd4e8b7643b0568cb9f4d8eafd1946a3a0fce46e59bc7e37",
+        "sha256": "1730981d209d45a24d22040cf89c35675d288e59c073e815e25911b1c44cf5a0",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "1002": {
+        "identity": "76836696e9eb95826f4e5b4c0f10c37f3a1463357e5c0716706347cfdd1902de",
+        "sha256": "9662dc790919c6fb291503364214435a9fcf707980ad79d28536007e8cd5c0a7",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "1003": {
+        "identity": "1b915eadc6fc2b7fe0e7d8b55ec9ec728de11b9abf8760fd34ba19968abcb4dd",
+        "sha256": "0831ae30513ef78e5e539abd2f35dfd077573c6bd3bd7ee6764cc6510bcafe33",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "1004": {
+        "identity": "cb00f86c970871362795298e38688cf02fcca4663ab4e2ee87312ba999f37847",
+        "sha256": "cbb51e1b4c9e4d27268f74a1eda760ba5cf256296210eea4f01d8352f7a58092",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      }
+    },
+    "source": {
+      "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+      "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+      "src/trajectorylab/bidding_delayed_experiment.py": "e1c8f7ad0861acaf42bed041405353377591e21c369e0eafc449635f40ca7fbc",
+      "src/trajectorylab/bidding_delayed_feedback.py": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+      "src/trajectorylab/bidding_delayed_statistics.py": "198780e0a2f1ed55ba90bd321a7141b112b1179dd286e1229b5b3c76de9e3526",
+      "src/trajectorylab/bidding_pending_response.py": "2899e437654c9ce7f646d63c03dd98289758a179dff6ced75dafe3d6772bbbfd"
+    }
+  },
+  "history_sha256": "2e88beaf8aad0089c4480ec6fefbde9d31bfac50e079f48f8a947e2cf2662c29",
+  "identity": "8c387c2199e07f5e621a39f9e54ba5d5f45cfa5a17206fe121c502af94b6e3e2"
+}

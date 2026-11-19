@@ -9,6 +9,7 @@
 
 - **已确认的局部收益：**高估 50% 时，3 个冻结响应模型在 24 个新模拟市场相对冻结反馈的 score **+17.6%**、转化 **+8.4%**、CPA 违约频率 **−24.8 个百分点**。[统计口径及失败边界](docs/bidding-findings.md)。
 - **生成式分支：**已实现条件 Flow Matching、分位筛选与反馈回退；第二训练种子未通过业务门槛，生成分布带来的额外决策价值尚未确认。[已完成的种子复核与机制诊断](docs/bidding-generative-findings.md)。
+- **延迟反馈：**独立的 24 市场确认中，posterior 补回的 score **+1.21%**（95% 区间 **[+0.41%, +2.05%]**），未达预设 +3% 实用门槛；高估、长延迟格下降 4.25%。同轨迹审计进一步区分估计精度与控制收益。[结果与边界](docs/bidding-delayed-findings.md)。
 - **实现入口：**[拍卖结算](src/trajectorylab/bidding/market.py)、[响应学习](src/trajectorylab/bidding/learning.py)、[Flow 采样器](src/trajectorylab/bidding_generative_learning.py)、[公开记录](reports/bidding-generative/README.md)。
 
 ## 研究什么
@@ -33,6 +34,8 @@
 | [所选动作与预算节奏审计](reports/bidding-onpolicy/report.html) | 已完成：1,080 个周期精确重放。检查控制器实际选择的动作、预测误差方向和早期预算消耗；属于事后验证诊断，不是因果证明。 |
 | [新市场独立确认](reports/bidding-confirmation/report.html) | 已完成：24 个新市场、4,320 条记录。高估 50% 场景下，原 response 通过冻结的 score、转化保留、违约和种子一致性门槛；失败控制器的门槛仍未通过。 |
 | [生成式响应开发复核](docs/bidding-generative-findings.md) | 复用 6 个开发市场，按规则在训练种子 23 后停止；业务复现与生成增量均未通过，附已完成的零拟合机制审计。 |
+| [延迟反馈估计与控制](docs/bidding-delayed-findings.md) | 已完成：24 个新市场、19,440 条记录；7 个保护端点通过，+3% 实用门槛未通过。附 1,296 条同轨迹 pending 审计、源码哈希与小规模 CPU 重放。 |
+| [Pending 使用策略对照](docs/bidding-delayed-strategy-findings.md) | 已完成：6 个旧开发市场比较 12 个配置。50% 补回的折中最好，但相对更强固定基线仅 +0.30%，没有候选通过晋级门槛，未开启新确认。 |
 | [信息价值与反馈协调消融](docs/bidding-evolution-audits.md) | 已完成并独立复核：4 个训练市场上的历史赢家信息对照，以及 4 个训练 / 6 个已见开发市场上的控制机制对照。两个候选均未通过冻结门槛，公开摘录保留对照表、图和来源哈希。 |
 | [动作解码器结构对照](docs/bidding-decoder-findings.md) | 三组各2,000步对照已完成并复核；乘积特征候选未胜过强对照，预测门失败，未进入策略评估。 |
 | [离线策略学习基础实验](docs/results.md) | 已完成：Pendulum、公开 PointMaze 子集和 IQL 机制消融，合计 39 次 BC / IQL / DT 训练。 |
@@ -58,6 +61,7 @@
 | 学习策略 | [训练与执行](src/trajectorylab/bidding/learning.py)：因果 DT、单调响应模型；归一化只拟合训练市场 |
 | 预测与控制的分离 | [逐时段控制研究](src/trajectorylab/bidding_control.py)：同一检查点比较控制器、经验响应曲线，以及完整的简单策略参数网格 |
 | 反馈信息边界 | 策略只接收当前观测和过去实际反馈；发生预算截断的反馈不进入未截断预测的比例修正 |
+| 延迟回传 | [事件账本](src/trajectorylab/bidding_delayed_experiment.py)与[pending 估计](src/trajectorylab/bidding_pending_response.py)：严格回传时间边界、成熟历史校准与最终标签结算 |
 | 证据与恢复 | 源码 / 配置指纹、优化器与随机状态检查点、按市场配对统计、原始 CSV / JSON 和可公开的文本导出 |
 
 响应模型使用模拟器干预产生的密集反事实标签，DT 使用行为策略轨迹，两者监督不同，
@@ -88,6 +92,15 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory reports
 
 报告不依赖账号、API Key 或在线后端。公开导出不包含模型权重、流量数组、本机日志和运行器状态。
 GitHub 显示 HTML 源码，查看页面请本地启动上述服务。
+
+小规模延迟回传 CPU 重放：
+
+```bash
+PYTHONPATH=src python scripts/run_bidding_delayed_smoke.py
+```
+
+该入口检查公开链路和恢复身份，不能复现正式收益；完整分阶段命令、假设和证据清单见
+[延迟反馈协议](docs/bidding-delayed-protocol.md)。
 
 ## 离线策略学习基础
 

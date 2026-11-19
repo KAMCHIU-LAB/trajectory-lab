@@ -1,0 +1,30 @@
+{
+  "elapsed_seconds": 393.6906367499905,
+  "identity": "53940cfaaa6fa288622c950930e06a694ef47171ef3716842dd6f4f5a8f3b61b",
+  "methods": [
+    "delay_corrected-g0.3-p3",
+    "delay_corrected-g0.3-p8",
+    "delay_corrected-g0.7-p8",
+    "delay_corrected-g1.2-p8",
+    "mature_only-g0.3-p3",
+    "mature_only-g0.3-p8",
+    "mature_only-g0.7-p8",
+    "mature_only-g1.2-p8",
+    "naive-g0.3-p3",
+    "naive-g0.3-p8",
+    "naive-g0.7-p8",
+    "naive-g1.2-p8",
+    "oracle_past-g0.3-p3",
+    "oracle_past-g0.3-p8",
+    "oracle_past-g0.7-p8",
+    "oracle_past-g1.2-p8",
+    "posterior-g0.3-p3",
+    "posterior-g0.3-p8",
+    "posterior-g0.7-p8",
+    "posterior-g1.2-p8"
+  ],
+  "paired_campaigns": 972,
+  "peak_rss_native": 943587328,
+  "phase": "complete",
+  "rows": 19440
+}

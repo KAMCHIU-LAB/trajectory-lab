@@ -1,0 +1,1479 @@
+{
+  "confirmation_scope": "One selected policy; primary score vs frozen stronger fixed reference; protection vs fixed naive",
+  "development_identity": "e17064ba73b111df13d7f8877963d2876a21b8db38ed571092d2267fd0ddde43",
+  "development_results_sha256": "3c02a15cf9258a017944f213b9df1608601e310c06cd037be8c3946d2a7751b8",
+  "gate": false,
+  "identity": "49bf3a74ecacdcd014766ce45911bddb1c60134ea6139c80c7c9d3a0ac381329",
+  "protection_endpoints": 10,
+  "provenance": {
+    "config": {
+      "evaluation": {
+        "arrival_seeds": [
+          11,
+          23,
+          37
+        ],
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 20261119,
+        "probability_bin_edges": [
+          0.0001,
+          0.0005,
+          0.002
+        ],
+        "regimes": [
+          "immediate",
+          "short",
+          "long"
+        ]
+      },
+      "history": {
+        "calibration_prior_log_sd": 0.5,
+        "maturity_window": 48
+      },
+      "strategy": {
+        "calibration_threshold": 0.9,
+        "factor_lower": 0.6666666666666666,
+        "factor_upper": 1.5,
+        "gain": 0.3,
+        "information_threshold": 8.0,
+        "minimum_confirmation_markets": 24,
+        "minimum_dev_wins": 4,
+        "prior": 8.0
+      },
+      "study": {
+        "actions": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5,
+          1.75,
+          2.0,
+          2.5,
+          3.0
+        ],
+        "biases": [
+          0.75,
+          1.0,
+          1.5
+        ],
+        "confirmation_markets": [
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107,
+          7108,
+          7109,
+          7110,
+          7111,
+          7112,
+          7113,
+          7114,
+          7115,
+          7116,
+          7117,
+          7118,
+          7119,
+          7120,
+          7121,
+          7122,
+          7123,
+          7124
+        ],
+        "focal_agents": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ],
+        "name": "delayed-feedback-strategy-v2",
+        "purpose": "bounded-feedback-use-extension",
+        "pv_count": 500000,
+        "train_markets": [
+          1001,
+          1002,
+          1003,
+          1004
+        ],
+        "validation_markets": [
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006
+        ]
+      }
+    },
+    "history_sha256": "2e88beaf8aad0089c4480ec6fefbde9d31bfac50e079f48f8a947e2cf2662c29",
+    "source": {
+      "config_sha256": "5ccb56e426ae264ba27fd261746b343662b2c8dd5116877bb89bf51da20795b6",
+      "extension": {
+        "scripts/run_bidding_delayed_strategy.py": "02f36de593982cc1aab0412a1455813b12cdf3d5a4e6e5fade193d4351d3bbc1",
+        "src/trajectorylab/bidding_delayed_strategy.py": "6abe47309b936eec444a1900950694c34433545715b768ff16d8b66c76d1a19c"
+      },
+      "frozen_core": {
+        "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+        "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+        "src/trajectorylab/bidding_delayed_experiment.py": "e1c8f7ad0861acaf42bed041405353377591e21c369e0eafc449635f40ca7fbc",
+        "src/trajectorylab/bidding_delayed_feedback.py": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+        "src/trajectorylab/bidding_delayed_statistics.py": "198780e0a2f1ed55ba90bd321a7141b112b1179dd286e1229b5b3c76de9e3526",
+        "src/trajectorylab/bidding_pending_response.py": "2899e437654c9ce7f646d63c03dd98289758a179dff6ced75dafe3d6772bbbfd"
+      },
+      "registration_sha256": "cc541549ff1949c9dbbee5c086765b6634bae4c0a02e5a6e3e710b882ec57185"
+    },
+    "training_history_identity": "8c387c2199e07f5e621a39f9e54ba5d5f45cfa5a17206fe121c502af94b6e3e2"
+  },
+  "selected": null,
+  "stop_reason": "All registered configurations failed; no further search",
+  "stronger_fixed_reference": "fixed-posterior",
+  "table": [
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "over": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "under": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        }
+      },
+      "gates": {
+        "bias_violation": true,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": true,
+        "over_cell_retention": true
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9835472380844688,
+        "score_ratio": 0.9872259417776541,
+        "violation_delta": -0.011316872427983626
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.739473600283827,
+          "conversions": 17.734567901234566,
+          "score": 14.885123280149614,
+          "violation": 0.5246913580246914
+        },
+        "2002": {
+          "budget_utilization": 0.7240362285098868,
+          "conversions": 20.685185185185187,
+          "score": 18.994274307257392,
+          "violation": 0.3271604938271605
+        },
+        "2003": {
+          "budget_utilization": 0.6908296685885267,
+          "conversions": 14.197530864197532,
+          "score": 10.294316705638842,
+          "violation": 0.7037037037037037
+        },
+        "2004": {
+          "budget_utilization": 0.6673675166263574,
+          "conversions": 13.981481481481481,
+          "score": 10.316139022579701,
+          "violation": 0.6049382716049383
+        },
+        "2005": {
+          "budget_utilization": 0.7604927521268747,
+          "conversions": 17.82716049382716,
+          "score": 13.859471159080153,
+          "violation": 0.7222222222222222
+        },
+        "2006": {
+          "budget_utilization": 0.7814394828737824,
+          "conversions": 22.95679012345679,
+          "score": 20.49543218916311,
+          "violation": 0.35802469135802467
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.7272732081682092,
+        "conversions": 17.897119341563787,
+        "score": 14.807459443978134,
+        "violation": 0.5401234567901234
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "short": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        }
+      },
+      "passed": false,
+      "variant": {
+        "family": "fixed",
+        "name": "fixed-naive",
+        "pending": 0.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9835472380844688,
+          "score_ratio": 0.9872259417776541,
+          "violation_delta": -0.011316872427983626
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 1.0123269165822357,
+          "score_ratio": 1.0047402881239307,
+          "violation_delta": -0.0092592592592593
+        },
+        "over": {
+          "conversion_ratio": 1.0090504237896856,
+          "score_ratio": 1.0097282875810665,
+          "violation_delta": -0.00925925925925919
+        },
+        "under": {
+          "conversion_ratio": 1.0343452249058276,
+          "score_ratio": 1.026834892006086,
+          "violation_delta": 0.05246913580246915
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": true,
+        "over_cell_retention": true
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 1.0,
+        "score_ratio": 1.0,
+        "violation_delta": 0.0
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.75216767755948,
+          "conversions": 18.135802469135804,
+          "score": 15.244031614084376,
+          "violation": 0.5432098765432098
+        },
+        "2002": {
+          "budget_utilization": 0.7393466227091761,
+          "conversions": 20.65432098765432,
+          "score": 18.743968862955434,
+          "violation": 0.3271604938271605
+        },
+        "2003": {
+          "budget_utilization": 0.7039116246570272,
+          "conversions": 14.549382716049383,
+          "score": 10.485825390072486,
+          "violation": 0.7283950617283951
+        },
+        "2004": {
+          "budget_utilization": 0.6832161594798098,
+          "conversions": 14.339506172839506,
+          "score": 10.686169387173592,
+          "violation": 0.6234567901234568
+        },
+        "2005": {
+          "budget_utilization": 0.7754793862319805,
+          "conversions": 18.21604938271605,
+          "score": 14.047554570603165,
+          "violation": 0.7345679012345679
+        },
+        "2006": {
+          "budget_utilization": 0.7899144680007321,
+          "conversions": 23.28395061728395,
+          "score": 20.786799902074137,
+          "violation": 0.35185185185185186
+        }
+      },
+      "market_wins": 0,
+      "means": {
+        "budget_utilization": 0.7406726564397009,
+        "conversions": 18.19650205761317,
+        "score": 14.999058287827198,
+        "violation": 0.551440329218107
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 1.0186875271621032,
+          "score_ratio": 1.0106085831560805,
+          "violation_delta": -0.02777777777777779
+        },
+        "short": {
+          "conversion_ratio": 1.0086206896551726,
+          "score_ratio": 1.0187189513438926,
+          "violation_delta": 0.0
+        }
+      },
+      "passed": false,
+      "variant": {
+        "family": "fixed",
+        "name": "fixed-posterior",
+        "pending": 1.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 1.01672798344447,
+          "score_ratio": 1.0129393461838576,
+          "violation_delta": 0.011316872427983626
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9967916244511988,
+          "score_ratio": 0.9954142876422215,
+          "violation_delta": 0.00925925925925919
+        },
+        "over": {
+          "conversion_ratio": 1.0011492601637697,
+          "score_ratio": 1.0007159235532999,
+          "violation_delta": 0.0030864197530864335
+        },
+        "under": {
+          "conversion_ratio": 1.011965433192998,
+          "score_ratio": 1.0105333345851009,
+          "violation_delta": 0.015432098765432112
+        }
+      },
+      "gates": {
+        "bias_violation": true,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": true,
+        "over_cell_retention": true
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9859784022163169,
+        "score_ratio": 0.9888751491210102,
+        "violation_delta": -0.002057613168724326
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7441371796990864,
+          "conversions": 17.882716049382715,
+          "score": 15.031814030434967,
+          "violation": 0.5308641975308642
+        },
+        "2002": {
+          "budget_utilization": 0.7291010899441907,
+          "conversions": 20.72222222222222,
+          "score": 19.006557688239827,
+          "violation": 0.32098765432098764
+        },
+        "2003": {
+          "budget_utilization": 0.6917735075738684,
+          "conversions": 14.17283950617284,
+          "score": 10.297909068954914,
+          "violation": 0.7222222222222222
+        },
+        "2004": {
+          "budget_utilization": 0.6713060476156927,
+          "conversions": 14.049382716049383,
+          "score": 10.342168979668486,
+          "violation": 0.6049382716049383
+        },
+        "2005": {
+          "budget_utilization": 0.7632302289581826,
+          "conversions": 17.80246913580247,
+          "score": 13.735319765776937,
+          "violation": 0.7469135802469136
+        },
+        "2006": {
+          "budget_utilization": 0.7841573876710448,
+          "conversions": 23.01851851851852,
+          "score": 20.57940647322394,
+          "violation": 0.37037037037037035
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.7306175735770111,
+        "conversions": 17.941358024691358,
+        "score": 14.832196001049844,
+        "violation": 0.5493827160493827
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 1.009561060408518,
+          "score_ratio": 1.00858289824866,
+          "violation_delta": -0.01851851851851849
+        },
+        "short": {
+          "conversion_ratio": 0.9939655172413793,
+          "score_ratio": 0.9934750105060016,
+          "violation_delta": 0.02777777777777779
+        }
+      },
+      "passed": false,
+      "variant": {
+        "family": "partial",
+        "name": "partial-0.25",
+        "pending": 0.25
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 1.0024718326051965,
+          "score_ratio": 1.0016705470081007,
+          "violation_delta": 0.0092592592592593
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9859784022163169,
+          "score_ratio": 0.9888751491210102,
+          "violation_delta": -0.002057613168724326
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 1.0075987841945289,
+          "score_ratio": 1.0085467252110265,
+          "violation_delta": -0.015432098765432167
+        },
+        "over": {
+          "conversion_ratio": 1.0112052865967536,
+          "score_ratio": 1.0171517579730656,
+          "violation_delta": -0.0030864197530864335
+        },
+        "under": {
+          "conversion_ratio": 1.0248171947706626,
+          "score_ratio": 1.0238478322680866,
+          "violation_delta": 0.0092592592592593
+        }
+      },
+      "gates": {
+        "bias_violation": true,
+        "macro_uplift": false,
+        "market_wins": true,
+        "nominal_under_retention": true,
+        "over_cell_retention": true
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9968338327585231,
+        "score_ratio": 1.0030078365072197,
+        "violation_delta": -0.014403292181069949
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7478611127008626,
+          "conversions": 18.24074074074074,
+          "score": 15.513536859707834,
+          "violation": 0.49382716049382713
+        },
+        "2002": {
+          "budget_utilization": 0.7347013494385174,
+          "conversions": 20.820987654320987,
+          "score": 19.059688087047622,
+          "violation": 0.3271604938271605
+        },
+        "2003": {
+          "budget_utilization": 0.6984034843016061,
+          "conversions": 14.425925925925926,
+          "score": 10.537121883557049,
+          "violation": 0.7098765432098766
+        },
+        "2004": {
+          "budget_utilization": 0.6772108545954549,
+          "conversions": 14.283950617283951,
+          "score": 10.668412152647837,
+          "violation": 0.6049382716049383
+        },
+        "2005": {
+          "budget_utilization": 0.7685162273244278,
+          "conversions": 18.104938271604937,
+          "score": 14.054806644822095,
+          "violation": 0.7160493827160493
+        },
+        "2006": {
+          "budget_utilization": 0.7857632260181581,
+          "conversions": 22.95679012345679,
+          "score": 20.43147238973302,
+          "violation": 0.37037037037037035
+        }
+      },
+      "market_wins": 4,
+      "means": {
+        "budget_utilization": 0.7354093757298379,
+        "conversions": 18.13888888888889,
+        "score": 15.044173002919242,
+        "violation": 0.5370370370370371
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 1.0221642764015646,
+          "score_ratio": 1.02966317121143,
+          "violation_delta": -0.02777777777777779
+        },
+        "short": {
+          "conversion_ratio": 1.0116379310344827,
+          "score_ratio": 1.0219026715105406,
+          "violation_delta": 0.01851851851851849
+        }
+      },
+      "passed": false,
+      "variant": {
+        "family": "partial",
+        "name": "partial-0.5",
+        "pending": 0.5
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 1.0135088526097953,
+          "score_ratio": 1.0159861021289087,
+          "violation_delta": -0.0030864197530863224
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9968338327585231,
+          "score_ratio": 1.0030078365072197,
+          "violation_delta": -0.014403292181069949
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 1.011144883485309,
+          "score_ratio": 1.0043299201863727,
+          "violation_delta": -0.006172839506172867
+        },
+        "over": {
+          "conversion_ratio": 1.0044533831346072,
+          "score_ratio": 1.0091519224822476,
+          "violation_delta": -0.00925925925925919
+        },
+        "under": {
+          "conversion_ratio": 1.0343452249058276,
+          "score_ratio": 1.026834892006086,
+          "violation_delta": 0.05246913580246915
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": true,
+        "nominal_under_retention": true,
+        "over_cell_retention": true
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9977949906711144,
+        "score_ratio": 0.9996578982700695,
+        "violation_delta": 0.0010288065843621075
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7515360142792066,
+          "conversions": 18.117283950617285,
+          "score": 15.230116140842966,
+          "violation": 0.5432098765432098
+        },
+        "2002": {
+          "budget_utilization": 0.7392288184267664,
+          "conversions": 20.685185185185187,
+          "score": 18.799975309073723,
+          "violation": 0.3271604938271605
+        },
+        "2003": {
+          "budget_utilization": 0.7015141923948773,
+          "conversions": 14.493827160493828,
+          "score": 10.496988040520701,
+          "violation": 0.7283950617283951
+        },
+        "2004": {
+          "budget_utilization": 0.6816076674593182,
+          "conversions": 14.320987654320987,
+          "score": 10.704502015524657,
+          "violation": 0.6234567901234568
+        },
+        "2005": {
+          "budget_utilization": 0.7710034761842463,
+          "conversions": 17.987654320987655,
+          "score": 13.850590161529695,
+          "violation": 0.7407407407407407
+        },
+        "2006": {
+          "budget_utilization": 0.7899145377559748,
+          "conversions": 23.333333333333332,
+          "score": 20.88139083674587,
+          "violation": 0.35185185185185186
+        }
+      },
+      "market_wins": 4,
+      "means": {
+        "budget_utilization": 0.7391341177500649,
+        "conversions": 18.156378600823047,
+        "score": 14.993927084039603,
+        "violation": 0.5524691358024691
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 1.004780530204259,
+          "score_ratio": 1.003745368527536,
+          "violation_delta": -0.02777777777777779
+        },
+        "short": {
+          "conversion_ratio": 1.0086206896551726,
+          "score_ratio": 1.023924816225416,
+          "violation_delta": 0.0
+        }
+      },
+      "passed": false,
+      "variant": {
+        "family": "gate",
+        "name": "gate-0.8",
+        "pending": 1.0,
+        "threshold": 0.8
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 1.0144860887560359,
+          "score_ratio": 1.0125928178812134,
+          "violation_delta": 0.012345679012345734
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9977949906711144,
+          "score_ratio": 0.9996578982700695,
+          "violation_delta": 0.0010288065843621075
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 1.012158054711246,
+          "score_ratio": 1.0044862869110651,
+          "violation_delta": -0.0092592592592593
+        },
+        "over": {
+          "conversion_ratio": 1.003735095532251,
+          "score_ratio": 1.005959090932937,
+          "violation_delta": -0.00925925925925919
+        },
+        "under": {
+          "conversion_ratio": 1.0343452249058276,
+          "score_ratio": 1.026834892006086,
+          "violation_delta": 0.05246913580246915
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": true,
+        "over_cell_retention": true
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9978515293718551,
+        "score_ratio": 0.998636255855307,
+        "violation_delta": 0.0
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7521677013291439,
+          "conversions": 18.117283950617285,
+          "score": 15.21974339533115,
+          "violation": 0.5432098765432098
+        },
+        "2002": {
+          "budget_utilization": 0.7393466227091761,
+          "conversions": 20.65432098765432,
+          "score": 18.743968862955434,
+          "violation": 0.3271604938271605
+        },
+        "2003": {
+          "budget_utilization": 0.7015882402543575,
+          "conversions": 14.487654320987655,
+          "score": 10.48729030371582,
+          "violation": 0.7283950617283951
+        },
+        "2004": {
+          "budget_utilization": 0.6816767098847518,
+          "conversions": 14.302469135802468,
+          "score": 10.681577669862486,
+          "violation": 0.6234567901234568
+        },
+        "2005": {
+          "budget_utilization": 0.7733522217710949,
+          "conversions": 18.123456790123456,
+          "score": 13.997776104731095,
+          "violation": 0.7345679012345679
+        },
+        "2006": {
+          "budget_utilization": 0.7899143982132321,
+          "conversions": 23.25925925925926,
+          "score": 20.7412641228716,
+          "violation": 0.35185185185185186
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.7396743156936261,
+        "conversions": 18.15740740740741,
+        "score": 14.978603409911265,
+        "violation": 0.551440329218107
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 1.0112994350282485,
+          "score_ratio": 1.0109254071548335,
+          "violation_delta": -0.02777777777777779
+        },
+        "short": {
+          "conversion_ratio": 1.0,
+          "score_ratio": 1.0069823129824955,
+          "violation_delta": 0.0
+        }
+      },
+      "passed": false,
+      "variant": {
+        "family": "gate",
+        "name": "gate-0.95",
+        "pending": 1.0,
+        "threshold": 0.95
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 1.0145435732352266,
+          "score_ratio": 1.0115579560815702,
+          "violation_delta": 0.011316872427983626
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9978515293718551,
+          "score_ratio": 0.998636255855307,
+          "violation_delta": 0.0
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9606551840594394,
+          "score_ratio": 0.9563033947961014,
+          "violation_delta": 0.05246913580246915
+        },
+        "over": {
+          "conversion_ratio": 0.9222812814250826,
+          "score_ratio": 0.968833965617721,
+          "violation_delta": 0.0185185185185186
+        },
+        "under": {
+          "conversion_ratio": 1.0214934633281632,
+          "score_ratio": 1.0053498349990837,
+          "violation_delta": 0.11419753086419754
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": false,
+        "over_cell_retention": false
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9452705376830439,
+        "score_ratio": 0.9625478124808113,
+        "violation_delta": 0.05041152263374482
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.774336845981491,
+          "conversions": 18.080246913580247,
+          "score": 15.27463982560465,
+          "violation": 0.6234567901234568
+        },
+        "2002": {
+          "budget_utilization": 0.7544266581820641,
+          "conversions": 20.580246913580247,
+          "score": 19.15369811734133,
+          "violation": 0.3148148148148148
+        },
+        "2003": {
+          "budget_utilization": 0.6596370769689102,
+          "conversions": 13.518518518518519,
+          "score": 10.652901137021939,
+          "violation": 0.7407407407407407
+        },
+        "2004": {
+          "budget_utilization": 0.6689298465885465,
+          "conversions": 13.709876543209877,
+          "score": 10.134937566840184,
+          "violation": 0.7530864197530864
+        },
+        "2005": {
+          "budget_utilization": 0.6983792009572249,
+          "conversions": 15.376543209876543,
+          "score": 12.045475629036355,
+          "violation": 0.7469135802469136
+        },
+        "2006": {
+          "budget_utilization": 0.792387863661346,
+          "conversions": 21.938271604938272,
+          "score": 19.36221218947707,
+          "violation": 0.43209876543209874
+        }
+      },
+      "market_wins": 3,
+      "means": {
+        "budget_utilization": 0.7246829153899305,
+        "conversions": 17.200617283950617,
+        "score": 14.437310744220254,
+        "violation": 0.6018518518518519
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 0.9166666666666666,
+          "score_ratio": 0.9468225948822845,
+          "violation_delta": 0.05555555555555558
+        },
+        "long": {
+          "conversion_ratio": 0.9300304215558451,
+          "score_ratio": 0.9768973541244861,
+          "violation_delta": -0.0092592592592593
+        },
+        "short": {
+          "conversion_ratio": 0.9202586206896552,
+          "score_ratio": 0.9830266584941353,
+          "violation_delta": 0.0092592592592593
+        }
+      },
+      "passed": false,
+      "variant": {
+        "eta": 0.5,
+        "family": "centered",
+        "name": "centered-eta0.5-pending0",
+        "pending": 0.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 0.9610830075879512,
+          "score_ratio": 0.9750025518450154,
+          "violation_delta": 0.06172839506172845
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9452705376830439,
+          "score_ratio": 0.9625478124808113,
+          "violation_delta": 0.05041152263374482
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9687605538669368,
+          "score_ratio": 0.9469297886776544,
+          "violation_delta": 0.07407407407407407
+        },
+        "over": {
+          "conversion_ratio": 0.9307570751328833,
+          "score_ratio": 0.9594754008187116,
+          "violation_delta": 0.0185185185185186
+        },
+        "under": {
+          "conversion_ratio": 1.054509195656991,
+          "score_ratio": 1.0308756818955258,
+          "violation_delta": 0.12654320987654322
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": false,
+        "over_cell_retention": false
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9597444450726521,
+        "score_ratio": 0.9634246133527095,
+        "violation_delta": 0.061728395061728336
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7926072247581041,
+          "conversions": 18.339506172839506,
+          "score": 15.199855784421763,
+          "violation": 0.6481481481481481
+        },
+        "2002": {
+          "budget_utilization": 0.761418847077916,
+          "conversions": 20.191358024691358,
+          "score": 18.463749155557668,
+          "violation": 0.35802469135802467
+        },
+        "2003": {
+          "budget_utilization": 0.6731225882511,
+          "conversions": 13.962962962962964,
+          "score": 10.87904583567606,
+          "violation": 0.6975308641975309
+        },
+        "2004": {
+          "budget_utilization": 0.6930878515457206,
+          "conversions": 14.209876543209877,
+          "score": 10.361929235504325,
+          "violation": 0.7839506172839507
+        },
+        "2005": {
+          "budget_utilization": 0.7137170184176759,
+          "conversions": 15.728395061728396,
+          "score": 12.205892836269408,
+          "violation": 0.7654320987654321
+        },
+        "2006": {
+          "budget_utilization": 0.8068891644224012,
+          "conversions": 22.35185185185185,
+          "score": 19.59229874219881,
+          "violation": 0.42592592592592593
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.7401404490788196,
+        "conversions": 17.463991769547324,
+        "score": 14.450461931604671,
+        "violation": 0.6131687242798354
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 0.9179487179487179,
+          "score_ratio": 0.9485921426965666,
+          "violation_delta": 0.05555555555555558
+        },
+        "long": {
+          "conversion_ratio": 0.9452411994784876,
+          "score_ratio": 0.9573969670343079,
+          "violation_delta": 0.0
+        },
+        "short": {
+          "conversion_ratio": 0.9293103448275862,
+          "score_ratio": 0.9726361060579154,
+          "violation_delta": 0.0
+        }
+      },
+      "passed": false,
+      "variant": {
+        "eta": 0.5,
+        "family": "centered",
+        "name": "centered-eta0.5-pending1",
+        "pending": 1.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 0.9757990342607494,
+          "score_ratio": 0.9758906979469293,
+          "violation_delta": 0.07304526748971196
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9597444450726521,
+          "score_ratio": 0.9634246133527095,
+          "violation_delta": 0.061728395061728336
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9128672745694023,
+          "score_ratio": 0.8706008292891577,
+          "violation_delta": 0.11111111111111105
+        },
+        "over": {
+          "conversion_ratio": 0.8781784226404253,
+          "score_ratio": 0.9699466759273523,
+          "violation_delta": -0.021604938271604923
+        },
+        "under": {
+          "conversion_ratio": 1.0325725681364946,
+          "score_ratio": 0.9781756400535986,
+          "violation_delta": 0.19753086419753085
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": false,
+        "over_cell_retention": false
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9147396392830893,
+        "score_ratio": 0.9242288719844022,
+        "violation_delta": 0.08436213991769548
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7753311819073709,
+          "conversions": 17.469135802469136,
+          "score": 14.276813350895658,
+          "violation": 0.6358024691358025
+        },
+        "2002": {
+          "budget_utilization": 0.7721767371201087,
+          "conversions": 20.567901234567902,
+          "score": 18.94640009317974,
+          "violation": 0.41975308641975306
+        },
+        "2003": {
+          "budget_utilization": 0.6313876066556482,
+          "conversions": 12.561728395061728,
+          "score": 9.846969548402015,
+          "violation": 0.7530864197530864
+        },
+        "2004": {
+          "budget_utilization": 0.6589871594517501,
+          "conversions": 13.87037037037037,
+          "score": 10.457931271123238,
+          "violation": 0.7407407407407407
+        },
+        "2005": {
+          "budget_utilization": 0.6524821197898809,
+          "conversions": 13.333333333333334,
+          "score": 10.102971174010735,
+          "violation": 0.7839506172839507
+        },
+        "2006": {
+          "budget_utilization": 0.822687428336402,
+          "conversions": 22.067901234567902,
+          "score": 19.54429089550959,
+          "violation": 0.48148148148148145
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.71884203887686,
+        "conversions": 16.645061728395063,
+        "score": 13.86256272218683,
+        "violation": 0.6358024691358025
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 0.8794871794871795,
+          "score_ratio": 0.9754496617283613,
+          "violation_delta": 0.05555555555555558
+        },
+        "long": {
+          "conversion_ratio": 0.8765754019991309,
+          "score_ratio": 0.9481669235748886,
+          "violation_delta": -0.04629629629629628
+        },
+        "short": {
+          "conversion_ratio": 0.878448275862069,
+          "score_ratio": 0.9864164902249271,
+          "violation_delta": -0.07407407407407407
+        }
+      },
+      "passed": false,
+      "variant": {
+        "eta": 1.0,
+        "family": "centered",
+        "name": "centered-eta1-pending0",
+        "pending": 0.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 0.9300413888250173,
+          "score_ratio": 0.9361877893121245,
+          "violation_delta": 0.0956790123456791
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9147396392830893,
+          "score_ratio": 0.9242288719844022,
+          "violation_delta": 0.08436213991769548
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9452887537993921,
+          "score_ratio": 0.891521072532788,
+          "violation_delta": 0.10493827160493818
+        },
+        "over": {
+          "conversion_ratio": 0.881626203131734,
+          "score_ratio": 0.9479179947818503,
+          "violation_delta": 0.021604938271605034
+        },
+        "under": {
+          "conversion_ratio": 1.0556171061378241,
+          "score_ratio": 0.9924419716761409,
+          "violation_delta": 0.19753086419753085
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": false,
+        "over_cell_retention": false
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9328320235200993,
+        "score_ratio": 0.9284523625962249,
+        "violation_delta": 0.0967078189300411
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7879262847143664,
+          "conversions": 17.512345679012345,
+          "score": 13.966601565322062,
+          "violation": 0.6604938271604939
+        },
+        "2002": {
+          "budget_utilization": 0.7819901857847559,
+          "conversions": 20.59259259259259,
+          "score": 18.76203321224232,
+          "violation": 0.43209876543209874
+        },
+        "2003": {
+          "budget_utilization": 0.654711705939308,
+          "conversions": 13.277777777777779,
+          "score": 10.364387151893975,
+          "violation": 0.7345679012345679
+        },
+        "2004": {
+          "budget_utilization": 0.676247091079152,
+          "conversions": 14.055555555555555,
+          "score": 10.303211985618729,
+          "violation": 0.7777777777777778
+        },
+        "2005": {
+          "budget_utilization": 0.679092884683894,
+          "conversions": 14.12962962962963,
+          "score": 10.768724197311489,
+          "violation": 0.7777777777777778
+        },
+        "2006": {
+          "budget_utilization": 0.8385410761952639,
+          "conversions": 22.27777777777778,
+          "score": 19.390508511921325,
+          "violation": 0.5061728395061729
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.73641820473279,
+        "conversions": 16.974279835390945,
+        "score": 13.92591110405165,
+        "violation": 0.6481481481481481
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 0.8794871794871795,
+          "score_ratio": 0.9754496617283613,
+          "violation_delta": 0.05555555555555558
+        },
+        "long": {
+          "conversion_ratio": 0.894393741851369,
+          "score_ratio": 0.9179711613824781,
+          "violation_delta": 0.01851851851851849
+        },
+        "short": {
+          "conversion_ratio": 0.8711206896551724,
+          "score_ratio": 0.9502825581367581,
+          "violation_delta": -0.0092592592592593
+        }
+      },
+      "passed": false,
+      "variant": {
+        "eta": 1.0,
+        "family": "centered",
+        "name": "centered-eta1-pending1",
+        "pending": 1.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 0.9484364221660151,
+          "score_ratio": 0.940465929131078,
+          "violation_delta": 0.10802469135802473
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9328320235200993,
+          "score_ratio": 0.9284523625962249,
+          "violation_delta": 0.0967078189300411
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9814251941911516,
+          "score_ratio": 0.9717687174124627,
+          "violation_delta": 0.04012345679012341
+        },
+        "over": {
+          "conversion_ratio": 0.9379399511564431,
+          "score_ratio": 0.9711240439068116,
+          "violation_delta": -0.0030864197530864335
+        },
+        "under": {
+          "conversion_ratio": 1.0440948371371592,
+          "score_ratio": 1.0385749832898046,
+          "violation_delta": 0.06481481481481483
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": true,
+        "over_cell_retention": false
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9641544637304234,
+        "score_ratio": 0.9785205618200288,
+        "violation_delta": 0.02263374485596703
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.752421075591418,
+          "conversions": 17.95679012345679,
+          "score": 15.138982669747591,
+          "violation": 0.5987654320987654
+        },
+        "2002": {
+          "budget_utilization": 0.7489918266850684,
+          "conversions": 20.62962962962963,
+          "score": 18.9777989999588,
+          "violation": 0.3148148148148148
+        },
+        "2003": {
+          "budget_utilization": 0.6712729355843576,
+          "conversions": 13.981481481481481,
+          "score": 10.790154484833767,
+          "violation": 0.6851851851851852
+        },
+        "2004": {
+          "budget_utilization": 0.6754978177823044,
+          "conversions": 13.95679012345679,
+          "score": 10.57376348839241,
+          "violation": 0.6975308641975309
+        },
+        "2005": {
+          "budget_utilization": 0.722766472297918,
+          "conversions": 16.067901234567902,
+          "score": 12.401131016568915,
+          "violation": 0.7530864197530864
+        },
+        "2006": {
+          "budget_utilization": 0.7872491208455188,
+          "conversions": 22.67283950617284,
+          "score": 20.179490995954698,
+          "violation": 0.3950617283950617
+        }
+      },
+      "market_wins": 2,
+      "means": {
+        "budget_utilization": 0.7263665414644308,
+        "conversions": 17.54423868312757,
+        "score": 14.67688694257603,
+        "violation": 0.5740740740740741
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 0.9141025641025641,
+          "score_ratio": 0.935356210296654,
+          "violation_delta": 0.0
+        },
+        "long": {
+          "conversion_ratio": 0.9656671012603215,
+          "score_ratio": 0.9941212371335052,
+          "violation_delta": -0.0092592592592593
+        },
+        "short": {
+          "conversion_ratio": 0.9344827586206896,
+          "score_ratio": 0.9841650576919153,
+          "violation_delta": 0.0
+        }
+      },
+      "passed": false,
+      "variant": {
+        "eta": 0.5,
+        "family": "absolute",
+        "name": "absolute-eta0.5",
+        "pending": 1.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 0.9802828236376177,
+          "score_ratio": 0.9911819781174409,
+          "violation_delta": 0.03395061728395066
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9641544637304234,
+          "score_ratio": 0.9785205618200288,
+          "violation_delta": 0.02263374485596703
+        }
+      }
+    },
+    {
+      "bias_vs_naive": {
+        "nominal": {
+          "conversion_ratio": 0.9442755825734549,
+          "score_ratio": 0.9277769253154784,
+          "violation_delta": 0.06481481481481477
+        },
+        "over": {
+          "conversion_ratio": 0.8948426950150842,
+          "score_ratio": 0.9682963404323054,
+          "violation_delta": -0.021604938271604923
+        },
+        "under": {
+          "conversion_ratio": 1.0303567471748283,
+          "score_ratio": 1.0163553341517737,
+          "violation_delta": 0.1049382716049383
+        }
+      },
+      "gates": {
+        "bias_violation": false,
+        "macro_uplift": false,
+        "market_wins": false,
+        "nominal_under_retention": false,
+        "over_cell_retention": false
+      },
+      "macro_vs_stronger": {
+        "conversion_ratio": 0.9312489398993611,
+        "score_ratio": 0.9553040475034436,
+        "violation_delta": 0.03806584362139909
+      },
+      "market_means": {
+        "2001": {
+          "budget_utilization": 0.7570084909803002,
+          "conversions": 17.734567901234566,
+          "score": 14.861133114110414,
+          "violation": 0.6234567901234568
+        },
+        "2002": {
+          "budget_utilization": 0.7464810884333262,
+          "conversions": 19.993827160493826,
+          "score": 18.533558166281523,
+          "violation": 0.30864197530864196
+        },
+        "2003": {
+          "budget_utilization": 0.6496546542140882,
+          "conversions": 13.382716049382717,
+          "score": 10.70350415782955,
+          "violation": 0.6851851851851852
+        },
+        "2004": {
+          "budget_utilization": 0.6553376108910904,
+          "conversions": 13.82716049382716,
+          "score": 10.587244482843376,
+          "violation": 0.7098765432098766
+        },
+        "2005": {
+          "budget_utilization": 0.6833517126957963,
+          "conversions": 14.592592592592593,
+          "score": 11.300353098028578,
+          "violation": 0.7901234567901234
+        },
+        "2006": {
+          "budget_utilization": 0.7831669976226712,
+          "conversions": 22.141975308641975,
+          "score": 19.9861735275149,
+          "violation": 0.41975308641975306
+        }
+      },
+      "market_wins": 1,
+      "means": {
+        "budget_utilization": 0.7125000924728787,
+        "conversions": 16.945473251028808,
+        "score": 14.328661091101393,
+        "violation": 0.5895061728395061
+      },
+      "over_cells_vs_naive": {
+        "immediate": {
+          "conversion_ratio": 0.8782051282051282,
+          "score_ratio": 0.9748670204767744,
+          "violation_delta": -0.02777777777777779
+        },
+        "long": {
+          "conversion_ratio": 0.9209039548022598,
+          "score_ratio": 0.9668281865608462,
+          "violation_delta": 0.0
+        },
+        "short": {
+          "conversion_ratio": 0.8857758620689655,
+          "score_ratio": 0.9631086880213344,
+          "violation_delta": -0.03703703703703709
+        }
+      },
+      "passed": false,
+      "variant": {
+        "eta": 1.0,
+        "family": "absolute",
+        "name": "absolute-eta1",
+        "pending": 1.0
+      },
+      "vs_fixed_references": {
+        "fixed-naive": {
+          "conversion_ratio": 0.946826856748678,
+          "score_ratio": 0.967665057284931,
+          "violation_delta": 0.04938271604938271
+        },
+        "fixed-posterior": {
+          "conversion_ratio": 0.9312489398993611,
+          "score_ratio": 0.9553040475034436,
+          "violation_delta": 0.03806584362139909
+        }
+      }
+    }
+  ]
+}

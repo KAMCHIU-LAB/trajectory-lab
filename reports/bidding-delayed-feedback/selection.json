@@ -1,0 +1,72 @@
+{
+  "config_identity": "8c68cb7dfdd0c42ce6a28a7995375313e3c0e74df42f26703aea8c989ddf2b66",
+  "diagnostic_oracle": {
+    "estimator": "oracle_past",
+    "gain": 0.3,
+    "name": "oracle_past-g0.3-p8",
+    "prior": 8.0
+  },
+  "diagnostic_scope": "past-outcome feedback heuristic; not a global optimum or proof that no better policy exists",
+  "frozen_variants": [
+    {
+      "estimator": "naive",
+      "gain": 0.3,
+      "name": "naive-g0.3-p8",
+      "prior": 8.0
+    },
+    {
+      "estimator": "mature_only",
+      "gain": 0.3,
+      "name": "mature_only-g0.3-p8",
+      "prior": 8.0
+    },
+    {
+      "estimator": "delay_corrected",
+      "gain": 0.3,
+      "name": "delay_corrected-g0.3-p8",
+      "prior": 8.0
+    },
+    {
+      "estimator": "posterior",
+      "gain": 0.3,
+      "name": "posterior-g0.3-p8",
+      "prior": 8.0
+    },
+    {
+      "estimator": "oracle_past",
+      "gain": 0.3,
+      "name": "oracle_past-g0.3-p8",
+      "prior": 8.0
+    }
+  ],
+  "generative_investment_gate": false,
+  "history_contract": "Each deployment context supplies its own frozen mature TRAIN history. Context-specific history is matched and stable; the policy gets neither test delay parameters nor context/regime labels. This does not infer unknown delay regimes or handle drift.",
+  "history_sha256": "2e88beaf8aad0089c4480ec6fefbde9d31bfac50e079f48f8a947e2cf2662c29",
+  "identity": "b13a365f83ccb517299efa8a3cf711060ed7b928d9a4c717f138c6e6af8101d9",
+  "mature_only_scope": "Mature-cohort calibration plus pending imputation. H=W=48 provides no fully mature live cohort, so calibration remains the prior MAP; this is not a controller that discards all immature conversions.",
+  "mean_scores": {
+    "delay_corrected-g0.3-p8": 14.963335992284552,
+    "mature_only-g0.3-p8": 14.99739280471079,
+    "naive-g0.3-p8": 14.807459443978134,
+    "oracle_past-g0.3-p8": 14.977570775409346,
+    "posterior-g0.3-p8": 14.999058287827198
+  },
+  "oracle_action_change_fraction": 0.05937071330589849,
+  "oracle_diagnostic_gain": -0.0014325907670678095,
+  "selection_scope": "best macro development score within each estimator; confirmation protection gates remain binding",
+  "source": {
+    "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+    "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+    "src/trajectorylab/bidding_delayed_experiment.py": "e1c8f7ad0861acaf42bed041405353377591e21c369e0eafc449635f40ca7fbc",
+    "src/trajectorylab/bidding_delayed_feedback.py": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+    "src/trajectorylab/bidding_delayed_statistics.py": "198780e0a2f1ed55ba90bd321a7141b112b1179dd286e1229b5b3c76de9e3526",
+    "src/trajectorylab/bidding_pending_response.py": "2899e437654c9ce7f646d63c03dd98289758a179dff6ced75dafe3d6772bbbfd"
+  },
+  "strongest_point": {
+    "estimator": "posterior",
+    "gain": 0.3,
+    "name": "posterior-g0.3-p8",
+    "prior": 8.0
+  },
+  "validation_identity": "53940cfaaa6fa288622c950930e06a694ef47171ef3716842dd6f4f5a8f3b61b"
+}

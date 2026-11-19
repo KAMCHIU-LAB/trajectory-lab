@@ -9,6 +9,7 @@
 
 - **Confirmed scope:** under 50% pCVR overprediction, three frozen response models in 24 fresh simulated markets achieved score **+17.6%**, conversions **+8.4%**, and CPA violations **−24.8 pp** versus frozen feedback. [Statistics and failure boundaries](docs/bidding-findings.md).
 - **Generative branch:** conditional Flow Matching, quantile screening and feedback fallback are implemented. The second training seed failed the registered business gate; distribution-specific decision value remains unconfirmed. [Completed seed replication and mechanism audits](docs/bidding-generative-findings.md).
+- **Delayed feedback:** a separate 24-market confirmation found posterior imputation score **+1.21%** (95% interval **[+0.41%, +2.05%]**), below the registered +3% practical target. Long-delay overprediction lost 4.25%; the common-trajectory audit explains why estimation and control need separate tests. [Results and limits](docs/bidding-delayed-findings.md).
 - **Inspect the work:** [market settlement](src/trajectorylab/bidding/market.py), [response learning](src/trajectorylab/bidding/learning.py), [Flow sampler](src/trajectorylab/bidding_generative_learning.py), and [public evidence records](reports/bidding-generative/README.md).
 
 ## The question
@@ -35,6 +36,8 @@ There is currently no LLM planner in the implemented system.
 | [Chosen-action and pacing audit](reports/bidding-onpolicy/report.html) | Complete: 1,080 campaigns replayed exactly. Examines selected actions, forecast-bias direction and early budget spend; a post-hoc validation diagnostic, not a causal result. |
 | [Independent new-market confirmation](reports/bidding-confirmation/report.html) | Complete: 24 new markets and 4,320 rows. Original response passed the frozen score, conversion-retention, violation and seed-consistency gates under 50% overprediction. The failed controller gate remains closed. |
 | [Generative response development](docs/bidding-generative-findings.md) | Stopped at training seed 23 on six existing development markets; business replication and generative-value gates failed. Includes completed zero-fit mechanism audits. |
+| [Delayed-feedback estimation and control](docs/bidding-delayed-findings.md) | Complete: 24 fresh markets, 19,440 campaign rows, seven protection endpoints passed, +3% practical target failed. Includes a 1,296-trajectory matched pending audit, source hashes and a small CPU replay. |
+| [Pending-use strategy comparison](docs/bidding-delayed-strategy-findings.md) | Complete: twelve configurations on six existing development markets. Half correction offered the best trade-off, but only +0.30% score versus the stronger fixed reference; no candidate passed and no fresh confirmation opened. |
 | [Information and feedback-coordination ablations](docs/bidding-evolution-audits.md) | Complete and independently checked: causal winner-log information on four training markets, and a control-mechanism comparison on four training/six seen development markets. Both candidates failed their frozen gates; scalar evidence and comparison plots are exported. |
 | [Action-decoder structural comparison](docs/bidding-decoder-findings.md) | Complete: three matched 2,000-update arms; the product-feature candidate failed the frozen prediction gate against strong controls. Policy evaluation was skipped. |
 | [Offline policy-learning foundation](docs/results.md) | Completed: 39 BC/IQL/DT training runs across Pendulum, a public PointMaze subset and an IQL mechanism ablation. |
@@ -65,6 +68,7 @@ change the failed history-correction and paced-controller findings.
 | Learned policies | [Training and rollout](src/trajectorylab/bidding/learning.py): a causal DT and a monotone response model; normalization fitted on training markets only |
 | Forecast versus controller | [Paced control study](src/trajectorylab/bidding_control.py): same neural checkpoints, alternative controllers, empirical response curves and full simple-baseline grids |
 | Feedback boundary | Current observations and past realized outcomes only; budget-censored outcomes are excluded from unthrottled forecast-ratio updates |
+| Delayed reports | [Event ledger](src/trajectorylab/bidding_delayed_experiment.py) and [pending estimator](src/trajectorylab/bidding_pending_response.py): reporting-time boundaries, mature-history calibration and final-label settlement |
 | Evidence and recovery | Source/configuration fingerprints, optimizer/RNG checkpoints, market-paired comparisons, raw CSV/JSON and text-only publication exports |
 
 The response model receives dense simulated intervention labels; DT learns from
@@ -100,6 +104,16 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory reports
 Reports need no account, API key or live backend. Public exports omit model
 weights, traffic arrays, local logs and runner state. GitHub displays HTML source;
 serve reports locally to view them.
+
+For a small CPU-only delayed-report replay, run:
+
+```bash
+PYTHONPATH=src python scripts/run_bidding_delayed_smoke.py
+```
+
+This checks the public chain and resume identities with a tiny configuration;
+it is not a performance replication. The [delayed-feedback protocol](docs/bidding-delayed-protocol.md)
+gives the full staged commands, assumptions and evidence inventory.
 
 ## Earlier policy-learning studies
 

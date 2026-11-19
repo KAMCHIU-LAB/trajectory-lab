@@ -1,0 +1,281 @@
+{
+  "core": {
+    "config": {
+      "evaluation": {
+        "arrival_seeds": [
+          11,
+          23,
+          37
+        ],
+        "bootstrap_draws": 10000,
+        "bootstrap_seed": 20261119,
+        "probability_bin_edges": [
+          0.0001,
+          0.0005,
+          0.002
+        ],
+        "regimes": [
+          "immediate",
+          "short",
+          "long"
+        ]
+      },
+      "history": {
+        "calibration_prior_log_sd": 0.5,
+        "maturity_window": 48
+      },
+      "strategy": {
+        "calibration_threshold": 0.9,
+        "factor_lower": 0.6666666666666666,
+        "factor_upper": 1.5,
+        "gain": 0.3,
+        "information_threshold": 8.0,
+        "minimum_confirmation_markets": 24,
+        "minimum_dev_wins": 4,
+        "prior": 8.0
+      },
+      "study": {
+        "actions": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5,
+          1.75,
+          2.0,
+          2.5,
+          3.0
+        ],
+        "biases": [
+          0.75,
+          1.0,
+          1.5
+        ],
+        "confirmation_markets": [
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107,
+          7108,
+          7109,
+          7110,
+          7111,
+          7112,
+          7113,
+          7114,
+          7115,
+          7116,
+          7117,
+          7118,
+          7119,
+          7120,
+          7121,
+          7122,
+          7123,
+          7124
+        ],
+        "focal_agents": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ],
+        "name": "delayed-feedback-strategy-v2",
+        "purpose": "bounded-feedback-use-extension",
+        "pv_count": 500000,
+        "train_markets": [
+          1001,
+          1002,
+          1003,
+          1004
+        ],
+        "validation_markets": [
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006
+        ]
+      }
+    },
+    "history_sha256": "2e88beaf8aad0089c4480ec6fefbde9d31bfac50e079f48f8a947e2cf2662c29",
+    "markets": {
+      "2001": {
+        "identity": "71efeb6d8deafc176c9f58dd978a754066f67e8f09e50114447ab5a4833d54d0",
+        "sha256": "697363ee8d3bfe40a0d9787db89b5a72e2b54e123104ef1d1bc1dc0605448062",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "2002": {
+        "identity": "f915af0f3e1c52e8c80e2dcce3a458729816899eba69689009b414a692ce9d3b",
+        "sha256": "f1ca0002e4f401dcd11c9307f6dc88977638083fb3f05e0de9d95a4627ea42f1",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "2003": {
+        "identity": "ffdfacfa5deffd49c584f5cb71670aa2cda7fdb2efd8ba37b3d1cae81b51232f",
+        "sha256": "48e7c01ab04ec9757bde95e14c9a89fb36ee66dafc3394ed4a6fbf79a7b380b4",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "2004": {
+        "identity": "d9a53a8d531b5e2c83bed848d5fc1720106f02c74d4bd126beb44846f0de8469",
+        "sha256": "6858f8a19f5bc8d590657978f78c45252677d01ae698a52955d2534d868e7c2f",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "2005": {
+        "identity": "aef57be8516171c5c91e23c95641b94a3021aa1329023cd705895940934466a8",
+        "sha256": "d72f8f0c9319877784fe4a251298068655d92140d265de3a46f8314a25dd1979",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      },
+      "2006": {
+        "identity": "bde923565210edf084f6c782b36ed38f95bdea3ac10f550205f1c596188c3912",
+        "sha256": "92e5d4ad94cb4b149ccba3fb6c159ac36b6471011bacb8a7e804ac7a3618db05",
+        "source": {
+          "event_adapter_sha256": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+          "sha256": {
+            "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+            "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+            "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+          },
+          "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+        }
+      }
+    },
+    "methods": [
+      {
+        "family": "fixed",
+        "name": "fixed-naive",
+        "pending": 0.0
+      },
+      {
+        "family": "fixed",
+        "name": "fixed-posterior",
+        "pending": 1.0
+      },
+      {
+        "family": "partial",
+        "name": "partial-0.25",
+        "pending": 0.25
+      },
+      {
+        "family": "partial",
+        "name": "partial-0.5",
+        "pending": 0.5
+      },
+      {
+        "family": "gate",
+        "name": "gate-0.8",
+        "pending": 1.0,
+        "threshold": 0.8
+      },
+      {
+        "family": "gate",
+        "name": "gate-0.95",
+        "pending": 1.0,
+        "threshold": 0.95
+      },
+      {
+        "eta": 0.5,
+        "family": "centered",
+        "name": "centered-eta0.5-pending0",
+        "pending": 0.0
+      },
+      {
+        "eta": 0.5,
+        "family": "centered",
+        "name": "centered-eta0.5-pending1",
+        "pending": 1.0
+      },
+      {
+        "eta": 1.0,
+        "family": "centered",
+        "name": "centered-eta1-pending0",
+        "pending": 0.0
+      },
+      {
+        "eta": 1.0,
+        "family": "centered",
+        "name": "centered-eta1-pending1",
+        "pending": 1.0
+      },
+      {
+        "eta": 0.5,
+        "family": "absolute",
+        "name": "absolute-eta0.5",
+        "pending": 1.0
+      },
+      {
+        "eta": 1.0,
+        "family": "absolute",
+        "name": "absolute-eta1",
+        "pending": 1.0
+      }
+    ],
+    "selection_identity": null,
+    "source": {
+      "config_sha256": "5ccb56e426ae264ba27fd261746b343662b2c8dd5116877bb89bf51da20795b6",
+      "extension": {
+        "scripts/run_bidding_delayed_strategy.py": "02f36de593982cc1aab0412a1455813b12cdf3d5a4e6e5fade193d4351d3bbc1",
+        "src/trajectorylab/bidding_delayed_strategy.py": "6abe47309b936eec444a1900950694c34433545715b768ff16d8b66c76d1a19c"
+      },
+      "frozen_core": {
+        "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+        "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+        "src/trajectorylab/bidding_delayed_experiment.py": "e1c8f7ad0861acaf42bed041405353377591e21c369e0eafc449635f40ca7fbc",
+        "src/trajectorylab/bidding_delayed_feedback.py": "f022ec57a1467667a0d84e7a889b361d120930c0cc159437a383d5d467af950b",
+        "src/trajectorylab/bidding_delayed_statistics.py": "198780e0a2f1ed55ba90bd321a7141b112b1179dd286e1229b5b3c76de9e3526",
+        "src/trajectorylab/bidding_pending_response.py": "2899e437654c9ce7f646d63c03dd98289758a179dff6ced75dafe3d6772bbbfd"
+      },
+      "registration_sha256": "cc541549ff1949c9dbbee5c086765b6634bae4c0a02e5a6e3e710b882ec57185"
+    },
+    "split": "validation",
+    "training_history_identity": "8c387c2199e07f5e621a39f9e54ba5d5f45cfa5a17206fe121c502af94b6e3e2"
+  },
+  "identity": "e17064ba73b111df13d7f8877963d2876a21b8db38ed571092d2267fd0ddde43"
+}

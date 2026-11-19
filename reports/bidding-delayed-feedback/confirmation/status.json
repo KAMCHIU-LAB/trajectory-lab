@@ -1,0 +1,15 @@
+{
+  "elapsed_seconds": 408.7423116249847,
+  "identity": "d637d15a29455ed67b5ce42fd538e51453d9d597d25b39600db80f03d7782e06",
+  "methods": [
+    "delay_corrected-g0.3-p8",
+    "mature_only-g0.3-p8",
+    "naive-g0.3-p8",
+    "oracle_past-g0.3-p8",
+    "posterior-g0.3-p8"
+  ],
+  "paired_campaigns": 3888,
+  "peak_rss_native": 1433600000,
+  "phase": "complete",
+  "rows": 19440
+}
