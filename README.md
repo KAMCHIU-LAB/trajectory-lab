@@ -13,7 +13,8 @@
 - **Confirmed scope:** under 50% pCVR overprediction, three frozen response models in 24 fresh simulated markets achieved score **+17.6%**, conversions **+8.4%**, and CPA violations **−24.8 pp** versus frozen feedback. [Statistics and failure boundaries](docs/bidding-findings.md).
 - **Generative branch:** conditional Flow Matching, quantile screening and feedback fallback are implemented. The second training seed failed the registered business gate; distribution-specific decision value remains unconfirmed. [Completed seed replication and mechanism audits](docs/bidding-generative-findings.md).
 - **Delayed feedback:** a separate 24-market confirmation found posterior imputation score **+1.21%** (95% interval **[+0.41%, +2.05%]**), below the registered +3% practical target. Long-delay overprediction lost 4.25%; the common-trajectory audit explains why estimation and control need separate tests. [Results and limits](docs/bidding-delayed-findings.md).
-- **How the research evolved:** [fourteen evidence-linked stages](docs/bidding-research-journal.md) connect problems, hypotheses, controls, outcomes and decisions; [a recording template](docs/experiment-record-template.md) keeps future work traceable. The journal is in Chinese.
+- **Latest decision:** unknown-bias expert selection stopped before fitting: this expert pair's hindsight headroom was +2.27% versus strong feedback, below the +3% development gate. [Result and limits](docs/bidding-expert-findings.md).
+- **How the research evolved:** [seventeen evidence-linked entries](docs/bidding-research-journal.md) connect problems, hypotheses, controls, outcomes and decisions; [a recording template](docs/experiment-record-template.md) keeps future work traceable. The journal is in Chinese.
 - **Inspect the work:** [market settlement](src/trajectorylab/bidding/market.py), [response learning](src/trajectorylab/bidding/learning.py), [Flow sampler](src/trajectorylab/bidding_generative_learning.py), and [public evidence records](reports/bidding-generative/README.md).
 
 ## Try the public path
@@ -23,8 +24,12 @@ From a source checkout with Python 3.11 or 3.12:
 ```bash
 python -m pip install -e '.[dev]'
 python scripts/run_bidding_delayed_smoke.py --output artifacts/public-replay-v0.2.0
-python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-evidence.json
+python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-evidence.json --replay-only
 ```
+
+In a research checkout, `--replay-only` checks the replay invariants. To verify
+the historical source hashes in `releases/v0.2.0.json`, use a checkout of the
+`v0.2.0` tag and run the verifier there without `--replay-only`.
 
 No GPU, account or external dataset is needed after dependency installation.
 Expected: 90 validation rows, 45 confirmation rows, mature settlement and hard
@@ -60,6 +65,7 @@ There is currently no LLM planner in the implemented system.
 | [Pending-use strategy comparison](docs/bidding-delayed-strategy-findings.md) | Complete: twelve configurations on six existing development markets. Half correction offered the best trade-off, but only +0.30% score versus the stronger fixed reference; no candidate passed and no fresh confirmation opened. |
 | [Information and feedback-coordination ablations](docs/bidding-evolution-audits.md) | Complete and independently checked: causal winner-log information on four training markets, and a control-mechanism comparison on four training/six seen development markets. Both candidates failed their frozen gates; scalar evidence and comparison plots are exported. |
 | [Action-decoder structural comparison](docs/bidding-decoder-findings.md) | Complete: three matched 2,000-update arms; the product-feature candidate failed the frozen prediction gate against strong controls. Policy evaluation was skipped. |
+| [Unknown-bias expert selection](docs/bidding-expert-findings.md) | `STOP_NO_HEADROOM`: 8 new training / 6 development markets, 252 contexts and 2,880 rows; 24 development methods. Nondeployable hindsight was +2.27% versus strong feedback, below +3%; no ridge fit or confirmation generation/opening. |
 | [Offline policy-learning foundation](docs/results.md) | Completed: 39 BC/IQL/DT training runs across Pendulum, a public PointMaze subset and an IQL mechanism ablation. |
 
 Campaigns within a market and repeated methods/seeds are correlated. Row counts
@@ -121,9 +127,12 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory reports
 # Open http://127.0.0.1:8765
 ```
 
-Reports need no account, API key or live backend. Public exports omit model
-weights, traffic arrays, local logs and runner state. GitHub displays HTML source;
-serve reports locally to view them.
+Reports need no account, API key or live backend. Original training checkpoints,
+optimizer/RNG state, traffic arrays, local logs and runner state are excluded.
+The three [public response experts](assets/bidding-response-v1/README.md) are a
+specific weight-publication exception: numeric NPZ/JSON assets converted from
+public-simulator-trained checkpoints, loaded without pickle. GitHub displays
+HTML source; serve reports locally to view them.
 
 For a small CPU-only delayed-report replay, run:
 

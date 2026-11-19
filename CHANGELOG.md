@@ -1,5 +1,19 @@
 # Change log
 
+## Unreleased — Unknown-bias expert-selection study
+
+- Publish pickle-free numeric weights for three public-simulator response experts
+  and a complete source-checkout path for generating the new study inputs.
+- Add common-prefix paired continuations, public-only features, strong observable
+  calibration controls and tamper-checked experiment recovery and exports.
+- Complete 8 new training / 6 new development markets. Hindsight selection has
+  +2.27% headroom over the strongest cheap reference, below the registered +3%
+  gate; stop before selector fitting and leave confirmation unopened.
+- Retain all 24 development methods, source/input hashes, design decisions and
+  the scope of the negative result. No new generative or production gain follows.
+- Keep one explicit formatter exclusion for sealed experimental source bytes;
+  lint and behavior tests still apply. The historical v0.2.0 tag is unchanged.
+
 ## 0.2.0 — Public replay and evidence navigation
 
 - Make the public CPU replay's commands, expected invariant outputs and resume

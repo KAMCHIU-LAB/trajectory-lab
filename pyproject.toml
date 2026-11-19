@@ -35,3 +35,8 @@ line-length = 100
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
 ignore = ["E501"]
+
+[tool.ruff.format]
+# Preserve the pre-outcome source bytes sealed at e61bda8; lint/tests still apply.
+# See docs/bidding-expert-decisions.md; format before freezing a future identity.
+exclude = ["src/trajectorylab/bidding_expert_selection.py"]

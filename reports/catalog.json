@@ -57,6 +57,11 @@
   "mechanism_check": "passed",
   "recent_publications": [
     {
+      "manifest": "bidding-expert-selection/export.json",
+      "study": "bidding-expert-selection",
+      "verified_files": 6
+    },
+    {
       "manifest": "bidding-generative/publication-manifest.json",
       "study": "bidding-generative",
       "verified_files": 3

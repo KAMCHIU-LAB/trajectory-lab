@@ -1,0 +1,1135 @@
+{
+  "data_generation": {
+    "config": {
+      "baselines": {
+        "calibration_bases": [
+          "fixed-1",
+          "fixed-1.25",
+          "feedback-g0.3-p8"
+        ],
+        "calibration_priors": [
+          3.0,
+          8.0
+        ],
+        "feedback_gains": [
+          0.3,
+          0.7,
+          1.2
+        ],
+        "feedback_priors": [
+          3.0,
+          8.0
+        ],
+        "fixed_multipliers": [
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "mixture_seed": 73119,
+        "threshold_ratios": [
+          0.85,
+          1.0
+        ]
+      },
+      "evaluation": {
+        "alpha": 0.05,
+        "bootstrap_draws": 20000,
+        "bootstrap_seed": 20261119,
+        "conversion_protection": 0.98,
+        "minimum_relative_gain": 0.03,
+        "power": 0.8,
+        "probability_bin_edges": [
+          0.0001,
+          0.0005,
+          0.002
+        ],
+        "score_protection": 0.99,
+        "statistical_unit": "market",
+        "violation_delta_protection": 0.01
+      },
+      "limits": {
+        "cache_gib": 5.0,
+        "confirmation_maximum_markets": 24,
+        "neural_training": false,
+        "peak_rss_gib": 10.0,
+        "preflight_seconds": 21600,
+        "torch_threads": 2
+      },
+      "selection": {
+        "arrival_seed": 11,
+        "prefix": 16,
+        "prefix_gain": 0.3,
+        "prefix_prior": 8.0,
+        "regime": "immediate",
+        "rejection_thresholds": [
+          0.0,
+          0.02
+        ],
+        "response_context": 24,
+        "response_seed": 11,
+        "ridge_alphas": [
+          1.0,
+          10.0,
+          100.0
+        ],
+        "target": "full_terminal_response_score_minus_full_terminal_feedback_score_divided_by_budget_over_cpa"
+      },
+      "study": {
+        "actions": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5,
+          1.75,
+          2.0,
+          2.5,
+          3.0
+        ],
+        "biases": [
+          0.75,
+          1.0,
+          1.5
+        ],
+        "confirmation_markets": [
+          122001,
+          122002,
+          122003,
+          122004,
+          122005,
+          122006,
+          122007,
+          122008,
+          122009,
+          122010,
+          122011,
+          122012,
+          122013,
+          122014,
+          122015,
+          122016,
+          122017,
+          122018,
+          122019,
+          122020,
+          122021,
+          122022,
+          122023,
+          122024
+        ],
+        "focal_agents": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ],
+        "name": "expert-selection-immediate-v1",
+        "purpose": "unknown-fixed-pcvr-bias-public-mechanism-study",
+        "pv_count": 500000,
+        "train_markets": [
+          120001,
+          120002,
+          120003,
+          120004,
+          120005,
+          120006,
+          120007,
+          120008
+        ],
+        "validation_markets": [
+          121001,
+          121002,
+          121003,
+          121004,
+          121005,
+          121006
+        ]
+      }
+    },
+    "generator": {
+      "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+      "sha256": {
+        "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+        "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+        "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+      },
+      "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+    },
+    "identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+    "protocol_sha256": "2c184aac767f342f446f3c32ef56c55a86f1d2c11eba5828abf356d8a8ff7981"
+  },
+  "excluded": "Raw traffic, per-event labels, event IDs, pickle checkpoints, optimizer/RNG states, local paths, runtime logs and orchestration notes.",
+  "experiment": {
+    "config": {
+      "baselines": {
+        "calibration_bases": [
+          "fixed-1",
+          "fixed-1.25",
+          "feedback-g0.3-p8"
+        ],
+        "calibration_priors": [
+          3.0,
+          8.0
+        ],
+        "feedback_gains": [
+          0.3,
+          0.7,
+          1.2
+        ],
+        "feedback_priors": [
+          3.0,
+          8.0
+        ],
+        "fixed_multipliers": [
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5
+        ],
+        "mixture_seed": 73119,
+        "threshold_ratios": [
+          0.85,
+          1.0
+        ]
+      },
+      "evaluation": {
+        "alpha": 0.05,
+        "bootstrap_draws": 20000,
+        "bootstrap_seed": 20261119,
+        "conversion_protection": 0.98,
+        "minimum_relative_gain": 0.03,
+        "power": 0.8,
+        "probability_bin_edges": [
+          0.0001,
+          0.0005,
+          0.002
+        ],
+        "score_protection": 0.99,
+        "statistical_unit": "market",
+        "violation_delta_protection": 0.01
+      },
+      "limits": {
+        "cache_gib": 5.0,
+        "confirmation_maximum_markets": 24,
+        "neural_training": false,
+        "peak_rss_gib": 10.0,
+        "preflight_seconds": 21600,
+        "torch_threads": 2
+      },
+      "selection": {
+        "arrival_seed": 11,
+        "prefix": 16,
+        "prefix_gain": 0.3,
+        "prefix_prior": 8.0,
+        "regime": "immediate",
+        "rejection_thresholds": [
+          0.0,
+          0.02
+        ],
+        "response_context": 24,
+        "response_seed": 11,
+        "ridge_alphas": [
+          1.0,
+          10.0,
+          100.0
+        ],
+        "target": "full_terminal_response_score_minus_full_terminal_feedback_score_divided_by_budget_over_cpa"
+      },
+      "study": {
+        "actions": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0,
+          1.25,
+          1.5,
+          1.75,
+          2.0,
+          2.5,
+          3.0
+        ],
+        "biases": [
+          0.75,
+          1.0,
+          1.5
+        ],
+        "confirmation_markets": [
+          122001,
+          122002,
+          122003,
+          122004,
+          122005,
+          122006,
+          122007,
+          122008,
+          122009,
+          122010,
+          122011,
+          122012,
+          122013,
+          122014,
+          122015,
+          122016,
+          122017,
+          122018,
+          122019,
+          122020,
+          122021,
+          122022,
+          122023,
+          122024
+        ],
+        "focal_agents": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40
+        ],
+        "name": "expert-selection-immediate-v1",
+        "purpose": "unknown-fixed-pcvr-bias-public-mechanism-study",
+        "pv_count": 500000,
+        "train_markets": [
+          120001,
+          120002,
+          120003,
+          120004,
+          120005,
+          120006,
+          120007,
+          120008
+        ],
+        "validation_markets": [
+          121001,
+          121002,
+          121003,
+          121004,
+          121005,
+          121006
+        ]
+      }
+    },
+    "generator": {
+      "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+      "sha256": {
+        "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+        "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+        "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+      },
+      "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+    },
+    "identity": "de894f1ff6f2db13e274f384ca9e85badca411a9c51f8fc8297535edffc8df77",
+    "protocol_sha256": "5f51b6b91c841185d900b6e066602aa71d862f784704af775520d117fbef88b4",
+    "source": {
+      "src/trajectorylab/bidding/learning.py": "cd059eb363baf86117f5e6d894766128bd426e2c1b7460faef7ba839f07207ad",
+      "src/trajectorylab/bidding/market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f",
+      "src/trajectorylab/bidding_delayed_experiment.py": "4ce2b9d96c85e20a390000e5fc6320c22f97aaa735fa37596ce1f48aee1ebd01",
+      "src/trajectorylab/bidding_delayed_feedback.py": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+      "src/trajectorylab/bidding_expert_experiment.py": "94ad16c869cb96759d69edcfb6e1d7104ace41e2101fcbba3b518599c074a2d2",
+      "src/trajectorylab/bidding_expert_selection.py": "3b9bc08d629a34ed254c61b429ca8e96bc0f13534ea06741598e85fa5457c827",
+      "src/trajectorylab/bidding_pending_response.py": "52c7c951b161a73f7ec657b9c8d94cd01eec1f98db1b2cbe619cd9142f8d628c",
+      "src/trajectorylab/bidding_public_response.py": "d2f5a7f97c0d3e7b6beb5c3fec2cc51521408c34e67d4dcb88a3ba9c1c32622b",
+      "src/trajectorylab/models.py": "fef8dc2ad2a6343db88c53bcc7185e07814f50438129d3c8ec9a2ca862fcdeed",
+      "src/trajectorylab/utils.py": "3672c2a7d3db7ed617fc3a14b90d762bb4fde1f53d913f456687c1563a3ac788"
+    },
+    "weights": {
+      "assets/bidding-response-v1/response-11.json": "dd31d252a47f54e3f3d669b7f7596c385458660490f712b7453159fe55e767a6",
+      "assets/bidding-response-v1/response-11.npz": "a0fbf66773055ef1b6c876d9065371ab59c829ed7ca1ea112854bbd59adb3225"
+    }
+  },
+  "inputs": [
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "86a23e68f0bddb7cf5d889cedf1485d5e8d86614c406fa71aa7c284f7346471e",
+      "market": 120001,
+      "tape_sha256": "7719ded8e18efe903808ae6a5e81c3f080e81c689986809a06cac9b7d7e64e2e"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "d6b20fee067d016322a887ebf5dc1a12349f1003cf3fb448efae2d924516b13b",
+      "market": 120002,
+      "tape_sha256": "147b5dd23cac20440ba2397e3238a4c32ebbf5e7856db5c1b7140ce8e1598a44"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "3c6e92380ee109d7d29fdae4fda40594eaea5788d20be9d044b689e27560ae8e",
+      "market": 120003,
+      "tape_sha256": "a5e70a9878169f922e1eb8f547cf528ffe5b787a58a1b3ba05f7d454083951c7"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "eab522fb9de84b0c46ff22c850aea451bad3e00c1d456961708378c53f1aabd0",
+      "market": 120004,
+      "tape_sha256": "3830d0abdaceb884ea20d0a772a99fa72188cc4ac93f1e92bedb546a9bad7c25"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "d14eee375ad37eac4ee0ea88a950742d32f93401fc38975758b5d3c502c53483",
+      "market": 120005,
+      "tape_sha256": "aafbdafa94557bdf47577d84e4c8a14eedf27d0f0a291d7c9c66a1042691439b"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "8c88d02f477e3f087601a952cd4d6334aca8c630f77a8e947d5f192fc2080d67",
+      "market": 120006,
+      "tape_sha256": "dbdc0f8f1b141ed8d2e86696dc8a4d1c9e41e42f48b64acaccb3940b99a2f8b0"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "e4183eed774b282c29a9b69d05215a20e4ecc86c9a91106bff1148c4ba235802",
+      "market": 120007,
+      "tape_sha256": "954af7526fc1e5139d7eaf023a8ed78cf0f3ac5657ddb93df1b0cded0f03b425"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "434cc53e4da283094d566f4dde8e36e5fb2ec1c3823ac6b0cc2533e2e54c73c8",
+      "market": 120008,
+      "tape_sha256": "5d2a532d3db88cc82a90e97e2ec380025bd3ffa2b0ce1f28eee379d05ad3c1b9"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "ef7686a0db80b9c8e5a05ae754ab34c92004e892c0ca805cd0e284a213552dae",
+      "market": 121001,
+      "tape_sha256": "f38e75b014de694258dbc6cb84f1a8023fe3fb551087b8cd47ef113ff94873d2"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "5b9c24c9d292254868b21996abbc3cabc3e234f70f0d018f477ecee40293df6b",
+      "market": 121002,
+      "tape_sha256": "53b15613f2b159e3179be2e34ad913bfe71610b0d76120eb36270123ab027141"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "4caa51a643e5aafbaecce8839fd8293d03d8ebbec6e2077f6923e471fbf51e12",
+      "market": 121003,
+      "tape_sha256": "5d0828855a376b48161c8af7cdd83a4e81a084b1ee6dd75728184d83b4a11948"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "ad2e5239eae8d5f2f9830f4918247b14ffae3a540abc138303d70f94e2c9714b",
+      "market": 121004,
+      "tape_sha256": "c7fbe9fc5e53e64f73d3cad7c3aa72e2c25c2f16e1a6f73eaf44f969bdcd2161"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "82746ffb9c501bbeebb180e51d627265e5a98bded5c5f606cba753451ad5098c",
+      "market": 121005,
+      "tape_sha256": "5e0c08e119eb0ae34bd224f5949d9e9f5dba78719b5c79b6b349e9cff8b0a430"
+    },
+    {
+      "data_identity": "0e08e0df42b4a394b9ef02075f6c2300045b7062695577a9c4f8e5e61ae40efe",
+      "generator_identity": "8ebbd29984fa13b9f77ee10e5b0e02243991b35d7975ea845002608e3ee58696",
+      "market": 121006,
+      "tape_sha256": "dd9512abdfd07be2362be9e6cd47a67b8a0d532a62be13e42c1fdfe845e2ffea"
+    }
+  ],
+  "markets": [
+    {
+      "bytes": 157012688,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "86a23e68f0bddb7cf5d889cedf1485d5e8d86614c406fa71aa7c284f7346471e",
+      "market_id": 120001,
+      "pv_count": 499974,
+      "requested_pv_count": 500000,
+      "seconds": 188.41672691699932,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 146980614,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "d6b20fee067d016322a887ebf5dc1a12349f1003cf3fb448efae2d924516b13b",
+      "market_id": 120002,
+      "pv_count": 499976,
+      "requested_pv_count": 500000,
+      "seconds": 191.10823341700598,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 157984482,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "3c6e92380ee109d7d29fdae4fda40594eaea5788d20be9d044b689e27560ae8e",
+      "market_id": 120003,
+      "pv_count": 499977,
+      "requested_pv_count": 500000,
+      "seconds": 190.97072358301375,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 156192111,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "eab522fb9de84b0c46ff22c850aea451bad3e00c1d456961708378c53f1aabd0",
+      "market_id": 120004,
+      "pv_count": 499978,
+      "requested_pv_count": 500000,
+      "seconds": 189.69041245800327,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 145445522,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "d14eee375ad37eac4ee0ea88a950742d32f93401fc38975758b5d3c502c53483",
+      "market_id": 120005,
+      "pv_count": 499977,
+      "requested_pv_count": 500000,
+      "seconds": 187.43859804200474,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 144251566,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "8c88d02f477e3f087601a952cd4d6334aca8c630f77a8e947d5f192fc2080d67",
+      "market_id": 120006,
+      "pv_count": 499974,
+      "requested_pv_count": 500000,
+      "seconds": 192.29919366698596,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 152962089,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "e4183eed774b282c29a9b69d05215a20e4ecc86c9a91106bff1148c4ba235802",
+      "market_id": 120007,
+      "pv_count": 499977,
+      "requested_pv_count": 500000,
+      "seconds": 188.96609641698888,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 132680602,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "434cc53e4da283094d566f4dde8e36e5fb2ec1c3823ac6b0cc2533e2e54c73c8",
+      "market_id": 120008,
+      "pv_count": 499973,
+      "requested_pv_count": 500000,
+      "seconds": 186.74638887500623,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 147901448,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "ef7686a0db80b9c8e5a05ae754ab34c92004e892c0ca805cd0e284a213552dae",
+      "market_id": 121001,
+      "pv_count": 499974,
+      "requested_pv_count": 500000,
+      "seconds": 186.99280783400172,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 153397798,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "5b9c24c9d292254868b21996abbc3cabc3e234f70f0d018f477ecee40293df6b",
+      "market_id": 121002,
+      "pv_count": 499975,
+      "requested_pv_count": 500000,
+      "seconds": 184.61918362500728,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 136662967,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "4caa51a643e5aafbaecce8839fd8293d03d8ebbec6e2077f6923e471fbf51e12",
+      "market_id": 121003,
+      "pv_count": 499976,
+      "requested_pv_count": 500000,
+      "seconds": 184.8020093330124,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 146051572,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "ad2e5239eae8d5f2f9830f4918247b14ffae3a540abc138303d70f94e2c9714b",
+      "market_id": 121004,
+      "pv_count": 499977,
+      "requested_pv_count": 500000,
+      "seconds": 183.84504112499417,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 153039163,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "82746ffb9c501bbeebb180e51d627265e5a98bded5c5f606cba753451ad5098c",
+      "market_id": 121005,
+      "pv_count": 499974,
+      "requested_pv_count": 500000,
+      "seconds": 188.7442987920076,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    },
+    {
+      "bytes": 172624280,
+      "effective_actions": [
+        0.0,
+        0.1875,
+        0.25,
+        0.375,
+        0.5,
+        0.5625,
+        0.75,
+        0.9375,
+        1.0,
+        1.125,
+        1.25,
+        1.3125,
+        1.5,
+        1.75,
+        1.875,
+        2.0,
+        2.25,
+        2.5,
+        2.625,
+        3.0,
+        3.75,
+        4.5
+      ],
+      "focal_agents": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40
+      ],
+      "identity": "8ebbd29984fa13b9f77ee10e5b0e02243991b35d7975ea845002608e3ee58696",
+      "market_id": 121006,
+      "pv_count": 499978,
+      "requested_pv_count": 500000,
+      "seconds": 191.78485162497964,
+      "source": {
+        "event_adapter_sha256": "1c842ca1de8e649c147bf4e0edfada3a1d7a7ed5da12c2389c8b90ee1a2b1a81",
+        "sha256": {
+          "BiddingEnv.py": "ea4c9a4b3c080494e5be4adf714f2a3963665b9aa25c05028adf665b1fa56f48",
+          "NeurIPSPvGen.py": "157a4c4c57d6fab0c23898090efe0d7735d0268dd8ad296ace89f9b88db47fce",
+          "market.py": "83b189a10064d9ed74ce3b6fafe737f29014fc69d2d62a8e6bfe8d3cbac1b49f"
+        },
+        "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+      }
+    }
+  ],
+  "protocol_amendment": "Source/selection-seal/zero-variance safeguards were reviewed and committed before any new market policy outcome analysis. The initial data-generation protocol hash is retained; the experiment freeze binds the final pre-outcome protocol.",
+  "runtime": {
+    "device": "cpu",
+    "identity": "de894f1ff6f2db13e274f384ca9e85badca411a9c51f8fc8297535edffc8df77",
+    "numpy": "2.5.5",
+    "pre_outcome_commit": "e61bda8",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "status": "recorded",
+    "threads": 2,
+    "torch": "2.15.0"
+  }
+}

@@ -62,7 +62,11 @@ def fixed(action):
 def test_immediate_matches_legacy_every_observation_action_reward_and_terminal(tmp_path, bias):
     tape = synthetic_tape(tmp_path)
     actions = np.array(selection.DEFAULT_ACTIONS)
-    scenario = bias if isinstance(bias, str) else {0.75: "under_25", 1.0: "calibrated", 1.5: "over_50"}[bias]
+    scenario = (
+        bias
+        if isinstance(bias, str)
+        else {0.75: "under_25", 1.0: "calibrated", 1.5: "over_50"}[bias]
+    )
     legacy = rollout(tape, 0, actions, scenario, Feedback(actions, 0.3, 8), retain=True)
     env = selection.ExpertSelectionEnv(tape, 0, bias, "immediate", 4)
     result = env.run(Feedback(actions, 0.3, 8)).finish()
@@ -135,7 +139,9 @@ def test_clone_isolates_queue_ledger_budget_previous_and_histories(tmp_path):
     assert env.prefix_record() == record
 
 
-def test_delayed_observation_uses_new_arrivals_not_hidden_previous_conversions(tmp_path, monkeypatch):
+def test_delayed_observation_uses_new_arrivals_not_hidden_previous_conversions(
+    tmp_path, monkeypatch
+):
     monkeypatch.setattr(
         "trajectorylab.bidding_delayed_feedback.event_delay",
         lambda market, focal, event, seed, regime: 2,
@@ -155,13 +161,18 @@ def test_delayed_observation_uses_new_arrivals_not_hidden_previous_conversions(t
     assert state[9] == observation(tape, 0, 3, env.spent, 1, env.previous, 1.5)[9]
     assert state[10] == observation(tape, 0, 3, env.spent, 1, env.previous, 1.5)[10]
     assert {f.name for f in fields(env.public_traffic())} == {
-        "probability_mean", "relative_uncertainty", "count", "previous_count"
+        "probability_mean",
+        "relative_uncertainty",
+        "count",
+        "previous_count",
     }
     row = env.run(fixed(1.0)).finish()
     assert row["final_arrived"] == row["conversions"]
 
 
-def test_private_pending_and_future_labels_do_not_change_prefix_features_or_public_digest(tmp_path, monkeypatch):
+def test_private_pending_and_future_labels_do_not_change_prefix_features_or_public_digest(
+    tmp_path, monkeypatch
+):
     monkeypatch.setattr(
         "trajectorylab.bidding_delayed_feedback.event_delay",
         lambda market, focal, event, seed, regime: 48,

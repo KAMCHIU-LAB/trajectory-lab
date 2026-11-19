@@ -1,0 +1,12 @@
+{
+  "experiment_identity": "de894f1ff6f2db13e274f384ca9e85badca411a9c51f8fc8297535edffc8df77",
+  "files_sha256": {
+    "comparison.svg": "7d2379e090f78312dcde65af52ae07f16862429787f195d0f84a0966649eaa18",
+    "features.csv": "75df8cb3f9a5ab251bcb54a2e7d18e60bcdecf4045c535ce1b8fdaf0dea278b6",
+    "provenance.json": "8ba5602f1b29a362ccadf4d132c868d2381c46de39efdeadaf28b161ad35e040",
+    "report.md": "73deaf9709993a4ad10cba33e70e71d1c2fd4379c102ab4bcf1a21ad00c055f8",
+    "results.csv": "7c6cd5243553b40f8801277268395bb7c14ee94c5bea9dae053db2084ee54d41",
+    "summary.json": "e077917aac20de848770bdbd3f71876bd680c5e0a7c28181d31d5ed173b428cd"
+  },
+  "status": "STOP_NO_HEADROOM"
+}

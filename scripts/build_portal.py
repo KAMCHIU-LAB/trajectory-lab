@@ -289,8 +289,18 @@ def recent_publications(reports: Path):
         "bidding-generative": "f48645b65393c04737323954f2a67af0155ce0d49dd6967f7f1d72d27e3dc01b",
         "bidding-delayed-feedback": "df4dd628534ed297145cf66995ca971ca8124b3acf5bab6e615224e0f720b2cc",
         "bidding-delayed-strategy": "d8496f7539c03df6021f3f4d52271d4a609c4bed3a9cf3837f56377a919f6cb9",
+        "bidding-expert-selection": "8b2e0a0c498c9575a880e6dfe0f668242d7d1f24be3cecfd6737a66e04a04ac7",
     }
     entries = (
+        (
+            "bidding-expert-selection",
+            "export.json",
+            "files_sha256",
+            "全新开发市场 · 空间门停止",
+            "未知偏移下的一次专家选择",
+            "6 个新开发市场、24 种对照中，事后最优专家选择相对强简单反馈仅 +2.27%，未达 +3% 门槛。未拟合选择器，未开启确认；公开权重和完整生成路径可复核。",
+            "bidding-expert-findings.md",
+        ),
         (
             "bidding-generative",
             "publication-manifest.json",

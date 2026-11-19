@@ -72,6 +72,8 @@ def test_changed_publication_manifest_cannot_relabel_results(tmp_path):
 def test_public_portal_contains_current_research():
     root = Path(__file__).parents[1]
     markup, records = portal.recent_publications(root / "reports")
-    assert len(records) == 3
+    assert len(records) == 4
     assert "未确认" in markup and "未晋级" in markup
     assert "+1.21%" in markup and "+0.30%" in markup
+    assert "+2.27%" in markup and "未拟合选择器" in markup
+    assert records[0]["study"] == "bidding-expert-selection"

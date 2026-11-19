@@ -13,7 +13,8 @@
 - **已确认的局部收益：**高估 50% 时，3 个冻结响应模型在 24 个新模拟市场相对冻结反馈的 score **+17.6%**、转化 **+8.4%**、CPA 违约频率 **−24.8 个百分点**。[统计口径及失败边界](docs/bidding-findings.md)。
 - **生成式分支：**已实现条件 Flow Matching、分位筛选与反馈回退；第二训练种子未通过业务门槛，生成分布带来的额外决策价值尚未确认。[已完成的种子复核与机制诊断](docs/bidding-generative-findings.md)。
 - **延迟反馈：**独立的 24 市场确认中，posterior 补回的 score **+1.21%**（95% 区间 **[+0.41%, +2.05%]**），未达预设 +3% 实用门槛；高估、长延迟格下降 4.25%。同轨迹审计进一步区分估计精度与控制收益。[结果与边界](docs/bidding-delayed-findings.md)。
-- **问题如何推动演进：**[14 个阶段的实验记录](docs/bidding-research-journal.md)串起问题、假设、对照、结果和取舍；后续研究按[记录模板](docs/experiment-record-template.md)持续追加。
+- **最新研究决定：**未知偏差专家选择在拟合前停止；这对专家的 hindsight 相对强反馈仅有 +2.27% 开发空间，未达 +3% 门槛。[结果与边界](docs/bidding-expert-findings.md)。
+- **问题如何推动演进：**[17 个索引条目的研究记录](docs/bidding-research-journal.md)串起问题、假设、对照、结果和取舍；后续研究按[记录模板](docs/experiment-record-template.md)持续追加。
 - **实现入口：**[拍卖结算](src/trajectorylab/bidding/market.py)、[响应学习](src/trajectorylab/bidding/learning.py)、[Flow 采样器](src/trajectorylab/bidding_generative_learning.py)、[公开记录](reports/bidding-generative/README.md)。
 
 ## 先跑一个完整的小例子
@@ -23,8 +24,12 @@
 ```bash
 python -m pip install -e '.[dev]'
 python scripts/run_bidding_delayed_smoke.py --output artifacts/public-replay-v0.2.0
-python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-evidence.json
+python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-evidence.json --replay-only
 ```
+
+研究 checkout 使用 `--replay-only` 检查回放不变量。验证历史
+`releases/v0.2.0.json` 中的源码文件哈希时，须 checkout `v0.2.0` tag，
+在该版本中运行不带 `--replay-only` 的验证命令。
 
 安装依赖后，无需 GPU、账号或外部数据集。预期得到 90 条验证记录、45 条确认记录，
 成熟结算与硬预算检查均为 `true`，业务门槛为 `false`。这条路线只有 1 个确认市场，
@@ -57,6 +62,7 @@ python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-e
 | [Pending 使用策略对照](docs/bidding-delayed-strategy-findings.md) | 已完成：6 个旧开发市场比较 12 个配置。50% 补回的折中最好，但相对更强固定基线仅 +0.30%，没有候选通过晋级门槛，未开启新确认。 |
 | [信息价值与反馈协调消融](docs/bidding-evolution-audits.md) | 已完成并独立复核：4 个训练市场上的历史赢家信息对照，以及 4 个训练 / 6 个已见开发市场上的控制机制对照。两个候选均未通过冻结门槛，公开摘录保留对照表、图和来源哈希。 |
 | [动作解码器结构对照](docs/bidding-decoder-findings.md) | 三组各2,000步对照已完成并复核；乘积特征候选未胜过强对照，预测门失败，未进入策略评估。 |
+| [未知偏差专家选择](docs/bidding-expert-findings.md) | `STOP_NO_HEADROOM`：8 个新训练 / 6 个新开发市场，252 个上下文、2,880 行记录，开发比较 24 种方法。不可部署的 hindsight 相对强反馈为 +2.27%，未达 +3%；未拟合 ridge，未生成或开启确认市场。 |
 | [离线策略学习基础实验](docs/results.md) | 已完成：Pendulum、公开 PointMaze 子集和 IQL 机制消融，合计 39 次 BC / IQL / DT 训练。 |
 
 同一市场内的广告主、不同方法和重复种子之间存在相关性，记录条数不是独立市场数。
@@ -110,7 +116,9 @@ python3 -m http.server 8765 --bind 127.0.0.1 --directory reports
 # 打开 http://127.0.0.1:8765
 ```
 
-报告不依赖账号、API Key 或在线后端。公开导出不包含模型权重、流量数组、本机日志和运行器状态。
+报告不依赖账号、API Key 或在线后端。原始训练 checkpoint、优化器 / RNG 状态、
+流量数组、本机日志和运行器状态仍不公开。三份[公开响应专家权重](assets/bidding-response-v1/README.md)
+是特定例外：它们从公开模拟训练的 checkpoint 转换为 numeric NPZ / JSON，加载无需 pickle。
 GitHub 显示 HTML 源码，查看页面请本地启动上述服务。
 
 小规模延迟回传 CPU 重放：

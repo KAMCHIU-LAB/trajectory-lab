@@ -99,6 +99,31 @@ requirements against the 24-market budget. These are registered gates, not
 instructions to add candidates until one passes. Read a `STOP_*` result as the
 scientific stopping point and report it with its reason.
 
+## Export the completed evidence
+
+After a registered development stop, or after the gated confirmation has
+finished, run:
+
+```bash
+python scripts/export_bidding_expert_selection.py --config "$EXPERT_CONFIG" --output "$EXPERT_RUN"
+```
+
+The destination defaults to `reports/bidding-expert-selection`. The exporter
+recomputes the complete development decision in a temporary mirror and compares
+it with the saved record; it does not rewrite that record. For a confirmed run,
+it also recomputes confirmation under the immutable opening seal. No markets or
+response models are retrained during export. Only the registered files are
+written, after schema and privacy checks. Existing unregistered files or
+symlinks under the report destination cause rejection.
+
+`execution-runtime.json` is optional metadata from the original orchestration,
+not an input required by the public runner. If absent, the export explicitly
+records `not_recorded`; the exporter's current environment is never substituted
+for the experiment's execution environment. Unknown metadata fields are rejected.
+The published provenance retains Python/NumPy/Torch/SciPy versions for the
+recorded run. Equivalent source and seeds do not guarantee bitwise outcomes
+across package versions or platforms.
+
 ## Open confirmation only after readiness
 
 Run this block only for the same unchanged config, source tree and output

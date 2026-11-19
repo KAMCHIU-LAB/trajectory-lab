@@ -11,6 +11,8 @@ local implementation and the data excluded from the repository.
 | Bidding models, controllers and research scripts | Local implementation of public methods and explicitly scoped experimental variants, developed with AI-assisted coding. The source review found no employer SDK, company endpoint, internal integration or private credential reader. This finding concerns the inspected repository; it is not a legal determination of ownership. |
 | Bidding examples and reported measurements | Public-simulator-generated markets under the declared custom fixed-opponent and settlement protocol; no production advertising logs or online business metrics. |
 | Delayed-feedback study and control extension | New event-level caches generated from the published AuctionNet-derived kernels, with synthetic event-keyed reporting delays. New estimator/ledger/control code uses public simulation interfaces; mature training history is generated within the study. No old private runtime bundle or trained checkpoint is imported. |
+| Frozen expert-selection study | New synthetic markets generated from the same public AuctionNet-derived, fixed-opponent kernels, with immediate feedback. The [protocol](bidding-expert-selection-protocol.md) fixes response seed 11 and separates training, validation and gated confirmation. The [source-checkout guide](bidding-expert-reproduction.md) documents generation, freezing and recovery; no production traffic or private checkpoint is required. |
+| Public response expert assets | Three frozen experts trained in this repository's public simulation, converted to numeric NPZ plus allowlisted JSON in [assets/bidding-response-v1](../assets/bidding-response-v1/README.md). Original checkpoint hashes and distributed weight hashes record conversion provenance. Loading uses `allow_pickle=False`; these assets preserve frozen inference, not complete bitwise retraining. |
 | Earlier control tasks | Gymnasium Pendulum and the public Minari PointMaze subset named in the [offline study](offline-policy-guide.md). Dataset files retain upstream terms and are not redistributed. |
 
 The study is not an official AuctionNet benchmark reproduction. See the
@@ -39,9 +41,11 @@ The parent publication commit retains the original vendored file.
 ## Publication boundary
 
 Included: reviewed source/configurations, documented protocols, scalar experiment
-records and generated research figures. Model weights, traffic/trajectory arrays,
-local orchestration state, private runner logs, credentials and environment files
-are excluded. The checked source does not require a company account or service.
+records and generated research figures. The three numeric NPZ/JSON response
+experts in `assets/bidding-response-v1` are a specific weight-publication
+exception. Original training checkpoints, optimizer/RNG state, traffic/trajectory
+arrays, local orchestration state, private runner logs, credentials and environment
+files are excluded. The checked source does not require a company account or service.
 
 The publication review screened the candidate tree and reachable Git history for
 credential patterns, private filesystem paths, nonpublic email addresses, private
@@ -79,6 +83,16 @@ for auction tapes. Its [control extension](bidding-delayed-strategy-protocol.md)
 reuses only those generated development inputs. All twelve extension candidates
 failed promotion, so the reserved fresh confirmation markets remain unopened.
 
+The [expert-selection study](bidding-expert-selection-protocol.md) also supports
+generation of all its new markets from a source checkout containing the repository
+assets and `third_party` code. It uses the published seed-11 response asset for
+frozen inference; it does not promise a complete rerun of the original expert
+training. Training and validation inputs precede the frozen evaluation; reserved
+confirmation inputs may be generated only after `READY_FOR_CONFIRMATION` and
+the explicit opening step. The [reproduction guide](bidding-expert-reproduction.md)
+defines these boundaries and valid scientific stops. This describes reproduction
+scope, not an experiment outcome.
+
 ## v0.2.0 software delivery
 
 The delivery pass applies the existing formatter and repairs configuration-test
@@ -88,3 +102,8 @@ gains. Historical hashes describe the source at their recorded revisions; the
 remains available. Fresh software replay outputs use new identities and output
 directories. See the [reproduction guide](reproduce.md) and versioned source
 record for the current supported public path.
+
+In later research checkouts, the README replay command uses `--replay-only` to
+check software replay invariants. The historical source hashes in
+`releases/v0.2.0.json` must be verified from a checkout of the `v0.2.0` tag with
+the verifier's full source checks enabled, without `--replay-only`.
