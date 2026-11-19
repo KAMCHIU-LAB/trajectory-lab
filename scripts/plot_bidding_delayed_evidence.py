@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Plot recorded confirmation estimates without selecting or fitting a policy."""
+
 from __future__ import annotations
 
 import argparse
@@ -49,7 +50,8 @@ def plot_evidence(directory: Path):
     labels = ("All stresses", "Nominal pCVR", "Underprediction")
     fig, axes = plt.subplots(1, 3, figsize=(11.2, 3.8), layout="constrained")
     for ax, metric, title in zip(
-        axes, ("score_ratio", "conversion_ratio", "violation_delta"),
+        axes,
+        ("score_ratio", "conversion_ratio", "violation_delta"),
         ("Mature score change (%)", "Mature conversions (%)", "CPA violation change (pp)"),
         strict=True,
     ):
@@ -59,41 +61,89 @@ def plot_evidence(directory: Path):
             low, high = result[f"{metric}_ci95"]
             offset = 0 if metric == "violation_delta" else 1
             value, low, high = (100 * (v - offset) for v in (value, low, high))
-            ax.errorbar(value, position, xerr=[[value-low], [high-value]], fmt="o", color="#16697a", capsize=4)
-            ax.annotate(f"{value:+.2f}", (value, position), xytext=(0, 9), textcoords="offset points", ha="center", fontsize=8)
-            target = 3 if metric == "violation_delta" else (-3 if group != "all" else (3 if metric == "score_ratio" else None))
+            ax.errorbar(
+                value,
+                position,
+                xerr=[[value - low], [high - value]],
+                fmt="o",
+                color="#16697a",
+                capsize=4,
+            )
+            ax.annotate(
+                f"{value:+.2f}",
+                (value, position),
+                xytext=(0, 9),
+                textcoords="offset points",
+                ha="center",
+                fontsize=8,
+            )
+            target = (
+                3
+                if metric == "violation_delta"
+                else (-3 if group != "all" else (3 if metric == "score_ratio" else None))
+            )
             if target is not None:
-                ax.plot([target, target], [position-.28, position+.28], color="#be6e46", linestyle="--", linewidth=1.5)
+                ax.plot(
+                    [target, target],
+                    [position - 0.28, position + 0.28],
+                    color="#be6e46",
+                    linestyle="--",
+                    linewidth=1.5,
+                )
         ax.axvline(0, color="#87959a", linewidth=1)
         ax.set_yticks(range(3), labels if ax is axes[0] else ("", "", ""))
-        ax.set_ylim(2.6, -.6)
+        ax.set_ylim(2.6, -0.6)
         ax.set_xlabel(title)
-        ax.grid(axis="x", alpha=.15)
+        ax.grid(axis="x", alpha=0.15)
         ax.spines[["top", "right"]].set_visible(False)
-    fig.suptitle("Frozen feedback correction vs tuned arrived-only feedback\n"
-                 "Bars: descriptive paired-market 95% intervals; dashed marks: practical thresholds.\n"
-                 "Protection gates use separate multiplicity-adjusted one-sided bounds.", fontsize=10)
-    fig.savefig(directory / "confirmation-effects.svg", metadata={"Date": None, "Creator": "TrajectoryLab"})
+    fig.suptitle(
+        "Frozen feedback correction vs tuned arrived-only feedback\n"
+        "Bars: descriptive paired-market 95% intervals; dashed marks: practical thresholds.\n"
+        "Protection gates use separate multiplicity-adjusted one-sided bounds.",
+        fontsize=10,
+    )
+    fig.savefig(
+        directory / "confirmation-effects.svg", metadata={"Date": None, "Creator": "TrajectoryLab"}
+    )
     plt.close(fig)
 
     selected = summary["strongest_point"]
-    naive = next(v["name"] for v in summary["selection"]["frozen_variants"] if v["estimator"] == "naive")
+    naive = next(
+        v["name"] for v in summary["selection"]["frozen_variants"] if v["estimator"] == "naive"
+    )
     cells = {(v["method"], v["bias_group"], v["delay"]): v["score"] for v in summary["cells"]}
     regimes, biases = ("immediate", "short", "long"), ("under", "nominal", "over")
-    values = np.array([
-        [100*(cells[selected, group, delay]/cells[naive, group, delay]-1) for delay in regimes]
-        for group in biases
-    ])
-    limit = max(1., float(np.max(np.abs(values))))
+    values = np.array(
+        [
+            [
+                100 * (cells[selected, group, delay] / cells[naive, group, delay] - 1)
+                for delay in regimes
+            ]
+            for group in biases
+        ]
+    )
+    limit = max(1.0, float(np.max(np.abs(values))))
     fig, ax = plt.subplots(figsize=(6.4, 3.8), layout="constrained")
     im = ax.imshow(values, cmap="BrBG", vmin=-limit, vmax=limit)
     for (r, c), value in np.ndenumerate(values):
-        ax.text(c, r, f"{value:+.2f}%", ha="center", va="center", color="white" if abs(value) > .65*limit else "#16282d")
+        ax.text(
+            c,
+            r,
+            f"{value:+.2f}%",
+            ha="center",
+            va="center",
+            color="white" if abs(value) > 0.65 * limit else "#16282d",
+        )
     ax.set_xticks(range(3), ("Immediate", "Short delay", "Long delay"))
     ax.set_yticks(range(3), ("Underprediction", "Nominal pCVR", "Overprediction"))
-    ax.set_title("Mature score change by stress cell\nDescriptive; cells share the same 24 markets", fontsize=11)
-    fig.colorbar(im, ax=ax, label="Change vs tuned arrived-only (%)", shrink=.8)
-    fig.savefig(directory / "confirmation-stress.svg", metadata={"Date": None, "Creator": "TrajectoryLab"})
+    ax.set_title(
+        "Mature score change by stress cell\nDescriptive; cells share the same 24 markets",
+        fontsize=11,
+    )
+    fig.colorbar(im, ax=ax, label="Change vs tuned arrived-only (%)", shrink=0.8)
+    fig.savefig(
+        directory / "confirmation-stress.svg", metadata={"Date": None, "Creator": "TrajectoryLab"}
+    )
     plt.close(fig)
 
 

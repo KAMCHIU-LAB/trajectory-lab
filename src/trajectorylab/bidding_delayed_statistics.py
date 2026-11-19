@@ -79,16 +79,36 @@ def paired_comparison(
             "violation_delta": float(x[:, 2].mean() - y[:, 2].mean()),
             "violation_delta_ci95": np.quantile(vd, [0.025, 0.975]).tolist(),
             "violation_delta_protection_upper": float(np.quantile(vd, 1 - alpha)),
-            "method_means": dict(zip(("score", "conversions", "violation", "budget_utilization"), x.mean(axis=0).tolist(), strict=True)),
-            "baseline_means": dict(zip(("score", "conversions", "violation", "budget_utilization"), y.mean(axis=0).tolist(), strict=True)),
+            "method_means": dict(
+                zip(
+                    ("score", "conversions", "violation", "budget_utilization"),
+                    x.mean(axis=0).tolist(),
+                    strict=True,
+                )
+            ),
+            "baseline_means": dict(
+                zip(
+                    ("score", "conversions", "violation", "budget_utilization"),
+                    y.mean(axis=0).tolist(),
+                    strict=True,
+                )
+            ),
         }
     estimated = all(v["status"] == "estimated" for v in groups.values())
-    protection = estimated and all(
-        groups[g]["score_ratio_protection_lower"] >= 0.97
-        and groups[g]["conversion_ratio_protection_lower"] >= 0.97
-        for g in ("nominal", "under")
-    ) and all(groups[g]["violation_delta_protection_upper"] <= 0.03 for g in groups)
-    uplift = estimated and groups["all"]["score_ratio"] >= 1.03 and groups["all"]["score_ratio_ci95"][0] > 1
+    protection = (
+        estimated
+        and all(
+            groups[g]["score_ratio_protection_lower"] >= 0.97
+            and groups[g]["conversion_ratio_protection_lower"] >= 0.97
+            for g in ("nominal", "under")
+        )
+        and all(groups[g]["violation_delta_protection_upper"] <= 0.03 for g in groups)
+    )
+    uplift = (
+        estimated
+        and groups["all"]["score_ratio"] >= 1.03
+        and groups["all"]["score_ratio_ci95"][0] > 1
+    )
     return {
         "method": method,
         "baseline": baseline,
@@ -125,4 +145,8 @@ def validate_rows(rows: list[dict]) -> dict:
             raise ValueError("Violation is not an indicator")
     if not coverage or any(v != next(iter(coverage.values())) for v in coverage.values()):
         raise ValueError("Methods have different campaign coverage")
-    return {"rows": len(rows), "methods": sorted(coverage), "paired_campaigns": len(next(iter(coverage.values())))}
+    return {
+        "rows": len(rows),
+        "methods": sorted(coverage),
+        "paired_campaigns": len(next(iter(coverage.values()))),
+    }

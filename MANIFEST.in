@@ -1,5 +1,10 @@
-include README.zh-CN.md Makefile requirements.lock
-recursive-include configs *.toml
+include README.zh-CN.md Makefile requirements.lock CHANGELOG.md
+recursive-include releases *.json
+include .github/workflows/*.yml
+recursive-include reports *.json *.csv *.html *.svg *.png *.md
+prune reports/smoke-*
+recursive-include configs *.toml *.json
 recursive-include docs *.md
 recursive-include scripts *.py
 recursive-include tests *.py
+recursive-include third_party/auctionnet *.py *.md *.txt

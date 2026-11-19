@@ -78,3 +78,13 @@ the recorded runtime, seeds and source bytes; scalar exports are not substitutes
 for auction tapes. Its [control extension](bidding-delayed-strategy-protocol.md)
 reuses only those generated development inputs. All twelve extension candidates
 failed promotion, so the reserved fresh confirmation markets remain unopened.
+
+## v0.2.0 software delivery
+
+The delivery pass applies the existing formatter and repairs configuration-test
+coverage. It does not rewrite historical experiment records or claim new research
+gains. Historical hashes describe the source at their recorded revisions; the
+[pre-delivery research revision](https://github.com/KAMCHIU-LAB/trajectory-lab/tree/43fc0acf61e4ad13b01c95492c45e94ce711b384)
+remains available. Fresh software replay outputs use new identities and output
+directories. See the [reproduction guide](reproduce.md) and versioned source
+record for the current supported public path.

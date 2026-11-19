@@ -5,6 +5,9 @@
 [English](README.md) · [研究定位](docs/bidding-research-map.md) ·
 [出价实验协议](docs/bidding-protocol.md) · [架构](docs/architecture.md)
 
+[CPU 自动检查](https://github.com/KAMCHIU-LAB/trajectory-lab/actions/workflows/ci.yml) ·
+[v0.2.0 回放指南](docs/reproduce.md) · [版本记录](CHANGELOG.md)
+
 ## 先看这里
 
 - **已确认的局部收益：**高估 50% 时，3 个冻结响应模型在 24 个新模拟市场相对冻结反馈的 score **+17.6%**、转化 **+8.4%**、CPA 违约频率 **−24.8 个百分点**。[统计口径及失败边界](docs/bidding-findings.md)。
@@ -12,6 +15,21 @@
 - **延迟反馈：**独立的 24 市场确认中，posterior 补回的 score **+1.21%**（95% 区间 **[+0.41%, +2.05%]**），未达预设 +3% 实用门槛；高估、长延迟格下降 4.25%。同轨迹审计进一步区分估计精度与控制收益。[结果与边界](docs/bidding-delayed-findings.md)。
 - **问题如何推动演进：**[14 个阶段的实验记录](docs/bidding-research-journal.md)串起问题、假设、对照、结果和取舍；后续研究按[记录模板](docs/experiment-record-template.md)持续追加。
 - **实现入口：**[拍卖结算](src/trajectorylab/bidding/market.py)、[响应学习](src/trajectorylab/bidding/learning.py)、[Flow 采样器](src/trajectorylab/bidding_generative_learning.py)、[公开记录](reports/bidding-generative/README.md)。
+
+## 先跑一个完整的小例子
+
+在源码目录中，使用 Python 3.11 或 3.12 环境执行：
+
+```bash
+python -m pip install -e '.[dev]'
+python scripts/run_bidding_delayed_smoke.py --output artifacts/public-replay-v0.2.0
+python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-evidence.json
+```
+
+安装依赖后，无需 GPU、账号或外部数据集。预期得到 90 条验证记录、45 条确认记录，
+成熟结算与硬预算检查均为 `true`，业务门槛为 `false`。这条路线只有 1 个确认市场，
+用于检查软件流程，不能复现或证明历史收益。再次执行同一命令可检查冻结恢复。
+[环境设置、预期输出与故障排查](docs/reproduce.md)。
 
 ## 研究什么
 
@@ -69,9 +87,10 @@
 不能直接把分数差归因于架构。各方法能看到什么、主比较是什么、哪些分析属于探索，
 都写在[实验协议](docs/bidding-protocol.md)中。
 
-## 本地运行
+## 运行原始神经出价研究
 
-在仓库根目录执行。参考环境是 Apple M1、Python 3.12，出价配置使用 MPS。
+以下是原始训练配置，区别于前面的 CPU 软件回放。在仓库根目录执行。
+参考环境是 Apple M1、Python 3.12，出价配置使用 MPS。
 其他设备需在独立本地配置中明确声明，形成新的实验身份。
 
 ```bash

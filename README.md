@@ -5,6 +5,9 @@
 [中文](README.zh-CN.md) · [Research position](docs/bidding-research-map.md) ·
 [Bidding protocol](docs/bidding-protocol.md) · [Architecture](docs/architecture.md)
 
+[CPU checks](https://github.com/KAMCHIU-LAB/trajectory-lab/actions/workflows/ci.yml) ·
+[v0.2.0 reproduction guide](docs/reproduce.md) · [Change log](CHANGELOG.md)
+
 ## Start here
 
 - **Confirmed scope:** under 50% pCVR overprediction, three frozen response models in 24 fresh simulated markets achieved score **+17.6%**, conversions **+8.4%**, and CPA violations **−24.8 pp** versus frozen feedback. [Statistics and failure boundaries](docs/bidding-findings.md).
@@ -12,6 +15,22 @@
 - **Delayed feedback:** a separate 24-market confirmation found posterior imputation score **+1.21%** (95% interval **[+0.41%, +2.05%]**), below the registered +3% practical target. Long-delay overprediction lost 4.25%; the common-trajectory audit explains why estimation and control need separate tests. [Results and limits](docs/bidding-delayed-findings.md).
 - **How the research evolved:** [fourteen evidence-linked stages](docs/bidding-research-journal.md) connect problems, hypotheses, controls, outcomes and decisions; [a recording template](docs/experiment-record-template.md) keeps future work traceable. The journal is in Chinese.
 - **Inspect the work:** [market settlement](src/trajectorylab/bidding/market.py), [response learning](src/trajectorylab/bidding/learning.py), [Flow sampler](src/trajectorylab/bidding_generative_learning.py), and [public evidence records](reports/bidding-generative/README.md).
+
+## Try the public path
+
+From a source checkout with Python 3.11 or 3.12:
+
+```bash
+python -m pip install -e '.[dev]'
+python scripts/run_bidding_delayed_smoke.py --output artifacts/public-replay-v0.2.0
+python scripts/verify_release.py --replay artifacts/public-replay-v0.2.0/smoke-evidence.json
+```
+
+No GPU, account or external dataset is needed after dependency installation.
+Expected: 90 validation rows, 45 confirmation rows, mature settlement and hard
+budget checks both `true`, business target `false`. This is a one-market software
+replay, not a replication of the historical performance claims. Repeating the
+command checks frozen resume. [Setup, expected outputs and troubleshooting](docs/reproduce.md).
 
 ## The question
 
@@ -77,9 +96,9 @@ behavior trajectories. Their comparison does not isolate architecture alone.
 The [protocol](docs/bidding-protocol.md) specifies the information available to
 each method, the primary comparison and the exploratory analyses.
 
-## Run locally
+## Run the original neural bidding studies
 
-Start from the repository root. The reference environment is Python 3.12 on an
+Start from the repository root. For these studies, the reference environment is Python 3.12 on an
 Apple M1; bidding configurations request MPS. A different device must be declared
 in a separate local configuration and produces a different experiment identity.
 

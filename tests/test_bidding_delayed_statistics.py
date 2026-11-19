@@ -8,7 +8,22 @@ def records(multiplier=1.1):
     for market in range(4):
         for group in ("nominal", "under", "over"):
             for method, factor in (("base", 1), ("candidate", multiplier)):
-                rows.append(dict(market=market, focal=0, bias_group=group, delay="short", arrival_seed=11, method=method, score=(market + 1) * factor, conversions=(market + 1) * factor, cost=2, budget=10, budget_utilization=.2, violation=0))
+                rows.append(
+                    dict(
+                        market=market,
+                        focal=0,
+                        bias_group=group,
+                        delay="short",
+                        arrival_seed=11,
+                        method=method,
+                        score=(market + 1) * factor,
+                        conversions=(market + 1) * factor,
+                        cost=2,
+                        budget=10,
+                        budget_utilization=0.2,
+                        violation=0,
+                    )
+                )
     return rows
 
 

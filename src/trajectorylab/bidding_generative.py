@@ -241,7 +241,13 @@ def calibration(sampler, data, opts) -> dict:
         "by_scenario": {
             s: dict(
                 zip(
-                    ("energy_score", "point_energy_score", "coverage80", "coverage95", "upper_cap_fraction"),
+                    (
+                        "energy_score",
+                        "point_energy_score",
+                        "coverage80",
+                        "coverage95",
+                        "upper_cap_fraction",
+                    ),
                     np.mean(values, axis=0).tolist(),
                     strict=True,
                 )

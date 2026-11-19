@@ -55,6 +55,23 @@
   "completed_runs": 39,
   "completed_runs_scope": "offline RL foundation studies only",
   "mechanism_check": "passed",
+  "recent_publications": [
+    {
+      "manifest": "bidding-generative/publication-manifest.json",
+      "study": "bidding-generative",
+      "verified_files": 3
+    },
+    {
+      "manifest": "bidding-delayed-feedback/publication-manifest.json",
+      "study": "bidding-delayed-feedback",
+      "verified_files": 20
+    },
+    {
+      "manifest": "bidding-delayed-strategy/export-manifest.json",
+      "study": "bidding-delayed-strategy",
+      "verified_files": 8
+    }
+  ],
   "studies": [
     {
       "runs": 27,

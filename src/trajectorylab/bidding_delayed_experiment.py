@@ -53,7 +53,11 @@ class PublicLedger:
         for b in range(len(self.edges) + 1):
             mask = bins == b
             if mask.any():
-                self.groups[(public_cohort.tick, b)] = [int(mask.sum()), float(probabilities[mask].sum()), 0]
+                self.groups[(public_cohort.tick, b)] = [
+                    int(mask.sum()),
+                    float(probabilities[mask].sum()),
+                    0,
+                ]
         self.accepted.update(
             (event, (public_cohort.tick, int(b)))
             for event, b in zip(public_cohort.event_ids, bins, strict=True)
@@ -90,7 +94,18 @@ def variants(config):
     ]
 
 
-def episode(tape, fi, prediction_multiplier, regime, arrival_seed, variant, cdf, config, *, collect_delays=False):
+def episode(
+    tape,
+    fi,
+    prediction_multiplier,
+    regime,
+    arrival_seed,
+    variant,
+    cdf,
+    config,
+    *,
+    collect_delays=False,
+):
     """Truth is owned here; only PolicyView is used by ordinary decision code."""
     market = int(tape.arrays["market_id"])
     focal = int(tape.arrays["focals"][fi])
@@ -99,8 +114,10 @@ def episode(tape, fi, prediction_multiplier, regime, arrival_seed, variant, cdf,
     queue = DelayQueue(market, focal, arrival_seed, regime)
     ledger = PublicLedger(config["evaluation"]["probability_bin_edges"])
     kind = variant["estimator"]
-    estimator = None if kind == "oracle_past" else PendingEstimator(
-        cdf, kind, prior_log_sd=config["history"]["calibration_prior_log_sd"]
+    estimator = (
+        None
+        if kind == "oracle_past"
+        else PendingEstimator(cdf, kind, prior_log_sd=config["history"]["calibration_prior_log_sd"])
     )
     spent, truth, wins = 0.0, 0, 0
     chosen, delay_samples, pending_errors = [], [], []
@@ -122,7 +139,10 @@ def episode(tape, fi, prediction_multiplier, regime, arrival_seed, variant, cdf,
         wins += settled.wins
         chosen.append(float(action))
         if collect_delays:
-            delay_samples.extend(event_delay(market, focal, event, arrival_seed, regime) for event in settled.positive_ids)
+            delay_samples.extend(
+                event_delay(market, focal, event, arrival_seed, regime)
+                for event in settled.positive_ids
+            )
     ledger.receive(queue.advance(48 + config["history"]["maturity_window"]))
     if ledger.arrived != truth:
         raise RuntimeError("Final maturity failed or labels counted twice")
@@ -130,13 +150,28 @@ def episode(tape, fi, prediction_multiplier, regime, arrival_seed, variant, cdf,
         raise RuntimeError("Settlement exceeded hard budget")
     group = {0.75: "under", 1.0: "nominal", 1.5: "over"}[prediction_multiplier]
     row = dict(
-        market=market, focal=focal, bias_group=group, delay=regime, arrival_seed=arrival_seed,
-        method=variant["name"], estimator=kind, gain=variant["gain"], prior=variant["prior"],
-        cost=spent, conversions=truth, exposures=wins, budget=budget, target_cpa=cpa,
-        cpa=spent / truth if truth else None, violation=int(spent > cpa * truth + 1e-8),
-        score=score(spent, truth, cpa), budget_utilization=spent / budget,
-        pending_mae=float(np.mean(pending_errors)), actions=chosen,
-        final_arrived=ledger.arrived, zero_conversions=int(truth == 0),
+        market=market,
+        focal=focal,
+        bias_group=group,
+        delay=regime,
+        arrival_seed=arrival_seed,
+        method=variant["name"],
+        estimator=kind,
+        gain=variant["gain"],
+        prior=variant["prior"],
+        cost=spent,
+        conversions=truth,
+        exposures=wins,
+        budget=budget,
+        target_cpa=cpa,
+        cpa=spent / truth if truth else None,
+        violation=int(spent > cpa * truth + 1e-8),
+        score=score(spent, truth, cpa),
+        budget_utilization=spent / budget,
+        pending_mae=float(np.mean(pending_errors)),
+        actions=chosen,
+        final_arrived=ledger.arrived,
+        zero_conversions=int(truth == 0),
         deployable=kind != "oracle_past",
     )
     return row, delay_samples
@@ -148,12 +183,21 @@ def load_config(path):
 
 def source_record():
     names = [
-        "bidding_delayed_experiment.py", "bidding_delayed_feedback.py", "bidding_pending_response.py",
+        "bidding_delayed_experiment.py",
+        "bidding_delayed_feedback.py",
+        "bidding_pending_response.py",
         "bidding_delayed_statistics.py",
     ]
-    source = {f"src/trajectorylab/{name}": hashlib.sha256((ROOT / "src/trajectorylab" / name).read_bytes()).hexdigest() for name in names}
+    source = {
+        f"src/trajectorylab/{name}": hashlib.sha256(
+            (ROOT / "src/trajectorylab" / name).read_bytes()
+        ).hexdigest()
+        for name in names
+    }
     for name in ("market.py", "learning.py"):
-        source[f"src/trajectorylab/bidding/{name}"] = hashlib.sha256((ROOT / "src/trajectorylab/bidding" / name).read_bytes()).hexdigest()
+        source[f"src/trajectorylab/bidding/{name}"] = hashlib.sha256(
+            (ROOT / "src/trajectorylab/bidding" / name).read_bytes()
+        ).hexdigest()
     return source
 
 
@@ -163,7 +207,10 @@ def prepare(config, output, split):
     for market in markets:
         meta = build_event_market(output / "markets" / f"{market}.npz", config["study"], market)
         records.append(meta)
-        print(f"market-ready id={market} seconds={meta['seconds']:.2f} bytes={meta['bytes']}", flush=True)
+        print(
+            f"market-ready id={market} seconds={meta['seconds']:.2f} bytes={meta['bytes']}",
+            flush=True,
+        )
     return records
 
 
@@ -179,32 +226,68 @@ def fit_history(config, output):
         context_contract="separate mature training logs per stable deployment context; no test observations fitted",
     )
     result = {}
-    reference = dict(name="history-feedback", estimator="naive", gain=.3, prior=8.)
-    dummy = EmpiricalDelayCDF((1.,) * 49, 0)
+    reference = dict(name="history-feedback", estimator="naive", gain=0.3, prior=8.0)
+    dummy = EmpiricalDelayCDF((1.0,) * 49, 0)
     for regime in config["evaluation"]["regimes"]:
         samples = []
         for market in config["study"]["train_markets"]:
             tape = EventTape(output / "markets" / f"{market}.npz")
             for fi in range(len(tape.arrays["focals"])):
-                _, delays = episode(tape, fi, 1., regime, config["history"]["arrival_seed"], reference, dummy, config, collect_delays=True)
+                _, delays = episode(
+                    tape,
+                    fi,
+                    1.0,
+                    regime,
+                    config["history"]["arrival_seed"],
+                    reference,
+                    dummy,
+                    config,
+                    collect_delays=True,
+                )
                 samples.extend(delays)
-        cdf = EmpiricalDelayCDF.fit(samples, config["history"]["maturity_window"], split="train", all_mature=True, pseudocount=config["history"]["total_delay_pseudocount"])
-        result[regime] = dict(probabilities=list(cdf.probabilities), training_sample_count=cdf.training_sample_count, training_markets=config["study"]["train_markets"], all_mature=True)
+        cdf = EmpiricalDelayCDF.fit(
+            samples,
+            config["history"]["maturity_window"],
+            split="train",
+            all_mature=True,
+            pseudocount=config["history"]["total_delay_pseudocount"],
+        )
+        result[regime] = dict(
+            probabilities=list(cdf.probabilities),
+            training_sample_count=cdf.training_sample_count,
+            training_markets=config["study"]["train_markets"],
+            all_mature=True,
+        )
         print(f"history-fit regime={regime} mature_positive_samples={len(samples)}", flush=True)
     write_json(output / "history.json", result)
-    write_json(output / "history-manifest.json", dict(identity=fingerprint(provenance), core=provenance, history_sha256=hashlib.sha256((output / "history.json").read_bytes()).hexdigest()))
+    write_json(
+        output / "history-manifest.json",
+        dict(
+            identity=fingerprint(provenance),
+            core=provenance,
+            history_sha256=hashlib.sha256((output / "history.json").read_bytes()).hexdigest(),
+        ),
+    )
     return result
 
 
 def read_history(output):
-    return {k: EmpiricalDelayCDF(tuple(v["probabilities"]), v["training_sample_count"]) for k, v in read_json(output / "history.json").items()}
+    return {
+        k: EmpiricalDelayCDF(tuple(v["probabilities"]), v["training_sample_count"])
+        for k, v in read_json(output / "history.json").items()
+    }
 
 
 def check_frozen_selection(config, output):
     selection = read_json(output / "selection.json")
-    if selection["source"] != source_record() or selection["config_identity"] != fingerprint(config):
+    if selection["source"] != source_record() or selection["config_identity"] != fingerprint(
+        config
+    ):
         raise RuntimeError("Source/config changed after development selection")
-    if selection["history_sha256"] != hashlib.sha256((output / "history.json").read_bytes()).hexdigest():
+    if (
+        selection["history_sha256"]
+        != hashlib.sha256((output / "history.json").read_bytes()).hexdigest()
+    ):
         raise RuntimeError("Mature training history changed after selection")
     return selection
 
@@ -224,19 +307,29 @@ def cache_provenance(config, output, split):
         with path.open("rb") as stream:
             for chunk in iter(lambda: stream.read(1024 * 1024), b""):
                 digest.update(chunk)
-        records[str(market)] = dict(identity=meta["identity"], sha256=digest.hexdigest(), source=source)
+        records[str(market)] = dict(
+            identity=meta["identity"], sha256=digest.hexdigest(), source=source
+        )
     return records
 
 
 def validate_grid(rows, config, split, methods):
     coverage = validate_rows(rows)
-    expected = set(product(
-        config["study"][f"{split}_markets"], config["study"]["focal_agents"],
-        ("under", "nominal", "over"), config["evaluation"]["regimes"],
-        config["evaluation"]["arrival_seeds"],
-    ))
+    expected = set(
+        product(
+            config["study"][f"{split}_markets"],
+            config["study"]["focal_agents"],
+            ("under", "nominal", "over"),
+            config["evaluation"]["regimes"],
+            config["evaluation"]["arrival_seeds"],
+        )
+    )
     for method in methods:
-        actual = {tuple(r[k] for k in ("market", "focal", "bias_group", "delay", "arrival_seed")) for r in rows if r["method"] == method["name"]}
+        actual = {
+            tuple(r[k] for k in ("market", "focal", "bias_group", "delay", "arrival_seed"))
+            for r in rows
+            if r["method"] == method["name"]
+        }
         if actual != expected:
             raise RuntimeError("Evaluation is missing declared campaign cells")
     if set(coverage["methods"]) != {m["name"] for m in methods}:
@@ -250,14 +343,28 @@ def evaluate(config, output, split, selected=None):
         if selected != frozen["frozen_variants"]:
             raise RuntimeError("Confirmation methods differ from frozen selection")
     methods = variants(config) if selected is None else selected
-    core = dict(config=config, source=source_record(), markets=cache_provenance(config, output, split), history_sha256=hashlib.sha256((output / "history.json").read_bytes()).hexdigest(), methods=methods, split=split)
+    core = dict(
+        config=config,
+        source=source_record(),
+        markets=cache_provenance(config, output, split),
+        history_sha256=hashlib.sha256((output / "history.json").read_bytes()).hexdigest(),
+        methods=methods,
+        split=split,
+    )
     identity = fingerprint(core)
     destination = output / split
     destination.mkdir(parents=True, exist_ok=True)
     manifest_path = destination / "manifest.json"
     if manifest_path.exists() and read_json(manifest_path)["identity"] != identity:
         raise RuntimeError("Frozen evaluation changed; use a new output identity")
-    write_json(manifest_path, dict(identity=identity, core=core, claim="custom fixed-opponent simulation; mature labels; historical delay regime matched; finite declared arrival seeds"))
+    write_json(
+        manifest_path,
+        dict(
+            identity=identity,
+            core=core,
+            claim="custom fixed-opponent simulation; mature labels; historical delay regime matched; finite declared arrival seeds",
+        ),
+    )
     history = read_history(output)
     rows = []
     started = time.perf_counter()
@@ -277,16 +384,45 @@ def evaluate(config, output, split, selected=None):
                 for regime in config["evaluation"]["regimes"]:
                     for arrival_seed in config["evaluation"]["arrival_seeds"]:
                         for fi in range(len(tape.arrays["focals"])):
-                            row, _ = episode(tape, fi, bias, regime, arrival_seed, variant, history[regime], config)
+                            row, _ = episode(
+                                tape,
+                                fi,
+                                bias,
+                                regime,
+                                arrival_seed,
+                                variant,
+                                history[regime],
+                                config,
+                            )
                             local.append(row)
-            print(f"evaluated split={split} market={market} method={variant['name']} seconds={time.perf_counter()-tick_start:.2f}", flush=True)
+            print(
+                f"evaluated split={split} market={market} method={variant['name']} seconds={time.perf_counter() - tick_start:.2f}",
+                flush=True,
+            )
         validate_rows(local)
         write_json(path, dict(identity=identity, rows=local))
         rows.extend(local)
-        write_json(destination / "status.json", dict(identity=identity, phase="running", completed_markets=len({r['market'] for r in rows}), rows=len(rows)))
+        write_json(
+            destination / "status.json",
+            dict(
+                identity=identity,
+                phase="running",
+                completed_markets=len({r["market"] for r in rows}),
+                rows=len(rows),
+            ),
+        )
     coverage = validate_grid(rows, config, split, methods)
     write_json(destination / "results.json", rows)
-    write_json(destination / "status.json", dict(identity=identity, phase="complete", **coverage, elapsed_seconds=time.perf_counter()-started, peak_rss_native=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss))
+    write_json(
+        destination / "status.json",
+        dict(
+            identity=identity,
+            phase="complete",
+            **coverage,
+            elapsed_seconds=time.perf_counter() - started,
+            peak_rss_native=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+        ),
+    )
     return rows
 
 
@@ -296,20 +432,50 @@ def select_development(config, output):
     rows = read_json(output / "validation" / "results.json")
     options = variants(config)
     validate_grid(rows, config, "validation", options)
-    means = {v["name"]: np.mean([r["score"] for r in rows if r["method"] == v["name"]]) for v in options}
-    winners = [max((v for v in options if v["estimator"] == k), key=lambda v: means[v["name"]]) for k in config["evaluation"]["methods"]]
-    point = max((v for v in winners if v["estimator"] != "oracle_past"), key=lambda v: means[v["name"]])
+    means = {
+        v["name"]: np.mean([r["score"] for r in rows if r["method"] == v["name"]]) for v in options
+    }
+    winners = [
+        max((v for v in options if v["estimator"] == k), key=lambda v: means[v["name"]])
+        for k in config["evaluation"]["methods"]
+    ]
+    point = max(
+        (v for v in winners if v["estimator"] != "oracle_past"), key=lambda v: means[v["name"]]
+    )
     oracle = next(v for v in winners if v["estimator"] == "oracle_past")
-    a = {(r["market"], r["focal"], r["bias_group"], r["delay"], r["arrival_seed"]): r for r in rows if r["method"] == point["name"]}
-    b = {(r["market"], r["focal"], r["bias_group"], r["delay"], r["arrival_seed"]): r for r in rows if r["method"] == oracle["name"]}
-    action_change = float(np.mean([x != y for key in a for x, y in zip(a[key]["actions"], b[key]["actions"], strict=True)]))
-    gain = float(means[oracle["name"]] / means[point["name"]] - 1) if means[point["name"]] > 0 else None
+    a = {
+        (r["market"], r["focal"], r["bias_group"], r["delay"], r["arrival_seed"]): r
+        for r in rows
+        if r["method"] == point["name"]
+    }
+    b = {
+        (r["market"], r["focal"], r["bias_group"], r["delay"], r["arrival_seed"]): r
+        for r in rows
+        if r["method"] == oracle["name"]
+    }
+    action_change = float(
+        np.mean(
+            [x != y for key in a for x, y in zip(a[key]["actions"], b[key]["actions"], strict=True)]
+        )
+    )
+    gain = (
+        float(means[oracle["name"]] / means[point["name"]] - 1)
+        if means[point["name"]] > 0
+        else None
+    )
     selection = dict(
         validation_identity=read_json(output / "validation" / "manifest.json")["identity"],
-        frozen_variants=winners, strongest_point=point, diagnostic_oracle=oracle,
+        frozen_variants=winners,
+        strongest_point=point,
+        diagnostic_oracle=oracle,
         mean_scores={v["name"]: float(means[v["name"]]) for v in winners},
-        oracle_diagnostic_gain=gain, oracle_action_change_fraction=action_change,
-        generative_investment_gate=bool(gain is not None and gain >= config["limits"]["oracle_diagnostic_gain"] and action_change >= config["limits"]["oracle_diagnostic_action_change"]),
+        oracle_diagnostic_gain=gain,
+        oracle_action_change_fraction=action_change,
+        generative_investment_gate=bool(
+            gain is not None
+            and gain >= config["limits"]["oracle_diagnostic_gain"]
+            and action_change >= config["limits"]["oracle_diagnostic_action_change"]
+        ),
         diagnostic_scope="past-outcome feedback heuristic; not a global optimum or proof that no better policy exists",
         selection_scope="best macro development score within each estimator; confirmation protection gates remain binding",
         source=source_record(),
@@ -329,16 +495,52 @@ def summarise(config, output, split):
     baseline = selection["strongest_point"]["name"]
     methods = sorted({r["method"] for r in rows})
     naive = next(v["name"] for v in selection["frozen_variants"] if v["estimator"] == "naive")
-    comparison_args = dict(draws=config["evaluation"]["bootstrap_draws"], seed=config["evaluation"]["bootstrap_seed"], minimum_markets=config["limits"]["minimum_confirmation_markets"])
-    comparisons = [paired_comparison(rows, method, baseline, **comparison_args) for method in methods if method != baseline]
+    comparison_args = dict(
+        draws=config["evaluation"]["bootstrap_draws"],
+        seed=config["evaluation"]["bootstrap_seed"],
+        minimum_markets=config["limits"]["minimum_confirmation_markets"],
+    )
+    comparisons = [
+        paired_comparison(rows, method, baseline, **comparison_args)
+        for method in methods
+        if method != baseline
+    ]
     primary = paired_comparison(rows, baseline, naive, **comparison_args)
     cells = []
     for method in methods:
         for group in ("nominal", "under", "over"):
             for regime in config["evaluation"]["regimes"]:
-                s = [r for r in rows if r["method"] == method and r["bias_group"] == group and r["delay"] == regime]
-                cells.append(dict(method=method, bias_group=group, delay=regime, campaigns=len(s), score=float(np.mean([r["score"] for r in s])), conversions=float(np.mean([r["conversions"] for r in s])), violation=float(np.mean([r["violation"] for r in s])), budget_utilization=float(np.mean([r["budget_utilization"] for r in s])), pending_mae=float(np.mean([r["pending_mae"] for r in s]))))
-    result = dict(split=split, coverage=validate_rows(rows), strongest_point=baseline, primary_estimand="development-selected strongest deployable point vs development-tuned arrived-only feedback; no generative novelty claim", primary_comparison=primary, other_comparisons_scope="secondary/descriptive; not additional unadjusted primary hypothesis claims", selection=selection, comparisons=comparisons, cells=cells, final_metrics="matured labels at H+W; no additional opportunities after H", independent_market_count=len({r["market"] for r in rows}))
+                s = [
+                    r
+                    for r in rows
+                    if r["method"] == method and r["bias_group"] == group and r["delay"] == regime
+                ]
+                cells.append(
+                    dict(
+                        method=method,
+                        bias_group=group,
+                        delay=regime,
+                        campaigns=len(s),
+                        score=float(np.mean([r["score"] for r in s])),
+                        conversions=float(np.mean([r["conversions"] for r in s])),
+                        violation=float(np.mean([r["violation"] for r in s])),
+                        budget_utilization=float(np.mean([r["budget_utilization"] for r in s])),
+                        pending_mae=float(np.mean([r["pending_mae"] for r in s])),
+                    )
+                )
+    result = dict(
+        split=split,
+        coverage=validate_rows(rows),
+        strongest_point=baseline,
+        primary_estimand="development-selected strongest deployable point vs development-tuned arrived-only feedback; no generative novelty claim",
+        primary_comparison=primary,
+        other_comparisons_scope="secondary/descriptive; not additional unadjusted primary hypothesis claims",
+        selection=selection,
+        comparisons=comparisons,
+        cells=cells,
+        final_metrics="matured labels at H+W; no additional opportunities after H",
+        independent_market_count=len({r["market"] for r in rows}),
+    )
     write_json(output / split / "summary.json", result)
     return result
 
@@ -347,7 +549,9 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--config", type=Path, default=ROOT / "configs/bidding-delayed-feedback.toml")
     p.add_argument("--output", type=Path, default=ROOT / "artifacts/bidding/delayed-feedback")
-    p.add_argument("--stage", choices=["prepare", "history", "evaluate", "select", "summary"], required=True)
+    p.add_argument(
+        "--stage", choices=["prepare", "history", "evaluate", "select", "summary"], required=True
+    )
     p.add_argument("--split", choices=["train", "validation", "confirmation"], default="validation")
     args = p.parse_args()
     config = load_config(args.config)
@@ -360,7 +564,11 @@ def main():
     elif args.stage == "history":
         fit_history(config, args.output)
     elif args.stage == "evaluate":
-        selected = read_json(args.output / "selection.json")["frozen_variants"] if args.split == "confirmation" else None
+        selected = (
+            read_json(args.output / "selection.json")["frozen_variants"]
+            if args.split == "confirmation"
+            else None
+        )
         evaluate(config, args.output, args.split, selected)
     elif args.stage == "select":
         select_development(config, args.output)

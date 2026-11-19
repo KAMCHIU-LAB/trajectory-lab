@@ -249,6 +249,98 @@ def replication_figure(reports: Path):
         return None
 
 
+def publication_inventory(
+    reports: Path, slug: str, manifest: str, field: str, manifest_sha256: str
+):
+    """Expose a recent publication only when all its recorded files match."""
+    directory = reports / slug
+    try:
+        if directory.is_symlink() or not directory.resolve().is_relative_to(reports.resolve()):
+            return None
+        manifest_path = directory / manifest
+        if (
+            manifest_path.is_symlink()
+            or not manifest_path.resolve().is_relative_to(directory.resolve())
+            or hashlib.sha256(manifest_path.read_bytes()).hexdigest() != manifest_sha256
+        ):
+            return None
+        files = read_json(manifest_path)[field]
+        if not isinstance(files, dict) or not files:
+            return None
+        for name, expected in files.items():
+            path = directory / name
+            if (
+                Path(name).is_absolute()
+                or ".." in Path(name).parts
+                or path.is_symlink()
+                or not path.resolve().is_relative_to(directory.resolve())
+                or hashlib.sha256(path.read_bytes()).hexdigest() != expected
+            ):
+                return None
+        return {"manifest": f"{slug}/{manifest}", "verified_files": len(files)}
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+
+
+def recent_publications(reports: Path):
+    # Bind the displayed conclusions to these reviewed historical publications.
+    # Recheck each claim before accepting a new publication manifest.
+    manifest_hashes = {
+        "bidding-generative": "f48645b65393c04737323954f2a67af0155ce0d49dd6967f7f1d72d27e3dc01b",
+        "bidding-delayed-feedback": "df4dd628534ed297145cf66995ca971ca8124b3acf5bab6e615224e0f720b2cc",
+        "bidding-delayed-strategy": "d8496f7539c03df6021f3f4d52271d4a609c4bed3a9cf3837f56377a919f6cb9",
+    }
+    entries = (
+        (
+            "bidding-generative",
+            "publication-manifest.json",
+            "exports",
+            "生成式增量 · 未确认",
+            "条件 Flow Matching",
+            "已实现联合响应采样、分位筛选与反馈回退。第二训练种子未通过业务门槛；相对点预测与分布均值对照的增量未确认。",
+            "bidding-generative-findings.md",
+        ),
+        (
+            "bidding-delayed-feedback",
+            "publication-manifest.json",
+            "files",
+            "独立确认 · 小幅收益",
+            "延迟反馈估计与控制",
+            "24 个新市场中，后验补回相对 arrived-only 的 score +1.21%，未达 +3% 实用门槛；高估、长延迟格退化。估计改善需要单独接受决策检验。",
+            "bidding-delayed-findings.md",
+        ),
+        (
+            "bidding-delayed-strategy",
+            "export-manifest.json",
+            "files",
+            "开发对照 · 未晋级",
+            "12 个 Pending 使用策略",
+            "在 6 个旧开发市场比较部分补回、方向门控与校准修正。最佳折中相对更强固定基线仅 +0.30%，没有开启新市场确认。",
+            "bidding-delayed-strategy-findings.md",
+        ),
+    )
+    cards, catalog = [], []
+    docs = "https://github.com/KAMCHIU-LAB/trajectory-lab/blob/main/docs/"
+    for slug, manifest, field, status, title, description, finding in entries:
+        record = publication_inventory(reports, slug, manifest, field, manifest_hashes[slug])
+        if record is None:
+            continue
+        catalog.append({"study": slug, **record})
+        cards.append(
+            f'<div class="card"><span>{status}</span><h2>{title}</h2>'
+            f'<p>{description}</p><strong><a href="{docs}{finding}">方法、结果与边界 ↗</a></strong>'
+            f'<p class="small"><a href="{record["manifest"]}">公开文件校验记录</a></p></div>'
+        )
+    if not cards:
+        return "", catalog
+    return (
+        '<section aria-label="近期研究"><h2>近期研究 · 从模型拟合到决策价值</h2>'
+        f'<div class="cards">{"".join(cards)}</div>'
+        '<p class="small">各阶段使用的市场、基线和确认规则不同，百分比不能跨阶段直接比较。</p></section>',
+        catalog,
+    )
+
+
 def confirmation_panel(reports: Path):
     slug = "bidding-confirmation"
     required = {
@@ -376,6 +468,7 @@ def build(root: Path) -> Path:
         raise ValueError("The mechanism check has not passed")
     total = sum(study["runs"] for study in catalog)
     bidding, bidding_catalog = bidding_cards(reports)
+    recent, recent_catalog = recent_publications(reports)
     audit = forecast_audit(reports)
     audit_panel = (
         '<section><div class="section-title"><h2>预测审计 · 误差与总量偏差</h2>'
@@ -427,6 +520,7 @@ def build(root: Path) -> Path:
         "completed_runs_scope": "offline RL foundation studies only",
         "studies": catalog,
         "bidding_studies": bidding_catalog,
+        "recent_publications": recent_catalog,
         "bidding_forecast_audit": audit,
         "bidding_onpolicy_audit": {
             "identity": onpolicy["manifest"]["identity"],
@@ -460,6 +554,9 @@ section{{margin-top:22px;padding:28px;background:white;border:1px solid #dbe3ea;
 @media(max-width:760px){{.cards,.insights{{grid-template-columns:1fr}}header{{padding-top:34px}}section{{padding:18px}}body{{padding:20px 14px}}.section-title{{display:block}}.card p{{min-height:0}}}}
 </style><nav>TrajectoryLab <span>Generative bidding · Public experiments</span></nav>
 <header><div class="eyebrow">公开模拟 · 预测误差 · 可追溯的实验</div><h1>生成式出价：响应模型何时优于简单反馈？</h1><p>在公开 AuctionNet 的自定义固定对手环境中，比较简单出价、反馈控制与历史条件模型，检验转化、CPA 违约和预算使用的取舍。下面的阶段标签只依据已公开的完整导出；实验完成与预设接受标准是否达到分别标注。</p></header>
+<p><a href="https://github.com/KAMCHIU-LAB/trajectory-lab/blob/main/docs/reproduce.md">运行 CPU 小例子与核对预期输出 ↗</a> · <a href="https://github.com/KAMCHIU-LAB/trajectory-lab/blob/main/docs/bidding-research-journal.md">14 阶段的问题、假设与实验演进 ↗</a></p>
+{recent}
+<h2>早期研究与对照</h2>
 <div class="cards">{bidding}</div>
 <div class="note">当前入口保留开发结果和未通过的研究阶段。尚无完整公开导出的阶段显示待完成，不能从数据生成或训练进度推断收益。所有出价结论均限于该固定对手模拟，不代表官方基准、线上效果或通用安全保证；calibrated 仅表示未额外注入预测偏差。</div>
 {confirmation}

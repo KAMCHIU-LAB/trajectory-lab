@@ -1,10 +1,12 @@
 import copy
 import json
+import tomllib
 from pathlib import Path
 
 import numpy as np
 import pytest
 
+from trajectorylab.bidding.experiment import validate as validate_bidding_config
 from trajectorylab.config import load_config
 from trajectorylab.data import Normalizer
 from trajectorylab.evaluation import SupportDiagnostic
@@ -13,9 +15,21 @@ from trajectorylab.report import aggregate_results, collect_results
 ROOT = Path(__file__).parents[1]
 
 
-def test_shipped_configs_validate():
+def test_shipped_configs_parse():
     for path in (ROOT / "configs").glob("*.toml"):
+        tomllib.loads(path.read_text())
+
+
+def test_shipped_offline_configs_validate():
+    for path in (ROOT / "configs").glob("*.toml"):
+        if path.name.startswith("bidding-"):
+            continue
         load_config(path)
+
+
+@pytest.mark.parametrize("name", ["bidding-main.toml", "bidding-pilot.toml"])
+def test_shipped_base_bidding_configs_validate(name):
+    validate_bidding_config(tomllib.loads((ROOT / "configs" / name).read_text()))
 
 
 def test_validation_and_test_seeds_cannot_overlap(tmp_path):
