@@ -8,3 +8,7 @@ recursive-include docs *.md
 recursive-include scripts *.py
 recursive-include tests *.py
 recursive-include third_party/auctionnet *.py *.md *.txt
+include assets/bidding-response-v1/README.md
+include assets/bidding-response-v1/response-11.json assets/bidding-response-v1/response-11.npz
+include assets/bidding-response-v1/response-23.json assets/bidding-response-v1/response-23.npz
+include assets/bidding-response-v1/response-37.json assets/bidding-response-v1/response-37.npz

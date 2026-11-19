@@ -36,3 +36,8 @@ reports/iql-unweighted-ablation-*/
 *.log
 *.pem
 *.key
+
+# Three reviewed numeric-only public response checkpoints; no traffic arrays.
+!assets/bidding-response-v1/response-11.npz
+!assets/bidding-response-v1/response-23.npz
+!assets/bidding-response-v1/response-37.npz

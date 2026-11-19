@@ -1,0 +1,51 @@
+[study]
+name = "expert-selection-immediate-v1"
+purpose = "unknown-fixed-pcvr-bias-public-mechanism-study"
+train_markets = [120001, 120002, 120003, 120004, 120005, 120006, 120007, 120008]
+validation_markets = [121001, 121002, 121003, 121004, 121005, 121006]
+confirmation_markets = [122001, 122002, 122003, 122004, 122005, 122006, 122007, 122008, 122009, 122010, 122011, 122012, 122013, 122014, 122015, 122016, 122017, 122018, 122019, 122020, 122021, 122022, 122023, 122024]
+focal_agents = [0, 8, 16, 24, 32, 40]
+pv_count = 500000
+actions = [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0]
+biases = [0.75, 1.0, 1.5]
+
+[selection]
+prefix = 16
+prefix_gain = 0.3
+prefix_prior = 8.0
+response_seed = 11
+response_context = 24
+regime = "immediate"
+arrival_seed = 11
+ridge_alphas = [1.0, 10.0, 100.0]
+rejection_thresholds = [0.0, 0.02]
+target = "full_terminal_response_score_minus_full_terminal_feedback_score_divided_by_budget_over_cpa"
+
+[baselines]
+feedback_gains = [0.3, 0.7, 1.2]
+feedback_priors = [3.0, 8.0]
+fixed_multipliers = [0.5, 0.75, 1.0, 1.25, 1.5]
+calibration_priors = [3.0, 8.0]
+calibration_bases = ["fixed-1", "fixed-1.25", "feedback-g0.3-p8"]
+threshold_ratios = [0.85, 1.0]
+mixture_seed = 73119
+
+[evaluation]
+minimum_relative_gain = 0.03
+score_protection = 0.99
+conversion_protection = 0.98
+violation_delta_protection = 0.01
+alpha = 0.05
+bootstrap_draws = 20000
+bootstrap_seed = 20261119
+power = 0.8
+statistical_unit = "market"
+probability_bin_edges = [0.0001, 0.0005, 0.002]
+
+[limits]
+preflight_seconds = 21600
+peak_rss_gib = 10.0
+cache_gib = 5.0
+confirmation_maximum_markets = 24
+neural_training = false
+torch_threads = 2

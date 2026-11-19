@@ -1,0 +1,65 @@
+{
+  "actions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.5,
+    3.0
+  ],
+  "architecture": {
+    "heads": 4,
+    "layers": 2,
+    "width": 128
+  },
+  "checkpoint_sha256": "ae388409c27c21782bc4aa71d8bcc1db88f9e36b7689b385f1b3a27429c855d9",
+  "context": 24,
+  "format": "trajectorylab-public-response-v1",
+  "mean": [
+    0.4895833432674408,
+    0.5104166865348816,
+    0.5872379541397095,
+    0.41276630759239197,
+    0.3422468602657318,
+    0.07051275670528412,
+    0.01313437707722187,
+    0.011522236280143261,
+    0.4084477424621582,
+    0.9997771978378296,
+    0.1465895175933838,
+    1.0416136980056763,
+    0.042583271861076355
+  ],
+  "provenance": {
+    "data": "Public-simulator-generated fixed-opponent markets; no commercial code or data.",
+    "scope": "Original frozen response inference; not complete bitwise training reproduction.",
+    "upstream_repository": "https://github.com/alimama-tech/AuctionNet"
+  },
+  "return_scale": 25.018185766876314,
+  "seed": 37,
+  "selected_step": 1000,
+  "std": [
+    0.2886046767234802,
+    0.2886046767234802,
+    0.42123183608055115,
+    0.42123252153396606,
+    0.4024456739425659,
+    0.23535093665122986,
+    0.05000000074505806,
+    0.05000000074505806,
+    0.26455381512641907,
+    0.4094568192958832,
+    0.05038920417428017,
+    0.5562244057655334,
+    0.11156401038169861
+  ],
+  "study_identity": "16cf4929440a33b5b6ea67a713ac669d96f5087fea841e38c783db6993b9ff7a",
+  "target_return": 25.018185766876314,
+  "upstream_revision": "c20de631a40e24669d1d6a8e2acefd8f492f172d",
+  "weights_sha256": "023e489670a3254b3583d6fcfcdf8052c749f333df8df37f8f0a6d9a2489663c"
+}
