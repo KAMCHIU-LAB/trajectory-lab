@@ -10,6 +10,7 @@
 - **Confirmed scope:** under 50% pCVR overprediction, three frozen response models in 24 fresh simulated markets achieved score **+17.6%**, conversions **+8.4%**, and CPA violations **−24.8 pp** versus frozen feedback. [Statistics and failure boundaries](docs/bidding-findings.md).
 - **Generative branch:** conditional Flow Matching, quantile screening and feedback fallback are implemented. The second training seed failed the registered business gate; distribution-specific decision value remains unconfirmed. [Completed seed replication and mechanism audits](docs/bidding-generative-findings.md).
 - **Delayed feedback:** a separate 24-market confirmation found posterior imputation score **+1.21%** (95% interval **[+0.41%, +2.05%]**), below the registered +3% practical target. Long-delay overprediction lost 4.25%; the common-trajectory audit explains why estimation and control need separate tests. [Results and limits](docs/bidding-delayed-findings.md).
+- **How the research evolved:** [fourteen evidence-linked stages](docs/bidding-research-journal.md) connect problems, hypotheses, controls, outcomes and decisions; [a recording template](docs/experiment-record-template.md) keeps future work traceable. The journal is in Chinese.
 - **Inspect the work:** [market settlement](src/trajectorylab/bidding/market.py), [response learning](src/trajectorylab/bidding/learning.py), [Flow sampler](src/trajectorylab/bidding_generative_learning.py), and [public evidence records](reports/bidding-generative/README.md).
 
 ## The question

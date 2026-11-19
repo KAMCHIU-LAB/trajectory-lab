@@ -10,6 +10,7 @@
 - **已确认的局部收益：**高估 50% 时，3 个冻结响应模型在 24 个新模拟市场相对冻结反馈的 score **+17.6%**、转化 **+8.4%**、CPA 违约频率 **−24.8 个百分点**。[统计口径及失败边界](docs/bidding-findings.md)。
 - **生成式分支：**已实现条件 Flow Matching、分位筛选与反馈回退；第二训练种子未通过业务门槛，生成分布带来的额外决策价值尚未确认。[已完成的种子复核与机制诊断](docs/bidding-generative-findings.md)。
 - **延迟反馈：**独立的 24 市场确认中，posterior 补回的 score **+1.21%**（95% 区间 **[+0.41%, +2.05%]**），未达预设 +3% 实用门槛；高估、长延迟格下降 4.25%。同轨迹审计进一步区分估计精度与控制收益。[结果与边界](docs/bidding-delayed-findings.md)。
+- **问题如何推动演进：**[14 个阶段的实验记录](docs/bidding-research-journal.md)串起问题、假设、对照、结果和取舍；后续研究按[记录模板](docs/experiment-record-template.md)持续追加。
 - **实现入口：**[拍卖结算](src/trajectorylab/bidding/market.py)、[响应学习](src/trajectorylab/bidding/learning.py)、[Flow 采样器](src/trajectorylab/bidding_generative_learning.py)、[公开记录](reports/bidding-generative/README.md)。
 
 ## 研究什么
